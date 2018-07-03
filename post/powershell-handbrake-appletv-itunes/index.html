@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PowerShell &#43; HandBrake &#43; AppleTV &#43; iTunes = Automatic TV... Ish...</title>
+
+    
+    
+    
+    <link rel="preload" href="https://www.tiernanotoole.ie/styles.css" as="style" />
+
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+    
+
+    <meta name="description" itemprop="description" content="I have an AppleTV in the house (3, actually) and i am very happy with its ease of use, size and cost&amp;hellip; You cant really argue with the small price! I also have a lot of content that works great with the AppleTV in iTunes, but i have content which does not work so great with the AppleTV&amp;hellip; So, i needed to find a way to convert files quickly and easily&amp;hellip; thats where PowerShell and Handbrake come in&amp;hellip;" id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Powershell,Guide,Media Center" id="keywords"><link rel="canonical" href="https://www.tiernanotoole.ie/post/powershell-handbrake-appletv-itunes/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+  <link rel="stylesheet" type="text/css" href="https://www.tiernanotoole.ie/css/dark.css"><link rel="stylesheet" type="text/css" href="https://www.tiernanotoole.ie/styles.css">
+
+    <script>var _paq = undefined;</script></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="site-container">
+      <div id="site-header">
+        <a href="https://www.tiernanotoole.ie/">
+          <header class="small-text-center medium-text-left row">
+            <div class="row-item">
+              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet </span>
+              <br/><span id="site-tagline">homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</span>
+            </div>
+          </header>
+        </a>
+        </div>
+      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
+        
+        
+        
+<main class="row-item small-full medium-two-thirds" >
+  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <header id="page-header">
+      <h1 itemprop="headline">PowerShell &#43; HandBrake &#43; AppleTV &#43; iTunes = Automatic TV... Ish...</h1><p id="post-metadata" class="row"><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Published:</strong>
+          <time datetime="2012-09-28" content="2012-09-28" itemprop="datePublished">September 28, 2012</time>
+        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">2 minutes</span></span></p>
+      
+    </header>
+    
+    <div id="post-content">
+      <span itemprop="articleBody"><p>I have an <a href="http://www.apple.com/appletv">AppleTV</a> in the house (3, actually) and i am very happy with its ease of use, size and cost&hellip; You cant really argue with the small price!</p>
+
+<p>I also have a lot of content that works great with the AppleTV in iTunes, but i have content which does not work so great with the AppleTV&hellip; So, i needed to find a way to convert files quickly and easily&hellip; thats where PowerShell and <a href="http://handbrake.fr/">Handbrake</a> come in&hellip;</p>
+
+<p>{% gist 3798509 %}</p>
+
+<ul>
+<li>in the code above, you need to set the path of where your files live. in my case they live on a NAS.</li>
+<li>next, set the location of HandBrake&hellip; i have a 64 bit copy of Windows, and a 64 bit copy of HandBrake.</li>
+<li>set the new file name to where you want the file to go. in my case i have it set to my &ldquo;<a href="http://support.apple.com/kb/HT3832">Automatically Add to iTunes</a>&rdquo; folder, which is a magic folder for iTunes that copies any files dropped in there to your iTunes library.</li>
+<li>finally, conversion is run&hellip;</li>
+</ul>
+
+<p>This may take a few min, depending on a few factors:</p>
+
+<ul>
+<li>how many files you are converting</li>
+<li>how fast your machine in</li>
+<li>how fast your machine can read and write the files&hellip;</li>
+<li>etc&hellip;</li>
+</ul>
+
+<p>I have set files to convert on 3 different machines (the GodBox and 2 other servers) and i am getting speeds of anywhere between 250FPS (on the GodBox running 2 instances of HandBrake CLI) and 40 - 60 FPS on the older servers&hellip; on the remote machines, they are sending files to the GodBox folder also, so once everything completes, its just a matter of opening iTunes and we are good to go&hellip; Now to figure out how to automate the Metadata import&hellip;</p>
+</span>
+    </div><div id="post-tags">
+    	<ul class="menu">
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/powershell" rel="tag" itemprop="url">powershell</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/guide" rel="tag" itemprop="url">guide</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/media-center" rel="tag" itemprop="url">media center</a>
+    		</li></ul>
+    </div></article>
+
+  <nav id="post-nav" class="row"><a href="https://www.tiernanotoole.ie/post/crashplan-backups/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> Crashplan Backups</a><a href="https://www.tiernanotoole.ie/post/enabling-true-briding-mode-on-cisco-epc3925/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">Enabling True Bridging modem on a Cisco ECP3925 Cable Modem (UPC Ireland) <span class="fa fa-chevron-circle-right"></span></a></nav></main>
+
+        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+  
+	
+  
+	
+	
+</aside>
+
+      </div>
+      <footer class="row">
+        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
+          <div class="small-full">
+            <small>
+              &copy; 2018
+              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">Tiernan&#39;s Comms Closet </span>
+              </span>
+            </small>
+          </div>
+          <div class="small-full row">
+            
+            
+            <div class="row-item small-only-full">
+              
+                
+  
+  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+<script type="text/javascript">
+(function (w,d) {
+  var loader = function () {
+    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+    s.src = "//cdn.iubenda.com/iubenda.js";
+    tag.parentNode.insertBefore(s,tag);
+  };
+  if (w.addEventListener) {
+    w.addEventListener("load", loader, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", loader);
+  } else {
+    w.onload = loader;
+  }
+})(window, document);
+</script>
+
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
+
+
+</div>
+      </footer>
+    </div>
+    
+  </body>
+</html>

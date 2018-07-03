@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Send Emails as a Distribution Group in Office365</title>
+
+    
+    
+    
+    <link rel="preload" href="https://www.tiernanotoole.ie/styles.css" as="style" />
+
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+    
+
+    <meta name="description" itemprop="description" content="I am in the process of moving my Email domains from one Office365 plan (a Professional) to an Enterprise Plan. During the move, i set up some Email Aliases for older email addresses, which are still being used, but i dont send a lot of email from. But if i do need to send emails from these addresses, with the help of Powershell, I managed to set it up. The full details are listed on &amp;ldquo;how to send as an alias in Office 365&amp;rdquo;." id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Office_365,Email" id="keywords"><link rel="canonical" href="https://www.tiernanotoole.ie/post/send_emails_as_a_distribution_group_in_office365/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+  <link rel="stylesheet" type="text/css" href="https://www.tiernanotoole.ie/css/dark.css"><link rel="stylesheet" type="text/css" href="https://www.tiernanotoole.ie/styles.css">
+
+    <script>var _paq = undefined;</script></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="site-container">
+      <div id="site-header">
+        <a href="https://www.tiernanotoole.ie/">
+          <header class="small-text-center medium-text-left row">
+            <div class="row-item">
+              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet </span>
+              <br/><span id="site-tagline">homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</span>
+            </div>
+          </header>
+        </a>
+        </div>
+      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
+        
+        
+        
+<main class="row-item small-full medium-two-thirds" >
+  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <header id="page-header">
+      <h1 itemprop="headline">Send Emails as a Distribution Group in Office365</h1><p id="post-metadata" class="row"><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Published:</strong>
+          <time datetime="2012-12-20" content="2012-12-20" itemprop="datePublished">December 20, 2012</time>
+        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">1 minutes</span></span></p>
+      
+    </header>
+    
+    <div id="post-content">
+      <span itemprop="articleBody"><p>I am in the process of moving my Email domains from one <a href="http://www.office365.com">Office365</a> plan (a Professional) to an Enterprise Plan. During the move, i set up some Email Aliases for older email addresses, which are still being used, but i dont send a lot of email from. But if i do need to send emails from these addresses, with the help of Powershell, I managed to set it up. The full details are listed on <a href="https://www.cogmotive.com/blog/office-365-tips/send-as-an-alias-in-microsoft-office-365">&ldquo;how to send as an alias in Office 365&rdquo;</a>. It works perfectly! And, as a bit of shamless self promotion, if you are interested in Office365, why not drop me a mail at Tiernan at LimitedSlipNetworks dot com and i can set you up with a trial and more information.</p>
+</span>
+    </div><div id="post-tags">
+    	<ul class="menu">
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/office_365" rel="tag" itemprop="url">office 365</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/email" rel="tag" itemprop="url">email</a>
+    		</li></ul>
+    </div></article>
+
+  <nav id="post-nav" class="row"><a href="https://www.tiernanotoole.ie/post/ipv6_firewall_rules_for_mikrotik_routeros/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> IPv6 Firewall rules for MikroTik RouterOS</a><a href="https://www.tiernanotoole.ie/post/moving_sites_to_nearlyfreespeech/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">Moving sites to NearlyFreeSpeech <span class="fa fa-chevron-circle-right"></span></a></nav></main>
+
+        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+  
+	
+  
+	
+	
+</aside>
+
+      </div>
+      <footer class="row">
+        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
+          <div class="small-full">
+            <small>
+              &copy; 2018
+              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">Tiernan&#39;s Comms Closet </span>
+              </span>
+            </small>
+          </div>
+          <div class="small-full row">
+            
+            
+            <div class="row-item small-only-full">
+              
+                
+  
+  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+<script type="text/javascript">
+(function (w,d) {
+  var loader = function () {
+    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+    s.src = "//cdn.iubenda.com/iubenda.js";
+    tag.parentNode.insertBefore(s,tag);
+  };
+  if (w.addEventListener) {
+    w.addEventListener("load", loader, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", loader);
+  } else {
+    w.onload = loader;
+  }
+})(window, document);
+</script>
+
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
+
+
+</div>
+      </footer>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IPv6 &#43; MikroTik &#43; Linux &#43; Windows</title>
+
+    
+    
+    
+    <link rel="preload" href="https://www.tiernanotoole.ie/styles.css" as="style" />
+
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+    
+
+    <meta name="description" itemprop="description" content="I have been wanting to setup an IPv6 network for a while now, but never had the hardware or network to support it. My broadband Modem, a Cisco EPC3925, was pretty useless&amp;hellip; But with the advent of Bridging on the Cisco EPC3925 it now works! The first thing i needed to do was setup a Tunnel Broker Account with Hurricane Electric. I got a /64 block of IPv6 addresses, which should do me for a while&amp;hellip; :)" id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="RouterOS,Windows,Linux,Networking,IPv6" id="keywords"><link rel="canonical" href="https://www.tiernanotoole.ie/post/ipv6_&#43;_mikrotik_&#43;_linux_&#43;_windows/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+  <link rel="stylesheet" type="text/css" href="https://www.tiernanotoole.ie/css/dark.css"><link rel="stylesheet" type="text/css" href="https://www.tiernanotoole.ie/styles.css">
+
+    <script>var _paq = undefined;</script></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="site-container">
+      <div id="site-header">
+        <a href="https://www.tiernanotoole.ie/">
+          <header class="small-text-center medium-text-left row">
+            <div class="row-item">
+              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet </span>
+              <br/><span id="site-tagline">homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</span>
+            </div>
+          </header>
+        </a>
+        </div>
+      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
+        
+        
+        
+<main class="row-item small-full medium-two-thirds" >
+  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <header id="page-header">
+      <h1 itemprop="headline">IPv6 &#43; MikroTik &#43; Linux &#43; Windows</h1><p id="post-metadata" class="row"><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Published:</strong>
+          <time datetime="2012-12-19" content="2012-12-19" itemprop="datePublished">December 19, 2012</time>
+        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">1 minutes</span></span></p>
+      
+    </header>
+    
+    <div id="post-content">
+      <span itemprop="articleBody"><p>I have been wanting to setup an <a href="http://en.wikipedia.org/wiki/Ipv6">IPv6</a> network for a while now, but never had the hardware or network to support it. My broadband Modem, a Cisco EPC3925, was pretty useless&hellip; But with the advent of <a href="http://tiernanotoole.ie/2012/10/02/Enabling-true-briding-mode-on-Cisco-EPC3925.html">Bridging on the Cisco EPC3925</a> it now works!</p>
+
+<p>The first thing i needed to do was setup a <a href="http://www.tunnelbroker.net/">Tunnel Broker Account</a> with <a href="http://www.he.net">Hurricane Electric</a>. I got a /64 block of IPv6 addresses, which should do me for a while&hellip; :)</p>
+
+<p>Next, I followed the config example from the MikroTik Wiki Page: <a href="http://wiki.mikrotik.com/wiki/Manual:My_First_IPv6_Network">My First IPv6 Network</a>. In my case, i only ran though most of router 1&rsquo;s config, and did not create the &ldquo;routing between segments&rdquo; and &ldquo;ospv-v3&rdquo; backbone&hellip; I did give my internal LAN port an IPv6 address, as well as an IPv4 address.</p>
+
+<p>Next, on my Windows Server machine, i gave it a static IPv6 address (since i dont have an IPv6 DHCP setup&hellip; yet&hellip;) and told it to use the IPv6 address i gave the RouteBoard as its gateway. Then i told it to use the <a href="http://www.opendns.com">OpenDNS</a> <a href="http://www.opendns.com/ipv6">public IPv6</a> address. I then visited <a href="http://www.ipv6-test.com">IPv6 Test</a> and <a href="http://ipv6.google.com">Google&rsquo;s IPv6 page</a> to confirm connectivity&hellip; SUCCESS!!!</p>
+
+<p>On my Linux box, I followed <a href="http://knowledgelayer.softlayer.com/questions/468/Adding+IPv6+to+Ubuntu+systems">Soflayer&rsquo;s Adding an IPv6 IP</a> tutorial.</p>
+
+<p>So far, so good&hellip;</p>
+</span>
+    </div><div id="post-tags">
+    	<ul class="menu">
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/routeros" rel="tag" itemprop="url">router o s</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/windows" rel="tag" itemprop="url">windows</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/linux" rel="tag" itemprop="url">linux</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/networking" rel="tag" itemprop="url">networking</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/ipv6" rel="tag" itemprop="url">i pv6</a>
+    		</li></ul>
+    </div></article>
+
+  <nav id="post-nav" class="row"><a href="https://www.tiernanotoole.ie/post/compressing_and_uncompressing_protobuf_items_in_c/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> Compressing and UnCompressing Protobuf items in C#</a><a href="https://www.tiernanotoole.ie/post/ipv6_firewall_rules_for_mikrotik_routeros/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">IPv6 Firewall rules for MikroTik RouterOS <span class="fa fa-chevron-circle-right"></span></a></nav></main>
+
+        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+  
+	
+  
+	
+	
+</aside>
+
+      </div>
+      <footer class="row">
+        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
+          <div class="small-full">
+            <small>
+              &copy; 2018
+              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">Tiernan&#39;s Comms Closet </span>
+              </span>
+            </small>
+          </div>
+          <div class="small-full row">
+            
+            
+            <div class="row-item small-only-full">
+              
+                
+  
+  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+<script type="text/javascript">
+(function (w,d) {
+  var loader = function () {
+    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+    s.src = "//cdn.iubenda.com/iubenda.js";
+    tag.parentNode.insertBefore(s,tag);
+  };
+  if (w.addEventListener) {
+    w.addEventListener("load", loader, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", loader);
+  } else {
+    w.onload = loader;
+  }
+})(window, document);
+</script>
+
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
+
+
+</div>
+      </footer>
+    </div>
+    
+  </body>
+</html>

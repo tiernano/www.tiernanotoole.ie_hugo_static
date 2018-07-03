@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More VoIP Stuff</title>
+
+    
+    
+    
+    <link rel="preload" href="https://www.tiernanotoole.ie/styles.css" as="style" />
+
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+    
+
+    <meta name="description" itemprop="description" content="As part of my ongoing plan to upgrade the house to VoIP, and as a follow up to my first VoIP stuff post, here are some more things i have found&amp;hellip;  I have added SipDiscount and SipGate for making and recieving calls. SipDiscount allows me to set pretty much any number as my Caller ID, as long as i &amp;ldquo;own&amp;rdquo; that number (they either text or call you with a code, and you enter it on their site)." id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="VoIP" id="keywords"><link rel="canonical" href="https://www.tiernanotoole.ie/post/more-voip-stuff/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+  <link rel="stylesheet" type="text/css" href="https://www.tiernanotoole.ie/css/dark.css"><link rel="stylesheet" type="text/css" href="https://www.tiernanotoole.ie/styles.css">
+
+    <script>var _paq = undefined;</script></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="site-container">
+      <div id="site-header">
+        <a href="https://www.tiernanotoole.ie/">
+          <header class="small-text-center medium-text-left row">
+            <div class="row-item">
+              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet </span>
+              <br/><span id="site-tagline">homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</span>
+            </div>
+          </header>
+        </a>
+        </div>
+      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
+        
+        
+        
+<main class="row-item small-full medium-two-thirds" >
+  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <header id="page-header">
+      <h1 itemprop="headline">More VoIP Stuff</h1><p id="post-metadata" class="row"><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Published:</strong>
+          <time datetime="2012-09-27" content="2012-09-27" itemprop="datePublished">September 27, 2012</time>
+        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">2 minutes</span></span></p>
+      
+    </header>
+    
+    <div id="post-content">
+      <span itemprop="articleBody"><p>As part of my ongoing plan to upgrade the house to VoIP, and as a follow up to my first <a href="http://tiernanotoole.ie/2012/09/11/VOIP-Stuff.html">VoIP stuff</a> post, here are some more things i have found&hellip;</p>
+
+<ul>
+<li>I have added <a href="http://www.sipdiscount.com">SipDiscount</a> and <a href="http://www.sipgate.co.uk">SipGate</a> for making and recieving calls.</li>
+<li>SipDiscount allows me to set pretty much any number as my Caller ID, as long as i &ldquo;own&rdquo; that number (they either text or call you with a code, and you enter it on their site). They also allow me to make cheap calls to Irish Mobiles (check their <a href="http://www.sipdiscount.com/rates">rates here</a>)</li>
+<li>SipGate gave me a incoming UK phone number. Its an 0845 number, which I dont know what that means&hellip; but it was free, so its all good. Not sure if i can recieve text messages on it though&hellip;</li>
+<li>I have a <a href="http://www.blueface.ie">Blueface</a> account, which gives me an Irish 076 VoIP number. 076 is the standard VoIP number here in Ireland&hellip;</li>
+<li>I have a <a href="http://www.ipkall.com/">IpKall</a> number, which is based in Washington State. You need to recieve a call on this line at least once every 30 days to keep it active.</li>
+<li>My <a href="http://voice.google.com/">Google Voice</a> accepts calls and forwards them to my IpKall number, which then rings my BlueFace SIP account (since i know they will be up all the time, by my home server may be offline since i am only testing) which, if a SIP device is connected, will forward it again&hellip; if i am offline, or no sip devices are active, that call is redirected to voice mail&hellip;</li>
+</ul>
+
+<p>Its all very complicated at the moment, but the plan will be that any incoming calls should go directly to the machine in house, which will ring the desk phone and any other SIP clients. Any incoming PSTN calls will also do the same. Outgoing calls will depend on the dialing plan, which i still need to figure out, but the theory goes as follows:</p>
+
+<ul>
+<li>Irish landline calls at certin times should go though the PSTN (since we get some free calls with our line). Other times they should go though SipDiscount or BlueFace.</li>
+<li>if the PSTN is busy, fall over to one of the other providers&hellip;</li>
+<li>Irish Mobile calls should go though SipDiscount and then fall back to land line, or if i ever get the BlueTooth setup working, SipDiscount, then bluetooth, then landline&hellip;</li>
+<li>International calls should be sent though SipDiscount or Blueface, whichever is cheaper&hellip;</li>
+</ul>
+
+<p>Its going to be an interesting setup&hellip; :)</p>
+</span>
+    </div><div id="post-tags">
+    	<ul class="menu">
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/voip" rel="tag" itemprop="url">vo i p</a>
+    		</li></ul>
+    </div></article>
+
+  <nav id="post-nav" class="row"><a href="https://www.tiernanotoole.ie/post/raspberry-pi-cross-compiling/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> Building a Cross Compiler for your Raspberry Pi</a><a href="https://www.tiernanotoole.ie/post/crashplan-backups/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">Crashplan Backups <span class="fa fa-chevron-circle-right"></span></a></nav></main>
+
+        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+  
+	
+  
+	
+	
+</aside>
+
+      </div>
+      <footer class="row">
+        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
+          <div class="small-full">
+            <small>
+              &copy; 2018
+              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">Tiernan&#39;s Comms Closet </span>
+              </span>
+            </small>
+          </div>
+          <div class="small-full row">
+            
+            
+            <div class="row-item small-only-full">
+              
+                
+  
+  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+<script type="text/javascript">
+(function (w,d) {
+  var loader = function () {
+    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+    s.src = "//cdn.iubenda.com/iubenda.js";
+    tag.parentNode.insertBefore(s,tag);
+  };
+  if (w.addEventListener) {
+    w.addEventListener("load", loader, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", loader);
+  } else {
+    w.onload = loader;
+  }
+})(window, document);
+</script>
+
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
+
+
+</div>
+      </footer>
+    </div>
+    
+  </body>
+</html>
