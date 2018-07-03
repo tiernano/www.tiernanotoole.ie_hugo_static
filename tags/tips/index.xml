@@ -7,59 +7,90 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 23 Apr 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/tips/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Useful Web and Desktop Apps 2016 edition</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/useful-web-and-desktop-apps-2016-edition/</link>
       <pubDate>Sat, 23 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/useful-web-and-desktop-apps-2016-edition/</guid>
-      <description>I have decided to do a post on some of my favourite tools to use for development, administration, etc. It’s kind of like Hanselman&amp;rsquo;s Ultimate Tools list, but not as popular and about 2 years newer&amp;hellip; Anyway, the list is available here, and will be updated over time, much like my Daily Carry and Computers pages. If you are interested, you add links though GitHub by editing the toolslist.yml data file.</description>
+      <description>&lt;p&gt;I have decided to do a post on some of my favourite tools to use for development, administration, etc. It’s kind of like &lt;a href=&#34;http://www.hanselman.com/blog/ScottHanselmans2014UltimateDeveloperAndPowerUsersToolListForWindows.aspx&#34;&gt;Hanselman&amp;rsquo;s Ultimate Tools list&lt;/a&gt;, but not as popular and about 2 years newer&amp;hellip; Anyway, the &lt;a href=&#34;https://www.tiernanotoole.ie/ToolsList/&#34;&gt;list is available here&lt;/a&gt;, and will be updated over time, much like my &lt;a href=&#34;https://www.tiernanotoole.ie/DailyCarry/&#34;&gt;Daily Carry&lt;/a&gt; and &lt;a href=&#34;https://www.tiernanotoole.ie/Computers/&#34;&gt;Computers&lt;/a&gt; pages. If you are interested, you add links though &lt;a href=&#34;https://www.github.com&#34;&gt;GitHub&lt;/a&gt; by editing the &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie/blob/master/_data/toolslist.yml&#34;&gt;toolslist.yml data file&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>GIT tips and tricks</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git_tips_and_tricks/</link>
       <pubDate>Wed, 05 Dec 2012 15:48:44 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git_tips_and_tricks/</guid>
-      <description>I use GIT a lot for different things, including this blog. so, here are a few tips and tricks i have found useful over the while&amp;hellip;
- Using Dropbox as a local GIT/Mercurial Repository: my own post from a while back. Twelve GIT curated Tips and Workflows from the Trenches Using GIT with Subversion: tips that will make your life easier: The office has an SVN server, but i like GIT.</description>
+      <description>&lt;p&gt;I use &lt;a href=&#34;http://git-scm.com/&#34;&gt;GIT&lt;/a&gt; a lot for different things, including &lt;a href=&#34;http://tiernanotoole.ie/2012/08/29/NewSite.html&#34;&gt;this blog&lt;/a&gt;. so, here are a few tips and tricks i have found useful over the while&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.lotas-smartman.net/using-dropbox-as-a-personal-git-and-mercurial-storage-area/?utm_source=tiernanotoole&amp;amp;utm_medium=web&amp;amp;utm_campaign=gittipsandtricks&#34;&gt;Using Dropbox as a local GIT/Mercurial Repository&lt;/a&gt;: my own post from a while back.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://durdn.com/blog/2012/12/05/git-12-curated-git-tips-and-workflows/&#34;&gt;Twelve GIT curated Tips and Workflows from the Trenches&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://durdn.com/blog/2011/07/06/using-git-with-subversion-tips-that-will-make-your-life-easier/&#34;&gt;Using GIT with Subversion: tips that will make your life easier&lt;/a&gt;: The office has an SVN server, but i like GIT. This doc, with the help of &lt;a href=&#34;http://www.kernel.org/pub/software/scm/git/docs/git-svn.html&#34;&gt;git-svn&lt;/a&gt; and &lt;a href=&#34;http://stackoverflow.com/questions/4883453/seamless-git-svn-setup&#34;&gt;this post on StackOverflow&lt;/a&gt; allows me to use GIT locally, and then push to SVN.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://andyjeffries.co.uk/articles/25-tips-for-intermediate-git-users&#34;&gt;25 tips for intermediate git users&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://gitready.com/&#34;&gt;git ready: learn git one commit at a time&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://mislav.uniqpath.com/2010/07/git-tips/&#34;&gt;A few git tips you dont already know&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/gp/product/1430218339/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=1430218339&amp;amp;linkCode=as2&amp;amp;tag=lotassmartmann00&#34;&gt;The ProGIT book (paperback amazon)&lt;/a&gt; or &lt;a href=&#34;http://www.amazon.com/gp/product/B004TTXLGI/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=B004TTXLGI&amp;amp;linkCode=as2&amp;amp;tag=lotassmartmann00&#34;&gt;Kindle Edition&lt;/a&gt;. Also available &lt;a href=&#34;http://git-scm.com/book&#34;&gt;online&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>enabling VNC from SSH on OSX</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/enabling_vnc_from_ssh_on_osx/</link>
       <pubDate>Thu, 29 Nov 2012 16:16:49 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/enabling_vnc_from_ssh_on_osx/</guid>
-      <description>I have a Late 2008 MacBook Pro in the house, and SSH is enabled on it. I usually leave it on when in work. Anyway, SSH is enabled, but VNC access is not&amp;hellip; I found the following command on Ryan&amp;rsquo;s Tech Notes allowing you to enable it though SSH:
-{% gist 4170122 %}
-** NOTE ** Change mypasswd to your own password!!!
-If you need to disable it, use the following:</description>
+      <description>&lt;p&gt;I have a &lt;a href=&#34;https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/Computers/MacBookPro.html&#34;&gt;Late 2008 MacBook Pro&lt;/a&gt; in the house, and SSH is enabled on it. I usually leave it on when in work. Anyway, SSH is enabled, but VNC access is not&amp;hellip; I found the following command on &lt;a href=&#34;http://technotes.twosmallcoins.com/?p=279&#34;&gt;Ryan&amp;rsquo;s Tech Notes&lt;/a&gt; allowing you to enable it though SSH:&lt;/p&gt;
+
+&lt;p&gt;{% gist 4170122 %}&lt;/p&gt;
+
+&lt;p&gt;** NOTE ** Change &lt;em&gt;mypasswd&lt;/em&gt; to your own password!!!&lt;/p&gt;
+
+&lt;p&gt;If you need to disable it, use the following:&lt;/p&gt;
+
+&lt;p&gt;{% gist 4170129 %}&lt;/p&gt;
+
+&lt;p&gt;Also, of note, I am using &lt;a href=&#34;http://www.realvnc.com/&#34;&gt;RealVNC client for Windows&lt;/a&gt; to connect.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>More Jekyll Stuff</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/more_jekyll_stuff/</link>
       <pubDate>Thu, 04 Oct 2012 20:57:52 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/more_jekyll_stuff/</guid>
-      <description>Couple of bits and pieces on Jekyll stuff today&amp;hellip; I am tweaking the outline of the site, so i am surfing around finding stuff&amp;hellip; here is what i have found
- Host a static site on Amazon S3: Interesting idea, and something i would look into eventually&amp;hellip; And with the help of CloudFront you could host your whole blog on a CDN! Rake tasks for Jekyll: Rake is the Ruby version of make&amp;hellip; and a RakeFile can have tasks, which are in Ruby&amp;hellip; They can do, from what i can gather, pretty much anything&amp;hellip; So, some examples of what you can do with them are linked here&amp;hellip; I especially like the New Post generator&amp;hellip; very handy!</description>
+      <description>&lt;p&gt;Couple of bits and pieces on Jekyll stuff today&amp;hellip; I am tweaking the outline of the site, so i am surfing around finding stuff&amp;hellip; here is what i have found&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.layouts-the.me/2011/03/16/hosting-on-amazon-s3/&#34;&gt;Host a static site on Amazon S3&lt;/a&gt;: Interesting idea, and something i would look into eventually&amp;hellip; And with the help of &lt;a href=&#34;http://aws.amazon.com/cloudfront&#34;&gt;CloudFront&lt;/a&gt; you could host your whole blog on a CDN!&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.layouts-the.me/rake/2011/04/23/rake_tasks_for_jekyll/&#34;&gt;Rake tasks for Jekyll&lt;/a&gt;: Rake is the Ruby version of make&amp;hellip; and a RakeFile can have tasks, which are in Ruby&amp;hellip; They can do, from what i can gather, pretty much anything&amp;hellip; So, some examples of what you can do with them are linked here&amp;hellip; I especially like the New Post generator&amp;hellip; very handy!&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://recursive-design.com/projects/jekyll-plugins/&#34;&gt;Jekyll Plugins&lt;/a&gt;: Various different plugins for Jekyll&amp;hellip; I am interested in a few of these, mainly the Generate_projects one, which generates a page for your projects based on your &lt;a href=&#34;http://vitobotta.com/how-to-migrate-from-wordpress-to-jekyll/&#34;&gt;GitHub&lt;/a&gt; projects&amp;hellip; very cool stuff&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Strictly speaking, this is not just a Jekyll how to, but &lt;a href=&#34;http://vitobotta.com/how-to-migrate-from-wordpress-to-jekyll/&#34;&gt;Migrating from Wordpress to Jekyll&lt;/a&gt; is a handy read. my &lt;a href=&#34;http://blog.lotas-smartman.net&#34;&gt;main blog&lt;/a&gt;, &lt;a href=&#34;http://podcast.tiernanotoole.ie&#34;&gt;my podcast&lt;/a&gt; and &lt;a href=&#34;http://geekphotographer.com&#34;&gt;photography blog&lt;/a&gt; both run WordPress. migrating them to Jekyll would mean i could move them directly to a CDN and make things a lot faster&amp;hellip; Maybe something i plan doing soon&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you have any tips or tricks, why not leave a comment and i can add them to the post.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Crashplan Backups</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/crashplan-backups/</link>
       <pubDate>Thu, 27 Sep 2012 11:32:32 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/crashplan-backups/</guid>
-      <description>I have been running CrashPlan for a while now, and, other than some minor issues (backup speed to their central location is the big one), everything has been going grand. I use it to backup about 600GB of photos and videos, 500GB+ of VMs, documents, source code and a fair whack of other stuff&amp;hellip; In total, about 2TB of data.
-Anyway, here are some tips i have figured out over the last while for making Crashplan work a little better&amp;hellip;</description>
+      <description>&lt;p&gt;I have been running &lt;a href=&#34;http://www.crashplan.com&#34;&gt;CrashPlan&lt;/a&gt; for a while now, and, other than some minor issues (backup speed to their central location is the big one), everything has been going grand. I use it to backup about 600GB of photos and videos, 500GB+ of VMs, documents, source code and a fair whack of other stuff&amp;hellip; In total, about 2TB of data.&lt;/p&gt;
+
+&lt;p&gt;Anyway, here are some tips i have figured out over the last while for making Crashplan work a little better&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://support.crashplan.com/doku.php/recipe/speeding_up_your_backup&#34;&gt;Speeding up your backup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nerdwa.com/index.php/2011/05/crashplan-on-ubuntu-server/&#34;&gt;Installing CrashPlan on a headless (no monitor or GUI) Ubuntu Server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.uncorneredmarket.com/2012/02/crashplan-backup/&#34;&gt;How to get terabytes of data into the cloud using Crashplan Seed Drive&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I am also in the process of doing some further tests with iSCSI drives linked to the Cloud, and other weird and wonderful things&amp;hellip; once I have finished, i will upload extra stuff here.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

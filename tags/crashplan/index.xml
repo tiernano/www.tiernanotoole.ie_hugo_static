@@ -7,18 +7,51 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 25 Sep 2017 07:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/crashplan/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/crashplan/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>New Backup Plans</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/new-backup-plans/</link>
       <pubDate>Mon, 25 Sep 2017 07:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/new-backup-plans/</guid>
-      <description>So, a few weeks back, CrashPlan, one of my chosen backup services, decided to kill their consumer backup plans. Which made me have to rethink my backup plan for the house&amp;hellip;
-Note: This is how I am backing up files, and may or may not work for you. Some of this is already in &amp;ldquo;production&amp;rdquo; as of today, but others are planned&amp;hellip; Any questions, comments, etc, leave them in the comments.</description>
+      <description>&lt;p&gt;So, a few weeks back, &lt;a href=&#34;http://www.crashplan.com&#34;&gt;CrashPlan&lt;/a&gt;, one of my chosen backup services, decided to &lt;a href=&#34;https://www.crashplan.com/en-us/consumer/nextsteps/&#34;&gt;kill their consumer backup plans&lt;/a&gt;. Which made me have to rethink my backup plan for the house&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: This is how I am backing up files, and may or may not work for you. Some of this is already in &amp;ldquo;production&amp;rdquo; as of today, but others are planned&amp;hellip; Any questions, comments, etc, leave them in the comments.&lt;/p&gt;
+
+&lt;p&gt;So, first, as mentioned above, CrashPlan&amp;rsquo;s consumer backup options are now dead. They are giving you the option of either upgrading to their Small Business Plan for free till the end of your current contract + 2 months, or moving to &lt;a href=&#34;https://www.carbonite.com/&#34;&gt;Carbonite&lt;/a&gt;. For me, i just moved to their Small Business option, since its free, and meant that most of my backups just migrated over&amp;hellip; i did not, how ever, look too much into Carbonite.&lt;/p&gt;
+
+&lt;p&gt;Just checking their site now, i would have to go for a minimum of the Plus plan, and that only allows me to backup 1 machine&amp;hellip; I have 2 (currently) that get backed up&amp;hellip; and probably more at a later date&amp;hellip; and, given their yearly price for Plus is $75 per year, thats $150 for 2 current machines, and an extra $75 per machine after&amp;hellip; Granted, they are saying its unlimited storage. but the extra fee per machine puts it out of contention&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;For CrashPlans Small Business Plan, their plan is $10 per machine per month&amp;hellip; So, my 2 machines would cost $240 per year to backup. They are giving me the next few months for free, and then for the first year, they are offering a discount of 75%, but we will see what happens when renewal comes along&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;So, where does that leave me? Well, its looking like i will be using a mix of &lt;a href=&#34;https://secure.backblaze.com/r/01px2w&#34;&gt;BackBlaze&lt;/a&gt; and &lt;a href=&#34;http://www.hubic.com&#34;&gt;Hubic&lt;/a&gt;. The current idea is as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;GodBoxV2 and the Mac Mini both have &lt;a href=&#34;http://www.drobo.com&#34;&gt;Drobos&lt;/a&gt; plugged into them: the GodBoxV2 has a Drobo 5D, and the mini has a Drobo mini. There is also a Drobo FS on the network. I know they are not backup solutions, but its better than having stuff on single drives&amp;hellip;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For Windows boxes, I am backing up files to the cloud using &lt;a href=&#34;https://www.duplicati.com/&#34;&gt;Duplicati&lt;/a&gt;. These are backed up to both Hubic and BackBlaze B2. Photos and importing files are backed up to both, and stuff i want backed up, but not in 2 places, is just backed up on Hubic.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For my Mac mini, i use a a mix of Duplicati and &lt;a href=&#34;https://www.arqbackup.com/&#34;&gt;Arq Backup&lt;/a&gt;. Arq got B2 support recently, so its very handy for that.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For some of my Linux Boxes, i use &lt;a href=&#34;http://duplicity.nongnu.org/&#34;&gt;Duplicity&lt;/a&gt;. You may need to walk though the steps i have &lt;a href=&#34;https://www.tiernanotoole.ie/2015/04/01/Duplicity_Hubic.html&#34;&gt;here&lt;/a&gt; to get it working with Hubic, and it also works with B2.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some further notes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Hubic are charging about EUR5 a month for 10Tb of storage. If you refer people, that can go up. I have maxed mine out at 12.5Tb.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Hubic is limited to 10mb/s for uploads and downloads. I never got anywhere close to that speed with CrashPlan (I&amp;rsquo;m based in Europe, they are in the US, so speed of light and what have you&amp;hellip; maxed most of the time at 4ish). That being said, even those its &amp;ldquo;limited&amp;rdquo; to 10mb/s, i have seen higher.,.. might be 10 per thread&amp;hellip;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;I did, for a while, use the BackBlaze app and service. I just didn&amp;rsquo;t renew because of the move to B2. If you don&amp;rsquo;t want to mess with stuff, their App works great.And if you use &lt;a href=&#34;https://secure.backblaze.com/r/01px2w&#34;&gt;this referal link&lt;/a&gt; you get a free month&amp;hellip; Also, its FAST AF! it actually manged to max out my upload connection to their server! wont complain about that!&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;B2 is cheap. 0.5c per gig stored&amp;hellip; So, it works out at about $5 per TB per month, minus your usual bandwidth fees&amp;hellip;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Duplicati and Duplicity both have options to send emails on success or failure, or the like. I recommend having the emails on failure turned on at a minimum&amp;hellip; also, on headless boxes, like my Linux box, i recommend checking the backup every week&amp;hellip;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, there we have it. Any questions?&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -7,64 +7,102 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 24 Mar 2016 08:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/announcements/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/announcements/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Continuous Integration and Blogging</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/continuous-integration-and-blogging/</link>
       <pubDate>Thu, 24 Mar 2016 08:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/continuous-integration-and-blogging/</guid>
-      <description>Back in August of 2012, I started this site using Git and Jekyll. I hosted most of it at home, pushing to a server in house. Then, a few years back, I moved to pushing the files to Amazon S3 and had Cloud Front doing distribution. The last moved had me hosting the files in NearlyFreeSpeech.NET and Cloud Flare doing the content distribution&amp;hellip; Well, that changed over the last few days&amp;hellip; again&amp;hellip;</description>
+      <description>&lt;p&gt;Back in August of 2012, I started this site using Git and Jekyll. I hosted most of it at home, pushing to a server in house. Then, a few years back, I moved to pushing the files to &lt;a href=&#34;https://aws.amazon.com/s3/&#34;&gt;Amazon S3&lt;/a&gt; and had &lt;a href=&#34;https://aws.amazon.com/cloudfront/&#34;&gt;Cloud Front&lt;/a&gt; doing distribution. The last moved had me hosting the files in &lt;a href=&#34;http://www.nearlyfreespeech.net&#34;&gt;NearlyFreeSpeech.NET&lt;/a&gt; and &lt;a href=&#34;http://www.cloudflare.com&#34;&gt;Cloud Flare&lt;/a&gt; doing the content distribution&amp;hellip; Well, that changed over the last few days&amp;hellip; again&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Currently, you are still hitting Cloud Flare when you hit this site, but the backend is back to being hosted on Amazon S3. But the files getting to S3 is more interesting now. All the &amp;ldquo;code&amp;rdquo; for this site is up on a &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie&#34;&gt;GitHub repo&lt;/a&gt; and any time something is checked in, &lt;a href=&#34;https://travis-ci.org/tiernano/www.tiernanotoole.ie&#34;&gt;Travis CI&lt;/a&gt; kicks off, builds the files using &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie/issues&#34;&gt;Jekyll&lt;/a&gt; and pushes to S3 using &lt;a href=&#34;https://github.com/laurilehmijoki/s3_website&#34;&gt;s3_website&lt;/a&gt;. All my &amp;ldquo;private&amp;rdquo; keys are hidden in Travis-CI, so no one can access them but me. This makes updating the site a lot easier. I can create a file in GitHub directly, preview it, make changes, etc., and then check in. Once checked in, Travis kicks off, builds and deploys. All Good!&lt;/p&gt;
+
+&lt;p&gt;It also means that if &amp;ldquo;bugs&amp;rdquo; are found on the site (by you, my dear reader), or if you have queries for some things, a &amp;ldquo;bug report&amp;rdquo; can be opened on the &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie/issues&#34;&gt;issues log&lt;/a&gt;. I already have a bug for making the site faster&amp;hellip; Anything else you want me to change?&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Announcing B2 Uploader and Hubic Testing 2.0</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/announcing-b2uploader-hubictesting20/</link>
       <pubDate>Fri, 15 Jan 2016 23:55:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/announcing-b2uploader-hubictesting20/</guid>
-      <description>I have 2 new side projects to announce on the site today. First has been running for a while (first check-in was December 28th) and it’s called B2Uploader. Its a fairly simple Windows application to upload files to BackBlaze B2. If you are not familiar with BackBlaze, they provide unlimited backup storage for the low price of a fiver a month. They are the guys who design the BackBlaze storage pods (I want one, by the way!</description>
+      <description>&lt;p&gt;I have 2 new side projects to announce on the site today. First has been running for a while (first check-in was December 28th) and it’s called &lt;a href=&#34;https://github.com/tiernano/b2uploader&#34;&gt;B2Uploader&lt;/a&gt;. Its a fairly simple Windows application to upload files to &lt;a href=&#34;https://www.backblaze.com/b2/cloud-storage.html&#34;&gt;BackBlaze B2&lt;/a&gt;. If you are not familiar with &lt;a href=&#34;https://secure.backblaze.com/r/01px2w&#34;&gt;BackBlaze&lt;/a&gt;, they provide unlimited backup storage for the low price of a fiver a month. They are the guys who design the &lt;a href=&#34;https://www.backblaze.com/blog/cloud-storage-hardware/&#34;&gt;BackBlaze storage pods&lt;/a&gt; (I want one, by the way!) that allow them to provide unlimited storage for the fiver a month (I currently backup over 4Tb to them!), and late last year, they started offing &lt;a href=&#34;https://www.backblaze.com/b2/cloud-storage.html&#34;&gt;B2&lt;/a&gt; which is a storage platform on their pods, and it has a (somewhat) easy to use API. AND ITS CHEAP! half a cent, up 0.5c, per gig stored per month! That’s crazy cheap!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/tiernano/b2uploader&#34;&gt;B2Uploader&lt;/a&gt; uses the B2 API to upload files (it could do more, but currently, as the name suggests, its upload only). Its quite simple, and all the code is available. More stuff coming over the next few weeks. some of the usual badges for open source applications are below. if you want to shout at me, shout in the &lt;a href=&#34;https://Gitter.im/tiernano/b2uploader&#34;&gt;Gitter chatroom&lt;/a&gt; and I will reply. You can see the latest builds over on &lt;a href=&#34;https://travis-ci.org/tiernano/b2uploader&#34;&gt;travis-ci&lt;/a&gt;, and the &lt;a href=&#34;https://github.com/tiernano/b2uploader/releases&#34;&gt;latest releases&lt;/a&gt; are available on GitHub.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://Gitter.im/tiernano/b2uploader?utm_source=badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=pr-badge&amp;amp;utm_content=badge&#34;&gt;&lt;img src=&#34;https://badges.Gitter.im/tiernano/b2uploader.svg&#34; alt=&#34;Join the chat at https://Gitter.im/tiernano/b2uploader&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://travis-ci.org/tiernano/b2uploader&#34;&gt;&lt;img src=&#34;https://travis-ci.org/tiernano/b2uploader.svg?branch=master&#34; alt=&#34;Build Status&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The second project is still in the planning phase, and it’s an update to an older project I was working on called &lt;a href=&#34;https://github.com/tiernano/HubicTesting&#34;&gt;HubicTesting&lt;/a&gt;. The name is very cleverly called, wait for it&amp;hellip; &lt;a href=&#34;https://github.com/tiernano/HubicTesting2.0&#34;&gt;HubicTesting 2.0&lt;/a&gt;! I have mentioned &lt;a href=&#34;http://www.hubic.com&#34;&gt;Hubic&lt;/a&gt; before &lt;a href=&#34;https://www.tiernanotoole.ie/2015/03/31/HubiC_SWIFT_CURL.html&#34;&gt;here&lt;/a&gt;. Cheap (about a tenner a month) for lots of storage (10TB!) but an odd API.. It uses &lt;a href=&#34;http://docs.openstack.org/developer/swift/&#34;&gt;Swift&lt;/a&gt; for storage, but has a weird(ish) API for authentication. Anyway, more details will be on the site once I write it up.&lt;/p&gt;
+
+&lt;p&gt;So, anyone needing to upload files to B2, check out &lt;a href=&#34;https://github.com/tiernano/b2uploader&#34;&gt;B2Uploader&lt;/a&gt;. Want to work with stuff on Hubic, check out &lt;a href=&#34;https://github.com/tiernano/HubicTesting2.0&#34;&gt;HubicTesting 2.0&lt;/a&gt;. Any questions, drop me a mail or find me on the Gitter channel. Have a good one!&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>All blogs moved to Jekyll</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/all-blogs-moved-to-jekyll/</link>
       <pubDate>Tue, 28 Apr 2015 12:49:53 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/all-blogs-moved-to-jekyll/</guid>
-      <description>Well, its finally happened. All my blogs, Tiernan&amp;rsquo;s Comms Closet, GeekPhotographer and the Podcast have been moved to Jekyll. I wrote up a long and complicated post explaining how I did it&amp;hellip; Now, i dont have to worry about Wordpress security issues on my home sites! Happy Days!</description>
+      <description>&lt;p&gt;Well, its finally happened. All my blogs, &lt;a href=&#34;http://blog.lotas-smartman.net&#34;&gt;Tiernan&amp;rsquo;s Comms Closet&lt;/a&gt;, &lt;a href=&#34;http://www.geekphotographer.com&#34;&gt;GeekPhotographer&lt;/a&gt; and the &lt;a href=&#34;http://podcast.tiernanotoole.ie&#34;&gt;Podcast&lt;/a&gt; have been
+moved to &lt;a href=&#34;http://www.jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt;. I wrote up &lt;a href=&#34;http://blog.lotas-smartman.net/blog-move-details/&#34;&gt;a long and complicated&lt;/a&gt; post explaining how I did it&amp;hellip; Now, i dont have to worry
+about &lt;a href=&#34;http://www.wordpress.org&#34;&gt;Wordpress&lt;/a&gt; security issues on my home sites! Happy Days!&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>CDN Hosted Blog</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/cdnhostedblog/</link>
       <pubDate>Thu, 23 Jan 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/cdnhostedblog/</guid>
-      <description>Well, if you can read this, this site is now hosted fully on AWS with both S3 and CloudFront. More details eventually&amp;hellip;
-[UPDATE] How did i host this on S3 and CloudFront? Check out this article by Paul Stamatiou for details&amp;hellip;</description>
+      <description>&lt;p&gt;Well, if you can read this, this site is now hosted fully on &lt;a href=&#34;http://aws.amazon.com&#34;&gt;AWS&lt;/a&gt; with both &lt;a href=&#34;http://aws.amazon.com/s3&#34;&gt;S3&lt;/a&gt; and &lt;a href=&#34;http://aws.amazon.com/cloudfront&#34;&gt;CloudFront&lt;/a&gt;. More details eventually&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;[UPDATE] How did i host this on S3 and CloudFront? Check out &lt;a href=&#34;http://paulstamatiou.com/hosting-on-amazon-s3-with-cloudfront/&#34;&gt;this article by Paul Stamatiou&lt;/a&gt; for details&amp;hellip;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Moving sites to NearlyFreeSpeech</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/moving_sites_to_nearlyfreespeech/</link>
       <pubDate>Tue, 15 Jan 2013 19:23:02 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/moving_sites_to_nearlyfreespeech/</guid>
-      <description>I have been running a Dedicated Server from Hetzner for a while now, but have started to look at what i am running on the site, and reailized i under utilize the machine a lot&amp;hellip; For example, this site is generated using Jekyll, which takes up very little power, and becomes static HTML files. My other blogs (Tiernan&amp;rsquo;s Comms Closet and GeekPhotographer) are both low traffic Wordpress sites, and I run a couple of other static sites also for friends&amp;hellip; All in all, not a lot of power&amp;hellip;</description>
+      <description>&lt;p&gt;I have been running a Dedicated Server from &lt;a href=&#34;http://www.hetzner.de/en&#34;&gt;Hetzner&lt;/a&gt; for a while now, but have started to look at what i am running on the site, and reailized i under utilize the machine a lot&amp;hellip; For example, this site is generated using &lt;a href=&#34;http://www.vmware.com/products/vsphere-hypervisor/overview.html&#34;&gt;Jekyll&lt;/a&gt;, which takes up very little power, and becomes static HTML files. My other blogs (&lt;a href=&#34;http://blog.lotas-smartman.net&#34;&gt;Tiernan&amp;rsquo;s Comms Closet&lt;/a&gt; and &lt;a href=&#34;http://www.geekphotographer.com&#34;&gt;GeekPhotographer&lt;/a&gt;) are both low traffic &lt;a href=&#34;http://www.wordpress.org&#34;&gt;Wordpress&lt;/a&gt; sites, and I run a couple of other static sites also for friends&amp;hellip; All in all, not a lot of power&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Its not a fortune to run the server, the box i have has a Quad Core, Hyper threaded Intel i7, 32Gb RAM, 2 3TB Hdds (not raid&amp;hellip;) and runs a copy of &lt;a href=&#34;https://github.com/mojombo/jekyll&#34;&gt;VMWare ESXi&lt;/a&gt;, and it costs about EUR60 a month, including a couple of IP addresses&amp;hellip; But, i dont use it all that often&amp;hellip; So, i am in the process of getting rid of it&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;So, the 2 other blogs (&lt;a href=&#34;http://www.geekphotographer.com&#34;&gt;GeekPhotographer&lt;/a&gt; and &lt;a href=&#34;http://blog.lotas-smartman.net&#34;&gt;Tiernan&amp;rsquo;s Comms Closet&lt;/a&gt;) have already moved. They where easy enough&amp;hellip; Export the Wordpress DB, copy the file up, tweak the config, import the DB, DNS updates, etc&amp;hellip; All done&amp;hellip; but this site&amp;hellip; that is more &amp;ldquo;Complicated&amp;rdquo;&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Since it is generated on a &amp;lsquo;&lt;a href=&#34;http://tiernanotoole.ie/2012/08/29/NewSite.html&#34;&gt;git push&lt;/a&gt;&amp;rsquo;, Jekyll and Ruby needs to be installed on the box&amp;hellip; I am using static sites on &lt;a href=&#34;http://www.nearlyfreespeech.net/&#34;&gt;NearlyFreeSpeech&lt;/a&gt; which only charge me per meg (about 0.1c, but that reduces as you transfer more) transfered and per 5 meg stored (1c). Thats for STATIC sites&amp;hellip; if you are running a dynamic site, its about 1c per 1mb stored, plus 1c per day, plus another 2c for MySQL instances. Check out their &lt;a href=&#34;https://www.nearlyfreespeech.net/estimate&#34;&gt;pricing calculator&lt;/a&gt; to see the magic at work!&lt;/p&gt;
+
+&lt;p&gt;Anyway, my GIT repo is on a machine in the house. It has Jekyll and all required bits installed. In the &amp;lsquo;post-receive&amp;rsquo; hook (check &lt;a href=&#34;http://blog.zerosum.org/2010/11/01/pure-git-deploy-workflow.html&#34;&gt;the original zerosum post&lt;/a&gt;), i generate the site, and then do an rsync copy to NFSN servers. That is it!&lt;/p&gt;
+
+&lt;p&gt;Any question, leave a comment.&lt;/p&gt;
+
+&lt;p&gt;[update] forgot to add the &lt;a href=&#34;https://gist.github.com/4545178&#34;&gt;gist&lt;/a&gt; which shows how i do the rsync call&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;{% gist 4545178 %}&lt;/p&gt;
+
+&lt;p&gt;[update2] you in my case, the folder that Jekyll is being built in needed to be chmoded and chowned&amp;hellip; I chowned the the folder to the gitolite user and i chmodded the folder to 777&amp;hellip; before i did this, some files where unreadable on NFSN&amp;hellip; with this, all works grand&amp;hellip;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>My new Git Powered Site</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/newsite/</link>
       <pubDate>Wed, 29 Aug 2012 12:54:40 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/newsite/</guid>
-      <description>So, this site is brought to you by GIT, Jekyll and Magic&amp;hellip; here is how i did it&amp;hellip;
- I have a Linux VM running the site. Its an Ubuntu 12.04 server. On that i installed Jekyll. I also have gitolite installed for personal git repos. In the Git Repo for this site, under the hooks directory, I added a post-receive file which I got from here originally. Apache is set to serve the directory that Jekyll produces&amp;hellip; That&amp;rsquo;s what you are reading here.</description>
+      <description>&lt;p&gt;So, this site is brought to you by &lt;a href=&#34;http://git-scm.com/&#34;&gt;GIT&lt;/a&gt;, &lt;a href=&#34;https://github.com/mojombo/jekyll&#34;&gt;Jekyll&lt;/a&gt; and Magic&amp;hellip; here is how i did it&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I have a Linux VM running the site. Its an &lt;a href=&#34;http://ubuntu.com&#34;&gt;Ubuntu 12.04&lt;/a&gt; server. On that i installed Jekyll.&lt;/li&gt;
+&lt;li&gt;I also have &lt;a href=&#34;http://sitaramc.github.com/gitolite/master-toc.html&#34;&gt;gitolite&lt;/a&gt; installed for personal git repos.&lt;/li&gt;
+&lt;li&gt;In the Git Repo for this site, under the hooks directory, I added a post-receive file which I got from &lt;a href=&#34;http://blog.zerosum.org/2010/11/01/pure-git-deploy-workflow.html&#34;&gt;here&lt;/a&gt; originally.&lt;/li&gt;
+&lt;li&gt;Apache is set to serve the directory that Jekyll produces&amp;hellip; That&amp;rsquo;s what you are reading here.&lt;/li&gt;
+&lt;li&gt;If you are interested, you can find the code and config for this site on my &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie&#34;&gt;github repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

@@ -1,132 +1,205 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boot Raspberry Pi with SSH Enabled, Enable Wifi on Boot, and more</title>
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+<title>Boot Raspberry Pi with SSH Enabled, Enable Wifi on Boot, and more – Tiernan&#39;s Comms Closet </title>
+<meta name="created" content="2012-10-18T16:45:01&#43;0000">
+<meta name="modified" content="2012-10-18T16:45:01&#43;0000">
 
-    
-    
-    
-    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+<meta name="description" content="Some interesting links for the Raspberry Pi today:  So, you just bought a new Raspberry Pi and need to enable SSH, but dont have a screen? Prepare for SSH without a Screen shows you what to do! How to Bring up WLAN0 on boot shows you how to start your Wifi adapter when you boot your Pi  ">
+<meta property="og:site_name" content="Tiernan&#39;s Comms Closet ">
+<meta property="og:title" content="Boot Raspberry Pi with SSH Enabled, Enable Wifi on Boot, and more">
+<meta property="og:url" content="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/boot_raspberry_pi_with_ssh_enabled/">
 
-    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
-    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
-    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+<meta name="generator" content="Hugo 0.42.1" />
 
-    
+<link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/boot_raspberry_pi_with_ssh_enabled/">
+<link rel="apple-touch-icon" href="/www.tiernanotoole.ie_hugo_static/apple-touch-icon.png">
+<link rel="stylesheet" href="/www.tiernanotoole.ie_hugo_static/css/styles.css">
+<link rel="stylesheet" href="/www.tiernanotoole.ie_hugo_static/css/print.css" media="print">
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Boot Raspberry Pi with SSH Enabled, Enable Wifi on Boot, and more",
+    "datePublished": "2012-10-18T16:45:01Z",
+    "dateModified": "2012-10-18T16:45:01Z",
+    "url" : "https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/boot_raspberry_pi_with_ssh_enabled/",
+    "description": "Some interesting links for the Raspberry Pi today:  So, you just bought a new Raspberry Pi and need to enable SSH, but dont have a screen? Prepare for SSH without a Screen shows you what to do! How to Bring up WLAN0 on boot shows you how to start your Wifi adapter when you boot your Pi  ",
+    "keywords": ["Raspberry_Pi","Linux"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tiernan's Comms Closet ",
+      "url": "https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/",
+    }
+  }
+</script>
 
-    <meta name="description" itemprop="description" content="Some interesting links for the Raspberry Pi today:  So, you just bought a new Raspberry Pi and need to enable SSH, but dont have a screen? Prepare for SSH without a Screen shows you what to do! How to Bring up WLAN0 on boot shows you how to start your Wifi adapter when you boot your Pi  " id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Raspberry_Pi,Linux" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/boot_raspberry_pi_with_ssh_enabled/">
+</head>
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<body>
+<div class="page layout__page layout__sidebar-second">
+<header class="header layout__header" role="banner">
+<a href="/www.tiernanotoole.ie_hugo_static/" title="Home" rel="home" class="header__logo"><img src="/www.tiernanotoole.ie_hugo_static/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/www.tiernanotoole.ie_hugo_static/" title="Home" class="header__site-link" rel="home"><span>Tiernan&#39;s Comms Closet </span></a>
+</h1>
+<div class="region header__region">
 
-    
-  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
 
-    <script>var _paq = undefined;</script></head>
-  <body itemscope itemtype="http://schema.org/WebPage">
-    <div id="site-container">
-      <div id="site-header">
-        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
-          <header class="small-text-center medium-text-left row">
-            <div class="row-item">
-              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet </span>
-              <br/><span id="site-tagline">morning...</span>
-            </div>
-          </header>
-        </a>
-        </div>
-      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
-        
-        
-        
-<main class="row-item small-full medium-two-thirds" >
-  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
-    <header id="page-header">
-      <h1 itemprop="headline">Boot Raspberry Pi with SSH Enabled, Enable Wifi on Boot, and more</h1><p id="post-metadata" class="row"><span class="row-item">
-          <span class="fa fa-clock-o"></span>
-          <strong>Published:</strong>
-          <time datetime="2012-10-18" content="2012-10-18" itemprop="datePublished">October 18, 2012</time>
-        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">1 minutes</span></span></p>
-      
-    </header>
-    
-    <div id="post-content">
-      <span itemprop="articleBody"><p>Some interesting links for the Raspberry Pi today:</p>
+</div>
+</header>
+
+
+
+
+<nav class="main-menu layout__navigation" role="navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/">Home</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/daily-carry/">Daily Carry</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/testing/">testing</a></li>
+<li><a class="active" href="/www.tiernanotoole.ie_hugo_static/post/">Posts</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main" role="main">
+<h1 class="title ">Boot Raspberry Pi with SSH Enabled, Enable Wifi on Boot, and more</h1>
+<article class="section-post single-view">
+<header>
+<div class="tags">
+Tags:
+<ul>
+<li><a href="/www.tiernanotoole.ie_hugo_static/tags/raspberry_pi">Raspberry_Pi</a></li>
+<li><a href="/www.tiernanotoole.ie_hugo_static/tags/linux">Linux</a></li>
+</ul>
+</div>
+</header>
+<div class="content">
+<p>Some interesting links for the Raspberry Pi today:</p>
 
 <ul>
 <li>So, you just bought a new Raspberry Pi and need to enable SSH, but dont have a screen? <a href="http://raspberrypi.stackexchange.com/questions/38/prepare-for-ssh-without-a-screen">Prepare for SSH without a Screen</a> shows you what to do!</li>
 <li><a href="http://raspberrypi.stackexchange.com/questions/3200/wifi-bring-wlan0-up-on-boot">How to Bring up WLAN0 on boot</a> shows you how to start your Wifi adapter when you boot your Pi</li>
 </ul>
-</span>
-    </div><div id="post-tags">
-    	<ul class="menu">
-        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/raspberry_pi" rel="tag" itemprop="url">raspberry pi</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/linux" rel="tag" itemprop="url">linux</a>
-    		</li></ul>
-    </div></article>
-
-  <nav id="post-nav" class="row"><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/gps_and_raspberry_pi/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> GPS and Raspberry Pi</a><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/building_wanproxy_on_ubuntu_12.04/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">Building WANProxy on Ubuntu 12.04 <span class="fa fa-chevron-circle-right"></span></a></nav></main>
-
-        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
-  
-  
-  
-	
-  
-	
-	
-</aside>
-
-      </div>
-      <footer class="row">
-        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
-          <div class="small-full">
-            <small>
-              &copy; 2018
-              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                <span itemprop="name">Tiernan&#39;s Comms Closet </span>
-              </span>
-            </small>
-          </div>
-          <div class="small-full row">
-            
-            
-            <div class="row-item small-only-full">
-              
-                
-  
-  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
-<script type="text/javascript">
-(function (w,d) {
-  var loader = function () {
-    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
-    s.src = "//cdn.iubenda.com/iubenda.js";
-    tag.parentNode.insertBefore(s,tag);
-  };
-  if (w.addEventListener) {
-    w.addEventListener("load", loader, false);
-  } else if (w.attachEvent) {
-    w.attachEvent("onload", loader);
-  } else {
-    w.onload = loader;
-  }
-})(window, document);
-</script>
-
-              
-            </div>
-            
-            
-          </div>
-        </div>
-        
-        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
 
 
 </div>
-      </footer>
-    </div>
-    
-  </body>
+</article>
+</main>
+
+
+
+<aside class="sidebar layout__second-sidebar" role="complementary">
+<section>
+<h4 class="menu"><a class="" href="/www.tiernanotoole.ie_hugo_static/post/">Posts</a></h4>
+<ul class="menu">
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/playing-with-amd-epyc/">Playing with AMD&#39;s Epyc</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/as204994-own-ip-space-and-anycast/">AS204994, Own IP Space and Anycast</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/blogging-on-ipad/">Blogging on an iPad Pro</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/new-backup-plans/">New Backup Plans</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/testing-forestry/">Testing Forestry</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/vscode-with-powershell/">VSCode and Markdown Monster with Powershell</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/zerotier-minio-update/">Zerotier and Minio Followup</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/business-class-broadband/">Business Class Broadband... finally here....</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/distributed-s3-storage-minio-zerotier/">Distributed S3 data storage using Minio (and Zerotier)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/docker-jekyll-and-mr-ngrock/">Docker Jekyll and Mr ngrok</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/building-jekyll-sites-with-docker-on-windows/">Building Jekyll sites with Docker on Windows</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/cloud-desktop-becoming-reality./">Cloud Desktop becoming a reality</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-9-going-back/">double speed Internet Part 9 - Going Back</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/meraki-gear-update/">Meraki and Ubiquiti networks gear Update</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-8-routing-around/">double speed Internet Part 8 - Routing Around</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-7-ecmp-kind-of/">double speed Internet Part 7 - ECMP (kind of)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-6-hetzner-edition/">double speed Internet Part 6 - Hetzner Edition</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/useful-web-and-desktop-apps-2016-edition/">Useful Web and Desktop Apps 2016 edition</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-5/">(Mad) Max Speed - The Road Warrior (Internet connection) (double speed internet Part 5)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-4/">2 Cable Modems = Double Speed? Part 4</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/installing-jekyll-on-bash-on-ubuntu-on-windows/">Installing Jekyll on Bash On Ubuntu on Windows</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-3/">2 Cable modems = Double speed? Part 3</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/bash-on-ubuntu-on-windows/">Bash on Ubuntu on Windows</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/mptcp-ssh-squid-openvpn-double-speed-part-2/">MPTCP, SSH, Squid, OpenVPN (and 2 Cable modems) = Double Speed? Not quite... Part 2</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/continuous-integration-and-blogging/">Continuous Integration and Blogging</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-internet-speed-part1/">2 Cable modems = Double Internet Speed? Well... not really... Part 1</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/announcing-b2uploader-hubictesting20/">Announcing B2 Uploader and Hubic Testing 2.0</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/edgerouter-sophosutm-dmz-lan-firwwalls/">Edge Router, Sophos UTM, DMZ and LAN Networks</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-4/">Network and HomeLab V.Next (Part 4)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/windwsserver2012r2-returing-to-the-godboxv2/">Windows Server 2012 R2 returning to The GodBoxV2</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/zfs-home-dir/">ZFS Home storage pool</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/ubiquiti-edgerouter-poe-in-the-lab/">Ubiquiti EdgeRouter PoE in the lab</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-3/">Network and HomeLab V.Next (Part 3)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part2/">Network and HomeLab V.Next (Part 2)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-1/">Network and Homelab V.Next (Part 1)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/pfsense-with-multiple-public-ips/">PFSense with Multiple Public IPs</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/quick-tip-for-internet-facing-esxi/">Quick tip for internet facing ESXi servers</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/vlans-wifi-and-mikrotik/">VLANs, Wifi and Mikrotik</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/using-git-and-route53/">Using git and Route53 together</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/git-push-dns/">Git Push DNS</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/bulk-compressing-images-for-the-web/">Bulk compressing images for the Web</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/all-blogs-moved-to-jekyll/">All blogs moved to Jekyll</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/duplicity_hubic/">Hubic and Duplicity</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/hubic_swift_curl/">Hubic, OpenStack Swift and Curl</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/daily_carry/">Daily Carry, March 2015 Edition</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/mobile_phone_as_a_service/">Mobile Phone as a Service</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/cdnhostedblog/">CDN Hosted Blog</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/raspberrypi_astrisk_box/">Raspberry Pi as an Asterisk Box</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/college_bag_contents/">College Bag Contents</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/raspberry_pi_as_a_mobile_wifi_hotspot_-_part_1/">Raspberry Pi as a Mobile WiFi HotSpot (part 1)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/moving_sites_to_nearlyfreespeech/">Moving sites to NearlyFreeSpeech</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/send_emails_as_a_distribution_group_in_office365/">Send Emails as a Distribution Group in Office365</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/ipv6_firewall_rules_for_mikrotik_routeros/">IPv6 Firewall rules for MikroTik RouterOS</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/ipv6_%2b_mikrotik_%2b_linux_%2b_windows/">IPv6 &#43; MikroTik &#43; Linux &#43; Windows</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/compressing_and_uncompressing_protobuf_items_in_c/">Compressing and UnCompressing Protobuf items in C#</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/git_tips_and_tricks/">GIT tips and tricks</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/symform_-_p2p_backup/">Symform - P2P Backup</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/enabling_vnc_from_ssh_on_osx/">enabling VNC from SSH on OSX</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/moving_your_tmg_sql_server_and_other_tmg_tips/">moving your TMG SQL server Logs DB and other TMG tips</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/routeros_dynamic_ip_updates/">RouterOS Dynamic IP Updates</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/custom_msdeploy_overwrite_rules/">Custom MSDeploy OverWrite Rules</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/wanproxy_and_squid_with_upstream_servers/">WANProxy and Squid with Upstream Servers</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/building_wanproxy_on_ubuntu_12.04/">Building WANProxy on Ubuntu 12.04</a></li>
+<li><a class="active" href="/www.tiernanotoole.ie_hugo_static/post/boot_raspberry_pi_with_ssh_enabled/">Boot Raspberry Pi with SSH Enabled, Enable Wifi on Boot, and more</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/gps_and_raspberry_pi/">GPS and Raspberry Pi</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/raspberry_pi_now_with_512mb_ram/">Raspberry Pi now with 512MB RAM, other random links...</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/more_raspberry_pi_and_camera_antics/">more raspberry pi and camera antics</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/routeros_using_host_names_in_firewall_rules/">RouterOS Using Host names in Firewall Rules</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/routeros_blocking_machine_access/">RouterOS Blocking Machine access to all but one IP</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/zfs_iscsi_nfs_sftp_hyper-v_and_more/">ZFS iSCSI NFS SFTP Hyper-V and more</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/more_jekyll_stuff/">More Jekyll Stuff</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/handbrake-cluster/">Handbrake Cluster</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/enabling-true-briding-mode-on-cisco-epc3925/">Enabling True Bridging modem on a Cisco ECP3925 Cable Modem (UPC Ireland)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/powershell-handbrake-appletv-itunes/">PowerShell &#43; HandBrake &#43; AppleTV &#43; iTunes = Automatic TV... Ish...</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/crashplan-backups/">Crashplan Backups</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/more-voip-stuff/">More VoIP Stuff</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/raspberry-pi-cross-compiling/">Building a Cross Compiler for your Raspberry Pi</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/microtik-routeros-vpn-setup/">MicroTik RouterOS VPN Setup</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/ssh-tunneling-made-simple/">SSH Tunneling made simple</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/voip-stuff/">VOIP Stuff</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/rasberry-stuff/">Raspberry Pi Stuff</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/build-your-own-private-git-server/">Build your own Private GIT server</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/understanding-windows8-storage-spaces/">Understanding Storage Spaces in Windows 8 and Windows Server 2012</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/sublimetext-with-powershell/">Sublime Text 2 with Powershell</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/autoscalling-with-amazon/">AutoScaling with Amazon</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/newsite/">My new Git Powered Site</a></li>
+</ul>
+</section>
+</aside>
+
+
+<footer class="footer layout__footer" role="contentinfo">
+<p><span>© Tiernan&#39;s Comms Closet </span></p>
+
+
+</footer>
+
+</div>
+
+
+
+</body>
 </html>

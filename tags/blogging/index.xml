@@ -7,74 +7,203 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 06 Mar 2018 08:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/blogging/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/blogging/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Blogging on an iPad Pro</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/blogging-on-ipad/</link>
       <pubDate>Tue, 06 Mar 2018 08:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/blogging-on-ipad/</guid>
-      <description>So, a few months back I bought myself an iPad Pro. I got a 10.5&amp;rdquo; with 64GB Storage and the Smart Keyboard. Since then, i have been mostly using it for playing around: watching YouTube, Netflix, surfing on the couch, etc. but i started to wonder how &amp;ldquo;Pro&amp;rdquo; this was&amp;hellip;so i went and did some testing, and in the end nearly all of this post is being written on it&amp;hellip;</description>
+      <description>&lt;p&gt;So, a few months back I bought myself an &lt;a href=&#34;http://www.apple.com/ipad-pro&#34;&gt;iPad Pro&lt;/a&gt;. I got a 10.5&amp;rdquo; with 64GB Storage and the &lt;a href=&#34;https://www.apple.com/shop/product/MPTL2LL/A/smart-keyboard-for-105‑inch-ipad-pro-us-english?fnode=37&#34;&gt;Smart Keyboard&lt;/a&gt;. Since then, i have been mostly using it for playing around: watching YouTube, Netflix, surfing on the couch, etc. but i started to wonder how &amp;ldquo;Pro&amp;rdquo; this was&amp;hellip;so i went and did some testing, and in the end nearly all of this post is being written on it&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;first, the good stuff:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/ai/app/microsoft-remote-desktop/id714464092?mt=8&#34;&gt;Microsoft&amp;rsquo;s Remote Desktop Connection&lt;/a&gt; works perfect on the iPad Pro. I have RDPed into machines (with the help of &lt;a href=&#34;http://www.zerotier.com&#34;&gt;ZeroTier&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/us/app/prompt-2/id917437289?mt=8&amp;amp;uo=4&amp;amp;at=11l4BV&#34;&gt;Panic&amp;rsquo;s Prompt&lt;/a&gt; works well too&amp;hellip; again, with ZeroTier, i can SSH into boxes and remote manage them. Handy for checking on docker instances&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Panic also have &lt;a href=&#34;https://itunes.apple.com/us/app/coda/id500906297?mt=8&amp;amp;at=11l4BV&#34;&gt;Coda for iOS&lt;/a&gt;. its a very nice (if somewhat expensive at $25) editor for the iPad. This post is being written on there now.&lt;/li&gt;
+&lt;li&gt;for Git stuff, i am using an app called &lt;a href=&#34;https://itunes.apple.com/us/app/working-copy/id896694807?mt=8&amp;amp;uo=6&amp;amp;at=1000lHq&amp;amp;ct=workingcopyapp&#34;&gt;Working Copy&lt;/a&gt;. Its free, to an extend, but if you need to do stuff like push changes, which is kind of important, then you need to pay a fee.&lt;/li&gt;
+&lt;li&gt;Coda and Working Copy work together with some magic built into Working Copy. It can act as a &lt;a href=&#34;https://workingcopyapp.com/manual/webdav-server&#34;&gt;WebDav server&lt;/a&gt;, which Coda can the connect to. you open, edit, change and create docs, and Working Copy keeps note. then you swap to them and checkin. You need to have both apps on the screen at the same time (the docking feature works well for that) since iOS seems to kill some background tasks.&lt;/li&gt;
+&lt;li&gt;Unrelated to blogging, but i have also tried editing photos using &lt;a href=&#34;https://itunes.apple.com/ai/app/adobe-lightroom-cc-for-ipad/id804177739?mt=8&#34;&gt;Lightroom&lt;/a&gt;, and so far so good. I have used the &lt;a href=&#34;https://www.apple.com/ie/shop/product/MJYT2ZM/A/lightning-to-sd-card-camera-reader&#34;&gt;Apple SD Card adapter&lt;/a&gt; to download 50MP photos (upwards of 60MB) from my &lt;a href=&#34;https://www.usa.canon.com/internet/portal/us/home/products/details/cameras/dslr/eos-5ds&#34;&gt;Canon 5Ds&lt;/a&gt; quick enough, add them to Lightroom, make some changes and send them to &lt;a href=&#34;https://twitter.com/tiernano&#34;&gt;Twitter&lt;/a&gt;, Facebook (not Instagram just yet&amp;hellip;) and it works well. I have managed to hook it to my &lt;a href=&#34;http://www.gnarbox.com&#34;&gt;Gnarbox&lt;/a&gt; too.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bad Stuff?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;keyboard takes a bit of getting used to. the Stupid &amp;ldquo;Global&amp;rdquo; button to swap keyboards (from
+English to Emoji) is in the place you would expect to find CTRL. and CTRL, Option and Cmd (remember, this is a &amp;ldquo;Mac&amp;rdquo; style keyboard) and all shifted one place&amp;hellip; I would have preferred if they moved that somewhere else, or removed it altogether&amp;hellip;&lt;/li&gt;
+&lt;li&gt;a mouse would be very handy! I have tried pairing a bluetooth mouse to it, and no luck&amp;hellip; it would be handy especially for editing documents and code, since touchscreen is &amp;ldquo;handy&amp;rdquo; some of the time, but not all the time&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, there you have it. Blogging on an iPad. Would i give up my daily driver of my Surface Book and GodBoxV2 and just uses an iPad? Hell No&amp;hellip; for basic stuff, it works well. Basic photo editing, blogging, surfing, etc, yes. But there is a reason my workstation has 16 processor cores and 160GB RAM: I need it. I have multiple copies of Visual Studio running, SQL Server, multiple VMs running different tasks, multiple web browsers, multiple monitors, etc. the iPad can do a good chunk of stuff, but not the major stuff&amp;hellip; not yet. Don&amp;rsquo;t get me wrong: Word, Excel, Power Point, Outlook. all the major office tools work grand. But Visual Studio? SQL Management Studio? just not there yet&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;So, what did i not do on the iPad, and ended up doing on the PC? Well, so far, nothing&amp;hellip; using Coda and Working Copy, i wrote the text, previewed it and checked it into GitHub. Then, Prompt is being used to build it on my docker box, check into the static site and push, which will then publish. unless you see an update below, all went as planned and all was done on an iPad&amp;hellip;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>VSCode and Markdown Monster with Powershell</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/vscode-with-powershell/</link>
       <pubDate>Sat, 06 May 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/vscode-with-powershell/</guid>
-      <description>A few years back, i created a post showing you how to add an Alias to PowerShell to easily start Sublime Text from a PowerShell command line . This worked well, but this is 2017 (that post is from 2012!) and my daily text editor has changed. I have moved to Visual Studio Code for most of my daily work. It works well 95% of the time. I still use Visual Studio Pro for C# Development, but for quick fixes and work on, say Go or smaller edits, Code is great.</description>
+      <description>&lt;p&gt;A few years back, i created a post showing you how to add an Alias to PowerShell &lt;a href=&#34;https://www.tiernanotoole.ie/2012/08/30/SublimeText-With-Powershell.html&#34;&gt;to easily start Sublime Text from a PowerShell command line&lt;/a&gt; . This worked well, but this is 2017 (that post is from 2012!) and my daily text editor has changed. I have moved to &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt; for most of my daily work. It works well 95% of the time. I still use &lt;a href=&#34;https://www.visualstudio.com/vs/&#34;&gt;Visual Studio Pro&lt;/a&gt; for C# Development, but for quick fixes and work on, say &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; or smaller edits, Code is great. For blogging, on the other hand, I am trying out &lt;a href=&#34;https://markdownmonster.west-wind.com/&#34;&gt;MarkDown Monster&lt;/a&gt; but code still has some nice features. We will see how tests go.&lt;/p&gt;
+
+&lt;p&gt;Anyway, to upgrade the post, and to be able to use VS Code and MarkDown Monster from your PowerShell command line, I added the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Set-Alias code &amp;quot;C:\Program Files (x86)\Microsoft VS Code\Code.exe&amp;quot;
+Set-Alias mm &amp;quot;C:\Program Files (x86)\Markdown Monster\MarkdownMonster.exe&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can either run this each time you open PowerShell (a bit of pain) or you can add it to your &lt;code&gt;Microsoft.PowerShell_profile.ps1&lt;/code&gt; which lives in your &lt;code&gt;Document\WindowsPowerShell&lt;/code&gt; folder. If you dont have one, just create the file, add that piece of text, and next time you open PowerShell, you are good to go.&lt;/p&gt;
+
+&lt;p&gt;In my case, i am actually in the &lt;a href=&#34;https://code.visualstudio.com/insiders&#34;&gt;Visual Studio Code Insiders&lt;/a&gt; group, so my alias is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Set-Alias code &amp;quot;C:\Program Files (x86)\Microsoft VS Code Insiders\Code - Insiders.exe&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When these are set (and you have restarted your PowerShell windows), you can now run the following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;code filename.txt
+code folder
+mm filename.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;VSCode will open either files or folders, but it seems Markdown Monster only opens files.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Installing Jekyll on Bash On Ubuntu on Windows</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/installing-jekyll-on-bash-on-ubuntu-on-windows/</link>
       <pubDate>Mon, 11 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/installing-jekyll-on-bash-on-ubuntu-on-windows/</guid>
-      <description>At the 2016 Build conference, Microsoft announced that Bash on Ubuntu on Windows was coming. Well, it came out last week, and I installed it as soon as I could! My next challenge was to get Jekyll to run and install on it, so I can build and preview this site on my Surface Book.
-So, first, I needed to install version 2.0 of Ruby. There is a bit of messing involved for this, but first</description>
+      <description>&lt;p&gt;At the 2016 Build conference, Microsoft announced that &lt;a href=&#34;https://www.tiernanotoole.ie/2016/03/31/bash-on-ubuntu-on-windows.html&#34;&gt;Bash on Ubuntu on Windows&lt;/a&gt; was coming. Well, it &lt;a href=&#34;https://blogs.msdn.microsoft.com/commandline/2016/04/06/bash-on-ubuntu-on-windows-download-now-3/&#34;&gt;came out last week&lt;/a&gt;, and I installed it as soon as I could! My next challenge was to get &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; to run and install on it, so I can build and preview this site on my &lt;a href=&#34;https://www.microsoft.com/surface/en-us/devices/surface-book&#34;&gt;Surface Book&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, first, I needed to install version 2.0 of Ruby. There is a bit of messing involved for this, but first&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get update
+apt-get install ruby2.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, when you run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ruby -v
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;you will still see ruby 1.9.x installed&amp;hellip; and the github-pages gem, which includes Jekyll 3, requires ruby 2.0&amp;hellip; ugh. after reading &lt;a href=&#34;https://bugs.launchpad.net/ubuntu/+source/ruby2.0/+bug/1310292&#34;&gt;this very long bug report&lt;/a&gt; I got this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Rename original out of the way, so updates / reinstalls don&#39;t squash our hack fix
+dpkg-divert --add --rename --divert /usr/bin/ruby.divert /usr/bin/ruby
+dpkg-divert --add --rename --divert /usr/bin/gem.divert /usr/bin/gem
+# Create an alternatives entry pointing ruby -&amp;gt; ruby2.0
+update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby2.0 1
+update-alternatives --install /usr/bin/gem gem /usr/bin/gem2.0 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, when I run ruby -v, I am told I am on version 2.0! Happy days! Next, i installed bundler using&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem install bundler
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;which uses a &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie/blob/master/Gemfile&#34;&gt;Gemfile&lt;/a&gt; to install the required gems, so running&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;bundle install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;should&lt;/em&gt; install all required gems but no luck&amp;hellip; I tried adding ruby2.0 dev to the mix&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get install ruby2.0-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;but running jekyll from bash said it did not exist, and running&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;bundle exec jekyll build
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;failed with a memory issue&amp;hellip; ugh&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Anyway, next, I tried&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem install github-pages -V
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;-v makes it verbose, so you can see what&amp;rsquo;s going on&amp;hellip; after a bit of time, and lots of output to the screen&amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;jekyll build
+bash: /usr/bin/jekyll: No such file or directory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;FECK! So, after a bit more digging, i find that jekyll is actually in /usr/local/bin/jekyll&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ln /usr/local/bin/jekyll /usr/bin/jekyll
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;solves that problem!&lt;/p&gt;
+
+&lt;p&gt;now running&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;jekyll build
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;works perfectly, as does&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;HAPPY DAYS! Mind you, I am only using this as a testing and writing system. I have not tried &lt;a href=&#34;https://github.com/laurilehmijoki/s3_website&#34;&gt;s3_website&lt;/a&gt; just yet, but that is being sorted elsewhere anyway. Maybe my next post will explain that&amp;hellip;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Continuous Integration and Blogging</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/continuous-integration-and-blogging/</link>
       <pubDate>Thu, 24 Mar 2016 08:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/continuous-integration-and-blogging/</guid>
-      <description>Back in August of 2012, I started this site using Git and Jekyll. I hosted most of it at home, pushing to a server in house. Then, a few years back, I moved to pushing the files to Amazon S3 and had Cloud Front doing distribution. The last moved had me hosting the files in NearlyFreeSpeech.NET and Cloud Flare doing the content distribution&amp;hellip; Well, that changed over the last few days&amp;hellip; again&amp;hellip;</description>
+      <description>&lt;p&gt;Back in August of 2012, I started this site using Git and Jekyll. I hosted most of it at home, pushing to a server in house. Then, a few years back, I moved to pushing the files to &lt;a href=&#34;https://aws.amazon.com/s3/&#34;&gt;Amazon S3&lt;/a&gt; and had &lt;a href=&#34;https://aws.amazon.com/cloudfront/&#34;&gt;Cloud Front&lt;/a&gt; doing distribution. The last moved had me hosting the files in &lt;a href=&#34;http://www.nearlyfreespeech.net&#34;&gt;NearlyFreeSpeech.NET&lt;/a&gt; and &lt;a href=&#34;http://www.cloudflare.com&#34;&gt;Cloud Flare&lt;/a&gt; doing the content distribution&amp;hellip; Well, that changed over the last few days&amp;hellip; again&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Currently, you are still hitting Cloud Flare when you hit this site, but the backend is back to being hosted on Amazon S3. But the files getting to S3 is more interesting now. All the &amp;ldquo;code&amp;rdquo; for this site is up on a &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie&#34;&gt;GitHub repo&lt;/a&gt; and any time something is checked in, &lt;a href=&#34;https://travis-ci.org/tiernano/www.tiernanotoole.ie&#34;&gt;Travis CI&lt;/a&gt; kicks off, builds the files using &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie/issues&#34;&gt;Jekyll&lt;/a&gt; and pushes to S3 using &lt;a href=&#34;https://github.com/laurilehmijoki/s3_website&#34;&gt;s3_website&lt;/a&gt;. All my &amp;ldquo;private&amp;rdquo; keys are hidden in Travis-CI, so no one can access them but me. This makes updating the site a lot easier. I can create a file in GitHub directly, preview it, make changes, etc., and then check in. Once checked in, Travis kicks off, builds and deploys. All Good!&lt;/p&gt;
+
+&lt;p&gt;It also means that if &amp;ldquo;bugs&amp;rdquo; are found on the site (by you, my dear reader), or if you have queries for some things, a &amp;ldquo;bug report&amp;rdquo; can be opened on the &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie/issues&#34;&gt;issues log&lt;/a&gt;. I already have a bug for making the site faster&amp;hellip; Anything else you want me to change?&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>All blogs moved to Jekyll</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/all-blogs-moved-to-jekyll/</link>
       <pubDate>Tue, 28 Apr 2015 12:49:53 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/all-blogs-moved-to-jekyll/</guid>
-      <description>Well, its finally happened. All my blogs, Tiernan&amp;rsquo;s Comms Closet, GeekPhotographer and the Podcast have been moved to Jekyll. I wrote up a long and complicated post explaining how I did it&amp;hellip; Now, i dont have to worry about Wordpress security issues on my home sites! Happy Days!</description>
+      <description>&lt;p&gt;Well, its finally happened. All my blogs, &lt;a href=&#34;http://blog.lotas-smartman.net&#34;&gt;Tiernan&amp;rsquo;s Comms Closet&lt;/a&gt;, &lt;a href=&#34;http://www.geekphotographer.com&#34;&gt;GeekPhotographer&lt;/a&gt; and the &lt;a href=&#34;http://podcast.tiernanotoole.ie&#34;&gt;Podcast&lt;/a&gt; have been
+moved to &lt;a href=&#34;http://www.jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt;. I wrote up &lt;a href=&#34;http://blog.lotas-smartman.net/blog-move-details/&#34;&gt;a long and complicated&lt;/a&gt; post explaining how I did it&amp;hellip; Now, i dont have to worry
+about &lt;a href=&#34;http://www.wordpress.org&#34;&gt;Wordpress&lt;/a&gt; security issues on my home sites! Happy Days!&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>CDN Hosted Blog</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/cdnhostedblog/</link>
       <pubDate>Thu, 23 Jan 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/cdnhostedblog/</guid>
-      <description>Well, if you can read this, this site is now hosted fully on AWS with both S3 and CloudFront. More details eventually&amp;hellip;
-[UPDATE] How did i host this on S3 and CloudFront? Check out this article by Paul Stamatiou for details&amp;hellip;</description>
+      <description>&lt;p&gt;Well, if you can read this, this site is now hosted fully on &lt;a href=&#34;http://aws.amazon.com&#34;&gt;AWS&lt;/a&gt; with both &lt;a href=&#34;http://aws.amazon.com/s3&#34;&gt;S3&lt;/a&gt; and &lt;a href=&#34;http://aws.amazon.com/cloudfront&#34;&gt;CloudFront&lt;/a&gt;. More details eventually&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;[UPDATE] How did i host this on S3 and CloudFront? Check out &lt;a href=&#34;http://paulstamatiou.com/hosting-on-amazon-s3-with-cloudfront/&#34;&gt;this article by Paul Stamatiou&lt;/a&gt; for details&amp;hellip;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>My new Git Powered Site</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/newsite/</link>
       <pubDate>Wed, 29 Aug 2012 12:54:40 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/newsite/</guid>
-      <description>So, this site is brought to you by GIT, Jekyll and Magic&amp;hellip; here is how i did it&amp;hellip;
- I have a Linux VM running the site. Its an Ubuntu 12.04 server. On that i installed Jekyll. I also have gitolite installed for personal git repos. In the Git Repo for this site, under the hooks directory, I added a post-receive file which I got from here originally. Apache is set to serve the directory that Jekyll produces&amp;hellip; That&amp;rsquo;s what you are reading here.</description>
+      <description>&lt;p&gt;So, this site is brought to you by &lt;a href=&#34;http://git-scm.com/&#34;&gt;GIT&lt;/a&gt;, &lt;a href=&#34;https://github.com/mojombo/jekyll&#34;&gt;Jekyll&lt;/a&gt; and Magic&amp;hellip; here is how i did it&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I have a Linux VM running the site. Its an &lt;a href=&#34;http://ubuntu.com&#34;&gt;Ubuntu 12.04&lt;/a&gt; server. On that i installed Jekyll.&lt;/li&gt;
+&lt;li&gt;I also have &lt;a href=&#34;http://sitaramc.github.com/gitolite/master-toc.html&#34;&gt;gitolite&lt;/a&gt; installed for personal git repos.&lt;/li&gt;
+&lt;li&gt;In the Git Repo for this site, under the hooks directory, I added a post-receive file which I got from &lt;a href=&#34;http://blog.zerosum.org/2010/11/01/pure-git-deploy-workflow.html&#34;&gt;here&lt;/a&gt; originally.&lt;/li&gt;
+&lt;li&gt;Apache is set to serve the directory that Jekyll produces&amp;hellip; That&amp;rsquo;s what you are reading here.&lt;/li&gt;
+&lt;li&gt;If you are interested, you can find the code and config for this site on my &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie&#34;&gt;github repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

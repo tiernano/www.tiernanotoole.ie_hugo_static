@@ -7,55 +7,119 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 15 Nov 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/development/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Docker Jekyll and Mr ngrok</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/docker-jekyll-and-mr-ngrock/</link>
       <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/docker-jekyll-and-mr-ngrock/</guid>
-      <description>See what i did with the title?! Anyway, in my last post, i explained how i was building this site with Docker running on Windows 10 with the Anniversary update. Today, i am going to show you how to host it using Nginx and ngrok.
-So, first, you should know what Nginx is at this stage&amp;hellip; If not, check out their site. Next ngrok is basically a way of tunneling your localhost to the web.</description>
+      <description>&lt;p&gt;See what i did with the title?! Anyway, in &lt;a href=&#34;https://www.tiernanotoole.ie/2016/11/02/building-jekyll-sites-with-docker-on-windows.html&#34;&gt;my last post&lt;/a&gt;, i explained how i was building this site with Docker running on Windows 10 with the Anniversary update. Today, i am going to show you how to host it using &lt;a href=&#34;https://www.nginx.com/&#34;&gt;Nginx&lt;/a&gt; and &lt;a href=&#34;https://ngrok.com/&#34;&gt;ngrok&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, first, you should know what Nginx is at this stage&amp;hellip; If not, check out &lt;a href=&#34;https://www.nginx.com/&#34;&gt;their site&lt;/a&gt;. Next &lt;a href=&#34;https://ngrok.com/&#34;&gt;ngrok&lt;/a&gt; is basically a way of tunneling your localhost to the web. So, how do we build the whole lot together and serve your site to the internet? Well, this is what i have so far:&lt;/p&gt;
+
+&lt;p&gt;First, build your site in jekyll. for me, the command is&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker run --rm -v &amp;quot;$(pwd):/src&amp;quot; -w /src ruby sh -c &#39;bundle install --path vendor/bundle &amp;amp;&amp;amp; exec jekyll build -s www.tiernanotoole.ie/ -d www.tiernanotoole.ie/_site/&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;next, run an nginx server with that output folder:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker run --name tiernanotoolenginx -v &amp;quot;$(pwd)/www.tiernanotoole.ie/_site/:/usr/share/nginx/html:ro&amp;quot; -d -p 8881:80 nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;the docker container is called tiernanotoolenginx, since i could have multiple ones, and port 8881 is being redirected to port 80 on that container, but technically, it might not be needed due to the next command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker run --rm -it --link tiernanotoolenginx wernight/ngrok ngrok http tiernanotoolenginx:80
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;essentially, what we are doing here is running ngrok and pointing it at post 80 on the nginx container&amp;hellip; you see i did not point at 8881, since we are using the continer directly&amp;hellip; it might be different if you were not&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;when that command runs, you get a screen telling you the URL of your site with some basic stats. your site is now hosted publically, via an ngrok tunnel! you could run that container as a daemon, and leave it running, but for me, i wanted to do some minor testing, so i can kill it when i want&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;So, all is good with the world!&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Building Jekyll sites with Docker on Windows</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/building-jekyll-sites-with-docker-on-windows/</link>
       <pubDate>Wed, 02 Nov 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/building-jekyll-sites-with-docker-on-windows/</guid>
-      <description>As some of you probably know (or based on the footer of the site) this site is built with Jekyll. Jekyll is a static web site builder, written in Ruby, and is a bit of a pain to build on Windows. Earlier on this year, I wrote up a post explaining how to use Jekyll on Windows using Bash on Ubuntu on Windows&amp;hellip; It was a bit complicated, and, well, worked a few times, but was not too successfull&amp;hellip; So, were do we go next?</description>
+      <description>&lt;p&gt;As some of you probably know (or based on the footer of the site) this site is built with &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;. Jekyll is a static web site builder, written in Ruby, and is a bit of a pain to build on Windows. Earlier on this year, I &lt;a href=&#34;https://www.tiernanotoole.ie/2016/04/11/installing-jekyll-on-bash-on-ubuntu-on-windows.html&#34;&gt;wrote up a post&lt;/a&gt; explaining how to use Jekyll on Windows using Bash on Ubuntu on Windows&amp;hellip; It was a bit complicated, and, well, worked a few times, but was not too successfull&amp;hellip; So, were do we go next? Well, &lt;a href=&#34;http://www.docker.io&#34;&gt;Docker&lt;/a&gt; to the rescue!&lt;/p&gt;
+
+&lt;p&gt;I am running the &lt;a href=&#34;https://blogs.windows.com/windowsexperience/2016/08/02/how-to-get-the-windows-10-anniversary-update/&#34;&gt;Windows 10 Anniversary edtion&lt;/a&gt; witch has &lt;a href=&#34;https://msdn.microsoft.com/en-us/virtualization/windowscontainers/quick_start/quick_start_windows_10&#34;&gt;container&lt;/a&gt; and &lt;a href=&#34;https://docs.docker.com/engine/getstarted/step_one/&#34;&gt;docker support&lt;/a&gt;.  using the &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie-docker&#34;&gt;repo for this site&lt;/a&gt; and the scripts (specifically &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie-docker/blob/master/build-tiernanotooleie&#34;&gt;build-tiernanotooleie&lt;/a&gt; and &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie-docker/blob/master/geekphotographer.com&#34;&gt;geekphotographer.com&lt;/a&gt;) i can build the docker site on my local Windows machine and upload the sites as required (I host on &lt;a href=&#34;http://www.nearlyfreespeech.net&#34;&gt;NFSN&lt;/a&gt; and upload via &lt;a href=&#34;https://en.wikipedia.org/wiki/Rsync&#34;&gt;RSync&lt;/a&gt;). The docker image i build from is a Linux docker image, do i need a Linux container running (and the docker tooling). I also use Bash on Ubuntu on Windows to upload using RSync. All is going well so far&amp;hellip;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Bash on Ubuntu on Windows</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/bash-on-ubuntu-on-windows/</link>
       <pubDate>Thu, 31 Mar 2016 07:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/bash-on-ubuntu-on-windows/</guid>
-      <description>Microsoft Build 2016 is on this week, and there were a lot of interesting developments yesterday, but the one that interested me the most is Bash on Ubuntu on Windows. Dustin from Ubuntu has a more details, and Scott Hanselman has posted a technical video about this. This is very interesting, and I CANT WAIT TO GET MY HANDS ON IT! But, I do have some questions, which I thought I would put down in blog format:</description>
+      <description>&lt;p&gt;Microsoft &lt;a href=&#34;http://www.buildwindows.com/&#34;&gt;Build 2016&lt;/a&gt; is on this week, and there were a lot of interesting developments yesterday, but the one that interested me the most is &lt;a href=&#34;http://www.hanselman.com/blog/DevelopersCanRunBashShellAndUsermodeUbuntuLinuxBinariesOnWindows10.aspx&#34;&gt;Bash on Ubuntu on Windows&lt;/a&gt;. &lt;a href=&#34;http://blog.dustinkirkland.com/2016/03/ubuntu-on-windows.html&#34;&gt;Dustin from Ubuntu&lt;/a&gt; has a more details, and Scott Hanselman has posted &lt;a href=&#34;https://channel9.msdn.com/Events/Build/2016/C906&#34;&gt;a technical video&lt;/a&gt; about this. This is very interesting, and I CANT WAIT TO GET MY HANDS ON IT! But, I do have some questions, which I thought I would put down in blog format:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Based on the post by Dustin, it seems that low level Linux calls are being handled and translated to Windows system calls. Which makes me think, could &lt;strong&gt;any&lt;/strong&gt; Linux Distro work? Could &lt;a href=&#34;http://www.archlinux.org&#34;&gt;Arch Linux&lt;/a&gt;, &lt;a href=&#34;http://www.redhat.com&#34;&gt;RedHat&lt;/a&gt; or &lt;a href=&#34;http://www.centos.org&#34;&gt;Centos&lt;/a&gt; work in the same way?&lt;/li&gt;
+&lt;li&gt;Will this Work on Windows Server 2016 when it launches?&lt;/li&gt;
+&lt;li&gt;Given that it calling down to a low level, could GUI applications work too?&lt;/li&gt;
+&lt;li&gt;Shut up and take my money! I WANT IT NOW!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, there are my questions&amp;hellip; This is very cool, and I cannot wait to get my hands on this. Just wondering if this will be available to &lt;a href=&#34;https://insider.windows.com/&#34;&gt;Windows Insiders&lt;/a&gt; sooner, rather than later?&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Using git and Route53 together</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/using-git-and-route53/</link>
       <pubDate>Thu, 07 May 2015 20:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/using-git-and-route53/</guid>
-      <description>so, earlier on today, i was talking about using Git with a DNS service called LuaDNS to update your DNS records. Well, thing is, i have 30+ domains registered, and of them about 25 are hosted on Amazon&amp;rsquo;s Route53. So, moving ALL of them seems, well at the moment, excessive&amp;hellip; So, i went digging&amp;hellip;
-there is a tool called cli53 which will allow you to manage route53 objects from the command line.</description>
+      <description>&lt;p&gt;so, earlier on today, i was talking about using &lt;a href=&#34;http://tiernanotoole.ie/2015/05/07/git-push-dns.html&#34;&gt;Git with a DNS service called LuaDNS&lt;/a&gt; to update your DNS records. Well, thing is, i have 30+ domains registered, and of them about 25 are hosted on &lt;a href=&#34;http://aws.amazon.com/route53&#34;&gt;Amazon&amp;rsquo;s Route53&lt;/a&gt;. So, moving ALL of them seems, well at the moment, excessive&amp;hellip; So, i went digging&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;there is a tool called &lt;a href=&#34;https://github.com/barnybug/cli53&#34;&gt;cli53&lt;/a&gt; which will allow you to manage route53 objects from the command line. It can also export your zones to BIND format and then re-import them if you have made changes&amp;hellip; This all came out of a blog post by the guys and gals at &lt;a href=&#34;https://netguru.co/blog/ci-your-dns-setup&#34;&gt;netguru&lt;/a&gt; who showed how they integrate their DNS records with their Continuous Integration&amp;hellip; Now, i have not gotten to that stage, just yet, but its only 1 step more down the road&amp;hellip; but I don&amp;rsquo;t have my zones in bind format&amp;hellip; So, how do i do that?&lt;/p&gt;
+
+&lt;p&gt;I tweaked their block of ruby code (first time playing with ruby, be gentle with me) and got the following:&lt;/p&gt;
+
+&lt;p&gt;{% gist f11fbec2075b8bf19d57 %}&lt;/p&gt;
+
+&lt;p&gt;essentially, it runs cli53 (you may need to change your path) and then creates .bind files for each zone.&lt;/p&gt;
+
+&lt;p&gt;then, using their code below, you can re-import them to Route53:&lt;/p&gt;
+
+&lt;p&gt;{% gist 7249547 %}&lt;/p&gt;
+
+&lt;p&gt;i have exported all mine, added them to git and done some testing&amp;hellip; All seems to be in order&amp;hellip; once i do some tweaks, i can get that CI piece working and it should be all magic&amp;hellip;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Git Push DNS</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git-push-dns/</link>
       <pubDate>Thu, 07 May 2015 15:30:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git-push-dns/</guid>
-      <description>There are now a lot of services that have &amp;ldquo;git push&amp;rdquo; options available&amp;hellip; you can build websites with Azure and Github, books using ShareLaTeX and now, DNS using LuaDNS. I have one zone running at the moment (tiernanotoole.net) and you can see the DNS records on github here. I am tempted at moving other records over soon&amp;hellip; but i am currently on Amazon Route53 and 1: its works, so dont break it, and 2, not sure how to bulk export records from Route53 to Bind or Lua format.</description>
+      <description>&lt;p&gt;There are now a lot of services that have &amp;ldquo;git push&amp;rdquo; options available&amp;hellip; you can build websites with
+&lt;a href=&#34;http://www.azure.com&#34;&gt;Azure&lt;/a&gt; and &lt;a href=&#34;http://www.github.com&#34;&gt;Github&lt;/a&gt;, books using &lt;a href=&#34;https://www.sharelatex.com/&#34;&gt;ShareLaTeX&lt;/a&gt; and now, DNS using &lt;a href=&#34;http://luadns.com&#34;&gt;LuaDNS&lt;/a&gt;. I have one zone
+running at the moment (&lt;a href=&#34;http://www.tiernanotoole.net&#34;&gt;tiernanotoole.net&lt;/a&gt;) and you can see the DNS records on &lt;a href=&#34;https://github.com/tiernano/dns&#34;&gt;github here&lt;/a&gt;. I am
+tempted at moving other records over soon&amp;hellip; but i am currently on &lt;a href=&#34;http://aws.amazon.com/route53&#34;&gt;Amazon Route53&lt;/a&gt; and 1: its works, so
+dont break it, and 2, not sure how to bulk export records from Route53 to Bind or &lt;a href=&#34;http://www.luadns.com/help.html#lua-zone-file-format&#34;&gt;Lua&lt;/a&gt; format.&lt;/p&gt;
+
+&lt;p&gt;[update] 2 quick updates: 1) their free account, which is what i am using, allows 3 domains and 30 host
+records. they also charge less than &lt;a href=&#34;http://aws.amazon.com/route53&#34;&gt;Route53&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;route 53 for 10 domains per year cost 50c per domain (first 25) per month, then query charges. total,
+about $60 + queries (@40c per million).&lt;/li&gt;
+&lt;li&gt;luadns cost $29 a year for 10 domains, 5 million (ish) querys a month and 500 host records&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I think i have nearly 30 domain on AWS&amp;hellip; so, their $59 a year package, which include 30 domains, would
+probably save me money&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;and 2) i forgot about one of those git push services&amp;hellip; &lt;a href=&#34;https://developermail.io/&#34;&gt;DeveloperMail&lt;/a&gt; is a service, for developers,
+for managing email servers. IMAP, SMTP, Git&amp;hellip; all supported! just signed up&amp;hellip; $2 a month per user. Lets
+see how this works&amp;hellip;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -7,58 +7,121 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Jul 2018 21:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/programming/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Playing with AMD&#39;s Epyc</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/playing-with-amd-epyc/</link>
       <pubDate>Mon, 02 Jul 2018 21:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/playing-with-amd-epyc/</guid>
-      <description>So, a few days back I got an email from Packet.net about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an AMD EPYC 7401P which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main stoage.</description>
+      <description>&lt;p&gt;So, a few days back I got an email from &lt;a href=&#34;http://www.packet.net&#34;&gt;Packet.net&lt;/a&gt; about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an &lt;a href=&#34;https://www.amd.com/en/products/cpu/amd-epyc-7401p&#34;&gt;AMD EPYC 7401P&lt;/a&gt; which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main stoage. It also has a 20Gb network link (2x10gb bonded) and can run pretty much any OS you can think of (Windows is not on the list officially, but you can boot off your own ISO, so you could probably get it on there&amp;hellip; might not be supported, but it might be possible). all this for $1 per hour! And did i mention they are bare metal machines?&lt;/p&gt;
+
+&lt;p&gt;This was the perfect opertunity to play with the new AMD processors. My current and previoius generation workstations (GodBoxv1 and Godboxv2) are both running Intel Xeon processors. the machine previous to this, the mac pro, is also running a Xeon processor. But previous to both of them, my first 2 major workstations ran AMD&amp;hellip; the first ran 2 AMD Athlon MP processors. These were old school processors that were single core, and i cant even remember their speeds, but i do know there were 32bit only and the machine maxed out at about 1.25GB RAM (well, i had it maxed out at that). the second AMD workstation ran 2 AMD Opterons&amp;hellip; again, single core machines, but this time, they ran 64 bit and IIRC maxed out at 8GB ram. This was a limitation of the board, not the processor&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;I have been thinking about GodboxV.next, and the AMD processors, specicially the &lt;a href=&#34;https://products.amd.com/en-us/search/cpu/amd-ryzen%E2%84%A2/amd-ryzen%E2%84%A2-threadripper&#34;&gt;Threadrippers&lt;/a&gt; and Epycs, are contenders for the next machine&amp;hellip; so, this test allows me to check them out before i buy!Why would i say no?!&lt;/p&gt;
+
+&lt;p&gt;So, i spun a box up in New Jersey running Ubuntu 17.10 to play with it, and here are my findings&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;First, i ran lscpu on the box to see what i was playing with:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/tiernano/4877abe19c89f1e45e617da1b4d46447.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;I then ran fdisk -l to see what disks i had to play with. on my machine sda and sdb where the 480gb SSDs, sdc was a 120gb that was empty and sdd was the boot drive&amp;hellip; i installed the btrfs-progs and then formatted sda and sdb as a RAID0 array, which i then mounted to /mnt. this gave me just under 900gb to play with&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;So, my first test is the usual test: building the Linux Kernel. I know that this is something that the lads at &lt;a href=&#34;http://www.servethehome.com&#34;&gt;ServeTheHome&lt;/a&gt; do a lot but its something i wanted to try my self&amp;hellip; So, first i installed git and build essential, then bison, flex and ncurses-dev, then i cloned Linus&amp;rsquo; git repo at git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git. First things first: this machine has a twin 10gb link, a shead load of cores and some very fast storage. How long did it take to clone? it download 1.02 GiB at 35.32MiB/s (about 30 seconds and aboiut 280Mbit/s) and all in, took 2 min 55 seconds to clone. I then ran &amp;lsquo;time make -j 49&amp;rsquo; to see how long it would take&amp;hellip; hmmm&amp;hellip; no config file&amp;hellip; make menuconfig and just hit save&amp;hellip; defaults are grand&amp;hellip; time make -j 49 again&amp;hellip; and more errors&amp;hellip; after a bit of googling, i find the page from Ubutnu &lt;a href=&#34;https://wiki.ubuntu.com/KernelTeam/GitKernelBuild&#34;&gt;showing what i need to do to build the kernel&lt;/a&gt;. i follow that&amp;hellip; download a LOT more stuff using their instrustions, and finally, we get to build&amp;hellip; Time: 6 min 12 seconds&amp;hellip; this is a FULL default build of the kernel&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/v1530618253/top_kernel_build_epy_hdb0R.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Same build on a VM on GodboxV2 (which was given 32GB RAM and 16 thread, so a full Xeon E5-4620) took 8min 27s to clone (8.18MiB/s. or about 64Mbit/s) and 36 min&amp;hellip; yea, that is 3x less cores, 2x less memory, slower storage (This is on Spinny Disk, not SSD), slower network and it is also a VM VS bare metal, still, to be essentially 6 times slower? interesting&amp;hellip; I might, at some stage, boot the machine off a live Linux USB and run some more tests, but not tonight&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/v1530618253/top-kernel-build-godboxv2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So, all this is becasue i was holding out for the main event&amp;hellip; Photo processing&amp;hellip; I wanted to do somethign &amp;ldquo;real life&amp;rdquo;, which for me would be development and photo processing&amp;hellip; the kernel build gives an idea of a large project build built, the image processsing gives an idea of multimedia work&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;so, i devised a test: Export a bunch of photos (mix of photos taken on my 5Ds, 5D MKII, iPhone 6 Plus and iPhone 7Plus) that are stored in light room as full  and run them though a basic .NET Core app i wrote. the code for the app is &lt;a href=&#34;https://github.com/tiernano/imageresizer-testapp&#34;&gt;available here&lt;/a&gt;. The app fully utilizes the machine by using multiple threads, and because its 64 bit, it will use as much memory as it can get its hands on. It just does some basic processing: open the file, resize to 1024X1024 and then save it&amp;hellip; the 1024X1024 part is just a test&amp;hellip; i was a bit under the gun on time, so couldnt spend as much time working on it as i wanted to&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;In total, there was 1546 photos exported, and the total file size was 15Gb. First obstical was to get them uploaded to the Packet machine, which took a while (my upload speed is currently 40Mbit/s)&amp;hellip; Once up, i downloaded a copy of dotnet core 2.0 SDK, cloned the repo with the project, built and ran&amp;hellip; and man, its fast! 4 min 43 seconds. And it used all the cores.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/v1530618252/image-resizer-epyc.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Running the same code on GodBoxV2 on the bare metal (no VM this time), i got XX min of a run&amp;hellip; Now, GodBoxV2 has other things running in the back ground, but not that much&amp;hellip; I also noticed that, on average, photos were being processed in 3-5 seconds on Epyc, but nearly 13-15, and sometimes 20 and 25 seconds on GodBoxV2. I also noticed that on Epyc, the dotnet process took nearly 45GB of RAM&amp;hellip; to run&amp;hellip; On GodBoxV2, it took over 70!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/v1530618252/image_resizer_godbox_f5de0.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So, there you have it. Some starting tests with these processors. I am well impressed with these processors, and would have no issue getting one for the next GodBox&amp;hellip; And with names like Epyc and Threadripper, why not?!&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Compressing and UnCompressing Protobuf items in C#</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/compressing_and_uncompressing_protobuf_items_in_c/</link>
       <pubDate>Wed, 12 Dec 2012 11:29:32 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/compressing_and_uncompressing_protobuf_items_in_c/</guid>
-      <description>Part of a project i am working on required sending large amounts of data between different instances. To get this to work efficially, we started using the ProtoBuf using ProtoBuf-net in .NET. but the files where still quite large (17mb, give or take). So, we looked into compression&amp;hellip;
-here is some examples of how we managed to compress the protobuf files. We got some decient compression: 3mb files, down from 17mb.</description>
+      <description>&lt;p&gt;Part of a project i am working on required sending large amounts of data between different instances. To get this to work efficially, we started using the &lt;a href=&#34;http://code.google.com/p/protobuf/&#34;&gt;ProtoBuf&lt;/a&gt; using &lt;a href=&#34;http://code.google.com/p/protobuf-net/&#34;&gt;ProtoBuf-net&lt;/a&gt; in .NET. but the files where still quite large (17mb, give or take). So, we looked into compression&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;here is some examples of how we managed to compress the protobuf files. We got some decient compression: 3mb files, down from 17mb. very happy.&lt;/p&gt;
+
+&lt;p&gt;to compress an object (obj) and write to a temp file (tmpfile):&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/4267147.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;to decompress the object back to a known type:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/4267157.js&#34;&gt;&lt;/script&gt;
+</description>
     </item>
     
     <item>
       <title>Custom MSDeploy OverWrite Rules</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/custom_msdeploy_overwrite_rules/</link>
       <pubDate>Wed, 31 Oct 2012 09:45:54 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/custom_msdeploy_overwrite_rules/</guid>
-      <description>I have a project which we are trying to automate the deployment system. The plan is to automatically deploy the project to a staging server anytime the build succeeds from SVN.
-I have had a few problems with this, but here are some of the links which may come in handy for you.
- MSDeploy skip rules when using MSBuild PublishProfile with Visual Studio 2012 Web Deploy : Customizing a deployment package How to set MSDeploy settings in .</description>
+      <description>&lt;p&gt;I have a project which we are trying to automate the deployment system. The plan is to automatically deploy the project to a staging server anytime the build succeeds from SVN.&lt;/p&gt;
+
+&lt;p&gt;I have had a few problems with this, but here are some of the links which may come in handy for you.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/12576662/msdeploy-skip-rules-when-using-msbuild-publishprofile-with-visual-studio-2012&#34;&gt;MSDeploy skip rules when using MSBuild PublishProfile with Visual Studio 2012&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.alanta.nl/2011/02/web-deploy-customizing-deployment.html&#34;&gt;Web Deploy : Customizing a deployment package&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/7100751/how-to-set-msdeploy-settings-in-csproj-file&#34;&gt;How to set MSDeploy settings in .csproj file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://forums.iis.net/p/1170702/1953807.aspx#1953807&#34;&gt;MSBuild target VSMSdeploy doesn&amp;rsquo;t seem to support skip with a skipAction&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Still some tweaks to get this to work&amp;hellip; If i find any more links i will put them here&amp;hellip; The problem we are haivng is when a deploy happens, the WebDeployment tool cannot overwrite the log files directory, since they are in use&amp;hellip; one option would be to restart IIS, which would be ok in staging, but we want to keep the logs in test and production, so, we need to figure out how to tell Web Deploy not to over write the files.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Handbrake Cluster</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/handbrake-cluster/</link>
       <pubDate>Wed, 03 Oct 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/handbrake-cluster/</guid>
-      <description>[UPDATED] someone asked in the comments if there was an binary build for this file. there is now! http://handbrakecluster.codeplex.com now hosts the code and binaries, and will soon have help files and documentation.
-A few days back, i wrote a post titled Powershell + Handbrake + AppleTV + iTunes = Automatic TV&amp;hellip; ish. In it i included a block of Powershell code to bulk convert TV shows from whatever format you had them in to a M4V format for the AppleTV.</description>
+      <description>&lt;p&gt;[UPDATED] someone asked in the comments if there was an binary build for this file. there is now! &lt;a href=&#34;http://handbrakecluster.codeplex.com&#34;&gt;http://handbrakecluster.codeplex.com&lt;/a&gt; now hosts the code and binaries, and will soon have help files and documentation.&lt;/p&gt;
+
+&lt;p&gt;A few days back, i wrote a post titled &lt;a href=&#34;https://www.tiernanotoole.ie/2012/09/28/Powershell-HandBrake-AppleTV-iTunes.html&#34;&gt;Powershell + Handbrake + AppleTV + iTunes = Automatic TV&amp;hellip; ish&lt;/a&gt;. In it i included a block of Powershell code to bulk convert TV shows from whatever format you had them in to a M4V format for the AppleTV. Well, as they say &amp;ldquo;If necessity is the mother of all invension, lazyness must be the father&amp;rdquo;. I have a lot of shows i wanted converted to the AppleTV, so i built something&amp;hellip; Its called &lt;a href=&#34;https://github.com/tiernano/HandbrakeCluster&#34;&gt;HandBrake Cluster&lt;/a&gt; and is written in &lt;a href=&#34;http://www.microsoft.com/en-us/download/details.aspx?id=30653&#34;&gt;.NET 4.5&lt;/a&gt;, uses &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa967729.aspx&#34;&gt;MSMQ&lt;/a&gt; and &lt;a href=&#34;http://handbrake.fr/&#34;&gt;Handbrake&lt;/a&gt; to do the processing&amp;hellip; The workflow is as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;setup the system as described on the &lt;a href=&#34;https://github.com/tiernano/HandbrakeCluster&#34;&gt;HandBrake Cluster&lt;/a&gt; site.&lt;/li&gt;
+&lt;li&gt;run the adder program with the paramaters required (location of files you want converted, type of files to find, where you want the files to be placed, output file type)&lt;/li&gt;
+&lt;li&gt;run the cluster EXE on as many machines as you want. each machine will need to point to the correct MSMQ on the head node, have their own copy of Handbrake, and must have access to the fileshare that you are reading and writing to&amp;hellip;&lt;/li&gt;
+&lt;li&gt;each node will take a message of the queue, process the file and then mark it as completed. There is code to see if the message has failed, so, in theory, if something goes into the queue, it should always be processed&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have run this at home on a couple of different machines, and so far so good&amp;hellip; my room gets a bit warmer when i kick this off, and between the 3 machines i ran it on, my FPS count went from just 80-120 on the Godbox, to a total of about 160 - 240 FPS (Godbox = 80-120, Server 1 and 2 are about 40-60FPS).&lt;/p&gt;
+
+&lt;p&gt;The next thing i managed to do was tweak my import process for iTunes. I am using a program called &lt;a href=&#34;http://www.bizmodeller.com/iHomeServer_for_iTunes.aspx&#34;&gt;iHomeServer for iTunes&lt;/a&gt; which is running on the &lt;a href=&#34;https://www.tiernanotoole.ie/Computers/godbox.html&#34;&gt;GodBox&lt;/a&gt;. It monitors a folder, which is where &lt;a href=&#34;https://github.com/tiernano/HandbrakeCluster&#34;&gt;HandBrake Cluster&lt;/a&gt; is writing to, and adds them to iTunes. I can then tweak the metadata using the tool, so i can add art work, tell it which shows are related, and it sets up Art work, title info, etc. It is very handy, and something i am very happy with.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Building a Cross Compiler for your Raspberry Pi</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/raspberry-pi-cross-compiling/</link>
       <pubDate>Tue, 25 Sep 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/raspberry-pi-cross-compiling/</guid>
-      <description>My main machine at home, known as &amp;ldquo;The GodBox&amp;rdquo; is a Dual Processor, Quad Core Xeon 5520 with 60Gb RAM, 2 300Gb 10,000 RPM Western Digital Velociraptor in RAID 0 for boot, 4X1Tb 7200RPM drives for storage, 2 more 300Gb 10,000 RPM drives for &amp;ldquo;scratch disk&amp;rdquo; and a couple high(ish) end graphics cards with 3 monitors plugged in&amp;hellip; Hence the name, GodBox!
-Anyway, The Raspberry Pi, on the other hand, has a 700Mhz processor, 256Mb RAM and not much else&amp;hellip; So, if you need to write code for your Pi, and you don&amp;rsquo;t want to wait a long time to compile, check out this tutorial on how to build a cross compiler for your raspberry pi which will allow you to build your apps on a different machine&amp;hellip; I have a college project which the Raspberry Pi will be used for, and i am thinking this will be how i build code.</description>
+      <description>&lt;p&gt;My main machine at home, known as &amp;ldquo;The GodBox&amp;rdquo; is a Dual Processor, &lt;a href=&#34;http://www.amazon.com/gp/product/B001QCEMFA/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=B001QCEMFA&amp;amp;linkCode=as2&amp;amp;tag=lotassmartmann00&#34;&gt;Quad Core Xeon 5520&lt;/a&gt; with 60Gb RAM, 2 &lt;a href=&#34;http://www.amazon.com/gp/product/B005CGDSDI/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=B005CGDSDI&amp;amp;linkCode=as2&amp;amp;tag=lotassmartmann00&#34;&gt;300Gb 10,000 RPM Western Digital Velociraptor&lt;/a&gt; in RAID 0 for boot, 4X1Tb 7200RPM drives for storage, 2 more 300Gb 10,000 RPM drives for &amp;ldquo;scratch disk&amp;rdquo; and a couple high(ish) end graphics cards with 3 monitors plugged in&amp;hellip; Hence the name, GodBox!&lt;/p&gt;
+
+&lt;p&gt;Anyway, The &lt;a href=&#34;http://www.raspberrypi.org/&#34;&gt;Raspberry Pi&lt;/a&gt;, on the other hand, has a 700Mhz processor, 256Mb RAM and not much else&amp;hellip; So, if you need to write code for your Pi, and you don&amp;rsquo;t want to wait a long time to compile, check out this tutorial on &lt;a href=&#34;http://www.bootc.net/archives/2012/05/26/how-to-build-a-cross-compiler-for-your-raspberry-pi/&#34;&gt;how to build a cross compiler for your raspberry pi&lt;/a&gt; which will allow you to build your apps on a different machine&amp;hellip; I have a college project which the Raspberry Pi will be used for, and i am thinking this will be how i build code.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
