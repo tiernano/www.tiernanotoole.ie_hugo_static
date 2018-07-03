@@ -8,7 +8,7 @@
     
     
     
-    <link rel="preload" href="https://www.tiernanotoole.ie/styles.css" as="style" />
+    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
 
     <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
     <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
@@ -16,12 +16,12 @@
 
     
 
-    <meta name="description" itemprop="description" content="[NOTE] This part 2 in a series of posts. The rest can be found here. In my previous post I explained what i was trying to do&amp;hellip; This post explains what i have been working on recently, and performance results&amp;hellip; So, first, what have i tried&amp;hellip; There are 3 different things i have tried, and here are some of their details. Some will need to be updated (other parts of this series), and others i will try get back to eventually." id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Networking,Projects,IPv6,Guide,HowTo,HomeLab,Double_Internet" id="keywords"><link rel="canonical" href="https://www.tiernanotoole.ie/post/mptcp-ssh-squid-openvpn-double-speed-part-2/">
+    <meta name="description" itemprop="description" content="[NOTE] This part 2 in a series of posts. The rest can be found here. In my previous post I explained what i was trying to do&amp;hellip; This post explains what i have been working on recently, and performance results&amp;hellip; So, first, what have i tried&amp;hellip; There are 3 different things i have tried, and here are some of their details. Some will need to be updated (other parts of this series), and others i will try get back to eventually." id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Networking,Projects,IPv6,Guide,HowTo,HomeLab,Double_Internet" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/mptcp-ssh-squid-openvpn-double-speed-part-2/">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     
-  <link rel="stylesheet" type="text/css" href="https://www.tiernanotoole.ie/css/dark.css"><link rel="stylesheet" type="text/css" href="https://www.tiernanotoole.ie/styles.css">
+  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
 
     <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2016/03/30/20160330-mlvpn-speed-test.PNG" as="image" />
     <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2016/03/30/20160330-mlvpn-speed-test-upload-only.PNG" as="image" />
@@ -30,7 +30,7 @@
   <body itemscope itemtype="http://schema.org/WebPage">
     <div id="site-container">
       <div id="site-header">
-        <a href="https://www.tiernanotoole.ie/">
+        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
           <header class="small-text-center medium-text-left row">
             <div class="row-item">
               <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet </span>
@@ -106,17 +106,17 @@ So, first, what have i tried&hellip; There are 3 different things i have tried, 
 </span>
     </div><div id="post-tags">
     	<ul class="menu">
-        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/networking" rel="tag" itemprop="url">networking</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/projects" rel="tag" itemprop="url">projects</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/ipv6" rel="tag" itemprop="url">i pv6</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/guide" rel="tag" itemprop="url">guide</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/howto" rel="tag" itemprop="url">how to</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/homelab" rel="tag" itemprop="url">home lab</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/double_internet" rel="tag" itemprop="url">double internet</a>
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/networking" rel="tag" itemprop="url">networking</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/projects" rel="tag" itemprop="url">projects</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ipv6" rel="tag" itemprop="url">i pv6</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/guide" rel="tag" itemprop="url">guide</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/howto" rel="tag" itemprop="url">how to</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/homelab" rel="tag" itemprop="url">home lab</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/double_internet" rel="tag" itemprop="url">double internet</a>
     		</li></ul>
     </div></article>
 
-  <nav id="post-nav" class="row"><a href="https://www.tiernanotoole.ie/post/continuous-integration-and-blogging/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> Continuous Integration and Blogging</a><a href="https://www.tiernanotoole.ie/post/bash-on-ubuntu-on-windows/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">Bash on Ubuntu on Windows <span class="fa fa-chevron-circle-right"></span></a></nav></main>
+  <nav id="post-nav" class="row"><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/continuous-integration-and-blogging/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> Continuous Integration and Blogging</a><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/bash-on-ubuntu-on-windows/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">Bash on Ubuntu on Windows <span class="fa fa-chevron-circle-right"></span></a></nav></main>
 
         <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
   

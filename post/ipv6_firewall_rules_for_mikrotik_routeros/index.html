@@ -8,7 +8,7 @@
     
     
     
-    <link rel="preload" href="https://www.tiernanotoole.ie/styles.css" as="style" />
+    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
 
     <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
     <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
@@ -16,18 +16,18 @@
 
     
 
-    <meta name="description" itemprop="description" content="After yesterday&amp;rsquo;s post on IPv6 Networking in the house, I realized that all machines internally had publically facing IPv6 addresses! I started to panic, then went looking online, and found the following script:  This script, when run on your RouterOS board, will allow Established and Related connections, allow outgoing connections, and drop anything incoming that has not been requested&amp;hellip; so, now everything inside the network should be more secured&amp;hellip; I am new to this IPv6 stuff, so I am still learning&amp;hellip; but, i am getting there&amp;hellip;" id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="RouterOS,Networking,IPv6" id="keywords"><link rel="canonical" href="https://www.tiernanotoole.ie/post/ipv6_firewall_rules_for_mikrotik_routeros/">
+    <meta name="description" itemprop="description" content="After yesterday&amp;rsquo;s post on IPv6 Networking in the house, I realized that all machines internally had publically facing IPv6 addresses! I started to panic, then went looking online, and found the following script:  This script, when run on your RouterOS board, will allow Established and Related connections, allow outgoing connections, and drop anything incoming that has not been requested&amp;hellip; so, now everything inside the network should be more secured&amp;hellip; I am new to this IPv6 stuff, so I am still learning&amp;hellip; but, i am getting there&amp;hellip;" id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="RouterOS,Networking,IPv6" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/ipv6_firewall_rules_for_mikrotik_routeros/">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     
-  <link rel="stylesheet" type="text/css" href="https://www.tiernanotoole.ie/css/dark.css"><link rel="stylesheet" type="text/css" href="https://www.tiernanotoole.ie/styles.css">
+  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
 
     <script>var _paq = undefined;</script></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <div id="site-container">
       <div id="site-header">
-        <a href="https://www.tiernanotoole.ie/">
+        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
           <header class="small-text-center medium-text-left row">
             <div class="row-item">
               <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet </span>
@@ -60,13 +60,13 @@
 </span>
     </div><div id="post-tags">
     	<ul class="menu">
-        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/routeros" rel="tag" itemprop="url">router o s</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/networking" rel="tag" itemprop="url">networking</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://www.tiernanotoole.ie/tags/ipv6" rel="tag" itemprop="url">i pv6</a>
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/routeros" rel="tag" itemprop="url">router o s</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/networking" rel="tag" itemprop="url">networking</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ipv6" rel="tag" itemprop="url">i pv6</a>
     		</li></ul>
     </div></article>
 
-  <nav id="post-nav" class="row"><a href="https://www.tiernanotoole.ie/post/ipv6_%2b_mikrotik_%2b_linux_%2b_windows/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> IPv6 &#43; MikroTik &#43; Linux &#43; Windows</a><a href="https://www.tiernanotoole.ie/post/send_emails_as_a_distribution_group_in_office365/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">Send Emails as a Distribution Group in Office365 <span class="fa fa-chevron-circle-right"></span></a></nav></main>
+  <nav id="post-nav" class="row"><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/ipv6_%2b_mikrotik_%2b_linux_%2b_windows/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> IPv6 &#43; MikroTik &#43; Linux &#43; Windows</a><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/send_emails_as_a_distribution_group_in_office365/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">Send Emails as a Distribution Group in Office365 <span class="fa fa-chevron-circle-right"></span></a></nav></main>
 
         <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
   
