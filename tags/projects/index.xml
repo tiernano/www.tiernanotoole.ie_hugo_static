@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Tiernan&#39;s Comms Closet</title>
+    <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/projects/</link>
+    <description>Recent content in Projects on Tiernan&#39;s Comms Closet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Jul 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>double speed Internet Part 9 - Going Back</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-9-going-back/</link>
+      <pubDate>Wed, 20 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-9-going-back/</guid>
+      <description>&lt;p&gt;[NOTE] This part 9 in a series of posts. The rest can be found &lt;a href=&#34;https://www.tiernanotoole.ie/tag/Double_Internet/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Well, the double internet experiment is about ready to be finished&amp;hellip; After 9 posts, 4 months, lots of sweating, many painful nights trying to figure out why something stopped using, shouting when &lt;a href=&#34;http://www.netflix.com&#34;&gt;Netflix&lt;/a&gt; did not work, wondering why my internet connection was so slow, and many, many other problems, i have decided to wind down the project. in the last 9 posts, i have learned a lot, and i hope i have helped someone figure out some stuff on their end. Even though this is a wind up of the project, there are still new things i have to share.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I found another project that has potential for speeding up the internet: &lt;a href=&#34;http://www.vrayo.com/how-to-set-up-a-bonding-vpn-connection-in-linux/&#34;&gt;VTrunkd&lt;/a&gt;. after some testing, i does seem to manage to speed up the connection, but either limits on hardware i have in house, or limits of hardware in the cloud, or even the software, stopped me in my tracks&amp;hellip; i did see 400mb/s out of it at one stage, using 200mb/s from each modem&amp;hellip; its close, but its not the full 720&amp;hellip;&lt;/li&gt;
+&lt;li&gt;messing with &lt;a href=&#34;http://www.nongnu.org/quagga/&#34;&gt;Quagga/Zebra&lt;/a&gt; as mentioned in &lt;a href=&#34;https://www.tiernanotoole.ie/2016/06/08/double-speed-internet-part-8-routing-around.html&#34;&gt;the previous post&lt;/a&gt; has been, well, interesting&amp;hellip; I did manage to get all &lt;a href=&#34;http://www.ovh.ie&#34;&gt;OVH&lt;/a&gt; traffic sent though their server, &lt;a href=&#34;https://m.do.co/c/d4d345b83b55&#34;&gt;Digital Ocean&lt;/a&gt; traffic sent over that box, and everything else over &lt;a href=&#34;http://www.hetzner.de/en&#34;&gt;Hetzner&lt;/a&gt;. I added an &lt;a href=&#34;http://www.azure.com&#34;&gt;Azure&lt;/a&gt; box to the mix for a while, aswell as a &lt;a href=&#34;http://www.vultr.com/?ref=6925433&#34;&gt;Vultr&lt;/a&gt; box, but it got very messey, very quickly. if i had something automated, it would be better.&lt;/li&gt;
+&lt;li&gt;the idea of having a /29 IP range in &lt;a href=&#34;http://www.hetzner.de/en&#34;&gt;Hetzner&lt;/a&gt; and forwarding it though the tunnels back to the house did work. My &lt;a href=&#34;https://meraki.cisco.com/products/appliances/mx64&#34;&gt;Meraki MX64&lt;/a&gt; had one IP address, i had a mail server on a second, everything else on a third, and was planning on using more&amp;hellip; but its just, well, again, messy. So, i will be going back to the idea of 2 IP addresses, and hoping whatever i put infront of the network can figure stuff out&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, what am i moving to? well, thats a question&amp;hellip; Currently, i have the &lt;a href=&#34;https://meraki.cisco.com/products/appliances/mx64&#34;&gt;Meraki MX64&lt;/a&gt; plugged directly into the modems, and protecting my LAN. So far, so good, but due to hardware limits, it maxes out at around 260mb/s. So, thats out of the question for the main network! I did at one stage have &lt;a href=&#34;https://www.sophos.com/en/products/free-tools/sophos-utm-home-edition.aspx&#34;&gt;Sophos UTM Home edition&lt;/a&gt; running. Sophos also have their &lt;a href=&#34;https://www.sophos.com/en-us/products/free-tools/sophos-xg-firewall-home-edition.aspx&#34;&gt;XG firewall&lt;/a&gt; available for home use, so i might try that&amp;hellip; There is also &lt;a href=&#34;https://www.pfsense.org/&#34;&gt;PFSense&lt;/a&gt; which i used before also&amp;hellip; And there may be more&amp;hellip; Maybe there will be a new series reviewing these home firewalls? we will see&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>double speed Internet Part 8 - Routing Around</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-8-routing-around/</link>
+      <pubDate>Wed, 08 Jun 2016 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-8-routing-around/</guid>
+      <description>&lt;p&gt;[NOTE] This part 8 in a series of posts. The rest can be found &lt;a href=&#34;https://www.tiernanotoole.ie/tag/Double_Internet/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;At the end of my &lt;a href=&#34;https://www.tiernanotoole.ie/2016/05/31/double-speed-internet-part-7-ecmp-kind-of.html&#34;&gt;last post&lt;/a&gt; I asked the question about routing traffic to different servers based on thier distances, etc&amp;hellip; Well, after a bit of messing, i can say it kind of works! here is a quick over view:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;server in the house has now got multiple OpenVPN connections (2 to &lt;a href=&#34;http://www.hetzner.de/en&#34;&gt;Hetzner&lt;/a&gt;, 1 to &lt;a href=&#34;http://www.ovh.ie&#34;&gt;OVH&lt;/a&gt; (with a plan to double), 1 to &lt;a href=&#34;https://m.do.co/c/d4d345b83b55&#34;&gt;Digital Ocean&lt;/a&gt; (again, to be doubled) and i am planning 2 to &lt;a href=&#34;http://www.azure.com&#34;&gt;Azure&lt;/a&gt; as well).&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.nongnu.org/quagga/&#34;&gt;Quagga/Zebra&lt;/a&gt; has static routes (currently static, planing on dynamic soon&amp;hellip; more eventually) to different servers depending on where they are. for example, all traffic to the hetzner network (including their &lt;a href=&#34;https://www.hetzner.de/en/hosting/produktmatrix/storagebox-produktmatrix&#34;&gt;Storage Boxes&lt;/a&gt;) go though the hetzner link. &lt;a href=&#34;http://www.hubic.com&#34;&gt;Hubic&lt;/a&gt; traffic goes though OVH, Azure (currently) and AWS traffic, aswell as some CDNs go direct over either WAN1 or WAN2 in the house, and some other stuff (&lt;a href=&#34;http://www.crashplan.com&#34;&gt;CrashPlan&lt;/a&gt; currently) goes though Digital Ocean. Everything that has no static route goes though Hetzner&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Ideally, the static side of things should be removed, and a more dynamic setup done. How that works, i have no idea&amp;hellip; &lt;a href=&#34;http://www.spotify.com&#34;&gt;Spotify&lt;/a&gt; have 2 posts about their SDN Internet Router (&lt;a href=&#34;https://labs.spotify.com/2016/01/26/sdn-internet-router-part-1/&#34;&gt;part 1&lt;/a&gt; and &lt;a href=&#34;https://labs.spotify.com/2016/01/27/sdn-internet-router-part-2/&#34;&gt;part 2&lt;/a&gt;) which is an interesting idea&amp;hellip; More digging and research is required.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, there you have it. Everything currently seems to be working, mostly, and tweaks can be made easily&amp;hellip; I have a couple posts i have in my head, including something to do with automating bringing up new machines (probably with &lt;a href=&#34;https://www.ansible.com/&#34;&gt;Ansible&lt;/a&gt; or something like it), more monitoring, and some other stuff too&amp;hellip; Any questions, leave a comment, and i will get back.&lt;/p&gt;
+
+&lt;p&gt;[UPDATE] I wrote a quick and dirty app called &lt;a href=&#34;https://github.com/tiernano/whoistozebraconfig&#34;&gt;WhoIsToZebraConfig&lt;/a&gt; which takes an AS Number, looks up the info in the &lt;a href=&#34;http://www.radb.net/&#34;&gt;Merit RADb&lt;/a&gt; (with the help of some code from &lt;a href=&#34;https://coderbuddy.wordpress.com/2010/10/12/a-simple-c-class-to-get-whois-information/&#34;&gt;Coder Buddy&lt;/a&gt;) and outputs what you need to put into your Zebra Config&amp;hellip; should save me some time, and it might save you time too&amp;hellip;  shout if you have questions!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>double speed Internet Part 7 - ECMP (kind of)</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-7-ecmp-kind-of/</link>
+      <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-7-ecmp-kind-of/</guid>
+      <description>&lt;p&gt;[NOTE] This part 7 in a series of posts. The rest can be found &lt;a href=&#34;https://www.tiernanotoole.ie/tag/Double_Internet/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;a href=&#34;https://www.tiernanotoole.ie/2016/05/17/double-speed-internet-part-6-hetzner-edition.html&#34;&gt;last post&lt;/a&gt; I mentioned I am now using &lt;a href=&#34;http://www.hetzner.de/en&#34;&gt;Hetzner&lt;/a&gt; for hosting a dedicated box. Thats still live, and going well. I have a /29 IP range (6 usable) and also 2 other IPs. So far, so good&amp;hellip; But because i was using a Socks Server, I was not fully able to use the /29 ips&amp;hellip; I use something like as follows:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/tiernano/68894593dd44acb4820617aef2889fd6.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;essentially, for each public IP i have that i want to map to an internal IP, i have a POST and PRE ROUTING rule, plus the required forward rules&amp;hellip; But, if socks are used, then that goes out the Window, since TCP traffic will look like its coming from the socks server&amp;hellip; So, i killed the socks server, removed the IPTables rule, and then realized that while outgoing traffic was being balanced somewhat (2 default rules on the internal box pointing at the OpenVPN IPs from the Hetzner box) incoming was a problem. Hetzner knew how to get to my internal network, but only though one ip&amp;hellip; enter Quagga and Zebra&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.nongnu.org/quagga/&#34;&gt;Quagga&lt;/a&gt; is a routing software suite, which can do protocols like OSPF, BGP and RIP, and Zebra is the component that does static routing. using their &lt;a href=&#34;http://www.nongnu.org/quagga/docs/docs-info.html#Static-Route-Commands&#34;&gt;documentation on static routes&lt;/a&gt;, I created a static route to my internal network with 2 next hops, the OVPN IPs from the internal box&amp;hellip; and, after restarting Quagga, all works! happy days! now i can forward ips from outside the network to inside the network correctly, and they look like they are the public ip!&lt;/p&gt;
+
+&lt;p&gt;So, whats next then? well, I now have a server in Germany (Hetzner) and one in France (&lt;a href=&#34;http://www.ovh.com&#34;&gt;OVH&lt;/a&gt;), and can spin one up in the UK or the US (&lt;a href=&#34;https://m.do.co/c/d4d345b83b55&#34;&gt;Digital Ocean&lt;/a&gt;). Given that i have Quagga running on the box, i am now thinking of trying to see if its possible to route traffic depending on distance or something similar&amp;hellip; If i am trying to hit a server in Hetzner&amp;rsquo;s DC, i should go though Germany. If its in Digital Ocean, go though either US or UK servers, same with OVH. Then figure out who has the fastest links to, say, Amazon, Azure, Netflix, BBC, Dropbox, etc, and add either static or dynamic links to the router&amp;hellip; essentially, thats the theory&amp;hellip; lets see how that works&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>double speed Internet Part 6 - Hetzner Edition</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-6-hetzner-edition/</link>
+      <pubDate>Tue, 17 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-6-hetzner-edition/</guid>
+      <description>&lt;p&gt;[NOTE] This part 6 in a series of posts. The rest can be found &lt;a href=&#34;https://www.tiernanotoole.ie/tag/Double_Internet/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Its been a while, since I posted, and there are some, well, pretty major changes since the last time&amp;hellip; Lets start are the beginning.&lt;/p&gt;
+
+&lt;p&gt;Last time I was using &lt;a href=&#34;https://m.do.co/c/d4d345b83b55&#34;&gt;Digital Ocean&lt;/a&gt; for my hosting provider. I was using their $20 a month server (2 cores, 2GB RAM, 40GB SSD, 3TB transfer), and it was all good&amp;hellip; But I noticed that every now and again I would need to reboot the box. I also noticed that when transferring large files or using higher bandwidth (400mb/s+) the 100% of both cores were being used. So, I wanted to move to something with more power&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;I also was limited to IP addresses. Yes, Digital Ocean do offer IPv6, but I could only get 1 IPv4 address&amp;hellip; and I wanted more&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;So, I went back to some old friends of mine, &lt;a href=&#34;http://www.hetzner.de/en&#34;&gt;Hetzner&lt;/a&gt;, and bought a dedicated server with a Quad Core Xeon E3, 32GB RAM, 4*3 TB HDDs, 1Gbit/s network connection with 30TB transfer per month and a KVMoIP plugged in. I also got 2 extra standard IPs and a /29 (8 IPs, 6 usable). I will explain that next. I installed Debian 8.4 on the first disk, and I am planning on using the other 3 for storage of some sort. I then installed the &lt;a href=&#34;http://www.multipath-tcp.org&#34;&gt;MPTCP kernel&lt;/a&gt;, &lt;a href=&#34;http://www.openvpn.net&#34;&gt;OpenVPN&lt;/a&gt;, Squid and a Socks server (same as the Digital Ocean box) and reconfigured the home machine&amp;hellip; All good! Now when browsing the web, everywhere thinks I am in Germany, but so far, so good&amp;hellip; Speed tests are about the same, but I have my theory about &lt;a href=&#34;https://en.wikipedia.org/wiki/Equal-cost_multi-path_routing&#34;&gt;ECMP&lt;/a&gt; to try this weekend.&lt;/p&gt;
+
+&lt;p&gt;Because of the extra IPs, I am working on doing full IP forwarding, not just port forwarding. One of my IPs in pointing directly at my &lt;a href=&#34;https://meraki.cisco.com/products/appliances/mx64&#34;&gt;Meraki MX64&lt;/a&gt; in house (a post on the Meraki stuff is coming, eventually&amp;hellip;) and another at the &lt;a href=&#34;https://www.tiernanotoole.ie/Computers/proliantml110.html&#34;&gt;Proliant box&lt;/a&gt;, and I plan on pointing other IPs at machines in the DMZ or a firewall of some sort. the /29 is routed though the IP pointing at the Proliant, so that makes life easier. The original IP is only used for SSH and OVPN from the house. it should not do much else. All network traffic in house is coming from other of the other IPs.&lt;/p&gt;
+
+&lt;p&gt;Again, so far, so good. Hopefully the ECMP stuff works correctly, so I will do an updated post soon.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>(Mad) Max Speed - The Road Warrior (Internet connection) (double speed internet Part 5)</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-5/</link>
+      <pubDate>Thu, 21 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-5/</guid>
+      <description>&lt;p&gt;[NOTE] This part 5 in a series of posts. The rest can be found &lt;a href=&#34;https://www.tiernanotoole.ie/tag/Double_Internet/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This post is going to be an update and theoretical post. probably very little &amp;ldquo;new&amp;rdquo; stuff going on here, mostly updates, and what I am planning on doing later on.&lt;/p&gt;
+
+&lt;p&gt;This week, I have been &lt;a href=&#34;http://blogs.technet.com/b/exchange/archive/2004/07/12/180899.aspx&#34;&gt;OOF&lt;/a&gt; sick, so I have not done much work, but I have been surfing the web, watching videos, downloading stuff, etc., so I have an idea of how things are going. First, as mentioned in &lt;a href=&#34;https://www.tiernanotoole.ie/2016/04/14/2-cable-modems-double-speed-part-4.html&#34;&gt;the previous post&lt;/a&gt; I have MPTCP, Squid, Socks Servers, OpenVPN and IPTables doing their magic. 2 &lt;a href=&#34;http://www.openvpn.net&#34;&gt;OpenVPN&lt;/a&gt; tunnels between the house and &lt;a href=&#34;https://m.do.co/c/d4d345b83b55&#34;&gt;Digital Ocean&lt;/a&gt;. All TCP Traffic (bar port 80) is sent over socks to the box in the cloud using RedSocks. All UDP traffic is sent direct over OpenVPN. Since MPTCP is in the mix, all socks traffic is actually split over the 2 connections. All port 80 traffic, and 443 (if the client is using local Squid as their proxy) is sent round-robin between the 2 upstream IPs to Squid (2 OpenVPN end points).&lt;/p&gt;
+
+&lt;p&gt;Things I have noticed:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Every now and again, &lt;a href=&#34;https://github.com/darkk/redsocks&#34;&gt;RedSocks&lt;/a&gt; crashes&amp;hellip; just full on dies. It’s just a matter of starting again, but it’s a pain&amp;hellip;&lt;/li&gt;
+&lt;li&gt;I have had to restart squid a couple of times&amp;hellip; not too often though&lt;/li&gt;
+&lt;li&gt;there was a power outage in the house a few days back&amp;hellip; so, when everything came back online, it was a bit of a pain bringing all connections back to life. I do have to figure out a better plan&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I still have to read more on this ECMP stuff. Hopefully it will do what I am hoping.&lt;/p&gt;
+
+&lt;p&gt;Now for the theoretical stuff. I started thinking, could this work outside the house? Could you build this into something smaller, like a Raspberry Pi, and stick 2 or more USB Modems in, connect it back to a server in the cloud, setup P2P OpenVPN connections and then get more than a single modem speed download? The problems I can see are around MPTCP. I am not sure if it has been ported to ARM to run on a Raspberry Pi. Second, the max you could ever get out of it is 100Mbit/s, given the 10/100mb network port on board&amp;hellip; and you may need extra power for the USB dongles. Also, getting P2P connections may be complicated, given the non-static IPs on the modems, though, in theory, non-P2P OpenVPN could work&amp;hellip; Again, it’s a theory. I had the though and that’s where the title came from&amp;hellip; anyway, throwing it out there&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2 Cable Modems = Double Speed? Part 4</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-4/</link>
+      <pubDate>Thu, 14 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-4/</guid>
+      <description>&lt;p&gt;[NOTE] This part 4 in a series of posts. The rest can be found &lt;a href=&#34;https://www.tiernanotoole.ie/tag/Double%Internet/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, this week I went in a completely different direction that I have been thinking recently&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;So, the basic theory is as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I am still using MPTCP kernels on both upstream and local machine&lt;/li&gt;
+&lt;li&gt;now have 2 P2P UDP &lt;a href=&#34;http://www.openvpn.net&#34;&gt;OpenVPN&lt;/a&gt; tunnels between house and cloud. Example config is &lt;a href=&#34;https://gist.github.com/tiernano/09c6928d1d8f6752ea84fd895451bbe5&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;all TCP traffic (bar port 80) that hits the router in house is redirected to &lt;a href=&#34;https://github.com/darkk/redsocks&#34;&gt;RedSocks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RedSocks uses a socks server, &lt;a href=&#34;http://www.inet.no/dante/&#34;&gt;Dante&lt;/a&gt;, as an upstream server on the cloud box&lt;/li&gt;
+&lt;li&gt;since the socks traffic is over TCP (inside the UDP OpenVPN tunnel) it uses MPTCP&lt;/li&gt;
+&lt;li&gt;having socks running, gives me quite the download speed, turning it off does not, hence the following tweet&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Hmmmm&amp;hellip; If I have socks on, the Internet is fast 400mb/s+). But without socks, it&amp;#39;s down to 60&amp;hellip; Feck&amp;hellip;&lt;/p&gt;&amp;mdash; Tiernan (@tiernano) &lt;a href=&#34;https://twitter.com/tiernano/status/720186883905626112&#34;&gt;April 13, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I am also noticing that I am starting to hit the limits of my upstream VM. If downloading or uploading at speed, the processor cores (2 in the case of the box I am currently running) are pegged at pretty much 100% full&amp;hellip; Well, 80ish, but that because the other 20% is being used by Dante. I am noticing I can hit a full 72Mbit/s up, but the max currently downloading is about 400, maybe 450&amp;hellip; Need a faster box now&amp;hellip;&lt;/li&gt;
+&lt;li&gt;I mentioned port 80 not being set over socks. That&amp;rsquo;s because its redirected to Squid. Squid (in house) then uses Squid (in cloud) as a parent. There are 2 round-robin parents for squid, one on each OpenVPN connection IP address.&lt;/li&gt;
+&lt;li&gt;all other traffic (UDP, ICMP, etc.) are sent over the OpenVPN connection&amp;hellip; currently only one is picked, but I have a cunning plan&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;{% youtube AsXKS8Nyu8Q %}&lt;/p&gt;
+
+&lt;p&gt;The cunning plan? Well, if I am reading the internet correctly, and I would like to think I am, I &lt;em&gt;think&lt;/em&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/Equal-cost_multi-path_routing&#34;&gt;ECMP&lt;/a&gt;, or Equal Cost Multi-Path Routing, could help&amp;hellip; Again, it’s a fledgling idea currently, and I am still reading the documentation, but if it works&amp;hellip; Well&amp;hellip; I not sure&amp;hellip; let’s see&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2 Cable modems = Double speed? Part 3</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-3/</link>
+      <pubDate>Sat, 02 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-3/</guid>
+      <description>&lt;p&gt;[NOTE] This part 3 in a series of posts. The rest can be found &lt;a href=&#34;https://www.tiernanotoole.ie/tag/Double_Internet/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In &lt;a href=&#34;https://www.tiernanotoole.ie/2016/03/22/2-Cable-Modems-Double-Internet-Speed-part1.html&#34;&gt;Part 1 of this series&lt;/a&gt; I explained the why and what I wanted to do for this &amp;ldquo;project&amp;rdquo;. In &lt;a href=&#34;https://www.tiernanotoole.ie/2016/03/30/mptcp-ssh-squid-openvpn-double-speed-part-2.html&#34;&gt;Part 2&lt;/a&gt; I did some basic testing of both &lt;a href=&#34;http://www.multipath-tcp.org&#34;&gt;MPTCP&lt;/a&gt; and &lt;a href=&#34;http://zehome.github.io/MLVPN&#34;&gt;MLVPN&lt;/a&gt;. I also mentioned trying &lt;a href=&#34;https://en.wikipedia.org/wiki/Point-to-Point_Protocol#PPP_Configuration_Options&#34;&gt;MMPPP&lt;/a&gt; using &lt;a href=&#34;http://vtun.sourceforge.net/&#34;&gt;vtund&lt;/a&gt; but it has been a while since I did that testing, and it had not been on bare metal. So, this post is a follow up, where I am using bare metal.&lt;/p&gt;
+
+&lt;p&gt;So, first, the setup:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ProLiant box is running Debian 8.3 x64, and has both vtund and ppp installed&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://m.do.co/c/d4d345b83b55&#34;&gt;Digtial Ocean&lt;/a&gt; box also has Debian 8.3, vtund and ppp installed&lt;/li&gt;
+&lt;li&gt;walked though the guide from &lt;a href=&#34;https://johnlewis.ie/bonding-teaming-internet-connections/&#34;&gt;John Lewis&lt;/a&gt; and made some changes to the configs. the main ones are mentioned below&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Once done, i installed both iperf and iftop on both boxes, and ran&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;iperf -s
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;on the Digital Ocean box and&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;iperf -c 192.168.10.1 -d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;on the local box. And, well, the results where not as expected. Pretty poor actually:&lt;/p&gt;
+
+&lt;p&gt;First, using Squid installed on the DO box, i tried using WGET to download a file using it. If I did this on the DO box itself, i was getting 100MBytes/s&amp;hellip; When I ran it over the MLPPP box, well, under 7 was achieved.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-downloading-over-mlppp-orig.PNG&#34;&gt;&lt;img src=&#34;https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-downloading-over-mlppp.PNG&#34; alt=&#34;WGET over Squid over MLPPP&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Then i though it might have been Squid. So, since the file had been downloaded to DO, i SFTPed into the box over the MLPPP link, and tried again&amp;hellip; Again, pretty poor result. I think i seen it hit about 7MB a sec at one stage.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-sftp2-over-mlppp-orig.PNG&#34;&gt;&lt;img src=&#34;https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-sftp2-over-mlppp.PNG&#34; alt=&#34;SFTP over MLPPP&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is what is showing on the DO box when running the SFTP download. You can see 2 connections from the 2 WAN links at home hitting the box, and they are balanced. Its just nowhere near the speed they are capable of.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-sftp-over-mlppp-orig.PNG&#34;&gt;&lt;img src=&#34;https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-sftp-over-mlppp.PNG&#34; alt=&#34;iftop running on server&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I did not get a screen shot of this, but when I tried with iperf, thinking it might have been overhead of SFTP or Squid, I was getting results matching what I was seeing with SFTP. Downloads in the 55-60mbit/s range for download and 40ish for upload. 40 is still faster than 1 link, mind you&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;I mentioned that I had made some minor tweaks to the configs from what John had written. Well, mostly it was config changes to how routing was done. In Johns case, he is bonding a DSL and a HSDPA connection, so he had setup to do for logging into his PPP modem and connecting. Also, when he setup the interfaces, he routing tables in there. I have mine setup in a single config file, like as follows:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/tiernano/a9a642c4d029c0dcf8beb926b3588991.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;I have changed the names from adsl1 and 2 to WAN1 and 2, and the IPs are changed from internal IPs to my public IPs. I manually run this when setting up my connection.&lt;/p&gt;
+
+&lt;p&gt;Nothing else on his config files have changed. I did not do any of the masquerading stuff, mainly cause this was testing. I just want a tunnel to start with. When reading the vtund.conf file, you can see that encryption and compression are both turned off, and and the same in the ppp configuration. I also don&amp;rsquo;t think the issue is to do with the CPU performance, since these are the screenshots of top running on both boxes:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-top-view-server-orig.PNG&#34;&gt;&lt;img src=&#34;https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-top-view-server.PNG&#34; alt=&#34;Top on Server&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-top-view-client-orig.PNG&#34;&gt;&lt;img src=&#34;https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-top-view-client.PNG&#34; alt=&#34;Top on Client&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;in both cases, CPU usage is sub 6% for VTUN and SSH seems to be using less than 10%. So, now, I&amp;rsquo;m baffled as to why this is not performing as expected&amp;hellip; More testing required!&lt;/p&gt;
+
+&lt;p&gt;[update 4/4/2016] - fixing images so they are clickable&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MPTCP, SSH, Squid, OpenVPN (and 2 Cable modems) = Double Speed? Not quite... Part 2</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/mptcp-ssh-squid-openvpn-double-speed-part-2/</link>
+      <pubDate>Wed, 30 Mar 2016 20:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/mptcp-ssh-squid-openvpn-double-speed-part-2/</guid>
+      <description>
+
+&lt;p&gt;[NOTE] This part 2 in a series of posts. The rest can be found &lt;a href=&#34;https://www.tiernanotoole.ie/tag/Double_Internet/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In &lt;a href=&#34;https://www.tiernanotoole.ie/2016/03/22/2-Cable-Modems-Double-Internet-Speed-part1.html&#34;&gt;my previous post&lt;/a&gt; I explained what i was trying to do&amp;hellip; This post explains what i have been working on recently, and performance results&amp;hellip;
+So, first, what have i tried&amp;hellip; There are 3 different things i have tried, and here are some of their details. Some will need to be updated (other parts of this series), and others i will try get back to eventually.&lt;/p&gt;
+
+&lt;h2 id=&#34;hardware-and-servers-used&#34;&gt;Hardware and servers used&lt;/h2&gt;
+
+&lt;p&gt;To test this, i am using my &lt;a href=&#34;https://www.tiernanotoole.ie/Computers/proliantml110.html&#34;&gt;HP Proliant ML110 G5&lt;/a&gt; running either Ubuntu or Debian Linux, with 2 GigE connections directly to the cable modems, and 1 connection to the LAN (for SSH and testing). The LAN has no gateway set, and the 2 WAN connections have DHCP enabled. They get fully public IP addresses. Upstream, I am using either &lt;a href=&#34;https://m.do.co/c/d4d345b83b55&#34;&gt;Digital Ocean&lt;/a&gt; or &lt;a href=&#34;http://www.scaleway.com&#34;&gt;ScaleWay&lt;/a&gt; VPS boxes.&lt;/p&gt;
+
+&lt;p&gt;Digital Ocean has the advantage of allowing different Kernels, so i have been using them for testing MPTCP. As for ScaleWay, well, their BareMetal C2S/M/L boxes have between 4 and 8 cores (4 for the S, 8 for the M and L) and between 8 and 32Gb RAM (S=8, M=16, L=32GB). The L model also comes with 256GB SSD (plus the boot disk, which seems to be a network disk of some sort) and they all come with lots of bandwidth (i use the L because its got about 800MBit/s to the internet).&lt;/p&gt;
+
+&lt;p&gt;Ping wise, Digital Ocean is about 20-30ms away from the house (I picked London to host the servers) and Scaleway is a little further at about 50ms (They are based in France).&lt;/p&gt;
+
+&lt;h2 id=&#34;mptcp-multipath-tcp-http-www-multipath-tcp-org&#34;&gt;MPTCP (&lt;a href=&#34;http://www.multipath-tcp.org&#34;&gt;MultiPath TCP&lt;/a&gt;)&lt;/h2&gt;
+
+&lt;p&gt;MPTCP (their site is a bit wonky as of writing, so bare with me&amp;hellip;) is a Linux Kernel patch that allows TCP connections to use multiple paths&amp;hellip; Essentially, if you have Wifi and 4G in a phone, and MPTCP is enabled, it should allow you to use both connections for TCP traffic, as long as the server upstream supports it. It also allows for easy fail over if, say, you lose your wifi connection. There is an example &lt;a href=&#34;https://youtu.be/VWN0ctPi5cw&#34;&gt;video of it on YouTube&lt;/a&gt; which should show the fail over parts and &lt;a href=&#34;https://www.youtube.com/watch?v=VMdPI9Cfi9k&#34;&gt;this video&lt;/a&gt; shows how they managed to get 50Gbit/s out of a 6 10Gb Ethernet connections.&lt;/p&gt;
+
+&lt;p&gt;When i was using MPTCP, I had a copy of &lt;a href=&#34;http://www.squid-cache.org&#34;&gt;Squid&lt;/a&gt; on both boxes, and told Squid locally to use Squid on the upstream box (over a SSH tunnel, which was over the MPTCP link) as a parent cache. Using this method, i could see (using &lt;a href=&#34;http://www.ex-parrot.com/pdw/iftop/&#34;&gt;iftop&lt;/a&gt;) that both connections were being used. When trying proper performace testing, I setup a RAM disk on both machines and copied a Linux ISO to the Digtial Ocean Box. Then, using wget and &lt;a href=&#34;http://axel.alioth.debian.org/&#34;&gt;Axel&lt;/a&gt; I downloaded the files using &lt;a href=&#34;https://www.nginx.com/&#34;&gt;Nginx&lt;/a&gt; on the server, and checked the results. I can max out 1 single connection, plus use about 60-80mbit/s from the second. about 420-440mbit/s total. Disk was not the bottleneck, since I was writing to RAM, so more tests are required.&lt;/p&gt;
+
+&lt;h2 id=&#34;mlvpn&#34;&gt;MLVPN&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://zehome.github.io/MLVPN&#34;&gt;MLVPN&lt;/a&gt; is a pretty interesting project that caught my eye. The idea is quite simple: you configure the local box and server, as mentioned in &lt;a href=&#34;http://mlvpn.readthedocs.org/en/latest/linux_example.html&#34;&gt;their example guide&lt;/a&gt; and run the MLVPN program on the server, then the client. It creates 2 VPN tunnels between the 2 boxes, and bonds them&amp;hellip; In my case, i was given an IP of 10.42.42.1 on my box in house and 10.42.42.2 on the server. Any traffic over that tunnel is bonded&amp;hellip; Problem is, it seems to be quite processor intensive: my Digital Ocean box was showing one cpu core (out of 2) maxing out at around 80% and my Proliant in house maxing around the 70% mark&amp;hellip; all while transferring data at around 100mbit/s. I tried iperf and got the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;20160330-mlvpn-speed-test.PNG&#34; alt=&#34;mlvpn speed test&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;getting 50mbit/s upload is good, in reality, since in theory my max speed would be 72, without overhead. but 116mb/s down is less than a third the max speed of a single connection. So, I tried just uploads and downloads&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Upload Only (from local machine to server)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;20160330-mlvpn-speed-test-upload-only.PNG&#34; alt=&#34;mlvpn upload only test&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Download Only (from server to local machine)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;20160330-mlvpn-speed-test-download-only.PNG&#34; alt=&#34;mlvpn download only test&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see, the download speed has increased a little, to 176Mbit/s, but the upload speed is now at over 60MBit/s!&lt;/p&gt;
+
+&lt;p&gt;Still.. download is as important as upload, and given I haven&amp;rsquo;t managed to get it to max out one connection, never mind 2, even more testing is required&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;mlppp-using-vtun&#34;&gt;MLPPP (using VTUN)&lt;/h2&gt;
+
+&lt;p&gt;This is one i need to come back to&amp;hellip; Used the guide from &lt;a href=&#34;https://johnlewis.ie/bonding-teaming-internet-connections/&#34;&gt;John Lewis&lt;/a&gt; but was only managing to get about 100Mbit/s&amp;hellip; I was originally using a VM (so disk may have been the issue) and also had the connection behind my EdgeRouter, so it might have been firewall rules causing a slow down. But I do need to come back to this soon&amp;hellip; Watch this space.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions?&lt;/h2&gt;
+
+&lt;p&gt;Well, at the moment, all I can conclude is that there is more testing required. Upload wise, i can somewhat use most of my bandwidth with MLVPN, and I did see promising results with MPTCP. I gave up a bit too early with MLPPP, so more testing is required with that. Also, all tests are using just iperf between boxes. I did use squid with the MPTCP box for a while, but not for proper performance testing. So, even once this is all sorted out, i will need to turn this into a proper &amp;ldquo;router&amp;rdquo; too&amp;hellip; So, conclusion? this was originally meant to be a 2 parter&amp;hellip; now it looks like I will require a lot more parts&amp;hellip; Watch this space&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2 Cable modems = Double Internet Speed? Well... not really... Part 1</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-internet-speed-part1/</link>
+      <pubDate>Tue, 22 Mar 2016 18:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-internet-speed-part1/</guid>
+      <description>&lt;p&gt;[NOTE] This part 1 in a series of posts. The rest can be found &lt;a href=&#34;https://www.tiernanotoole.ie/tag/Double_Internet/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;First, a bit of background, and then I will explain what I am currently running in &lt;a href=&#34;https://www.tiernanotoole.ie/2016/03/30/mptcp-ssh-squid-openvpn-double-speed-part-2.html&#34;&gt;Part 2&lt;/a&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;For the last 15 or so years, I have had at least 2 internet connections in to the house&amp;hellip; 2 of them have always been Cable Modems from NTL, which became UPC, and now is &lt;a href=&#34;http://www.virginmedia.ie&#34;&gt;Virgin Media&lt;/a&gt;. When I started, i think the modems where 150/50kbit/s and 600/150kb/s, and have steadily increased in speed, currently at 360/36Mbit/s each&amp;hellip; But they have always been somewhat separate, and single thread downloads have always been limited to 1 of the connections&amp;hellip; I have been looking for ways around this for years&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;It started with a &lt;a href=&#34;http://www.cisco.com/c/en/us/products/routers/rv042-dual-wan-vpn-router/index.html&#34;&gt;Linksys RV042 router&lt;/a&gt; which allowed me to load balance my connections&amp;hellip; At the time, and i cant even remember when this was, my total bandwidth would not exceed the router. The RV042 has 2 10/100mbit WAN links and 4 100mb/s LAN links&amp;hellip;So, when the connection bandwidth increased, I moved to a new router&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;The next router vendor i tried was &lt;a href=&#34;http://www.mikrotik.com&#34;&gt;Mikrotik&lt;/a&gt;. I tried a few different options, including an &lt;a href=&#34;http://routerboard.com/RB1100&#34;&gt;RB1100&lt;/a&gt; and running their &lt;a href=&#34;http://www.mikrotik.com/software&#34;&gt;RouterOS&lt;/a&gt; on x86 hardware&amp;hellip; Both worked, well, ok, and the &lt;a href=&#34;http://wiki.mikrotik.com/wiki/Load_Balancing#Nth&#34;&gt;Load balancing with nth&lt;/a&gt; stuff did do what i needed, along with other stuff, like routing traffic destined for some sites (like BBC iPlayer) to go over a VPN. But in the end, hardware issues and performance problems with the x86 machine (Mikrotik at the time was limited to 2GB of RAM on x86 hardware) I ended up at &lt;a href=&#34;http://www.pfsense.org&#34;&gt;PfSense&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;PfSense was installed on the same hardware, a HP ProLiant ML110 G5 with 8GB RAM, a Core2Quad processor and 12 GigE Network cards&amp;hellip; And, on PfSense, things were good&amp;hellip; Performance was stable, load balancing worked as expected, I could set some traffic to go over certain links, etc. all was good&amp;hellip; But I lacked IPv6&amp;hellip; Plus, the HP used a LOT of power&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;The current instalment of my network uses a &lt;a href=&#34;http://www.ubnt.com&#34;&gt;Ubiquiti Networks&lt;/a&gt; &lt;a href=&#34;https://www.ubnt.com/edgemax/edgerouter-poe/&#34;&gt;Edge Router POE&lt;/a&gt;. To show the difference in power, check out the graphs from my &lt;a href=&#34;https://www.ubnt.com/mfi/mpower/&#34;&gt;Ubnt MPower&lt;/a&gt; device. ProLiant first, EdgeRouter second:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-proliant-power-usage.PNG&#34; alt=&#34;Proliant Power Usage&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-edgerouter-power-usage.PNG&#34; alt=&#34;EdgeRouter POE Power Usage&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Plus, the EdgeRouter does not produce as much heat, and its a LOT smaller that the PowerEdge! It does all the same things I could get PfSense to do, in a lot smaller package (I could, in theory, get a smaller box for PfSense).&lt;/p&gt;
+
+&lt;p&gt;So, where does that leave us? Well, I now have 720Mbit/s down and 72Mbit/s up, if I can do multiple threads for uploading&amp;hellip; But what if I don&amp;rsquo;t? What&amp;rsquo;s next? Well, in the second post, I will explain what I have been trying to do in resent weeks, and what I can do now&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi as a Mobile WiFi HotSpot (part 1)</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/raspberry_pi_as_a_mobile_wifi_hotspot_-_part_1/</link>
+      <pubDate>Fri, 18 Jan 2013 07:57:16 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/raspberry_pi_as_a_mobile_wifi_hotspot_-_part_1/</guid>
+      <description>&lt;p&gt;I have been using an iPhone 4 as a wifi hotspot for a while now. It does not have a &amp;ldquo;phone&amp;rdquo; SIM in it, with calls and texts enabled, instead it has a 3G Data SIM from a dongle&amp;hellip; It works OK, but there are a few issues i have with it&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No easy way to see how much data is being used, unless you Jail Break, and then battery life goes away&amp;hellip;&lt;/li&gt;
+&lt;li&gt;not very hackable&amp;hellip; other than Jail Break, and thats not hackable enough&amp;hellip;&lt;/li&gt;
+&lt;li&gt;not a lot of storage: 16Gb, and most of that is takin up by Music and Apps&lt;/li&gt;
+&lt;li&gt;no background network daemons&amp;hellip; more on that in a second&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Network Daemons i am thinking would be useful for a WiFi Hotspot would be &lt;a href=&#34;http://www.squid-cache.org&#34;&gt;Squid&lt;/a&gt;, &lt;a href=&#34;http://wanproxy.org/&#34;&gt;WANProxy&lt;/a&gt;, SSH, PPTP or OpenVPN Client and possibly a downloader of some sort. What i am thinking is as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Have a device, that is small enough to fit in a bag, possibly small enough to fit in a jacket pocket. It will probably not be as small as the iPhone.&lt;/li&gt;
+&lt;li&gt;It should have storage on board. Boot storage and cache storage&lt;/li&gt;
+&lt;li&gt;At least 1, possibly more, WiFi Adapters, with optional antennas&lt;/li&gt;
+&lt;li&gt;At least 1, possibly more, 3G or 4G Modems&lt;/li&gt;
+&lt;li&gt;At least 1 ethernet port, again possibility for more&lt;/li&gt;
+&lt;li&gt;Battery that can run the whole system for at least 4-5 hours, and should be able to run while being charged. charging via USB would be ideal also&lt;/li&gt;
+&lt;li&gt;Optional Screen, but more likley, some sort of web interface to show whats going on (Bandwdith usage, clients connected, connection details)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When this turns on, it should automatically start the 3/4G connections (if there are multiple connections, it should do some balancing of the connections). if there are more then 1 WiFi Connection, one should be a Client (connect to an external WiFi connection, like home, college, work) and one should be an Access Point (Your Phone, Tablet and Laptop connect to this one). Ethernet can also be used in a simular way (if one only, it could be client or server, if multiple, one can be client, one can be server). DHCP addresses will be given out on Access Point or Server connections, and on Client connections, DHCP will be accepted.&lt;/p&gt;
+
+&lt;p&gt;Squid would be installed and listen on its usual port. Optionally, all port 80 and 8080 traffic could be routed though Squid. Ideally, HTTPS traffic should be automatically routed, but i think thats a bit harder to setup&amp;hellip; If VPN Clients are enabled, it could also allow All or Some traffic to be routed over the VPN connections. SSH could also be used to compress traffic between multiple Squid boxes (one in house, one on the device). WANProxy could be used in a simular manner to save bandwdith and make the connection faster.&lt;/p&gt;
+
+&lt;p&gt;So, with all that, i am looking at using a &lt;a href=&#34;http://www.raspberrypi.org/&#34;&gt;Raspberry Pi&lt;/a&gt; for the job. I am still working on this, but here is what i have so far&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I have put a Wifi adapter into my Raspberry Pi (A Linksys, but forget the exact model number). Using a tutorial on &lt;a href=&#34;http://exain.wordpress.com/2011/03/31/making-a-wifi-hotspot-access-point-using-linux-wifi-lan-cardusb-adapter/&#34;&gt;Vivek&amp;rsquo;s blog on making a wifi hotspot on linux&lt;/a&gt; i managed to get the AP showing up on my laptop, but could not connect. I am not sure if its the adapter causing the problem, or what, but i am going to change out the adapter.&lt;/li&gt;
+&lt;li&gt;At the moment, i am sharing the ethernet connection, not the 3G connection&amp;hellip; I have posted here before the &lt;a href=&#34;http://shkspr.mobi/blog/2012/07/3g-internet-on-raspberry-pi-success/&#34;&gt;link to Terence Eden&amp;rsquo;s post on getting the Raspberry Pi to connect to 3G&lt;/a&gt;. All that i will need to do is connect to 3g and then NAT the connection from Wifi to 3G&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, there are a few more bits and pieces to get done over the next while&amp;hellip; I will keep posting here&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ZFS iSCSI NFS SFTP Hyper-V and more</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/zfs_iscsi_nfs_sftp_hyper-v_and_more/</link>
+      <pubDate>Fri, 05 Oct 2012 09:38:13 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/zfs_iscsi_nfs_sftp_hyper-v_and_more/</guid>
+      <description>&lt;p&gt;As part of my new task to make my files safer and backups faster, and, well, cheap, I am looking into &lt;a href=&#34;http://en.wikipedia.org/wiki/ZFS&#34;&gt;ZFS&lt;/a&gt; for my storage needs. My needs are as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Allow me to store lots of different types of data (Photos, Videos, Music, VMs) in different formats (RAW and JPG photos, MP4, AVI and DivX Videos, with DVD and BluRay rips also a posibility, MP3 music and VHD files from HyperV, inclduing ISOs and Snapshots). I also need to store different file systems using &lt;a href=&#34;http://en.wikipedia.org/wiki/ISCSI&#34;&gt;iSCSI&lt;/a&gt; (Mac and Windows clients will be mounting the storage).&lt;/li&gt;
+&lt;li&gt;must be safe. DO NOT LOSE DATA!&lt;/li&gt;
+&lt;li&gt;must be somewhat fast. I have VHDs weighing in at 100Gb&amp;hellip; my photo collection is 600Gb. If i need to move or copy files to the storage system, it must be fast.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, ZFS offers all these features. I can export a file share as iSCSI, NFS, SMB, etc. All works well. But the replication stuff is the interesting part&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;The plan, which i am working on, is as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;have 2 machines setup: one in house and one in a datacenter (I have a dedicated box in the &lt;a href=&#34;http://www.hetzner.de/en&#34;&gt;Hetzner&lt;/a&gt; data center). both could be VMs (the one in the datacenter will more than likley be a VM).&lt;/li&gt;
+&lt;li&gt;use the storage on the local system for whatever i need backed up.&lt;/li&gt;
+&lt;li&gt;have a script which will take a snapshot of a given pool every 4 hours or so&amp;hellip;&lt;/li&gt;
+&lt;li&gt;that script should also dump the snapshot to a temporary location on the machine using ZFS send.&lt;/li&gt;
+&lt;li&gt;that file should be checked, compressed, broken up into little bits and checked again&amp;hellip; checking is important!&lt;/li&gt;
+&lt;li&gt;take those little bits and send them to the datacenter, which will do lots more checking and import the files into the ZFS pool over there&amp;hellip;&lt;/li&gt;
+&lt;li&gt;there may even be a two way system to send from the datacenter back to the house&amp;hellip;&lt;/li&gt;
+&lt;li&gt;finally, the remote pool should be dumped to an SFTP backup system that Hetzner give me&amp;hellip; Currently set at 100Gb, but can be increesed as needed&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thats the &amp;ldquo;plan&amp;rdquo;&amp;hellip; Lets see how it actually works out&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Anyway, parts of the process i need to tweak:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;uploading and using as much of my upload bandwidth as possible (2x10mb upload connections&amp;hellip;) if i am backing up 800Gb, which should be my first backup, i would like to use both pipes to the fullest&amp;hellip; on a single connection, at 50% capacity, it would take 15.1 days to upload. if i can get both connections to work at 80% capacity, giving me 16Mbits/s, it would be down to 4.7 days. With compression and Deduplication, i can probably bring that down a bit more&amp;hellip;&lt;/li&gt;
+&lt;li&gt;backing up to SFTP&amp;hellip; Reading different things is telling me this might not be such a good idea&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some links which you might find useful:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://nexenta.com/corp/&#34;&gt;Nexenta&lt;/a&gt;: I am using their &lt;a href=&#34;http://www.nexentastor.org/projects/1/wiki/CommunityEdition&#34;&gt;Community Edition&lt;/a&gt; product for the system.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.servethehome.com/create-nexentastor-vmware-esxi-virtual-machine/&#34;&gt;Create a Nexenta Store device in ESXi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.servethehome.com/configure-passthrough-vmdirectpath-vmware-esxi-raid-hba-usb-drive/&#34;&gt;Configure passthough VMDirectPath in VMWare ESXi&lt;/a&gt;: ideally, you should let Nexenta manage your disks&amp;hellip; Dont think i can do it wiht the dedicated server, but might be possible with the server in house&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Handbrake Cluster</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/handbrake-cluster/</link>
+      <pubDate>Wed, 03 Oct 2012 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/handbrake-cluster/</guid>
+      <description>&lt;p&gt;[UPDATED] someone asked in the comments if there was an binary build for this file. there is now! &lt;a href=&#34;http://handbrakecluster.codeplex.com&#34;&gt;http://handbrakecluster.codeplex.com&lt;/a&gt; now hosts the code and binaries, and will soon have help files and documentation.&lt;/p&gt;
+
+&lt;p&gt;A few days back, i wrote a post titled &lt;a href=&#34;https://www.tiernanotoole.ie/2012/09/28/Powershell-HandBrake-AppleTV-iTunes.html&#34;&gt;Powershell + Handbrake + AppleTV + iTunes = Automatic TV&amp;hellip; ish&lt;/a&gt;. In it i included a block of Powershell code to bulk convert TV shows from whatever format you had them in to a M4V format for the AppleTV. Well, as they say &amp;ldquo;If necessity is the mother of all invension, lazyness must be the father&amp;rdquo;. I have a lot of shows i wanted converted to the AppleTV, so i built something&amp;hellip; Its called &lt;a href=&#34;https://github.com/tiernano/HandbrakeCluster&#34;&gt;HandBrake Cluster&lt;/a&gt; and is written in &lt;a href=&#34;http://www.microsoft.com/en-us/download/details.aspx?id=30653&#34;&gt;.NET 4.5&lt;/a&gt;, uses &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa967729.aspx&#34;&gt;MSMQ&lt;/a&gt; and &lt;a href=&#34;http://handbrake.fr/&#34;&gt;Handbrake&lt;/a&gt; to do the processing&amp;hellip; The workflow is as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;setup the system as described on the &lt;a href=&#34;https://github.com/tiernano/HandbrakeCluster&#34;&gt;HandBrake Cluster&lt;/a&gt; site.&lt;/li&gt;
+&lt;li&gt;run the adder program with the paramaters required (location of files you want converted, type of files to find, where you want the files to be placed, output file type)&lt;/li&gt;
+&lt;li&gt;run the cluster EXE on as many machines as you want. each machine will need to point to the correct MSMQ on the head node, have their own copy of Handbrake, and must have access to the fileshare that you are reading and writing to&amp;hellip;&lt;/li&gt;
+&lt;li&gt;each node will take a message of the queue, process the file and then mark it as completed. There is code to see if the message has failed, so, in theory, if something goes into the queue, it should always be processed&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have run this at home on a couple of different machines, and so far so good&amp;hellip; my room gets a bit warmer when i kick this off, and between the 3 machines i ran it on, my FPS count went from just 80-120 on the Godbox, to a total of about 160 - 240 FPS (Godbox = 80-120, Server 1 and 2 are about 40-60FPS).&lt;/p&gt;
+
+&lt;p&gt;The next thing i managed to do was tweak my import process for iTunes. I am using a program called &lt;a href=&#34;http://www.bizmodeller.com/iHomeServer_for_iTunes.aspx&#34;&gt;iHomeServer for iTunes&lt;/a&gt; which is running on the &lt;a href=&#34;https://www.tiernanotoole.ie/Computers/godbox.html&#34;&gt;GodBox&lt;/a&gt;. It monitors a folder, which is where &lt;a href=&#34;https://github.com/tiernano/HandbrakeCluster&#34;&gt;HandBrake Cluster&lt;/a&gt; is writing to, and adds them to iTunes. I can then tweak the metadata using the tool, so i can add art work, tell it which shows are related, and it sets up Art work, title info, etc. It is very handy, and something i am very happy with.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

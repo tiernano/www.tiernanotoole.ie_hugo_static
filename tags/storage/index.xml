@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Storage on Tiernan&#39;s Comms Closet</title>
+    <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/storage/</link>
+    <description>Recent content in Storage on Tiernan&#39;s Comms Closet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/storage/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Distributed S3 data storage using Minio (and Zerotier)</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/distributed-s3-storage-minio-zerotier/</link>
+      <pubDate>Thu, 19 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/distributed-s3-storage-minio-zerotier/</guid>
+      <description>&lt;p&gt;So, something i have been looking into in recient times has been &lt;a href=&#34;https://en.wikipedia.org/wiki/Distributed_data_store&#34;&gt;Distributed Storage&lt;/a&gt;, and, more specifically, how to use the storage in my &lt;a href=&#34;https://www.tiernanotoole.ie/Computers/&#34;&gt;many, many machines&lt;/a&gt; to protect data, and also increese my usable space&amp;hellip; There are a few projects on the market that do this (&lt;a href=&#34;https://ceph.com/&#34;&gt;Ceph&lt;/a&gt;, &lt;a href=&#34;http://www.noobaa.com/&#34;&gt;NooBaa&lt;/a&gt; and &lt;a href=&#34;https://www.gluster.org/&#34;&gt;Gluster&lt;/a&gt; all spring to mind) but some are more painful to setup than others&amp;hellip; which brings me nicely to &lt;a href=&#34;https://minio.io/&#34;&gt;Minio&lt;/a&gt;. Minio is a 20ish MB executable you download from their site, mark it as executable (on Linux or Mac Boxes) and run&amp;hellip; and you have yourself a S3 compatable storage server&amp;hellip; Simples!&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;But Wait!&amp;rdquo; i here you screem! &amp;ldquo;thats not distributed!&amp;rdquo;. Well, yes&amp;hellip; but, it can be! Their &lt;a href=&#34;http://docs.minio.io/docs/distributed-minio-quickstart-guide&#34;&gt;Distributed Quick Start Guide&lt;/a&gt;, which is where i started with this, allows you to run a distributed copy of your data. I will let their documentation explain more, but this is what i did:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;download the minio server (single executable file) on a minimum of 4 machines.&lt;/li&gt;
+&lt;li&gt;on each machine, run a command like the following:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&#34;https://gist.github.com/tiernano/a6617921976eef0c1c79b3175bd76bf7.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;replacing accesskey and secretkey with keys (check minio documentation to get these) and foldertoexport with, well, the folder you want to export!&lt;/p&gt;
+
+&lt;p&gt;For me, i have 4 servers currently clustered. 2 are in &lt;a href=&#34;http://www.online.net&#34;&gt;online.net&lt;/a&gt; (one in Paris, one in Amsterdam), 1 in &lt;a href=&#34;http://www.ovh.net&#34;&gt;OVH.NET&lt;/a&gt; (France, somewhere) and one in Dublin (&lt;a href=&#34;https://www.tiernanotoole.ie/Computers/GodBoxV2.html&#34;&gt;GodBoxV2&lt;/a&gt; currently). They are all interconnected using &lt;a href=&#34;https://www.zerotier.com/&#34;&gt;ZeroTier&lt;/a&gt; (I will explain that later) and so far, so good&amp;hellip; only ran some basic tests, but with it, i could loose 2 machines and still have data&amp;hellip; Not bad for free! I will run some speed tests soon.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ZFS Home storage pool</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/zfs-home-dir/</link>
+      <pubDate>Mon, 10 Aug 2015 11:40:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/zfs-home-dir/</guid>
+      <description>&lt;p&gt;Over the weekend, my &lt;a href=&#34;https://btrfs.wiki.kernel.org/index.php/Main_Page&#34;&gt;BTRFS&lt;/a&gt; pool for my /home directory on Linux failed&amp;hellip; Not sure what happened, but it made me
+do something i wanted to do for a while: Build a &lt;a href=&#34;https://en.wikipedia.org/wiki/ZFS&#34;&gt;ZFS&lt;/a&gt; pool for my home dir.&lt;/p&gt;
+
+&lt;p&gt;First things first, the pool consists of 4 2Tb hard drives and 1 128Gb SSD. Its setup in RAIDZ1 (equivilent of RAID 5)
+and then the SSD is set for caching.&lt;/p&gt;
+
+&lt;p&gt;To create the pool i ran&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;zpool create home raidz sda sde sdf sdg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;then, to add the cache drive&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;zpool add home cache sdd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;the pool (in my case) got mounted to /home, and then i restored my backup to it. to do some tests, i can the
+following&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;{% gist 638891a7d9acac8e396f %}&lt;/p&gt;
+
+&lt;p&gt;614MB/s write and 5.3GB a second read is nothing to be sniffed at! :)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hubic and Duplicity</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/duplicity_hubic/</link>
+      <pubDate>Wed, 01 Apr 2015 07:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/duplicity_hubic/</guid>
+      <description>&lt;p&gt;I mentioned &lt;a href=&#34;https://hubic.com/home/new/?referral=GMSQVQ&#34;&gt;HubiC&lt;/a&gt; in my &lt;a href=&#34;https://www.tiernanotoole.ie/2015/03/31/HubiC_SWIFT_CURL.html&#34;&gt;last post&lt;/a&gt;, and in it i said that you could use &lt;a href=&#34;http://duplicity.nongnu.org/&#34;&gt;Duplicity&lt;/a&gt; for backups. Well, this is how you get it to work&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;First, i am using Ubuntu 14.04 (i think&amp;hellip;). I use &lt;a href=&#34;http://www.ubuntu.com&#34;&gt;Ubuntu&lt;/a&gt; in house for a few things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;its running &lt;a href=&#34;http://blog.lotas-smartman.net&#34;&gt;Tiernan&amp;rsquo;s Comms Closet&lt;/a&gt;, &lt;a href=&#34;http://www.geekphotographer.com&#34;&gt;GeekPhotographer&lt;/a&gt; and &lt;a href=&#34;http://podcast.tiernanotoole.ie&#34;&gt;Tiernan&amp;rsquo;s Podcast&lt;/a&gt; all in house, aswell as being used to &lt;a href=&#34;http://tiernanotoole.ie/2012/08/29/NewSite.html&#34;&gt;build this site&lt;/a&gt;. The Web Server and MySQL Server are seperated, MySQL running on Windows, web on Ubuntu&amp;hellip; but thats a different story&amp;hellip;&lt;/li&gt;
+&lt;li&gt;I have a couple of proxy servers running Ubuntu also&lt;/li&gt;
+&lt;li&gt;Other general servers running Ubuntu&amp;hellip; dont ask, cause i cant remember what they do half the time&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, &lt;a href=&#34;http://duplicity.nongnu.org/&#34;&gt;Duplicity&lt;/a&gt; is a backup application. From their website:&lt;/p&gt;
+
+&lt;p&gt;What is it?&lt;/p&gt;
+
+&lt;p&gt;Duplicity backs directories by producing encrypted tar-format volumes and uploading them to a remote or local file server. Because duplicity uses librsync, the incremental archives are space efficient and only record the parts of files that have changed since the last backup. Because duplicity uses GnuPG to encrypt and/or sign these archives, they will be safe from spying and/or modification by the server.&lt;/p&gt;
+
+&lt;p&gt;The duplicity package also includes the rdiffdir utility. Rdiffdir is an extension of librsync&amp;rsquo;s rdiff to directories&amp;mdash;it can be used to produce signatures and deltas of directories as well as regular files. These signatures and deltas are in GNU tar format.&lt;/p&gt;
+
+&lt;p&gt;So, how do we get it working? Well, givin that i am on Ubuntu, these are the steps i needed to do:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;first, we need some credentials and API keys&amp;hellip; If you havent signed up for &lt;a href=&#34;https://hubic.com/home/new/?referral=GMSQVQ&#34;&gt;HubiC&lt;/a&gt; Do so now&amp;hellip; That url gets you an extra 5Gb if you sign up for free (usually 25Gb) or if you pay 1EUR a month, you get 110Gb (usually 100Gb) and 5EUR a month gets you a staggering 10TB (yup! Terabytes!).&lt;/li&gt;
+&lt;li&gt;Login to Hubic, and in the menu go to &amp;lsquo;My Account&amp;rsquo;, &amp;lsquo;Developers&amp;rsquo;. in here, create a new application (name and URL to redirect to&amp;hellip; &lt;a href=&#34;http://localhost&#34;&gt;http://localhost&lt;/a&gt; seems to work correctly). Get the Client ID and Secret ID that was given to you.&lt;/li&gt;
+&lt;li&gt;take the contents of &lt;a href=&#34;https://gist.github.com/tiernano/86ab2e08ba4e588a343a&#34;&gt;the following gist&lt;/a&gt; and replace your own details&amp;hellip; I know, i am not a fan of sticking my password in a txt file&amp;hellip; but it should be your local machine&amp;hellip;&lt;/li&gt;
+&lt;li&gt;that file should be in your home directory and should be called .hubic_credentials.&lt;/li&gt;
+&lt;li&gt;add the duplicity PPA project (&lt;a href=&#34;https://launchpad.net/~duplicity-team/+archive/ubuntu/ppa&#34;&gt;https://launchpad.net/~duplicity-team/+archive/ubuntu/ppa&lt;/a&gt;) to ubuntu using the add-apt-repository command (details on the link above, under the link &amp;lsquo;read about installing&amp;rsquo;). for me, i just called &amp;lsquo;sudo add-apt-repository ppa:duplicity-team/ppa&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;install duplicity by doing &amp;lsquo;sudo apt-get install duplicity&amp;rsquo;. Dont forget (its in the tutorial above!) to do an &amp;lsquo;sudo apt-get update&amp;rsquo; first!&lt;/li&gt;
+&lt;li&gt;When i ran that, there where a few extra Python packages to be installed, so i was asked did i want to install them&amp;hellip; Say, yes.&lt;/li&gt;
+&lt;li&gt;Now, to run a backup we run the following command:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;duplicity ~/ cf+hubic://location&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;cf+hubic is the backend to use, ~/ is the url to backup (my home directory in this case) and location is where on Hubic we want it stored. If this doesent exist, not a problem&amp;hellip; it will create it.&lt;/li&gt;
+&lt;li&gt;after we run this we&amp;hellip; ahhh&amp;hellip; i get an error:
+&lt;pre&gt;BackendException: This backend requires the pyrax library available from Rackspace.&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;right&amp;hellip; &lt;a href=&#34;https://github.com/rackspace/pyrax&#34;&gt;pyrax library&lt;/a&gt; is from Rackspace and is available to download though pip&amp;hellip;&lt;/li&gt;
+&lt;li&gt;I seem to have python and a few other bits installed on this machine, so running &amp;lsquo;sudo pip install pyrax&amp;rsquo; works&amp;hellip; Your millage may vary&amp;hellip; [eg, this is out of scope for this tutorial! your on your own!]&lt;/li&gt;
+&lt;li&gt;Other problem&amp;hellip; I got a load of weird and wondering errors like this:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;AttributeError: &#39;Module_six_moves_urllib_parse&#39; object has no attribute &#39;SplitResult&#39;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I fixed these by running:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt; sudo pip install furl --upgrade&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FINALLY! ITS ALIVE!!! by default, it asks you for a key for the GnuPG encryption&amp;hellip; and its all good! the first backup creates the directories, required files, etc. the next time you run the command, it will only upload changes. it will also ask for your GnuPG code you entered, so remember it!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And thats all folks! Any questions, leave them in the comments!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hubic, OpenStack Swift and Curl</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/hubic_swift_curl/</link>
+      <pubDate>Tue, 31 Mar 2015 22:40:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/hubic_swift_curl/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://hubic.com/home/new/?referral=GMSQVQ&#34;&gt;HubiC&lt;/a&gt; is an online storage site, built by the guys at &lt;a href=&#34;http://www.ovh.com&#34;&gt;OVH&lt;/a&gt;. They are currently offering 30Gb free (if you use the link above) or if you pay, you get 110Gb (insted of the usual 100Gb) for EUR1 a month, or 10.5TB (yup&amp;hellip; TERABYTES!) for EUR5 a month&amp;hellip; Thats a crazy amount of storage for a not crazy amount of money!&lt;/p&gt;
+
+&lt;p&gt;So, while playing around with different things, I found they have an &lt;a href=&#34;https://api.hubic.com/&#34;&gt;API&lt;/a&gt;, so other than the usual apps to play with (like the Hubic Apps for iPhone, Android, Windows Phone, Windows Desktop and OSX, &lt;a href=&#34;http://duplicity.nongnu.org/&#34;&gt;Duplicity&lt;/a&gt; for backing up *nix boxes, and a few others) you can build your own&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;But first, i needed to figure out how&amp;hellip; So, after a lot of arsing around in Linux shells with &lt;a href=&#34;http://curl.haxx.se/&#34;&gt;curl&lt;/a&gt; i finally got some stuff working!&lt;/p&gt;
+
+&lt;p&gt;First, i used the &lt;a href=&#34;https://api.hubic.com/sandbox/&#34;&gt;Hubic sandbox&lt;/a&gt; to get the keys&amp;hellip; its quite simple to walk though&amp;hellip; this gets you your Access Token (see step 3). next, we need to get the Endpoint from Hubic: &lt;a href=&#34;https://gist.github.com/tiernano/9c061ae8d1312190f152#file-gistfile1-txt&#34;&gt;This GIST shows more&lt;/a&gt;:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/tiernano/9c061ae8d1312190f152.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Quick walkthough:&lt;/p&gt;
+
+&lt;p&gt;the first CURL request is to the HubiC API to get the credentials&amp;hellip; this gives you a JSON response with a token and a endpoint URL aswell with an expire time&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;The next request gets you a list of all files (or at least a load of files in my case) of whats in your folder. the &lt;pre&gt;default&lt;/pre&gt; name here is my folder&amp;hellip; I think its what everyone starts out with in HubiC&amp;hellip; if you remove it, you will see all your top level folders.&lt;/p&gt;
+
+&lt;p&gt;next request i tried was to upload a file&amp;hellip; the &lt;pre&gt;filename&lt;/pre&gt; part is where you want it to be stored. this must exist on your local machine.&lt;/p&gt;
+
+&lt;p&gt;finally, downloading of a file&amp;hellip; pass in the location of the file on the server (listing files will give you the location) and then &lt;pre&gt;-o&lt;/pre&gt; in curl shows the output location&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Simples! now to get this working in c#&amp;hellip; &lt;a href=&#34;http://developer.openstack.org/api-ref-objectstorage-v1.html&#34;&gt;Full OpenStack Swift API is available&lt;/a&gt; to show how to do more&amp;hellip; hopefully it will help in my C# coding&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Symform - P2P Backup</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/symform_-_p2p_backup/</link>
+      <pubDate>Fri, 30 Nov 2012 09:13:27 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/symform_-_p2p_backup/</guid>
+      <description>&lt;p&gt;I have previously &lt;a href=&#34;http://tiernanotoole.ie/2012/08/30/CrashPlan-Backups.html&#34;&gt;posted about CrashPlan&lt;/a&gt; as my Backup System. I also, a long time ago, talked about &lt;a href=&#34;http://blog.lotas-smartman.net/new-backup-plan-out-with-jungle-disk-and-zmanda-cloud-backup-in-with-crashplan-mysqlbf-and-sqlbf/&#34;&gt;Backing up SQL, MySQL and other stuff&lt;/a&gt; on my other blog. Well, CrashPlan is all good, but there are 2 &amp;ldquo;niggly&amp;rdquo; bits with it&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Its not FREE (well, this year i got it Free on Black Friday&amp;hellip;) but it is cheap ($120 a year to backup 10 machines to the cloud aint bad.)&lt;/li&gt;
+&lt;li&gt;Its NOT FAST! The CrashPlan Datacenters all live in the US, and my servers live in Europe (either Dublin or Germany). So, bandwidth is limited&amp;hellip; Getting less than 1Mbit/s most times, but have seen it reach 3&amp;hellip; I have 20Mbits/s upload&amp;hellip; even half that would be nice&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, thats where &lt;a href=&#34;https://control.symform.com/Organization/Referral?referralId=96E53D9DC4501633F2294EF202734DB08C00F044&#34;&gt;Symform&lt;/a&gt; comes in. Symform is a P2P Backup Service, which runs on Windows, Linux and MacOSX. In theory, it should run anywhere that has a &lt;a href=&#34;http://www.mono-project.com/Main_Page&#34;&gt;Mono&lt;/a&gt; runtime since its written in .NET. Anyway, you start with 10Gb of free storage, and you can increese that by one of 2 ways:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pay money: for $0.15 per month, you get 1Gb of storage in the cloud&lt;/li&gt;
+&lt;li&gt;Pay Bytes: For every 2Gb &amp;ldquo;Contributed&amp;rdquo; (which is actually more like a pledge than a contribution&amp;hellip; more on that later) you get 1Gb storage in the cloud.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It works very well, and is nice a fast too. I have a few machines in house which are contribting stoage, a total of about 2Tb, and I have been given 1Tb storage in &amp;ldquo;The Cloud&amp;rdquo;. There is a lot more on how this works on their &amp;ldquo;&lt;a href=&#34;http://www.symform.com/join-the-revolution/how-symform-works/&#34;&gt;How Symform Works&lt;/a&gt;&amp;rdquo; section of their site.&lt;/p&gt;
+
+&lt;p&gt;I mentioned the &amp;ldquo;Contribution&amp;rdquo; VS &amp;ldquo;Pledge&amp;rdquo; up above&amp;hellip; I have a machine in the house where i have Pledged 1Tb of storage. In reality, Symform can use the full 1Tb of storage, if it needs to, but is currently only using 168Gb. Now, that could just be that the machine is still getting files, and it will end up using the full 1Tb eventually, but either way, its all good.&lt;/p&gt;
+
+&lt;p&gt;Also, as a couple of notes on Contribution and Backups:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The machine needs to be online and accessable on the internet at least 80% of the time, but &lt;sup&gt;24&lt;/sup&gt;&amp;frasl;&lt;sub&gt;7&lt;/sub&gt; is ideal. If you drop below the 80%, your account can be suspended.&lt;/li&gt;
+&lt;li&gt;your machine needs to be publically accessable, meaning port forwarded. I have a couple contribution machines in house, so they each have seperate ports forwarded to them.&lt;/li&gt;
+&lt;li&gt;Given the P2P nature of the software, lots of connections to different machines are made&amp;hellip; if you are behind a firewall, you may need to allow all or most outgoing connections. If you are on a really restrictive firewall, you may want to stick a contribution box in your &lt;a href=&#34;http://en.wikipedia.org/wiki/DMZ_(computing)&#34;&gt;DMZ&lt;/a&gt; and probably use the &lt;a href=&#34;http://www.symform.com/our-solutions/key-features/turbo-seeding/&#34;&gt;Turbo Seeding&lt;/a&gt; feature.&lt;/li&gt;
+&lt;li&gt;Turbo Seeding is a handy feature, especially for Laptops&amp;hellip; only problem is its Windows Only&amp;hellip; So, importing and exporting does not work on Linux or OSX.&lt;/li&gt;
+&lt;li&gt;The software can managed Work and Non Work hours, and will limit the upload and download speed during this time. Also a nice feature&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So far, so good. Very happy with the software, but would like a nicer interface to see whats going on. At the moment, you are either limited to using the web interface, which aint bad, but not great, or watching the log files&amp;hellip; I would also like the ability to prioritize certain files or folders, so, for example, upload my documents folder before anything else, and if anything changes in there, even if its uploading from somewhere else, pause and upload the documents folder&amp;hellip; Just a thought&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ZFS iSCSI NFS SFTP Hyper-V and more</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/zfs_iscsi_nfs_sftp_hyper-v_and_more/</link>
+      <pubDate>Fri, 05 Oct 2012 09:38:13 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/zfs_iscsi_nfs_sftp_hyper-v_and_more/</guid>
+      <description>&lt;p&gt;As part of my new task to make my files safer and backups faster, and, well, cheap, I am looking into &lt;a href=&#34;http://en.wikipedia.org/wiki/ZFS&#34;&gt;ZFS&lt;/a&gt; for my storage needs. My needs are as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Allow me to store lots of different types of data (Photos, Videos, Music, VMs) in different formats (RAW and JPG photos, MP4, AVI and DivX Videos, with DVD and BluRay rips also a posibility, MP3 music and VHD files from HyperV, inclduing ISOs and Snapshots). I also need to store different file systems using &lt;a href=&#34;http://en.wikipedia.org/wiki/ISCSI&#34;&gt;iSCSI&lt;/a&gt; (Mac and Windows clients will be mounting the storage).&lt;/li&gt;
+&lt;li&gt;must be safe. DO NOT LOSE DATA!&lt;/li&gt;
+&lt;li&gt;must be somewhat fast. I have VHDs weighing in at 100Gb&amp;hellip; my photo collection is 600Gb. If i need to move or copy files to the storage system, it must be fast.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, ZFS offers all these features. I can export a file share as iSCSI, NFS, SMB, etc. All works well. But the replication stuff is the interesting part&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;The plan, which i am working on, is as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;have 2 machines setup: one in house and one in a datacenter (I have a dedicated box in the &lt;a href=&#34;http://www.hetzner.de/en&#34;&gt;Hetzner&lt;/a&gt; data center). both could be VMs (the one in the datacenter will more than likley be a VM).&lt;/li&gt;
+&lt;li&gt;use the storage on the local system for whatever i need backed up.&lt;/li&gt;
+&lt;li&gt;have a script which will take a snapshot of a given pool every 4 hours or so&amp;hellip;&lt;/li&gt;
+&lt;li&gt;that script should also dump the snapshot to a temporary location on the machine using ZFS send.&lt;/li&gt;
+&lt;li&gt;that file should be checked, compressed, broken up into little bits and checked again&amp;hellip; checking is important!&lt;/li&gt;
+&lt;li&gt;take those little bits and send them to the datacenter, which will do lots more checking and import the files into the ZFS pool over there&amp;hellip;&lt;/li&gt;
+&lt;li&gt;there may even be a two way system to send from the datacenter back to the house&amp;hellip;&lt;/li&gt;
+&lt;li&gt;finally, the remote pool should be dumped to an SFTP backup system that Hetzner give me&amp;hellip; Currently set at 100Gb, but can be increesed as needed&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thats the &amp;ldquo;plan&amp;rdquo;&amp;hellip; Lets see how it actually works out&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Anyway, parts of the process i need to tweak:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;uploading and using as much of my upload bandwidth as possible (2x10mb upload connections&amp;hellip;) if i am backing up 800Gb, which should be my first backup, i would like to use both pipes to the fullest&amp;hellip; on a single connection, at 50% capacity, it would take 15.1 days to upload. if i can get both connections to work at 80% capacity, giving me 16Mbits/s, it would be down to 4.7 days. With compression and Deduplication, i can probably bring that down a bit more&amp;hellip;&lt;/li&gt;
+&lt;li&gt;backing up to SFTP&amp;hellip; Reading different things is telling me this might not be such a good idea&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some links which you might find useful:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://nexenta.com/corp/&#34;&gt;Nexenta&lt;/a&gt;: I am using their &lt;a href=&#34;http://www.nexentastor.org/projects/1/wiki/CommunityEdition&#34;&gt;Community Edition&lt;/a&gt; product for the system.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.servethehome.com/create-nexentastor-vmware-esxi-virtual-machine/&#34;&gt;Create a Nexenta Store device in ESXi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.servethehome.com/configure-passthrough-vmdirectpath-vmware-esxi-raid-hba-usb-drive/&#34;&gt;Configure passthough VMDirectPath in VMWare ESXi&lt;/a&gt;: ideally, you should let Nexenta manage your disks&amp;hellip; Dont think i can do it wiht the dedicated server, but might be possible with the server in house&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Crashplan Backups</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/crashplan-backups/</link>
+      <pubDate>Thu, 27 Sep 2012 11:32:32 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/crashplan-backups/</guid>
+      <description>&lt;p&gt;I have been running &lt;a href=&#34;http://www.crashplan.com&#34;&gt;CrashPlan&lt;/a&gt; for a while now, and, other than some minor issues (backup speed to their central location is the big one), everything has been going grand. I use it to backup about 600GB of photos and videos, 500GB+ of VMs, documents, source code and a fair whack of other stuff&amp;hellip; In total, about 2TB of data.&lt;/p&gt;
+
+&lt;p&gt;Anyway, here are some tips i have figured out over the last while for making Crashplan work a little better&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://support.crashplan.com/doku.php/recipe/speeding_up_your_backup&#34;&gt;Speeding up your backup&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nerdwa.com/index.php/2011/05/crashplan-on-ubuntu-server/&#34;&gt;Installing CrashPlan on a headless (no monitor or GUI) Ubuntu Server&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.uncorneredmarket.com/2012/02/crashplan-backup/&#34;&gt;How to get terabytes of data into the cloud using Crashplan Seed Drive&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I am also in the process of doing some further tests with iSCSI drives linked to the Cloud, and other weird and wonderful things&amp;hellip; once I have finished, i will upload extra stuff here.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Understanding Storage Spaces in Windows 8 and Windows Server 2012</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/understanding-windows8-storage-spaces/</link>
+      <pubDate>Fri, 31 Aug 2012 09:04:14 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/understanding-windows8-storage-spaces/</guid>
+      <description>&lt;p&gt;So, Windows Server 2012 and Windows 8 have both RTMed in the last couple of weeks and will be available to the public in the next month or so (September for Server, October for Client). If you are an MSDN Subscriber, you already have Client, and will (hopefully) get server in the next couple of weeks&amp;hellip; Fingers crossed&amp;hellip; Anyway, one of the interesting features i am waiting for is &lt;a href=&#34;http://blogs.msdn.com/b/b8/archive/2012/01/05/virtualizing-storage-for-scale-resiliency-and-efficiency.aspx&#34;&gt;Storage Spaces&lt;/a&gt;. Tim Anderson&amp;rsquo;s Gadget Writing blog has some information on &lt;a href=&#34;http://gadgets.itwriting.com/1462-understanding-windows-8-storage-spaces-confusing-but-powerful.html&#34;&gt;how Storage Spaces works&lt;/a&gt;. handy notes on what to do and what not to do.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

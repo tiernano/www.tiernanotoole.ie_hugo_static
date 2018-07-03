@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh on Tiernan&#39;s Comms Closet</title>
+    <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ssh/</link>
+    <description>Recent content in Ssh on Tiernan&#39;s Comms Closet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 17 Sep 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SSH Tunneling made simple</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/ssh-tunneling-made-simple/</link>
+      <pubDate>Mon, 17 Sep 2012 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/ssh-tunneling-made-simple/</guid>
+      <description>&lt;p&gt;Something I do on a regular basis is use the internet while &amp;ldquo;out and about&amp;rdquo;. This could be college, which has a semi open network, or it could be a coffee shop, which also usually has a semi open connection. There is also the possibility of using the a mobile internet connection on my iPhone, which can be slow, but at least its only shared with me&amp;hellip; Anyway, over on RevSys.com, there is a post &lt;a href=&#34;http://www.revsys.com/writings/quicktips/ssh-tunnel.html&#34;&gt;SSH Tunneling made simple&lt;/a&gt; which shows you how to open an SSH tunnel to your machine somewhere else (could be at home, as is my case, or a VPS/Dedicated server somewhere, or even on Amazon&amp;hellip;) and use that for different things&amp;hellip; In the case he shows, its for SMTP access. For my case, i am forwarding my local port 3128 to my Microsoft TMG 2010 Server in house on port 8080. Then my system proxy on my laptop is set to use localhost:3128 for all web and HTTPS requests. Very handy. One other tip: Using the -C flag, so your command may look like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh yourname@remotemachine -L 3128:remoteMachine:8080 -C
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;will compress data between you and the SSH server, which for basic web browsing (HTML, CSS, JS) will make things faster, but for stuff like images, etc, may not work so well&amp;hellip; Your Mileage may Vary&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Also, while on the subject of SSH, Linux Journal has an article on &lt;a href=&#34;http://www.linuxjournal.com/article/6602&#34;&gt;Eleven SSH tricks&lt;/a&gt; which mentions compression, Encryption Cyphers, X11 Forwarding, Config files and other interesting bits.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

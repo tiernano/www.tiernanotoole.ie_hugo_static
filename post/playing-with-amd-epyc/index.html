@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+<title>Playing with AMD&#39;s Epyc – Tiernan&#39;s Comms Closet</title>
+<meta name="created" content="2018-07-02T21:00:00&#43;0000">
+<meta name="modified" content="2018-07-02T21:00:00&#43;0000">
+
+<meta name="description" content="So, a few days back I got an email from Packet.net about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an AMD EPYC 7401P which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main stoage.">
+<meta property="og:site_name" content="Tiernan&#39;s Comms Closet">
+<meta property="og:title" content="Playing with AMD&#39;s Epyc">
+<meta property="og:url" content="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/playing-with-amd-epyc/">
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+<link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/playing-with-amd-epyc/">
+<link rel="apple-touch-icon" href="/www.tiernanotoole.ie_hugo_static/apple-touch-icon.png">
+<link rel="stylesheet" href="/www.tiernanotoole.ie_hugo_static/css/styles.css">
+<link rel="stylesheet" href="/www.tiernanotoole.ie_hugo_static/css/print.css" media="print">
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Playing with AMD's Epyc",
+    "datePublished": "2018-07-02T21:00:00Z",
+    "dateModified": "2018-07-02T21:00:00Z",
+    "url" : "https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/playing-with-amd-epyc/",
+    "description": "So, a few days back I got an email from Packet.net about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an AMD EPYC 7401P which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main stoage.",
+    "keywords": ["Hardware","Programming","Reviews"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tiernan's Comms Closet",
+      "url": "https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/",
+    }
+  }
+</script>
+
+</head>
+
+<body>
+<div class="page layout__page layout__sidebar-second">
+<header class="header layout__header" role="banner">
+<a href="/www.tiernanotoole.ie_hugo_static/" title="Home" rel="home" class="header__logo"><img src="/www.tiernanotoole.ie_hugo_static/images/logo.png" alt="Home" class="header__logo-image"></a>
+<h1 class="header__site-name">
+<a href="/www.tiernanotoole.ie_hugo_static/" title="Home" class="header__site-link" rel="home"><span>Tiernan&#39;s Comms Closet</span></a>
+</h1>
+<div class="region header__region">
+
+
+</div>
+</header>
+
+
+
+
+<nav class="main-menu layout__navigation" role="navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/">Home</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/daily-carry/">Daily Carry</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/testing/">testing</a></li>
+<li><a class="active" href="/www.tiernanotoole.ie_hugo_static/post/">Posts</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main" role="main">
+<h1 class="title ">Playing with AMD&#39;s Epyc</h1>
+<article class="section-post single-view">
+<header>
+<div class="tags">
+Tags:
+<ul>
+<li><a href="/www.tiernanotoole.ie_hugo_static/tags/hardware">Hardware</a></li>
+<li><a href="/www.tiernanotoole.ie_hugo_static/tags/programming">Programming</a></li>
+<li><a href="/www.tiernanotoole.ie_hugo_static/tags/reviews">Reviews</a></li>
+</ul>
+</div>
+</header>
+<div class="content">
+<p>So, a few days back I got an email from <a href="http://www.packet.net">Packet.net</a> about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an <a href="https://www.amd.com/en/products/cpu/amd-epyc-7401p">AMD EPYC 7401P</a> which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main stoage. It also has a 20Gb network link (2x10gb bonded) and can run pretty much any OS you can think of (Windows is not on the list officially, but you can boot off your own ISO, so you could probably get it on there&hellip; might not be supported, but it might be possible). all this for $1 per hour! And did i mention they are bare metal machines?</p>
+
+<p>This was the perfect opertunity to play with the new AMD processors. My current and previoius generation workstations (GodBoxv1 and Godboxv2) are both running Intel Xeon processors. the machine previous to this, the mac pro, is also running a Xeon processor. But previous to both of them, my first 2 major workstations ran AMD&hellip; the first ran 2 AMD Athlon MP processors. These were old school processors that were single core, and i cant even remember their speeds, but i do know there were 32bit only and the machine maxed out at about 1.25GB RAM (well, i had it maxed out at that). the second AMD workstation ran 2 AMD Opterons&hellip; again, single core machines, but this time, they ran 64 bit and IIRC maxed out at 8GB ram. This was a limitation of the board, not the processor&hellip;</p>
+
+<p>I have been thinking about GodboxV.next, and the AMD processors, specicially the <a href="https://products.amd.com/en-us/search/cpu/amd-ryzen%E2%84%A2/amd-ryzen%E2%84%A2-threadripper">Threadrippers</a> and Epycs, are contenders for the next machine&hellip; so, this test allows me to check them out before i buy!Why would i say no?!</p>
+
+<p>So, i spun a box up in New Jersey running Ubuntu 17.10 to play with it, and here are my findings&hellip;</p>
+
+<p>First, i ran lscpu on the box to see what i was playing with:</p>
+
+<script src="https://gist.github.com/tiernano/4877abe19c89f1e45e617da1b4d46447.js"></script>
+
+<p>I then ran fdisk -l to see what disks i had to play with. on my machine sda and sdb where the 480gb SSDs, sdc was a 120gb that was empty and sdd was the boot drive&hellip; i installed the btrfs-progs and then formatted sda and sdb as a RAID0 array, which i then mounted to /mnt. this gave me just under 900gb to play with&hellip;</p>
+
+<p>So, my first test is the usual test: building the Linux Kernel. I know that this is something that the lads at <a href="http://www.servethehome.com">ServeTheHome</a> do a lot but its something i wanted to try my self&hellip; So, first i installed git and build essential, then bison, flex and ncurses-dev, then i cloned Linus&rsquo; git repo at git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git. First things first: this machine has a twin 10gb link, a shead load of cores and some very fast storage. How long did it take to clone? it download 1.02 GiB at 35.32MiB/s (about 30 seconds and aboiut 280Mbit/s) and all in, took 2 min 55 seconds to clone. I then ran &lsquo;time make -j 49&rsquo; to see how long it would take&hellip; hmmm&hellip; no config file&hellip; make menuconfig and just hit save&hellip; defaults are grand&hellip; time make -j 49 again&hellip; and more errors&hellip; after a bit of googling, i find the page from Ubutnu <a href="https://wiki.ubuntu.com/KernelTeam/GitKernelBuild">showing what i need to do to build the kernel</a>. i follow that&hellip; download a LOT more stuff using their instrustions, and finally, we get to build&hellip; Time: 6 min 12 seconds&hellip; this is a FULL default build of the kernel&hellip;</p>
+
+<p><img src="/v1530618253/top_kernel_build_epy_hdb0R.jpg" alt="" /></p>
+
+<p>Same build on a VM on GodboxV2 (which was given 32GB RAM and 16 thread, so a full Xeon E5-4620) took 8min 27s to clone (8.18MiB/s. or about 64Mbit/s) and 36 min&hellip; yea, that is 3x less cores, 2x less memory, slower storage (This is on Spinny Disk, not SSD), slower network and it is also a VM VS bare metal, still, to be essentially 6 times slower? interesting&hellip; I might, at some stage, boot the machine off a live Linux USB and run some more tests, but not tonight&hellip;</p>
+
+<p><img src="/v1530618253/top-kernel-build-godboxv2.png" alt="" /></p>
+
+<p>So, all this is becasue i was holding out for the main event&hellip; Photo processing&hellip; I wanted to do somethign &ldquo;real life&rdquo;, which for me would be development and photo processing&hellip; the kernel build gives an idea of a large project build built, the image processsing gives an idea of multimedia work&hellip;</p>
+
+<p>so, i devised a test: Export a bunch of photos (mix of photos taken on my 5Ds, 5D MKII, iPhone 6 Plus and iPhone 7Plus) that are stored in light room as full  and run them though a basic .NET Core app i wrote. the code for the app is <a href="https://github.com/tiernano/imageresizer-testapp">available here</a>. The app fully utilizes the machine by using multiple threads, and because its 64 bit, it will use as much memory as it can get its hands on. It just does some basic processing: open the file, resize to 1024X1024 and then save it&hellip; the 1024X1024 part is just a test&hellip; i was a bit under the gun on time, so couldnt spend as much time working on it as i wanted to&hellip;</p>
+
+<p>In total, there was 1546 photos exported, and the total file size was 15Gb. First obstical was to get them uploaded to the Packet machine, which took a while (my upload speed is currently 40Mbit/s)&hellip; Once up, i downloaded a copy of dotnet core 2.0 SDK, cloned the repo with the project, built and ran&hellip; and man, its fast! 4 min 43 seconds. And it used all the cores.</p>
+
+<p><img src="/v1530618252/image-resizer-epyc.png" alt="" /></p>
+
+<p>Running the same code on GodBoxV2 on the bare metal (no VM this time), i got XX min of a run&hellip; Now, GodBoxV2 has other things running in the back ground, but not that much&hellip; I also noticed that, on average, photos were being processed in 3-5 seconds on Epyc, but nearly 13-15, and sometimes 20 and 25 seconds on GodBoxV2. I also noticed that on Epyc, the dotnet process took nearly 45GB of RAM&hellip; to run&hellip; On GodBoxV2, it took over 70!</p>
+
+<p><img src="/v1530618252/image_resizer_godbox_f5de0.jpg" alt="" /></p>
+
+<p>So, there you have it. Some starting tests with these processors. I am well impressed with these processors, and would have no issue getting one for the next GodBox&hellip; And with names like Epyc and Threadripper, why not?!</p>
+
+
+</div>
+</article>
+</main>
+
+
+
+<aside class="sidebar layout__second-sidebar" role="complementary">
+<section>
+<h4 class="menu"><a class="" href="/www.tiernanotoole.ie_hugo_static/post/">Posts</a></h4>
+<ul class="menu">
+<li><a class="active" href="/www.tiernanotoole.ie_hugo_static/post/playing-with-amd-epyc/">Playing with AMD&#39;s Epyc</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/as204994-own-ip-space-and-anycast/">AS204994, Own IP Space and Anycast</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/blogging-on-ipad/">Blogging on an iPad Pro</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/new-backup-plans/">New Backup Plans</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/testing-forestry/">Testing Forestry</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/vscode-with-powershell/">VSCode and Markdown Monster with Powershell</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/zerotier-minio-update/">Zerotier and Minio Followup</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/business-class-broadband/">Business Class Broadband... finally here....</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/distributed-s3-storage-minio-zerotier/">Distributed S3 data storage using Minio (and Zerotier)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/docker-jekyll-and-mr-ngrock/">Docker Jekyll and Mr ngrok</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/building-jekyll-sites-with-docker-on-windows/">Building Jekyll sites with Docker on Windows</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/cloud-desktop-becoming-reality./">Cloud Desktop becoming a reality</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-9-going-back/">double speed Internet Part 9 - Going Back</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/meraki-gear-update/">Meraki and Ubiquiti networks gear Update</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-8-routing-around/">double speed Internet Part 8 - Routing Around</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-7-ecmp-kind-of/">double speed Internet Part 7 - ECMP (kind of)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-6-hetzner-edition/">double speed Internet Part 6 - Hetzner Edition</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/useful-web-and-desktop-apps-2016-edition/">Useful Web and Desktop Apps 2016 edition</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-5/">(Mad) Max Speed - The Road Warrior (Internet connection) (double speed internet Part 5)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-4/">2 Cable Modems = Double Speed? Part 4</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/installing-jekyll-on-bash-on-ubuntu-on-windows/">Installing Jekyll on Bash On Ubuntu on Windows</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-3/">2 Cable modems = Double speed? Part 3</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/bash-on-ubuntu-on-windows/">Bash on Ubuntu on Windows</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/mptcp-ssh-squid-openvpn-double-speed-part-2/">MPTCP, SSH, Squid, OpenVPN (and 2 Cable modems) = Double Speed? Not quite... Part 2</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/continuous-integration-and-blogging/">Continuous Integration and Blogging</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-internet-speed-part1/">2 Cable modems = Double Internet Speed? Well... not really... Part 1</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/announcing-b2uploader-hubictesting20/">Announcing B2 Uploader and Hubic Testing 2.0</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/edgerouter-sophosutm-dmz-lan-firwwalls/">Edge Router, Sophos UTM, DMZ and LAN Networks</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-4/">Network and HomeLab V.Next (Part 4)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/windwsserver2012r2-returing-to-the-godboxv2/">Windows Server 2012 R2 returning to The GodBoxV2</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/zfs-home-dir/">ZFS Home storage pool</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/ubiquiti-edgerouter-poe-in-the-lab/">Ubiquiti EdgeRouter PoE in the lab</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-3/">Network and HomeLab V.Next (Part 3)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part2/">Network and HomeLab V.Next (Part 2)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-1/">Network and Homelab V.Next (Part 1)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/pfsense-with-multiple-public-ips/">PFSense with Multiple Public IPs</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/quick-tip-for-internet-facing-esxi/">Quick tip for internet facing ESXi servers</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/vlans-wifi-and-mikrotik/">VLANs, Wifi and Mikrotik</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/using-git-and-route53/">Using git and Route53 together</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/git-push-dns/">Git Push DNS</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/bulk-compressing-images-for-the-web/">Bulk compressing images for the Web</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/all-blogs-moved-to-jekyll/">All blogs moved to Jekyll</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/duplicity_hubic/">Hubic and Duplicity</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/hubic_swift_curl/">Hubic, OpenStack Swift and Curl</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/daily_carry/">Daily Carry, March 2015 Edition</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/mobile_phone_as_a_service/">Mobile Phone as a Service</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/cdnhostedblog/">CDN Hosted Blog</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/raspberrypi_astrisk_box/">Raspberry Pi as an Asterisk Box</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/college_bag_contents/">College Bag Contents</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/raspberry_pi_as_a_mobile_wifi_hotspot_-_part_1/">Raspberry Pi as a Mobile WiFi HotSpot (part 1)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/moving_sites_to_nearlyfreespeech/">Moving sites to NearlyFreeSpeech</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/send_emails_as_a_distribution_group_in_office365/">Send Emails as a Distribution Group in Office365</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/ipv6_firewall_rules_for_mikrotik_routeros/">IPv6 Firewall rules for MikroTik RouterOS</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/ipv6_%2b_mikrotik_%2b_linux_%2b_windows/">IPv6 &#43; MikroTik &#43; Linux &#43; Windows</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/compressing_and_uncompressing_protobuf_items_in_c/">Compressing and UnCompressing Protobuf items in C#</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/git_tips_and_tricks/">GIT tips and tricks</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/symform_-_p2p_backup/">Symform - P2P Backup</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/enabling_vnc_from_ssh_on_osx/">enabling VNC from SSH on OSX</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/moving_your_tmg_sql_server_and_other_tmg_tips/">moving your TMG SQL server Logs DB and other TMG tips</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/routeros_dynamic_ip_updates/">RouterOS Dynamic IP Updates</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/custom_msdeploy_overwrite_rules/">Custom MSDeploy OverWrite Rules</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/wanproxy_and_squid_with_upstream_servers/">WANProxy and Squid with Upstream Servers</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/building_wanproxy_on_ubuntu_12.04/">Building WANProxy on Ubuntu 12.04</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/boot_raspberry_pi_with_ssh_enabled/">Boot Raspberry Pi with SSH Enabled, Enable Wifi on Boot, and more</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/gps_and_raspberry_pi/">GPS and Raspberry Pi</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/raspberry_pi_now_with_512mb_ram/">Raspberry Pi now with 512MB RAM, other random links...</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/more_raspberry_pi_and_camera_antics/">more raspberry pi and camera antics</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/routeros_using_host_names_in_firewall_rules/">RouterOS Using Host names in Firewall Rules</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/routeros_blocking_machine_access/">RouterOS Blocking Machine access to all but one IP</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/zfs_iscsi_nfs_sftp_hyper-v_and_more/">ZFS iSCSI NFS SFTP Hyper-V and more</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/more_jekyll_stuff/">More Jekyll Stuff</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/handbrake-cluster/">Handbrake Cluster</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/enabling-true-briding-mode-on-cisco-epc3925/">Enabling True Bridging modem on a Cisco ECP3925 Cable Modem (UPC Ireland)</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/powershell-handbrake-appletv-itunes/">PowerShell &#43; HandBrake &#43; AppleTV &#43; iTunes = Automatic TV... Ish...</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/crashplan-backups/">Crashplan Backups</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/more-voip-stuff/">More VoIP Stuff</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/raspberry-pi-cross-compiling/">Building a Cross Compiler for your Raspberry Pi</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/microtik-routeros-vpn-setup/">MicroTik RouterOS VPN Setup</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/ssh-tunneling-made-simple/">SSH Tunneling made simple</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/voip-stuff/">VOIP Stuff</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/rasberry-stuff/">Raspberry Pi Stuff</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/build-your-own-private-git-server/">Build your own Private GIT server</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/understanding-windows8-storage-spaces/">Understanding Storage Spaces in Windows 8 and Windows Server 2012</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/sublimetext-with-powershell/">Sublime Text 2 with Powershell</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/autoscalling-with-amazon/">AutoScaling with Amazon</a></li>
+<li><a class="" href="/www.tiernanotoole.ie_hugo_static/post/newsite/">My new Git Powered Site</a></li>
+</ul>
+</section>
+</aside>
+
+
+<footer class="footer layout__footer" role="contentinfo">
+<p><span>© Tiernan&#39;s Comms Closet</span></p>
+
+
+</footer>
+
+</div>
+
+
+
+</body>
+</html>

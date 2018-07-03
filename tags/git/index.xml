@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Tiernan&#39;s Comms Closet</title>
+    <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/git/</link>
+    <description>Recent content in Git on Tiernan&#39;s Comms Closet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 May 2015 20:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Using git and Route53 together</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/using-git-and-route53/</link>
+      <pubDate>Thu, 07 May 2015 20:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/using-git-and-route53/</guid>
+      <description>&lt;p&gt;so, earlier on today, i was talking about using &lt;a href=&#34;http://tiernanotoole.ie/2015/05/07/git-push-dns.html&#34;&gt;Git with a DNS service called LuaDNS&lt;/a&gt; to update your DNS records. Well, thing is, i have 30+ domains registered, and of them about 25 are hosted on &lt;a href=&#34;http://aws.amazon.com/route53&#34;&gt;Amazon&amp;rsquo;s Route53&lt;/a&gt;. So, moving ALL of them seems, well at the moment, excessive&amp;hellip; So, i went digging&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;there is a tool called &lt;a href=&#34;https://github.com/barnybug/cli53&#34;&gt;cli53&lt;/a&gt; which will allow you to manage route53 objects from the command line. It can also export your zones to BIND format and then re-import them if you have made changes&amp;hellip; This all came out of a blog post by the guys and gals at &lt;a href=&#34;https://netguru.co/blog/ci-your-dns-setup&#34;&gt;netguru&lt;/a&gt; who showed how they integrate their DNS records with their Continuous Integration&amp;hellip; Now, i have not gotten to that stage, just yet, but its only 1 step more down the road&amp;hellip; but I don&amp;rsquo;t have my zones in bind format&amp;hellip; So, how do i do that?&lt;/p&gt;
+
+&lt;p&gt;I tweaked their block of ruby code (first time playing with ruby, be gentle with me) and got the following:&lt;/p&gt;
+
+&lt;p&gt;{% gist f11fbec2075b8bf19d57 %}&lt;/p&gt;
+
+&lt;p&gt;essentially, it runs cli53 (you may need to change your path) and then creates .bind files for each zone.&lt;/p&gt;
+
+&lt;p&gt;then, using their code below, you can re-import them to Route53:&lt;/p&gt;
+
+&lt;p&gt;{% gist 7249547 %}&lt;/p&gt;
+
+&lt;p&gt;i have exported all mine, added them to git and done some testing&amp;hellip; All seems to be in order&amp;hellip; once i do some tweaks, i can get that CI piece working and it should be all magic&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Git Push DNS</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git-push-dns/</link>
+      <pubDate>Thu, 07 May 2015 15:30:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git-push-dns/</guid>
+      <description>&lt;p&gt;There are now a lot of services that have &amp;ldquo;git push&amp;rdquo; options available&amp;hellip; you can build websites with
+&lt;a href=&#34;http://www.azure.com&#34;&gt;Azure&lt;/a&gt; and &lt;a href=&#34;http://www.github.com&#34;&gt;Github&lt;/a&gt;, books using &lt;a href=&#34;https://www.sharelatex.com/&#34;&gt;ShareLaTeX&lt;/a&gt; and now, DNS using &lt;a href=&#34;http://luadns.com&#34;&gt;LuaDNS&lt;/a&gt;. I have one zone
+running at the moment (&lt;a href=&#34;http://www.tiernanotoole.net&#34;&gt;tiernanotoole.net&lt;/a&gt;) and you can see the DNS records on &lt;a href=&#34;https://github.com/tiernano/dns&#34;&gt;github here&lt;/a&gt;. I am
+tempted at moving other records over soon&amp;hellip; but i am currently on &lt;a href=&#34;http://aws.amazon.com/route53&#34;&gt;Amazon Route53&lt;/a&gt; and 1: its works, so
+dont break it, and 2, not sure how to bulk export records from Route53 to Bind or &lt;a href=&#34;http://www.luadns.com/help.html#lua-zone-file-format&#34;&gt;Lua&lt;/a&gt; format.&lt;/p&gt;
+
+&lt;p&gt;[update] 2 quick updates: 1) their free account, which is what i am using, allows 3 domains and 30 host
+records. they also charge less than &lt;a href=&#34;http://aws.amazon.com/route53&#34;&gt;Route53&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;route 53 for 10 domains per year cost 50c per domain (first 25) per month, then query charges. total,
+about $60 + queries (@40c per million).&lt;/li&gt;
+&lt;li&gt;luadns cost $29 a year for 10 domains, 5 million (ish) querys a month and 500 host records&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I think i have nearly 30 domain on AWS&amp;hellip; so, their $59 a year package, which include 30 domains, would
+probably save me money&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;and 2) i forgot about one of those git push services&amp;hellip; &lt;a href=&#34;https://developermail.io/&#34;&gt;DeveloperMail&lt;/a&gt; is a service, for developers,
+for managing email servers. IMAP, SMTP, Git&amp;hellip; all supported! just signed up&amp;hellip; $2 a month per user. Lets
+see how this works&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Moving sites to NearlyFreeSpeech</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/moving_sites_to_nearlyfreespeech/</link>
+      <pubDate>Tue, 15 Jan 2013 19:23:02 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/moving_sites_to_nearlyfreespeech/</guid>
+      <description>&lt;p&gt;I have been running a Dedicated Server from &lt;a href=&#34;http://www.hetzner.de/en&#34;&gt;Hetzner&lt;/a&gt; for a while now, but have started to look at what i am running on the site, and reailized i under utilize the machine a lot&amp;hellip; For example, this site is generated using &lt;a href=&#34;http://www.vmware.com/products/vsphere-hypervisor/overview.html&#34;&gt;Jekyll&lt;/a&gt;, which takes up very little power, and becomes static HTML files. My other blogs (&lt;a href=&#34;http://blog.lotas-smartman.net&#34;&gt;Tiernan&amp;rsquo;s Comms Closet&lt;/a&gt; and &lt;a href=&#34;http://www.geekphotographer.com&#34;&gt;GeekPhotographer&lt;/a&gt;) are both low traffic &lt;a href=&#34;http://www.wordpress.org&#34;&gt;Wordpress&lt;/a&gt; sites, and I run a couple of other static sites also for friends&amp;hellip; All in all, not a lot of power&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Its not a fortune to run the server, the box i have has a Quad Core, Hyper threaded Intel i7, 32Gb RAM, 2 3TB Hdds (not raid&amp;hellip;) and runs a copy of &lt;a href=&#34;https://github.com/mojombo/jekyll&#34;&gt;VMWare ESXi&lt;/a&gt;, and it costs about EUR60 a month, including a couple of IP addresses&amp;hellip; But, i dont use it all that often&amp;hellip; So, i am in the process of getting rid of it&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;So, the 2 other blogs (&lt;a href=&#34;http://www.geekphotographer.com&#34;&gt;GeekPhotographer&lt;/a&gt; and &lt;a href=&#34;http://blog.lotas-smartman.net&#34;&gt;Tiernan&amp;rsquo;s Comms Closet&lt;/a&gt;) have already moved. They where easy enough&amp;hellip; Export the Wordpress DB, copy the file up, tweak the config, import the DB, DNS updates, etc&amp;hellip; All done&amp;hellip; but this site&amp;hellip; that is more &amp;ldquo;Complicated&amp;rdquo;&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Since it is generated on a &amp;lsquo;&lt;a href=&#34;http://tiernanotoole.ie/2012/08/29/NewSite.html&#34;&gt;git push&lt;/a&gt;&amp;rsquo;, Jekyll and Ruby needs to be installed on the box&amp;hellip; I am using static sites on &lt;a href=&#34;http://www.nearlyfreespeech.net/&#34;&gt;NearlyFreeSpeech&lt;/a&gt; which only charge me per meg (about 0.1c, but that reduces as you transfer more) transfered and per 5 meg stored (1c). Thats for STATIC sites&amp;hellip; if you are running a dynamic site, its about 1c per 1mb stored, plus 1c per day, plus another 2c for MySQL instances. Check out their &lt;a href=&#34;https://www.nearlyfreespeech.net/estimate&#34;&gt;pricing calculator&lt;/a&gt; to see the magic at work!&lt;/p&gt;
+
+&lt;p&gt;Anyway, my GIT repo is on a machine in the house. It has Jekyll and all required bits installed. In the &amp;lsquo;post-receive&amp;rsquo; hook (check &lt;a href=&#34;http://blog.zerosum.org/2010/11/01/pure-git-deploy-workflow.html&#34;&gt;the original zerosum post&lt;/a&gt;), i generate the site, and then do an rsync copy to NFSN servers. That is it!&lt;/p&gt;
+
+&lt;p&gt;Any question, leave a comment.&lt;/p&gt;
+
+&lt;p&gt;[update] forgot to add the &lt;a href=&#34;https://gist.github.com/4545178&#34;&gt;gist&lt;/a&gt; which shows how i do the rsync call&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;{% gist 4545178 %}&lt;/p&gt;
+
+&lt;p&gt;[update2] you in my case, the folder that Jekyll is being built in needed to be chmoded and chowned&amp;hellip; I chowned the the folder to the gitolite user and i chmodded the folder to 777&amp;hellip; before i did this, some files where unreadable on NFSN&amp;hellip; with this, all works grand&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GIT tips and tricks</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git_tips_and_tricks/</link>
+      <pubDate>Wed, 05 Dec 2012 15:48:44 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git_tips_and_tricks/</guid>
+      <description>&lt;p&gt;I use &lt;a href=&#34;http://git-scm.com/&#34;&gt;GIT&lt;/a&gt; a lot for different things, including &lt;a href=&#34;http://tiernanotoole.ie/2012/08/29/NewSite.html&#34;&gt;this blog&lt;/a&gt;. so, here are a few tips and tricks i have found useful over the while&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.lotas-smartman.net/using-dropbox-as-a-personal-git-and-mercurial-storage-area/?utm_source=tiernanotoole&amp;amp;utm_medium=web&amp;amp;utm_campaign=gittipsandtricks&#34;&gt;Using Dropbox as a local GIT/Mercurial Repository&lt;/a&gt;: my own post from a while back.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://durdn.com/blog/2012/12/05/git-12-curated-git-tips-and-workflows/&#34;&gt;Twelve GIT curated Tips and Workflows from the Trenches&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://durdn.com/blog/2011/07/06/using-git-with-subversion-tips-that-will-make-your-life-easier/&#34;&gt;Using GIT with Subversion: tips that will make your life easier&lt;/a&gt;: The office has an SVN server, but i like GIT. This doc, with the help of &lt;a href=&#34;http://www.kernel.org/pub/software/scm/git/docs/git-svn.html&#34;&gt;git-svn&lt;/a&gt; and &lt;a href=&#34;http://stackoverflow.com/questions/4883453/seamless-git-svn-setup&#34;&gt;this post on StackOverflow&lt;/a&gt; allows me to use GIT locally, and then push to SVN.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://andyjeffries.co.uk/articles/25-tips-for-intermediate-git-users&#34;&gt;25 tips for intermediate git users&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://gitready.com/&#34;&gt;git ready: learn git one commit at a time&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://mislav.uniqpath.com/2010/07/git-tips/&#34;&gt;A few git tips you dont already know&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/gp/product/1430218339/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=1430218339&amp;amp;linkCode=as2&amp;amp;tag=lotassmartmann00&#34;&gt;The ProGIT book (paperback amazon)&lt;/a&gt; or &lt;a href=&#34;http://www.amazon.com/gp/product/B004TTXLGI/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=B004TTXLGI&amp;amp;linkCode=as2&amp;amp;tag=lotassmartmann00&#34;&gt;Kindle Edition&lt;/a&gt;. Also available &lt;a href=&#34;http://git-scm.com/book&#34;&gt;online&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Build your own Private GIT server</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/build-your-own-private-git-server/</link>
+      <pubDate>Mon, 03 Sep 2012 10:28:11 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/build-your-own-private-git-server/</guid>
+      <description>&lt;p&gt;This site is built with GIT, GitoLite and Jekyll&amp;hellip; I posted about this &lt;a href=&#34;http://tiernanotoole.ie/2012/08/29/NewSite.html&#34;&gt;before&lt;/a&gt;. but how do you setup your own Git Server? checkout &lt;a href=&#34;http://www.mmncs.com/2011/07/how-to-install-and-setup-a-git-repository-server-using-gitolite-on-linux-ubuntu-11-04-server-and-client/&#34;&gt;How to install and Setup a Git Repository Server using Gitolite on Linux Ubuntu 10.04 and 11.04&lt;/a&gt; on mmncs.com. I am using Ubuntu 12.04, but its mostly the same&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My new Git Powered Site</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/newsite/</link>
+      <pubDate>Wed, 29 Aug 2012 12:54:40 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/newsite/</guid>
+      <description>&lt;p&gt;So, this site is brought to you by &lt;a href=&#34;http://git-scm.com/&#34;&gt;GIT&lt;/a&gt;, &lt;a href=&#34;https://github.com/mojombo/jekyll&#34;&gt;Jekyll&lt;/a&gt; and Magic&amp;hellip; here is how i did it&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I have a Linux VM running the site. Its an &lt;a href=&#34;http://ubuntu.com&#34;&gt;Ubuntu 12.04&lt;/a&gt; server. On that i installed Jekyll.&lt;/li&gt;
+&lt;li&gt;I also have &lt;a href=&#34;http://sitaramc.github.com/gitolite/master-toc.html&#34;&gt;gitolite&lt;/a&gt; installed for personal git repos.&lt;/li&gt;
+&lt;li&gt;In the Git Repo for this site, under the hooks directory, I added a post-receive file which I got from &lt;a href=&#34;http://blog.zerosum.org/2010/11/01/pure-git-deploy-workflow.html&#34;&gt;here&lt;/a&gt; originally.&lt;/li&gt;
+&lt;li&gt;Apache is set to serve the directory that Jekyll produces&amp;hellip; That&amp;rsquo;s what you are reading here.&lt;/li&gt;
+&lt;li&gt;If you are interested, you can find the code and config for this site on my &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie&#34;&gt;github repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

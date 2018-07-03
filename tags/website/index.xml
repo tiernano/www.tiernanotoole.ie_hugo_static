@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Website on Tiernan&#39;s Comms Closet</title>
+    <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/website/</link>
+    <description>Recent content in Website on Tiernan&#39;s Comms Closet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 16 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/website/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Testing Forestry</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/testing-forestry/</link>
+      <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/testing-forestry/</guid>
+      <description>&lt;p&gt;So, as you probably know, this site is built with &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;. Jekyll is a Static Site Generator, basically taking an input of a load of text files (see the source repo for this site on &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie/&#34;&gt;Github here&lt;/a&gt;) and generating a load more HTML (the static HTML is hosted on &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie-static&#34;&gt;Github here&lt;/a&gt;, which auto publishes to &lt;a href=&#34;https://azure.microsoft.com/en-us/services/app-service/web/&#34;&gt;Azure App Service&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;In previous posts, i have talked about using the likes of &lt;a href=&#34;https://www.tiernanotoole.ie/2017/05/06/vscode-with-powershell.html&#34;&gt;Visual Studio Code and Mark Down Monster&lt;/a&gt; to build the site. Well, a few days back, i found &lt;a href=&#34;https://forestry.io&#34;&gt;Forestry.io&lt;/a&gt;. Its a web application which, in my case, is linked with my &lt;a href=&#34;https://www.github.com/&#34;&gt;GitHub&lt;/a&gt; repo (the Jekyll source one) and allows me to make changes to the code easily. Because the way i build my site is a little different, i manually build the site and push to the destination GitHub project, but they have features allowing you to push directly to SFTP or FTP servers, GitHub, or some other options.&lt;/p&gt;
+
+&lt;p&gt;The interface is nice and easy to use, and you can use drafts, etc. Mind you, even with drafts, because files are written into a public repo, they are not fully private&amp;hellip; I suppose I could just make the source repo private&amp;hellip; Anyway, they are free for single user sites (like this) or they have paid plans for teams (say, your business blog with more than 1 user updating it, for example).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

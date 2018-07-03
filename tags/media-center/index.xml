@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Media Center on Tiernan&#39;s Comms Closet</title>
+    <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/media-center/</link>
+    <description>Recent content in Media Center on Tiernan&#39;s Comms Closet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Oct 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/media-center/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Handbrake Cluster</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/handbrake-cluster/</link>
+      <pubDate>Wed, 03 Oct 2012 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/handbrake-cluster/</guid>
+      <description>&lt;p&gt;[UPDATED] someone asked in the comments if there was an binary build for this file. there is now! &lt;a href=&#34;http://handbrakecluster.codeplex.com&#34;&gt;http://handbrakecluster.codeplex.com&lt;/a&gt; now hosts the code and binaries, and will soon have help files and documentation.&lt;/p&gt;
+
+&lt;p&gt;A few days back, i wrote a post titled &lt;a href=&#34;https://www.tiernanotoole.ie/2012/09/28/Powershell-HandBrake-AppleTV-iTunes.html&#34;&gt;Powershell + Handbrake + AppleTV + iTunes = Automatic TV&amp;hellip; ish&lt;/a&gt;. In it i included a block of Powershell code to bulk convert TV shows from whatever format you had them in to a M4V format for the AppleTV. Well, as they say &amp;ldquo;If necessity is the mother of all invension, lazyness must be the father&amp;rdquo;. I have a lot of shows i wanted converted to the AppleTV, so i built something&amp;hellip; Its called &lt;a href=&#34;https://github.com/tiernano/HandbrakeCluster&#34;&gt;HandBrake Cluster&lt;/a&gt; and is written in &lt;a href=&#34;http://www.microsoft.com/en-us/download/details.aspx?id=30653&#34;&gt;.NET 4.5&lt;/a&gt;, uses &lt;a href=&#34;http://msdn.microsoft.com/en-us/library/aa967729.aspx&#34;&gt;MSMQ&lt;/a&gt; and &lt;a href=&#34;http://handbrake.fr/&#34;&gt;Handbrake&lt;/a&gt; to do the processing&amp;hellip; The workflow is as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;setup the system as described on the &lt;a href=&#34;https://github.com/tiernano/HandbrakeCluster&#34;&gt;HandBrake Cluster&lt;/a&gt; site.&lt;/li&gt;
+&lt;li&gt;run the adder program with the paramaters required (location of files you want converted, type of files to find, where you want the files to be placed, output file type)&lt;/li&gt;
+&lt;li&gt;run the cluster EXE on as many machines as you want. each machine will need to point to the correct MSMQ on the head node, have their own copy of Handbrake, and must have access to the fileshare that you are reading and writing to&amp;hellip;&lt;/li&gt;
+&lt;li&gt;each node will take a message of the queue, process the file and then mark it as completed. There is code to see if the message has failed, so, in theory, if something goes into the queue, it should always be processed&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have run this at home on a couple of different machines, and so far so good&amp;hellip; my room gets a bit warmer when i kick this off, and between the 3 machines i ran it on, my FPS count went from just 80-120 on the Godbox, to a total of about 160 - 240 FPS (Godbox = 80-120, Server 1 and 2 are about 40-60FPS).&lt;/p&gt;
+
+&lt;p&gt;The next thing i managed to do was tweak my import process for iTunes. I am using a program called &lt;a href=&#34;http://www.bizmodeller.com/iHomeServer_for_iTunes.aspx&#34;&gt;iHomeServer for iTunes&lt;/a&gt; which is running on the &lt;a href=&#34;https://www.tiernanotoole.ie/Computers/godbox.html&#34;&gt;GodBox&lt;/a&gt;. It monitors a folder, which is where &lt;a href=&#34;https://github.com/tiernano/HandbrakeCluster&#34;&gt;HandBrake Cluster&lt;/a&gt; is writing to, and adds them to iTunes. I can then tweak the metadata using the tool, so i can add art work, tell it which shows are related, and it sets up Art work, title info, etc. It is very handy, and something i am very happy with.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PowerShell &#43; HandBrake &#43; AppleTV &#43; iTunes = Automatic TV... Ish...</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/powershell-handbrake-appletv-itunes/</link>
+      <pubDate>Fri, 28 Sep 2012 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/powershell-handbrake-appletv-itunes/</guid>
+      <description>&lt;p&gt;I have an &lt;a href=&#34;http://www.apple.com/appletv&#34;&gt;AppleTV&lt;/a&gt; in the house (3, actually) and i am very happy with its ease of use, size and cost&amp;hellip; You cant really argue with the small price!&lt;/p&gt;
+
+&lt;p&gt;I also have a lot of content that works great with the AppleTV in iTunes, but i have content which does not work so great with the AppleTV&amp;hellip; So, i needed to find a way to convert files quickly and easily&amp;hellip; thats where PowerShell and &lt;a href=&#34;http://handbrake.fr/&#34;&gt;Handbrake&lt;/a&gt; come in&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;{% gist 3798509 %}&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;in the code above, you need to set the path of where your files live. in my case they live on a NAS.&lt;/li&gt;
+&lt;li&gt;next, set the location of HandBrake&amp;hellip; i have a 64 bit copy of Windows, and a 64 bit copy of HandBrake.&lt;/li&gt;
+&lt;li&gt;set the new file name to where you want the file to go. in my case i have it set to my &amp;ldquo;&lt;a href=&#34;http://support.apple.com/kb/HT3832&#34;&gt;Automatically Add to iTunes&lt;/a&gt;&amp;rdquo; folder, which is a magic folder for iTunes that copies any files dropped in there to your iTunes library.&lt;/li&gt;
+&lt;li&gt;finally, conversion is run&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This may take a few min, depending on a few factors:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;how many files you are converting&lt;/li&gt;
+&lt;li&gt;how fast your machine in&lt;/li&gt;
+&lt;li&gt;how fast your machine can read and write the files&amp;hellip;&lt;/li&gt;
+&lt;li&gt;etc&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have set files to convert on 3 different machines (the GodBox and 2 other servers) and i am getting speeds of anywhere between 250FPS (on the GodBox running 2 instances of HandBrake CLI) and 40 - 60 FPS on the older servers&amp;hellip; on the remote machines, they are sending files to the GodBox folder also, so once everything completes, its just a matter of opening iTunes and we are good to go&amp;hellip; Now to figure out how to automate the Metadata import&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

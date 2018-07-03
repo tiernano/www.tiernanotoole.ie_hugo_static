@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Voip on Tiernan&#39;s Comms Closet</title>
+    <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/voip/</link>
+    <description>Recent content in Voip on Tiernan&#39;s Comms Closet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Feb 2015 21:47:00 +0000</lastBuildDate>
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/voip/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mobile Phone as a Service</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/mobile_phone_as_a_service/</link>
+      <pubDate>Sun, 15 Feb 2015 21:47:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/mobile_phone_as_a_service/</guid>
+      <description>&lt;p&gt;After my &lt;a href=&#34;http://www.tiernanotoole.ie/2013/05/29/RaspberryPi_Astrisk_Box.html&#34;&gt;post&lt;/a&gt; about the Raspberry Pi acting as a VoIP server, and being able to add a 3G Dongle and allowing it to act as a Mobile Phone gateway, it got me thinking&amp;hellip; Why not have something that allows you to rent a mobile phone number in a country, send and recieve text messages, phone calls, etc, all from anywhere in the world? Thats where &lt;a href=&#34;http://www.mpaas.co&#34;&gt;Mobile Phone as a Service&lt;/a&gt; comes in&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;The theory behing &lt;a href=&#34;http://www.mpaas.co&#34;&gt;MPaaS&lt;/a&gt; is quite simple: A SIM Card for a mobile phone is placed in a USB Dongle, plugged into a VoIP server (Asterisk box, probably a Raspberry Pi) and shared with the user who requests it.&lt;/p&gt;
+
+&lt;p&gt;Its only a theory at the moment&amp;hellip; Any interest?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi as an Asterisk Box</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/raspberrypi_astrisk_box/</link>
+      <pubDate>Wed, 29 May 2013 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/raspberrypi_astrisk_box/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://www.raspberrypi.org/&#34;&gt;Raspberry Pi&lt;/a&gt; is a pretty amazing peice of kit for its price and size. And now, you can make it even more amazing by using it as a VoIP server for your house!&lt;/p&gt;
+
+&lt;p&gt;Check out &lt;a href=&#34;http://www.raspberry-asterisk.org/&#34;&gt;Raspberry Asterisk&lt;/a&gt; for downloads, documentation, etc, on how to setup a Raspberry Pi and &lt;a href=&#34;http://www.asterisk.org/&#34;&gt;Asterisk&lt;/a&gt;. I have a couple Pi&amp;rsquo;s in the house, and plan on setting this up in the next few days. Keep your eyes on the site&amp;hellip; more posts coming!&lt;/p&gt;
+
+&lt;p&gt;Also, as an added bonus: You can now use a 3G/HSDPA modem to make and recieve calls using Asterisk and your Pi! &lt;a href=&#34;http://blog.carrier-connect.com/raspberry-gsm-gateway/&#34;&gt;Carrier Connect&lt;/a&gt; has details of how they setup a couple of Raspberry Pi devices in Germany and Cambodia and anyone ringing from Germany got redirected to Cambodia, with no noticable issue. Very cool stuff! Have to try this!&lt;/p&gt;
+
+&lt;p&gt;Double Bonous: Chan-Dongle (the software that you use to make and recieve calls with GSM) also allows the &lt;a href=&#34;http://wiki.e1550.mobi/doku.php?id=usage#receive_sms_and_ussd&#34;&gt;device to accept SMS messages&lt;/a&gt;!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>More VoIP Stuff</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/more-voip-stuff/</link>
+      <pubDate>Thu, 27 Sep 2012 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/more-voip-stuff/</guid>
+      <description>&lt;p&gt;As part of my ongoing plan to upgrade the house to VoIP, and as a follow up to my first &lt;a href=&#34;http://tiernanotoole.ie/2012/09/11/VOIP-Stuff.html&#34;&gt;VoIP stuff&lt;/a&gt; post, here are some more things i have found&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I have added &lt;a href=&#34;http://www.sipdiscount.com&#34;&gt;SipDiscount&lt;/a&gt; and &lt;a href=&#34;http://www.sipgate.co.uk&#34;&gt;SipGate&lt;/a&gt; for making and recieving calls.&lt;/li&gt;
+&lt;li&gt;SipDiscount allows me to set pretty much any number as my Caller ID, as long as i &amp;ldquo;own&amp;rdquo; that number (they either text or call you with a code, and you enter it on their site). They also allow me to make cheap calls to Irish Mobiles (check their &lt;a href=&#34;http://www.sipdiscount.com/rates&#34;&gt;rates here&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;SipGate gave me a incoming UK phone number. Its an 0845 number, which I dont know what that means&amp;hellip; but it was free, so its all good. Not sure if i can recieve text messages on it though&amp;hellip;&lt;/li&gt;
+&lt;li&gt;I have a &lt;a href=&#34;http://www.blueface.ie&#34;&gt;Blueface&lt;/a&gt; account, which gives me an Irish 076 VoIP number. 076 is the standard VoIP number here in Ireland&amp;hellip;&lt;/li&gt;
+&lt;li&gt;I have a &lt;a href=&#34;http://www.ipkall.com/&#34;&gt;IpKall&lt;/a&gt; number, which is based in Washington State. You need to recieve a call on this line at least once every 30 days to keep it active.&lt;/li&gt;
+&lt;li&gt;My &lt;a href=&#34;http://voice.google.com/&#34;&gt;Google Voice&lt;/a&gt; accepts calls and forwards them to my IpKall number, which then rings my BlueFace SIP account (since i know they will be up all the time, by my home server may be offline since i am only testing) which, if a SIP device is connected, will forward it again&amp;hellip; if i am offline, or no sip devices are active, that call is redirected to voice mail&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Its all very complicated at the moment, but the plan will be that any incoming calls should go directly to the machine in house, which will ring the desk phone and any other SIP clients. Any incoming PSTN calls will also do the same. Outgoing calls will depend on the dialing plan, which i still need to figure out, but the theory goes as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Irish landline calls at certin times should go though the PSTN (since we get some free calls with our line). Other times they should go though SipDiscount or BlueFace.&lt;/li&gt;
+&lt;li&gt;if the PSTN is busy, fall over to one of the other providers&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Irish Mobile calls should go though SipDiscount and then fall back to land line, or if i ever get the BlueTooth setup working, SipDiscount, then bluetooth, then landline&amp;hellip;&lt;/li&gt;
+&lt;li&gt;International calls should be sent though SipDiscount or Blueface, whichever is cheaper&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Its going to be an interesting setup&amp;hellip; :)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>VOIP Stuff</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/voip-stuff/</link>
+      <pubDate>Tue, 11 Sep 2012 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/voip-stuff/</guid>
+      <description>&lt;p&gt;I have been very interested in VOIP stuff for the last while now, and finally started looking at implementing it in the house. Here are some links which may be useful. I will do a full post soon.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://wiki.stocksy.co.uk/wiki/Asterisk_1.8_with_chan_mobile_on_CentOS_6&#34;&gt;Asterisk 1.8 with chan_mobile on Centos 6&lt;/a&gt;: chan_mobile allows you to use a Bluetooth phone to make calls with Asterisk&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.stocksy.co.uk/articles/Networks/use_an_old_mobile_phone_as_a_gsm_gateway_in_asterisk/&#34;&gt;Use an old Mobile Phone as a GMS Gateway in asterisk&lt;/a&gt;: again, similar to above, but with Ubuntu.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.3cx.com/&#34;&gt;3CX&lt;/a&gt;: my current choice in VOIP software.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The main VOIP hardware I use is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.co.uk/gp/product/B000TSJ5JK/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1634&amp;amp;creative=19450&amp;amp;creativeASIN=B000TSJ5JK&amp;amp;linkCode=as2&amp;amp;tag=tiescomclo-21&#34;&gt;Cisco Small Business Pro SPA3102 Voice Gateway with Router (Amazon UK)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/gp/product/B000FKP55U/ref=as_li_ss_tl?ie=UTF8&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=B000FKP55U&amp;amp;linkCode=as2&amp;amp;tag=lotassmartmann00&#34;&gt;Cisco Small Business Pro SPA3102 Voice Gateway with Router (Amazon US)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I also use the 3CX software on both my iPhone and Android.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.tcx.sip.ui&#34;&gt;3CX phone for Android&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://target.georiot.com/Proxy.ashx?grid=621&amp;amp;GR_URL=http%3A%2F%2Fitunes.apple.com%2Fie%2Fapp%2F3cxphone-for-iphone%2Fid392927995%3Fmt%3D8&#34;&gt;3CX phone for iPhone&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

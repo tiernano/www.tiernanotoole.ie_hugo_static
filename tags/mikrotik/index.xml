@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mikrotik on Tiernan&#39;s Comms Closet</title>
+    <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/mikrotik/</link>
+    <description>Recent content in Mikrotik on Tiernan&#39;s Comms Closet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 May 2015 18:40:00 +0000</lastBuildDate>
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/mikrotik/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>VLANs, Wifi and Mikrotik</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/vlans-wifi-and-mikrotik/</link>
+      <pubDate>Sun, 10 May 2015 18:40:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/vlans-wifi-and-mikrotik/</guid>
+      <description>&lt;p&gt;About a month ago, while i was recovering from surgery, i attended a Webinar on
+&lt;a href=&#34;http://www.meraki.com&#34;&gt;Cisco Meraki&lt;/a&gt; devices. After the webinar, i was contacted by Maraki and given a &lt;a href=&#34;https://meraki.cisco.com/products/wireless/mr18&#34;&gt;MR18&lt;/a&gt; with a 3 year license, to play with and evaluate. So, i set it up in the house and all was good.&lt;/p&gt;
+
+&lt;p&gt;Thing is, the wifi in the house was grand previously. I have a &lt;a href=&#34;http://routerboard.com/RB951G-2HnD&#34;&gt;Routerboard RB951G&lt;/a&gt; which does the job and has no issues. And because i am mostly offsite in the office i work, and because i need to remotely manage the network, the MR18 is going into the office from tomorrow morning. I may talk about the MR18 and the rest of the Meraki gear later on, but this is not that post. This post is about something the MR18 did, and i wanted to do on the RB951.&lt;/p&gt;
+
+&lt;p&gt;So, the MR18 allows you to create multiple Wifi SSIDs, each with different encryption and security and can use different VLANs. Now, the Mikrotik does the same, but the VLANs stuff is not that easy to figure out. but essentially, what i needed to do was as follows:&lt;/p&gt;
+
+&lt;p&gt;create your new wifi SSIDs:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/interface wireless
+add master-interface=wlan1 name=wlan1.10 ssid=vlan10
+add master-interface=wlan1 name=wlan1.20 ssid=vlan20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;next, create your vlans. these need to be connected back to your main
+ethernet connection. In the case of my RB951, there are 5 ethernet
+ports. 1 is the gateway back to my Cisco switch and on to my &lt;a href=&#34;http://www.pfsense.org&#34;&gt;PFSense&lt;/a&gt; router. 2-5 are all slaves of number 1, which is a master. So, 1 is essentially a trunk network. So, vlans are created on that.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/interface vlan
+add name=vlan10 interface=ether1-gateway name=ether1.10 vlan-id=10
+add name=vlan20 interface=ether1-gateway name=ether1.20 vlan-id=20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;next, a bridge to connect them&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/interface bridge
+add name=vlan10
+add name=vlan20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and connect them to the bridge&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/interface bridge port
+add bridge=vlan10 interface ether1.10
+add bridge=vlan10 interface wlan1.10
+add bridge=vlan20 interface ether1.20
+add bridge=vlan20 interface wlan1.20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And thats all i needed to do. I have a &lt;a href=&#34;https://www.sophos.com/en-us/products/free-tools/sophos-utm-home-edition.aspx&#34;&gt;Sophos UTM Home edition&lt;/a&gt; running on a vm for testing, which vlan10 is connected to. It has an upstream connection back to the PFSense box, which has it firewalled off and allows it outside the network, not nothing else. I am planning on doing this with other firewalls, just to do some testing with. This allows me to connect my phone or laptop, or any other wifi device, to a given wifi connection and then be on my way. I also have an older Dell PowerConnect switch, which, if i ever get around to it, will have multiple connections back to the Cisco and then allow physical devices to connect to different vlans.&lt;/p&gt;
+
+&lt;p&gt;Any questions, comments, etc, leave a comment blow.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MicroTik RouterOS VPN Setup</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/microtik-routeros-vpn-setup/</link>
+      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/microtik-routeros-vpn-setup/</guid>
+      <description>
+
+&lt;p&gt;I have been running a &lt;a href=&#34;http://www.routerboard.com&#34;&gt;MikroTik RouterBoard&lt;/a&gt; in the house for a couple of months now (the &lt;a href=&#34;http://www.routerboard.com/RB750G&#34;&gt;RB750G&lt;/a&gt;) and I am very much loving the thing. But one thing you may need to do is setup VPN connections&amp;hellip; Here are some tips on how to create a VPN Server and Client on your RouterBoard.&lt;/p&gt;
+
+&lt;h2 id=&#34;client-setup&#34;&gt;Client Setup&lt;/h2&gt;
+
+&lt;p&gt;to setup a client, you need to do the following:&lt;/p&gt;
+
+&lt;p&gt;{% gist 8581643 %}&lt;/p&gt;
+
+&lt;p&gt;What does that all do? the first line creates an l2tp-client interface, pointing at &amp;ldquo;servername&amp;rdquo; with the username and password set. encryption, etc is enabled&amp;hellip; Line 2 then enables the client. Line 3 sets all traffic comming from networkaddress/24 (for example, 192.168.0.&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;24&lt;/sub&gt;) to be sent though the VPN. any traffic going into networkaddress (same example) is not sent though the VPN. Line 4 creates a gateway, for all addresses (0.0.0.0/0) to use the VPN address. finally, NAT Masquerading is enabled on the VPN interface.&lt;/p&gt;
+
+&lt;p&gt;there are more advanced things you can set above&amp;hellip; some examples I can think of are as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;There should be no good reason to limit the amount of VPN connections you have&amp;hellip; in theory, you could have multiple&amp;hellip;&lt;/li&gt;
+&lt;li&gt;for the mangle rule, set the src-address to a single machine in your network. that way, it gets VPN only connections. Also, you could set the dst-address to a single address or network to send only traffic going to a given server though the VPN&amp;hellip; Example would be Netflix US traffic to a US VPN server, BBC iPlayer traffic to a UK VPN, etc.&lt;/li&gt;
+&lt;li&gt;the example above uses L2TP, but PPTP, SSTP and OpenVPN are also available.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;server-setup&#34;&gt;Server Setup&lt;/h2&gt;
+
+&lt;p&gt;As mentioned above, L2TP, PPTP, SSTP and OpenVPN servers are available on RouterOs. Details on setting them up are available on MicroTik&amp;rsquo;s Wiki at the following locations:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://wiki.mikrotik.com/wiki/Manual:Interface/OVPN&#34;&gt;OpenVPN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://wiki.mikrotik.com/wiki/Manual:Interface/PPTP&#34;&gt;PPTP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://wiki.mikrotik.com/wiki/Manual:Interface/L2TP&#34;&gt;L2TP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://wiki.mikrotik.com/wiki/Manual:Interface/SSTP&#34;&gt;SSTP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

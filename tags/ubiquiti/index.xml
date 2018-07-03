@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ubiquiti on Tiernan&#39;s Comms Closet</title>
+    <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ubiquiti/</link>
+    <description>Recent content in Ubiquiti on Tiernan&#39;s Comms Closet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Sep 2015 20:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ubiquiti/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Edge Router, Sophos UTM, DMZ and LAN Networks</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/edgerouter-sophosutm-dmz-lan-firwwalls/</link>
+      <pubDate>Wed, 30 Sep 2015 20:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/edgerouter-sophosutm-dmz-lan-firwwalls/</guid>
+      <description>&lt;p&gt;I have been using an &lt;a href=&#34;https://www.ubnt.com/edgemax/edgerouter-poe/&#34;&gt;EdgeRouer POE&lt;/a&gt; as my main router for most of the network (some of the network still uses &lt;a href=&#34;http://www.pfsense.org&#34;&gt;PFSense&lt;/a&gt; as a router, but thats being removed soon) for the last few weeks, and i am quite happy with it. I also have a second router, a &lt;a href=&#34;https://www.sophos.com/en-us/products/unified-threat-management.aspx&#34;&gt;Sophos UTM&lt;/a&gt; VM between my first LAN (essentially a DMZ) and my client LAN (there will be more &amp;ldquo;LANs&amp;rdquo; over there soon). The Client LAN is NATed between the DMZ and the LAN, which means anything on the LAN i want to access from the DMZ has to be port forwarded&amp;hellip; Ideally, not much from the LAN should be accessible though the DMZ, but in my initial setup, stuff like &lt;a href=&#34;http://www.plex.tv&#34;&gt;Plex&lt;/a&gt;, etc, is&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;What i wanted to do was setup a proper firewall between both networks, without the use of NAT&amp;hellip; Do do this, i first had to disable th masquerading rules in Sophos:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/v1530620916/20150930-masquerading-off.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;next, on the EdgeRouter, i added a static route to point at the new network:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/v1530620916/20150930-static-route.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And finally, under firewall rules, i allowed what i wanted to allow (in this case, SSH from any DMZ client (not advised) to my Mac Mini).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/v1530620916/20150930-firewall-rules.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And that, as they say, is that! So far, so good!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Network and HomeLab V.Next (Part 4)</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-4/</link>
+      <pubDate>Wed, 16 Sep 2015 14:15:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-4/</guid>
+      <description>&lt;p&gt;So, after some messing, tweaking, and thinking, I have made some progress with the home lab&amp;hellip; or at least broken some stuff&amp;hellip; I mentioned previously that i had a &lt;a href=&#34;https://www.tiernanotoole.ie/2015/08/05/Ubiquiti-EdgeRouter-POE-In-the-lab.html&#34;&gt;Ubiqititi networks EdgeRouter POE&lt;/a&gt; in the home lab. Originally, the plan was to use a Virtual &lt;a href=&#34;http://www.pfsense.org&#34;&gt;PFSense&lt;/a&gt; box for my core router&amp;hellip; Given the power usage of the current PfSense Box (I have 2 &lt;a href=&#34;https://www.ubnt.com/mfi/mpower/&#34;&gt;MPower Pro&lt;/a&gt;&amp;rsquo;s watching power in the lab) I am now thinking of moving to just the EdgeRouter for, well, edge routing&amp;hellip;  below is the usage of the ProLiant for the last 12 hours or so:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-proliant-power-usage.PNG&#34; alt=&#34;Proliant Power Usage&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;for the same period, here is the usage for the &lt;a href=&#34;https://www.ubnt.com/edgemax/edgerouter-poe/&#34;&gt;Edge Router&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-edgerouter-power-usage.PNG&#34; alt=&#34;EdgeRouter POE Power Usage&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I am also setting up a DMZ for front facing services, and then a LAN for inside facing machines. There will be a firewall (currently thinking &lt;a href=&#34;https://www.sophos.com/en-us/products/unified-threat-management.aspx&#34;&gt;Sophos UTM&lt;/a&gt; or similar) between the DMZ and the network. Some machines will be able to access the DMZ, and there may be machines allowed into the LAN, but only some things&amp;hellip; not even sure if that would be done&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;I also need to work out the VLAN side of things. I have currently though of the following VLAN setup:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;WAN 1 (connected directly to the Cable modem)&lt;/li&gt;
+&lt;li&gt;WAN 2 (again, direct to cable modem)&lt;/li&gt;
+&lt;li&gt;LAN Network&lt;/li&gt;
+&lt;li&gt;DMZ Network&lt;/li&gt;
+&lt;li&gt;VoIP Network&lt;/li&gt;
+&lt;li&gt;IOT (stuff for running the house, like &lt;a href=&#34;https://nest.com/ie/thermostat/meet-nest-thermostat/&#34;&gt;Nest&lt;/a&gt;, the MPower devices or the like)&lt;/li&gt;
+&lt;li&gt;Media Network (Plex, Roku, Apple TV, Chrome Cast, etc. Not sure if i need to separate this, but it might be done&amp;hellip;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The current &lt;a href=&#34;http://www.cisco.com/c/en/us/products/switches/catalyst-3560-series-switches/index.html&#34;&gt;Cisco 3560G switch&lt;/a&gt; should do all that, without problems, so no new switch needed&amp;hellip; lets see what i can break over the next while&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubiquiti EdgeRouter PoE in the lab</title>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/ubiquiti-edgerouter-poe-in-the-lab/</link>
+      <pubDate>Wed, 05 Aug 2015 21:00:00 +0000</pubDate>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/ubiquiti-edgerouter-poe-in-the-lab/</guid>
+      <description>&lt;p&gt;Today, my &lt;a href=&#34;https://www.ubnt.com/edgemax/edgerouter-poe/&#34;&gt;Ubiquiti EdgeRouter POE&lt;/a&gt; arrived in the house. I got it hooked up to both UPC connections (as secondary connections) and all seems to be working grand. Some notes i wanted to put up here:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;out of the box, the install was quite simple. set my Ethernet connection to a static ip in the 192.168.1.x/24 range,
+using 192.168.1.1 as gateway and dns, and then point at &lt;a href=&#34;http://192.168.1.1&#34;&gt;http://192.168.1.1&lt;/a&gt; for admin. login (ubit for both username and
+password) and heay presto. I was asked did i agree to the license, and then im in.&lt;/li&gt;
+&lt;li&gt;by default, NAT is off&amp;hellip; i turned it on, and enabled DNS and was able to surf.&lt;/li&gt;
+&lt;li&gt;I also noticed the software was out of date&amp;hellip; Oddly, there did not seem to be an option to update automatically, but
+you can manually download the tar and upload it, which i did.&lt;/li&gt;
+&lt;li&gt;so far, so good&amp;hellip; not sure yet if i will be using it as my main router, but it may end up being a VoIP router.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finally, speed test result below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://res.cloudinary.com/tiernanotoole/image/upload/v1530620885/20150805.ubiquiti.speedtest.compressed-resized.jpg&#34; alt=&#34;Speed Test Result&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;More &lt;a href=&#34;https://www.ubnt.com&#34;&gt;Ubiquiti&lt;/a&gt; stuff arriving tomorrow&amp;hellip; will post more stuff then.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
