@@ -1,7 +1,7 @@
 {
     "version" : "https://jsonfeed.org/version/1",
-    "title" : "Tiernan's Comms Closet ",
-    "description": "Recent content on Tiernan's Comms Closet ",
+    "title" : "Tiernan's Comms Closet",
+    "description": "Recent content on Tiernan's Comms Closet",
     "home_page_url" : "https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/",
     "feed_url" : "https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/index.json",
     "items" : [
