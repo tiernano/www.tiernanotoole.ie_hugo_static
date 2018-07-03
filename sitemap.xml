@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/playing-with-amd-epyc/</loc>
+    <lastmod>2018-07-02T21:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/as204994-own-ip-space-and-anycast/</loc>
     <lastmod>2018-04-01T22:55:06+00:00</lastmod>
   </url>
@@ -577,7 +582,7 @@
   
   <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/hardware/</loc>
-    <lastmod>2018-03-06T08:00:00+00:00</lastmod>
+    <lastmod>2018-07-02T21:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -673,7 +678,7 @@
   
   <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/</loc>
-    <lastmod>2018-04-01T22:55:06+00:00</lastmod>
+    <lastmod>2018-07-02T21:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -685,7 +690,7 @@
   
   <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/programming/</loc>
-    <lastmod>2012-12-12T11:29:32+00:00</lastmod>
+    <lastmod>2018-07-02T21:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -698,6 +703,12 @@
   <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/raspberry_pi/</loc>
     <lastmod>2015-02-15T21:47:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/reviews/</loc>
+    <lastmod>2018-07-02T21:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
