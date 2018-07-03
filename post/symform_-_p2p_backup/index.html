@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symform - P2P Backup</title>
+
+    
+    
+    
+    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+    
+
+    <meta name="description" itemprop="description" content="I have previously posted about CrashPlan as my Backup System. I also, a long time ago, talked about Backing up SQL, MySQL and other stuff on my other blog. Well, CrashPlan is all good, but there are 2 &amp;ldquo;niggly&amp;rdquo; bits with it&amp;hellip;  Its not FREE (well, this year i got it Free on Black Friday&amp;hellip;) but it is cheap ($120 a year to backup 10 machines to the cloud aint bad." id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Backup,Storage,Networking,P2P" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/symform_-_p2p_backup/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
+
+    <script>var _paq = undefined;</script></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="site-container">
+      <div id="site-header">
+        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
+          <header class="small-text-center medium-text-left row">
+            <div class="row-item">
+              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet </span>
+              <br/><span id="site-tagline">morning...</span>
+            </div>
+          </header>
+        </a>
+        </div>
+      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
+        
+        
+        
+<main class="row-item small-full medium-two-thirds" >
+  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <header id="page-header">
+      <h1 itemprop="headline">Symform - P2P Backup</h1><p id="post-metadata" class="row"><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Published:</strong>
+          <time datetime="2012-11-30" content="2012-11-30" itemprop="datePublished">November 30, 2012</time>
+        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">3 minutes</span></span></p>
+      
+    </header>
+    
+    <div id="post-content">
+      <span itemprop="articleBody"><p>I have previously <a href="http://tiernanotoole.ie/2012/08/30/CrashPlan-Backups.html">posted about CrashPlan</a> as my Backup System. I also, a long time ago, talked about <a href="http://blog.lotas-smartman.net/new-backup-plan-out-with-jungle-disk-and-zmanda-cloud-backup-in-with-crashplan-mysqlbf-and-sqlbf/">Backing up SQL, MySQL and other stuff</a> on my other blog. Well, CrashPlan is all good, but there are 2 &ldquo;niggly&rdquo; bits with it&hellip;</p>
+
+<ul>
+<li>Its not FREE (well, this year i got it Free on Black Friday&hellip;) but it is cheap ($120 a year to backup 10 machines to the cloud aint bad.)</li>
+<li>Its NOT FAST! The CrashPlan Datacenters all live in the US, and my servers live in Europe (either Dublin or Germany). So, bandwidth is limited&hellip; Getting less than 1Mbit/s most times, but have seen it reach 3&hellip; I have 20Mbits/s upload&hellip; even half that would be nice&hellip;</li>
+</ul>
+
+<p>So, thats where <a href="https://control.symform.com/Organization/Referral?referralId=96E53D9DC4501633F2294EF202734DB08C00F044">Symform</a> comes in. Symform is a P2P Backup Service, which runs on Windows, Linux and MacOSX. In theory, it should run anywhere that has a <a href="http://www.mono-project.com/Main_Page">Mono</a> runtime since its written in .NET. Anyway, you start with 10Gb of free storage, and you can increese that by one of 2 ways:</p>
+
+<ul>
+<li>Pay money: for $0.15 per month, you get 1Gb of storage in the cloud</li>
+<li>Pay Bytes: For every 2Gb &ldquo;Contributed&rdquo; (which is actually more like a pledge than a contribution&hellip; more on that later) you get 1Gb storage in the cloud.</li>
+</ul>
+
+<p>It works very well, and is nice a fast too. I have a few machines in house which are contribting stoage, a total of about 2Tb, and I have been given 1Tb storage in &ldquo;The Cloud&rdquo;. There is a lot more on how this works on their &ldquo;<a href="http://www.symform.com/join-the-revolution/how-symform-works/">How Symform Works</a>&rdquo; section of their site.</p>
+
+<p>I mentioned the &ldquo;Contribution&rdquo; VS &ldquo;Pledge&rdquo; up above&hellip; I have a machine in the house where i have Pledged 1Tb of storage. In reality, Symform can use the full 1Tb of storage, if it needs to, but is currently only using 168Gb. Now, that could just be that the machine is still getting files, and it will end up using the full 1Tb eventually, but either way, its all good.</p>
+
+<p>Also, as a couple of notes on Contribution and Backups:</p>
+
+<ul>
+<li>The machine needs to be online and accessable on the internet at least 80% of the time, but <sup>24</sup>&frasl;<sub>7</sub> is ideal. If you drop below the 80%, your account can be suspended.</li>
+<li>your machine needs to be publically accessable, meaning port forwarded. I have a couple contribution machines in house, so they each have seperate ports forwarded to them.</li>
+<li>Given the P2P nature of the software, lots of connections to different machines are made&hellip; if you are behind a firewall, you may need to allow all or most outgoing connections. If you are on a really restrictive firewall, you may want to stick a contribution box in your <a href="http://en.wikipedia.org/wiki/DMZ_(computing)">DMZ</a> and probably use the <a href="http://www.symform.com/our-solutions/key-features/turbo-seeding/">Turbo Seeding</a> feature.</li>
+<li>Turbo Seeding is a handy feature, especially for Laptops&hellip; only problem is its Windows Only&hellip; So, importing and exporting does not work on Linux or OSX.</li>
+<li>The software can managed Work and Non Work hours, and will limit the upload and download speed during this time. Also a nice feature&hellip;</li>
+</ul>
+
+<p>So far, so good. Very happy with the software, but would like a nicer interface to see whats going on. At the moment, you are either limited to using the web interface, which aint bad, but not great, or watching the log files&hellip; I would also like the ability to prioritize certain files or folders, so, for example, upload my documents folder before anything else, and if anything changes in there, even if its uploading from somewhere else, pause and upload the documents folder&hellip; Just a thought&hellip;</p>
+</span>
+    </div><div id="post-tags">
+    	<ul class="menu">
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/backup" rel="tag" itemprop="url">backup</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/storage" rel="tag" itemprop="url">storage</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/networking" rel="tag" itemprop="url">networking</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/p2p" rel="tag" itemprop="url">p2 p</a>
+    		</li></ul>
+    </div></article>
+
+  <nav id="post-nav" class="row"><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/enabling_vnc_from_ssh_on_osx/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> enabling VNC from SSH on OSX</a><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git_tips_and_tricks/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">GIT tips and tricks <span class="fa fa-chevron-circle-right"></span></a></nav></main>
+
+        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+  
+	
+  
+	
+	
+</aside>
+
+      </div>
+      <footer class="row">
+        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
+          <div class="small-full">
+            <small>
+              &copy; 2018
+              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">Tiernan&#39;s Comms Closet </span>
+              </span>
+            </small>
+          </div>
+          <div class="small-full row">
+            
+            
+            <div class="row-item small-only-full">
+              
+                
+  
+  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+<script type="text/javascript">
+(function (w,d) {
+  var loader = function () {
+    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+    s.src = "//cdn.iubenda.com/iubenda.js";
+    tag.parentNode.insertBefore(s,tag);
+  };
+  if (w.addEventListener) {
+    w.addEventListener("load", loader, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", loader);
+  } else {
+    w.onload = loader;
+  }
+})(window, document);
+</script>
+
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
+
+
+</div>
+      </footer>
+    </div>
+    
+  </body>
+</html>

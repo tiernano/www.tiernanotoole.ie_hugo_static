@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZFS iSCSI NFS SFTP Hyper-V and more</title>
+
+    
+    
+    
+    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+    
+
+    <meta name="description" itemprop="description" content="As part of my new task to make my files safer and backups faster, and, well, cheap, I am looking into ZFS for my storage needs. My needs are as follows:  Allow me to store lots of different types of data (Photos, Videos, Music, VMs) in different formats (RAW and JPG photos, MP4, AVI and DivX Videos, with DVD and BluRay rips also a posibility, MP3 music and VHD files from HyperV, inclduing ISOs and Snapshots)." id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="ZFS,Storage,Projects,Hyper-V" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/zfs_iscsi_nfs_sftp_hyper-v_and_more/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
+
+    <script>var _paq = undefined;</script></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="site-container">
+      <div id="site-header">
+        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
+          <header class="small-text-center medium-text-left row">
+            <div class="row-item">
+              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet </span>
+              <br/><span id="site-tagline">morning...</span>
+            </div>
+          </header>
+        </a>
+        </div>
+      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
+        
+        
+        
+<main class="row-item small-full medium-two-thirds" >
+  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <header id="page-header">
+      <h1 itemprop="headline">ZFS iSCSI NFS SFTP Hyper-V and more</h1><p id="post-metadata" class="row"><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Published:</strong>
+          <time datetime="2012-10-05" content="2012-10-05" itemprop="datePublished">October 05, 2012</time>
+        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">3 minutes</span></span></p>
+      
+    </header>
+    
+    <div id="post-content">
+      <span itemprop="articleBody"><p>As part of my new task to make my files safer and backups faster, and, well, cheap, I am looking into <a href="http://en.wikipedia.org/wiki/ZFS">ZFS</a> for my storage needs. My needs are as follows:</p>
+
+<ul>
+<li>Allow me to store lots of different types of data (Photos, Videos, Music, VMs) in different formats (RAW and JPG photos, MP4, AVI and DivX Videos, with DVD and BluRay rips also a posibility, MP3 music and VHD files from HyperV, inclduing ISOs and Snapshots). I also need to store different file systems using <a href="http://en.wikipedia.org/wiki/ISCSI">iSCSI</a> (Mac and Windows clients will be mounting the storage).</li>
+<li>must be safe. DO NOT LOSE DATA!</li>
+<li>must be somewhat fast. I have VHDs weighing in at 100Gb&hellip; my photo collection is 600Gb. If i need to move or copy files to the storage system, it must be fast.</li>
+</ul>
+
+<p>So, ZFS offers all these features. I can export a file share as iSCSI, NFS, SMB, etc. All works well. But the replication stuff is the interesting part&hellip;</p>
+
+<p>The plan, which i am working on, is as follows:</p>
+
+<ul>
+<li>have 2 machines setup: one in house and one in a datacenter (I have a dedicated box in the <a href="http://www.hetzner.de/en">Hetzner</a> data center). both could be VMs (the one in the datacenter will more than likley be a VM).</li>
+<li>use the storage on the local system for whatever i need backed up.</li>
+<li>have a script which will take a snapshot of a given pool every 4 hours or so&hellip;</li>
+<li>that script should also dump the snapshot to a temporary location on the machine using ZFS send.</li>
+<li>that file should be checked, compressed, broken up into little bits and checked again&hellip; checking is important!</li>
+<li>take those little bits and send them to the datacenter, which will do lots more checking and import the files into the ZFS pool over there&hellip;</li>
+<li>there may even be a two way system to send from the datacenter back to the house&hellip;</li>
+<li>finally, the remote pool should be dumped to an SFTP backup system that Hetzner give me&hellip; Currently set at 100Gb, but can be increesed as needed&hellip;</li>
+</ul>
+
+<p>Thats the &ldquo;plan&rdquo;&hellip; Lets see how it actually works out&hellip;</p>
+
+<p>Anyway, parts of the process i need to tweak:</p>
+
+<ul>
+<li>uploading and using as much of my upload bandwidth as possible (2x10mb upload connections&hellip;) if i am backing up 800Gb, which should be my first backup, i would like to use both pipes to the fullest&hellip; on a single connection, at 50% capacity, it would take 15.1 days to upload. if i can get both connections to work at 80% capacity, giving me 16Mbits/s, it would be down to 4.7 days. With compression and Deduplication, i can probably bring that down a bit more&hellip;</li>
+<li>backing up to SFTP&hellip; Reading different things is telling me this might not be such a good idea&hellip;</li>
+</ul>
+
+<p>Some links which you might find useful:</p>
+
+<ul>
+<li><a href="http://nexenta.com/corp/">Nexenta</a>: I am using their <a href="http://www.nexentastor.org/projects/1/wiki/CommunityEdition">Community Edition</a> product for the system.</li>
+<li><a href="http://www.servethehome.com/create-nexentastor-vmware-esxi-virtual-machine/">Create a Nexenta Store device in ESXi</a></li>
+<li><a href="http://www.servethehome.com/configure-passthrough-vmdirectpath-vmware-esxi-raid-hba-usb-drive/">Configure passthough VMDirectPath in VMWare ESXi</a>: ideally, you should let Nexenta manage your disks&hellip; Dont think i can do it wiht the dedicated server, but might be possible with the server in house&hellip;</li>
+</ul>
+</span>
+    </div><div id="post-tags">
+    	<ul class="menu">
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/zfs" rel="tag" itemprop="url">z f s</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/storage" rel="tag" itemprop="url">storage</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/projects" rel="tag" itemprop="url">projects</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/hyper-v" rel="tag" itemprop="url">hyper v</a>
+    		</li></ul>
+    </div></article>
+
+  <nav id="post-nav" class="row"><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/more_jekyll_stuff/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> More Jekyll Stuff</a><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/routeros_blocking_machine_access/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">RouterOS Blocking Machine access to all but one IP <span class="fa fa-chevron-circle-right"></span></a></nav></main>
+
+        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+  
+	
+  
+	
+	
+</aside>
+
+      </div>
+      <footer class="row">
+        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
+          <div class="small-full">
+            <small>
+              &copy; 2018
+              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">Tiernan&#39;s Comms Closet </span>
+              </span>
+            </small>
+          </div>
+          <div class="small-full row">
+            
+            
+            <div class="row-item small-only-full">
+              
+                
+  
+  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+<script type="text/javascript">
+(function (w,d) {
+  var loader = function () {
+    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+    s.src = "//cdn.iubenda.com/iubenda.js";
+    tag.parentNode.insertBefore(s,tag);
+  };
+  if (w.addEventListener) {
+    w.addEventListener("load", loader, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", loader);
+  } else {
+    w.onload = loader;
+  }
+})(window, document);
+</script>
+
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
+
+
+</div>
+      </footer>
+    </div>
+    
+  </body>
+</html>

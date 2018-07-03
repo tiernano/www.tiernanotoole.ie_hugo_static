@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WANProxy and Squid with Upstream Servers</title>
+
+    
+    
+    
+    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+    
+
+    <meta name="description" itemprop="description" content="In my previous post on WANProxy, i did not really go into detail about what it actually was. The direct quote from their site is WANProxy is a free, portable TCP proxy which makes TCP connections send less data, which improves TCP performance and throughput over lossy links, slow links and long links. This is just what you need to improve performance over satellite, wireless and WAN links. This is something that has interested me for a while, so i have been looking into it, and so far so good&amp;hellip; In my last post i mentioned i was proxying Squid traffic, in todays post, i still am, but with some tweaks." id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Networking,Linux" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/wanproxy_and_squid_with_upstream_servers/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
+
+    <script>var _paq = undefined;</script></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="site-container">
+      <div id="site-header">
+        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
+          <header class="small-text-center medium-text-left row">
+            <div class="row-item">
+              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet </span>
+              <br/><span id="site-tagline">morning...</span>
+            </div>
+          </header>
+        </a>
+        </div>
+      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
+        
+        
+        
+<main class="row-item small-full medium-two-thirds" >
+  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <header id="page-header">
+      <h1 itemprop="headline">WANProxy and Squid with Upstream Servers</h1><p id="post-metadata" class="row"><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Published:</strong>
+          <time datetime="2012-10-26" content="2012-10-26" itemprop="datePublished">October 26, 2012</time>
+        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">2 minutes</span></span></p>
+      
+    </header>
+    
+    <div id="post-content">
+      <span itemprop="articleBody"><p>In my <a href="http://tiernanotoole.ie/2012/10/24/building_wanproxy_on_ubuntu_12.04.html">previous post on WANProxy</a>, i did not really go into detail about what it actually was. The direct quote from their site is <em><a href="http://www.wanproxy.org">WANProxy</a> is a free, portable TCP proxy which makes TCP connections send less data, which improves TCP performance and throughput over lossy links, slow links and long links. This is just what you need to improve performance over satellite, wireless and WAN links.</em> This is something that has interested me for a while, so i have been looking into it, and so far so good&hellip; In my last post i mentioned i was proxying <a href="http://www.squid-cache.org">Squid</a> traffic, in todays post, i still am, but with some tweaks.</p>
+
+<ul>
+<li>i have a Squid box running in the house. It is connected to 2 Cable Modems, giving me 250Mbits/s down and 20Mbits/s upload connection. It is caching data locally also.</li>
+<li>on my laptop i have Squid running also. It connects to a WANProxy server at home and proxies the Squid server. The local squid box is using the home Squid box as an upstream connection.</li>
+<li>for upstream connections i used the following lines in the squid.conf:</li>
+</ul>
+
+<p>{% gist 3958472 %}</p>
+
+<p>I have set it to never use a direct connection, which is probably silly, since if i loose the WANProxy connection, i loose connectivity&hellip; Also, port 3300 is the WANProxy port its listening on.</p>
+
+<p>So far, so good&hellip; I am also thinking this could be an interesting thing to get working on a <a href="http://www.raspberrypi.org">Raspberry Pi</a>&hellip;. Just a though&hellip; :)</p>
+</span>
+    </div><div id="post-tags">
+    	<ul class="menu">
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/networking" rel="tag" itemprop="url">networking</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/linux" rel="tag" itemprop="url">linux</a>
+    		</li></ul>
+    </div></article>
+
+  <nav id="post-nav" class="row"><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/building_wanproxy_on_ubuntu_12.04/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> Building WANProxy on Ubuntu 12.04</a><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/custom_msdeploy_overwrite_rules/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">Custom MSDeploy OverWrite Rules <span class="fa fa-chevron-circle-right"></span></a></nav></main>
+
+        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+  
+	
+  
+	
+	
+</aside>
+
+      </div>
+      <footer class="row">
+        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
+          <div class="small-full">
+            <small>
+              &copy; 2018
+              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">Tiernan&#39;s Comms Closet </span>
+              </span>
+            </small>
+          </div>
+          <div class="small-full row">
+            
+            
+            <div class="row-item small-only-full">
+              
+                
+  
+  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+<script type="text/javascript">
+(function (w,d) {
+  var loader = function () {
+    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+    s.src = "//cdn.iubenda.com/iubenda.js";
+    tag.parentNode.insertBefore(s,tag);
+  };
+  if (w.addEventListener) {
+    w.addEventListener("load", loader, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", loader);
+  } else {
+    w.onload = loader;
+  }
+})(window, document);
+</script>
+
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
+
+
+</div>
+      </footer>
+    </div>
+    
+  </body>
+</html>

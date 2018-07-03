@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bulk compressing images for the Web</title>
+
+    
+    
+    
+    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+    
+
+    <meta name="description" itemprop="description" content="Now that all my sites are running Jekyll I am trying to get them optimized for SPEED which meant looking at all the stuff that takes time to download&amp;hellip; There are more tweaks (and possibly posts) coming down the road, but to start, I needed to look at images. First things first. I&amp;rsquo;m running this on a Sabayon Linux box, so some of the install commands will be different&amp;hellip; (Also, i do need to explain why I moved from Windows to Linux on the GodboxV2, but that&amp;rsquo;s a different post&amp;hellip;)" id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Web,Linux" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/bulk-compressing-images-for-the-web/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
+
+    <script>var _paq = undefined;</script></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="site-container">
+      <div id="site-header">
+        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
+          <header class="small-text-center medium-text-left row">
+            <div class="row-item">
+              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet </span>
+              <br/><span id="site-tagline">morning...</span>
+            </div>
+          </header>
+        </a>
+        </div>
+      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
+        
+        
+        
+<main class="row-item small-full medium-two-thirds" >
+  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <header id="page-header">
+      <h1 itemprop="headline">Bulk compressing images for the Web</h1><p id="post-metadata" class="row"><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Published:</strong>
+          <time datetime="2015-04-29" content="2015-04-29" itemprop="datePublished">April 29, 2015</time>
+        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">2 minutes</span></span></p>
+      
+    </header>
+    
+    <div id="post-content">
+      <span itemprop="articleBody"><p>Now that all my sites are running <a href="http://www.jekyllrb.com">Jekyll</a> I am trying to get them optimized for <strong>SPEED</strong> which meant
+looking at all the stuff that takes time to download&hellip; There are more tweaks (and possibly posts) coming down
+the road, but to start, I needed to look at images.</p>
+
+<p>First things first. I&rsquo;m running this on a <a href="http://www.sabayon.org">Sabayon Linux</a> box, so some of the install commands will be different&hellip; (Also, i do need to explain why I moved from Windows to Linux on the <a href="http://tiernanotoole.ie/Computers/GodBoxV2.html">GodboxV2</a>, but that&rsquo;s a different post&hellip;)</p>
+
+<p>First, install <a href="http://optipng.sourceforge.net/">OptiPNG</a> (they have a Windows build too&hellip;) and <a href="http://www.kokkonen.net/tjko/projects.html">JPEGOptim</a></p>
+
+<pre><code>sudo equo install optipng
+sudo equo install jpegoptim
+</code></pre>
+
+<p>[UPDATE] I tried this on an Ubutnu Box, and to install both of these, the package names are the same. so, to install both:</p>
+
+<pre><code>sudo apt-get install optipng jpegoptim
+</code></pre>
+
+<p>Next, using the Linux find command (this should work also on OSX&hellip;) run OptiPNG and JPEGOptim on all pngs and
+jpgs in your given directory:</p>
+
+<pre><code>find . -iname &quot;*.png&quot; -exec optipng {} \;
+find . -iname &quot;*.jpe?g&quot; -exec jpegoptim {} \;
+</code></pre>
+
+<p>depending on how many images (and how fast your machine is) it should take a min or two&hellip;</p>
+
+<p>That&rsquo;s it! I did a git status, which showed me all the changed images, and then deployed the Jekyll sites&hellip; All
+good! That&rsquo;s it!</p>
+</span>
+    </div><div id="post-tags">
+    	<ul class="menu">
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/web" rel="tag" itemprop="url">web</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/linux" rel="tag" itemprop="url">linux</a>
+    		</li></ul>
+    </div></article>
+
+  <nav id="post-nav" class="row"><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/all-blogs-moved-to-jekyll/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> All blogs moved to Jekyll</a><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git-push-dns/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">Git Push DNS <span class="fa fa-chevron-circle-right"></span></a></nav></main>
+
+        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+  
+	
+  
+	
+	
+</aside>
+
+      </div>
+      <footer class="row">
+        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
+          <div class="small-full">
+            <small>
+              &copy; 2018
+              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">Tiernan&#39;s Comms Closet </span>
+              </span>
+            </small>
+          </div>
+          <div class="small-full row">
+            
+            
+            <div class="row-item small-only-full">
+              
+                
+  
+  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+<script type="text/javascript">
+(function (w,d) {
+  var loader = function () {
+    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+    s.src = "//cdn.iubenda.com/iubenda.js";
+    tag.parentNode.insertBefore(s,tag);
+  };
+  if (w.addEventListener) {
+    w.addEventListener("load", loader, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", loader);
+  } else {
+    w.onload = loader;
+  }
+})(window, document);
+</script>
+
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
+
+
+</div>
+      </footer>
+    </div>
+    
+  </body>
+</html>

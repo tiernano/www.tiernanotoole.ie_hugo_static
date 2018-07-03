@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2 Cable modems = Double Internet Speed? Well... not really... Part 1</title>
+
+    
+    
+    
+    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+    
+
+    <meta name="description" itemprop="description" content="[NOTE] This part 1 in a series of posts. The rest can be found here. First, a bit of background, and then I will explain what I am currently running in Part 2&amp;hellip; For the last 15 or so years, I have had at least 2 internet connections in to the house&amp;hellip; 2 of them have always been Cable Modems from NTL, which became UPC, and now is Virgin Media. When I started, i think the modems where 150/50kbit/s and 600/150kb/s, and have steadily increased in speed, currently at 360/36Mbit/s each&amp;hellip; But they have always been somewhat separate, and single thread downloads have always been limited to 1 of the connections&amp;hellip; I have been looking for ways around this for years&amp;hellip;" id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Networking,Projects,IPv6,Double_Internet" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-internet-speed-part1/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
+
+    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-proliant-power-usage.PNG" as="image" />
+    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-edgerouter-power-usage.PNG" as="image" />
+    <script>var _paq = undefined;</script></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="site-container">
+      <div id="site-header">
+        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
+          <header class="small-text-center medium-text-left row">
+            <div class="row-item">
+              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet </span>
+              <br/><span id="site-tagline">morning...</span>
+            </div>
+          </header>
+        </a>
+        </div>
+      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
+        
+        
+        
+<main class="row-item small-full medium-two-thirds" >
+  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <header id="page-header">
+      <h1 itemprop="headline">2 Cable modems = Double Internet Speed? Well... not really... Part 1</h1><p id="post-metadata" class="row"><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Published:</strong>
+          <time datetime="2016-03-22" content="2016-03-22" itemprop="datePublished">March 22, 2016</time>
+        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">3 minutes</span></span></p>
+      
+    </header>
+    
+    <div id="post-content">
+      <span itemprop="articleBody"><p>[NOTE] This part 1 in a series of posts. The rest can be found <a href="https://www.tiernanotoole.ie/tag/Double_Internet/">here</a>.</p>
+
+<p>First, a bit of background, and then I will explain what I am currently running in <a href="https://www.tiernanotoole.ie/2016/03/30/mptcp-ssh-squid-openvpn-double-speed-part-2.html">Part 2</a>&hellip;</p>
+
+<p>For the last 15 or so years, I have had at least 2 internet connections in to the house&hellip; 2 of them have always been Cable Modems from NTL, which became UPC, and now is <a href="http://www.virginmedia.ie">Virgin Media</a>. When I started, i think the modems where 150/50kbit/s and 600/150kb/s, and have steadily increased in speed, currently at 360/36Mbit/s each&hellip; But they have always been somewhat separate, and single thread downloads have always been limited to 1 of the connections&hellip; I have been looking for ways around this for years&hellip;</p>
+
+<p>It started with a <a href="http://www.cisco.com/c/en/us/products/routers/rv042-dual-wan-vpn-router/index.html">Linksys RV042 router</a> which allowed me to load balance my connections&hellip; At the time, and i cant even remember when this was, my total bandwidth would not exceed the router. The RV042 has 2 10/100mbit WAN links and 4 100mb/s LAN links&hellip;So, when the connection bandwidth increased, I moved to a new router&hellip;</p>
+
+<p>The next router vendor i tried was <a href="http://www.mikrotik.com">Mikrotik</a>. I tried a few different options, including an <a href="http://routerboard.com/RB1100">RB1100</a> and running their <a href="http://www.mikrotik.com/software">RouterOS</a> on x86 hardware&hellip; Both worked, well, ok, and the <a href="http://wiki.mikrotik.com/wiki/Load_Balancing#Nth">Load balancing with nth</a> stuff did do what i needed, along with other stuff, like routing traffic destined for some sites (like BBC iPlayer) to go over a VPN. But in the end, hardware issues and performance problems with the x86 machine (Mikrotik at the time was limited to 2GB of RAM on x86 hardware) I ended up at <a href="http://www.pfsense.org">PfSense</a>.</p>
+
+<p>PfSense was installed on the same hardware, a HP ProLiant ML110 G5 with 8GB RAM, a Core2Quad processor and 12 GigE Network cards&hellip; And, on PfSense, things were good&hellip; Performance was stable, load balancing worked as expected, I could set some traffic to go over certain links, etc. all was good&hellip; But I lacked IPv6&hellip; Plus, the HP used a LOT of power&hellip;</p>
+
+<p>The current instalment of my network uses a <a href="http://www.ubnt.com">Ubiquiti Networks</a> <a href="https://www.ubnt.com/edgemax/edgerouter-poe/">Edge Router POE</a>. To show the difference in power, check out the graphs from my <a href="https://www.ubnt.com/mfi/mpower/">Ubnt MPower</a> device. ProLiant first, EdgeRouter second:</p>
+
+<p><img src="https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-proliant-power-usage.PNG" alt="Proliant Power Usage" /></p>
+
+<p><img src="https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-edgerouter-power-usage.PNG" alt="EdgeRouter POE Power Usage" /></p>
+
+<p>Plus, the EdgeRouter does not produce as much heat, and its a LOT smaller that the PowerEdge! It does all the same things I could get PfSense to do, in a lot smaller package (I could, in theory, get a smaller box for PfSense).</p>
+
+<p>So, where does that leave us? Well, I now have 720Mbit/s down and 72Mbit/s up, if I can do multiple threads for uploading&hellip; But what if I don&rsquo;t? What&rsquo;s next? Well, in the second post, I will explain what I have been trying to do in resent weeks, and what I can do now&hellip;</p>
+</span>
+    </div><div id="post-tags">
+    	<ul class="menu">
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/networking" rel="tag" itemprop="url">networking</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/projects" rel="tag" itemprop="url">projects</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ipv6" rel="tag" itemprop="url">i pv6</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/double_internet" rel="tag" itemprop="url">double internet</a>
+    		</li></ul>
+    </div></article>
+
+  <nav id="post-nav" class="row"><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/announcing-b2uploader-hubictesting20/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> Announcing B2 Uploader and Hubic Testing 2.0</a><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/continuous-integration-and-blogging/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">Continuous Integration and Blogging <span class="fa fa-chevron-circle-right"></span></a></nav></main>
+
+        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+  
+	
+  
+	
+	
+</aside>
+
+      </div>
+      <footer class="row">
+        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
+          <div class="small-full">
+            <small>
+              &copy; 2018
+              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">Tiernan&#39;s Comms Closet </span>
+              </span>
+            </small>
+          </div>
+          <div class="small-full row">
+            
+            
+            <div class="row-item small-only-full">
+              
+                
+  
+  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+<script type="text/javascript">
+(function (w,d) {
+  var loader = function () {
+    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+    s.src = "//cdn.iubenda.com/iubenda.js";
+    tag.parentNode.insertBefore(s,tag);
+  };
+  if (w.addEventListener) {
+    w.addEventListener("load", loader, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", loader);
+  } else {
+    w.onload = loader;
+  }
+})(window, document);
+</script>
+
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
+
+
+</div>
+      </footer>
+    </div>
+    
+  </body>
+</html>

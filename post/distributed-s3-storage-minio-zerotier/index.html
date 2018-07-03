@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distributed S3 data storage using Minio (and Zerotier)</title>
+
+    
+    
+    
+    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+    
+
+    <meta name="description" itemprop="description" content="So, something i have been looking into in recient times has been Distributed Storage, and, more specifically, how to use the storage in my many, many machines to protect data, and also increese my usable space&amp;hellip; There are a few projects on the market that do this (Ceph, NooBaa and Gluster all spring to mind) but some are more painful to setup than others&amp;hellip; which brings me nicely to Minio. Minio is a 20ish MB executable you download from their site, mark it as executable (on Linux or Mac Boxes) and run&amp;hellip; and you have yourself a S3 compatable storage server&amp;hellip; Simples!" id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Storage,Tutorial,S3" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/distributed-s3-storage-minio-zerotier/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
+
+    <script>var _paq = undefined;</script></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="site-container">
+      <div id="site-header">
+        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
+          <header class="small-text-center medium-text-left row">
+            <div class="row-item">
+              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet </span>
+              <br/><span id="site-tagline">morning...</span>
+            </div>
+          </header>
+        </a>
+        </div>
+      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
+        
+        
+        
+<main class="row-item small-full medium-two-thirds" >
+  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <header id="page-header">
+      <h1 itemprop="headline">Distributed S3 data storage using Minio (and Zerotier)</h1><p id="post-metadata" class="row"><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Published:</strong>
+          <time datetime="2017-01-19" content="2017-01-19" itemprop="datePublished">January 19, 2017</time>
+        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">2 minutes</span></span></p>
+      
+    </header>
+    
+    <div id="post-content">
+      <span itemprop="articleBody"><p>So, something i have been looking into in recient times has been <a href="https://en.wikipedia.org/wiki/Distributed_data_store">Distributed Storage</a>, and, more specifically, how to use the storage in my <a href="https://www.tiernanotoole.ie/Computers/">many, many machines</a> to protect data, and also increese my usable space&hellip; There are a few projects on the market that do this (<a href="https://ceph.com/">Ceph</a>, <a href="http://www.noobaa.com/">NooBaa</a> and <a href="https://www.gluster.org/">Gluster</a> all spring to mind) but some are more painful to setup than others&hellip; which brings me nicely to <a href="https://minio.io/">Minio</a>. Minio is a 20ish MB executable you download from their site, mark it as executable (on Linux or Mac Boxes) and run&hellip; and you have yourself a S3 compatable storage server&hellip; Simples!</p>
+
+<p>&ldquo;But Wait!&rdquo; i here you screem! &ldquo;thats not distributed!&rdquo;. Well, yes&hellip; but, it can be! Their <a href="http://docs.minio.io/docs/distributed-minio-quickstart-guide">Distributed Quick Start Guide</a>, which is where i started with this, allows you to run a distributed copy of your data. I will let their documentation explain more, but this is what i did:</p>
+
+<ul>
+<li>download the minio server (single executable file) on a minimum of 4 machines.</li>
+<li>on each machine, run a command like the following:</li>
+</ul>
+
+<script src="https://gist.github.com/tiernano/a6617921976eef0c1c79b3175bd76bf7.js"></script>
+
+<p>replacing accesskey and secretkey with keys (check minio documentation to get these) and foldertoexport with, well, the folder you want to export!</p>
+
+<p>For me, i have 4 servers currently clustered. 2 are in <a href="http://www.online.net">online.net</a> (one in Paris, one in Amsterdam), 1 in <a href="http://www.ovh.net">OVH.NET</a> (France, somewhere) and one in Dublin (<a href="https://www.tiernanotoole.ie/Computers/GodBoxV2.html">GodBoxV2</a> currently). They are all interconnected using <a href="https://www.zerotier.com/">ZeroTier</a> (I will explain that later) and so far, so good&hellip; only ran some basic tests, but with it, i could loose 2 machines and still have data&hellip; Not bad for free! I will run some speed tests soon.</p>
+</span>
+    </div><div id="post-tags">
+    	<ul class="menu">
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/storage" rel="tag" itemprop="url">storage</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/tutorial" rel="tag" itemprop="url">tutorial</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/s3" rel="tag" itemprop="url">s3</a>
+    		</li></ul>
+    </div></article>
+
+  <nav id="post-nav" class="row"><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/docker-jekyll-and-mr-ngrock/" rel="prev" class="small-full medium-half pagination small-text-center medium-text-left"><span class="fa fa-chevron-circle-left"></span> Docker Jekyll and Mr ngrok</a><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/business-class-broadband/" rel="next" class="small-full medium-half pagination small-text-center medium-text-right">Business Class Broadband... finally here.... <span class="fa fa-chevron-circle-right"></span></a></nav></main>
+
+        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+  
+	
+  
+	
+	
+</aside>
+
+      </div>
+      <footer class="row">
+        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
+          <div class="small-full">
+            <small>
+              &copy; 2018
+              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">Tiernan&#39;s Comms Closet </span>
+              </span>
+            </small>
+          </div>
+          <div class="small-full row">
+            
+            
+            <div class="row-item small-only-full">
+              
+                
+  
+  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+<script type="text/javascript">
+(function (w,d) {
+  var loader = function () {
+    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+    s.src = "//cdn.iubenda.com/iubenda.js";
+    tag.parentNode.insertBefore(s,tag);
+  };
+  if (w.addEventListener) {
+    w.addEventListener("load", loader, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", loader);
+  } else {
+    w.onload = loader;
+  }
+})(window, document);
+</script>
+
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
+
+
+</div>
+      </footer>
+    </div>
+    
+  </body>
+</html>
