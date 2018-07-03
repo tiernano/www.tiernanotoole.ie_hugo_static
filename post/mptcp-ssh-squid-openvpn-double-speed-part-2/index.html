@@ -23,9 +23,9 @@
     
   <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
 
-    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2016/03/30/20160330-mlvpn-speed-test.PNG" as="image" />
-    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2016/03/30/20160330-mlvpn-speed-test-upload-only.PNG" as="image" />
-    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2016/03/30/20160330-mlvpn-speed-test-download-only.PNG" as="image" />
+    <link rel="preload" href="20160330-mlvpn-speed-test.PNG" as="image" />
+    <link rel="preload" href="20160330-mlvpn-speed-test-upload-only.PNG" as="image" />
+    <link rel="preload" href="20160330-mlvpn-speed-test-download-only.PNG" as="image" />
     <script>var _paq = undefined;</script></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <div id="site-container">
@@ -70,7 +70,7 @@ So, first, what have i tried&hellip; There are 3 different things i have tried, 
 
 <p>Ping wise, Digital Ocean is about 20-30ms away from the house (I picked London to host the servers) and Scaleway is a little further at about 50ms (They are based in France).</p>
 
-<h2 id="mptcp-multipath-tcp-5">MPTCP (<a href="http://www.multipath-tcp.org">MultiPath TCP</a>)</h2>
+<h2 id="mptcp-multipath-tcp-http-www-multipath-tcp-org">MPTCP (<a href="http://www.multipath-tcp.org">MultiPath TCP</a>)</h2>
 
 <p>MPTCP (their site is a bit wonky as of writing, so bare with me&hellip;) is a Linux Kernel patch that allows TCP connections to use multiple paths&hellip; Essentially, if you have Wifi and 4G in a phone, and MPTCP is enabled, it should allow you to use both connections for TCP traffic, as long as the server upstream supports it. It also allows for easy fail over if, say, you lose your wifi connection. There is an example <a href="https://youtu.be/VWN0ctPi5cw">video of it on YouTube</a> which should show the fail over parts and <a href="https://www.youtube.com/watch?v=VMdPI9Cfi9k">this video</a> shows how they managed to get 50Gbit/s out of a 6 10Gb Ethernet connections.</p>
 
@@ -80,17 +80,17 @@ So, first, what have i tried&hellip; There are 3 different things i have tried, 
 
 <p><a href="http://zehome.github.io/MLVPN">MLVPN</a> is a pretty interesting project that caught my eye. The idea is quite simple: you configure the local box and server, as mentioned in <a href="http://mlvpn.readthedocs.org/en/latest/linux_example.html">their example guide</a> and run the MLVPN program on the server, then the client. It creates 2 VPN tunnels between the 2 boxes, and bonds them&hellip; In my case, i was given an IP of 10.42.42.1 on my box in house and 10.42.42.2 on the server. Any traffic over that tunnel is bonded&hellip; Problem is, it seems to be quite processor intensive: my Digital Ocean box was showing one cpu core (out of 2) maxing out at around 80% and my Proliant in house maxing around the 70% mark&hellip; all while transferring data at around 100mbit/s. I tried iperf and got the following:</p>
 
-<p><img src="https://www.tiernanotoole.ie/post_images/2016/03/30/20160330-mlvpn-speed-test.PNG" alt="mlvpn speed test" /></p>
+<p><img src="20160330-mlvpn-speed-test.PNG" alt="mlvpn speed test" /></p>
 
 <p>getting 50mbit/s upload is good, in reality, since in theory my max speed would be 72, without overhead. but 116mb/s down is less than a third the max speed of a single connection. So, I tried just uploads and downloads&hellip;</p>
 
 <p>Upload Only (from local machine to server)</p>
 
-<p><img src="https://www.tiernanotoole.ie/post_images/2016/03/30/20160330-mlvpn-speed-test-upload-only.PNG" alt="mlvpn upload only test" /></p>
+<p><img src="20160330-mlvpn-speed-test-upload-only.PNG" alt="mlvpn upload only test" /></p>
 
 <p>Download Only (from server to local machine)</p>
 
-<p><img src="https://www.tiernanotoole.ie/post_images/2016/03/30/20160330-mlvpn-speed-test-download-only.PNG" alt="mlvpn download only test" /></p>
+<p><img src="20160330-mlvpn-speed-test-download-only.PNG" alt="mlvpn download only test" /></p>
 
 <p>As you can see, the download speed has increased a little, to 176Mbit/s, but the upload speed is now at over 60MBit/s!</p>
 
