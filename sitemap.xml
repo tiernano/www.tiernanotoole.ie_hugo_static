@@ -3,25 +3,989 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/daily-carry/</loc>
+    <lastmod>2018-07-04T12:51:11+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/testing/</loc>
+    <lastmod>2018-07-03T11:46:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/playing-with-amd-epyc/</loc>
+    <lastmod>2018-07-04T12:44:12+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/as204994-own-ip-space-and-anycast/</loc>
+    <lastmod>2018-07-04T11:04:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/blogging-on-ipad/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/new-backup-plans/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/testing-forestry/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/vscode-with-powershell/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/zerotier-minio-update/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/business-class-broadband/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/distributed-s3-storage-minio-zerotier/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/docker-jekyll-and-mr-ngrock/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/building-jekyll-sites-with-docker-on-windows/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/cloud-desktop-becoming-reality./</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-9-going-back/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/meraki-gear-update/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-8-routing-around/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-7-ecmp-kind-of/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/double-speed-internet-part-6-hetzner-edition/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/useful-web-and-desktop-apps-2016-edition/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-5/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-4/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/installing-jekyll-on-bash-on-ubuntu-on-windows/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-3/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/bash-on-ubuntu-on-windows/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/mptcp-ssh-squid-openvpn-double-speed-part-2/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/continuous-integration-and-blogging/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-internet-speed-part1/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/announcing-b2uploader-hubictesting20/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/edgerouter-sophosutm-dmz-lan-firwwalls/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-4/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/windwsserver2012r2-returing-to-the-godboxv2/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/zfs-home-dir/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/ubiquiti-edgerouter-poe-in-the-lab/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-3/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part2/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-1/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/pfsense-with-multiple-public-ips/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/quick-tip-for-internet-facing-esxi/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/vlans-wifi-and-mikrotik/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/using-git-and-route53/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git-push-dns/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/bulk-compressing-images-for-the-web/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/all-blogs-moved-to-jekyll/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/duplicity_hubic/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/hubic_swift_curl/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/daily_carry/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/mobile_phone_as_a_service/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/cdnhostedblog/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/raspberrypi_astrisk_box/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/college_bag_contents/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/raspberry_pi_as_a_mobile_wifi_hotspot_-_part_1/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/moving_sites_to_nearlyfreespeech/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/send_emails_as_a_distribution_group_in_office365/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/ipv6_firewall_rules_for_mikrotik_routeros/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/ipv6_%2b_mikrotik_%2b_linux_%2b_windows/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/compressing_and_uncompressing_protobuf_items_in_c/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git_tips_and_tricks/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/symform_-_p2p_backup/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/enabling_vnc_from_ssh_on_osx/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/moving_your_tmg_sql_server_and_other_tmg_tips/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/routeros_dynamic_ip_updates/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/custom_msdeploy_overwrite_rules/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/wanproxy_and_squid_with_upstream_servers/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/building_wanproxy_on_ubuntu_12.04/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/boot_raspberry_pi_with_ssh_enabled/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/gps_and_raspberry_pi/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/raspberry_pi_now_with_512mb_ram/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/more_raspberry_pi_and_camera_antics/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/routeros_using_host_names_in_firewall_rules/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/routeros_blocking_machine_access/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/zfs_iscsi_nfs_sftp_hyper-v_and_more/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/more_jekyll_stuff/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/handbrake-cluster/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/enabling-true-briding-mode-on-cisco-epc3925/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/powershell-handbrake-appletv-itunes/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/crashplan-backups/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/more-voip-stuff/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/raspberry-pi-cross-compiling/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/microtik-routeros-vpn-setup/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/ssh-tunneling-made-simple/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/voip-stuff/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/rasberry-stuff/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/build-your-own-private-git-server/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/understanding-windows8-storage-spaces/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/sublimetext-with-powershell/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/autoscalling-with-amazon/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/newsite/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/announcements/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/aws/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/b2/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/backblaze/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/backup/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/blogging/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/camera/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/cloud/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/cloud_desktop/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/code/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/college/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/computers/</loc>
+    <lastmod>2018-07-04T12:57:48+01:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/crashplan/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/c6100/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/pe1600sc/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/development/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/dns/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/docker/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/double_internet/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/email/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/firewall/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/gadgets/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/git/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/godboxv2/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/godbox/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/godboxv2/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/gps/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/guide/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/hpstorageworks/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/hardware/</loc>
+    <lastmod>2018-07-04T12:44:12+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/homelab/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/howto/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/hubic/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/hyper-v/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/ibmsrv1/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/ibmsrv2/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ipv6/</loc>
+    <lastmod>2018-07-04T11:04:35+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/jekyll/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/linux/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/macmini/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/macpro/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/macbookpro/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/media-center/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/surfacebook/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/mikrotik/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/nas/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/networking/</loc>
+    <lastmod>2018-07-04T11:04:35+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/office_365/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/opteron/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/osx/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/p2p/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/pfsense/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/photography/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/</loc>
+    <lastmod>2018-07-04T12:44:12+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/pe2900/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/pe2950/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/powershell/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/proliantml110/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/programming/</loc>
+    <lastmod>2018-07-04T12:44:12+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/projects/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/raspberry_pi/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/reviews/</loc>
+    <lastmod>2018-07-04T12:44:12+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/router/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/routeros/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/rsync/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/s3/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/server_2012/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/sophos_utm/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ssh/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/storage/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/sun/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tvserver/</loc>
+    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
+    <lastmod>2018-07-04T12:51:11+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/tips/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/tmg/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/tools/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/tutorial/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/tutorials/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ubiquiti/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/vmware/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/voip/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/web/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/website/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/windows/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/workstation/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/zfs/</loc>
+    <lastmod>2018-07-04T11:35:35+01:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Building WANProxy on Ubuntu 12.04</title>
+
+    
+    
+    
+    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+    
+
+    <meta name="description" itemprop="description" content="[Updated 2016/04/09] I had to use this today to build on Debian 8.3 for 2 different boxes. So, making minor changes (url to git proxy, and where you build from) to make sure this works now. I have been looking into WANProxy for a while now, but never successfully got it to build&amp;hellip; I have been more successfull reciently, so here is what you need to do. ** NOTE **: I built this on Ubuntu 12." id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Linux,Networking" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/building_wanproxy_on_ubuntu_12.04/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
+
+    <script>var _paq = undefined;</script></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="site-container">
+      <div id="site-header">
+        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
+          <header class="small-text-center medium-text-left row">
+            <div class="row-item">
+              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet</span>
+              <br/><span id="site-tagline">morning...</span>
+            </div>
+          </header>
+        </a>
+        </div>
+      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
+        
+        
+        
+<main class="row-item small-full medium-two-thirds" >
+  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <header id="page-header">
+      <h1 itemprop="headline">Building WANProxy on Ubuntu 12.04</h1><p id="post-metadata" class="row"><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Published:</strong>
+          <time datetime="2012-10-24" content="2012-10-24" itemprop="datePublished">October 24, 2012</time>
+        </span><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Last Updated:</strong>
+          <time datetime="2018-07-04" content="2018-07-04" itemprop="dateModified">July 04, 2018</time>
+        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">2 minutes</span></span></p>
+      
+    </header>
+    
+    <div id="post-content">
+      <span itemprop="articleBody"><p>[Updated 2016/04/09] I had to use this today to build on Debian 8.3 for 2 different boxes. So, making minor changes (url to git proxy, and where you build from) to make sure this works now.</p>
+
+<p>I have been looking into <a href="http://www.wanproxy.org">WANProxy</a> for a while now, but never successfully got it to build&hellip; I have been more successfull reciently, so here is what you need to do.</p>
+
+<p>** NOTE **: I built this on Ubuntu 12.04, so these are the tips for that&hellip; Not sure about other Distros&hellip;
+** Second NOTE ** : I am using the <a href="http://github.com/diegows/wanproxy">Digows GitHub Repo</a> for downloads&hellip; There is also the <a href="http://wanproxy.org/svn/trunk">WANProxy SVN Server</a> and their official <a href="http://wanproxy.org/get.shtml">downloads page</a>.</p>
+
+<pre><code>sudo apt-get install build-essential git-core libssl-dev uuid-dev
+
+git clone https://github.com/wanproxy/wanproxy.git
+
+cd wanproxy/programs/wanproxy
+
+make
+</code></pre>
+
+<ul>
+<li><p>Note -: git-core is needed to checkout code, build-essentails gives you your essential build utils, and the -dev files are needed for the build
+*- NOTE -: I have tried it on a couple VMs and they take about  5 min to build&hellip; If you are building on Physical hardware, it may be faster. Also, as a general note, if you are building with multiple processors, try add the -jX option, where x is your CPU count +1. for example, make -j5 if you have CPUs or Cores. or make -j17 if you have 16 cores&hellip;</p>
+
+<p>cp wanproxy ~/local/bin</p></li>
+</ul>
+
+<p>~~Now, this is, so far, as far as i have gotten&hellip; but given its building, and its further than I was a few weeks back, i though i would post incase i can help someone else&hellip; ~~</p>
+
+<p>** UPDATE ** I have successfully managed to get a WANProxy working. The way i have it setup is as follows:
+** UPDATE 2016 ** as part of my series on <a href="https://www.tiernanotoole.ie/tag/Projects/">getting double internet speed</a>, I am back looking at WANProxy&hellip; more on that later..</p>
+
+<ul>
+<li>Linux box in house, and VM on laptop.</li>
+<li>both have WANProxy installed</li>
+<li>use the ** Proxying over SSH ** example <a href="http://wanproxy.org/examples.shtml">from the WANProxy examples site</a> which shows you how to proxy a single web server over SSH.</li>
+<li>in my case, i pointed the port at my proxy server inhouse. I also changed the if0.host address from 127.0.0.1 (only accessable from that machine) to its internal IP address (can be seen by anyone on that network)</li>
+<li>finally, I told my browser to use the WANProxy ip and port 3300 (see the if0 config section) as its proxy.</li>
+</ul>
+
+<p>Works grand so far. no idea yet if its &ldquo;faster&rdquo; but its working, which is a start&hellip;</p>
+</span>
+    </div><div id="post-tags">
+    	<ul class="menu">
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/linux" rel="tag" itemprop="url">linux</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/networking" rel="tag" itemprop="url">networking</a>
+    		</li></ul>
+    </div></article>
+
+  </main>
+
+        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+  
+	
+  
+	
+	
+</aside>
+
+      </div>
+      <footer class="row">
+        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
+          <div class="small-full">
+            <small>
+              &copy; 2018
+              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">Tiernan&#39;s Comms Closet</span>
+              </span>
+            </small>
+          </div>
+          <div class="small-full row">
+            
+            
+            <div class="row-item small-only-full">
+              
+                
+  
+  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+<script type="text/javascript">
+(function (w,d) {
+  var loader = function () {
+    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+    s.src = "//cdn.iubenda.com/iubenda.js";
+    tag.parentNode.insertBefore(s,tag);
+  };
+  if (w.addEventListener) {
+    w.addEventListener("load", loader, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", loader);
+  } else {
+    w.onload = loader;
+  }
+})(window, document);
+</script>
+
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
+
+
+</div>
+      </footer>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Network and HomeLab V.Next (Part 4)</title>
+
+    
+    
+    
+    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+    
+
+    <meta name="description" itemprop="description" content="So, after some messing, tweaking, and thinking, I have made some progress with the home lab&amp;hellip; or at least broken some stuff&amp;hellip; I mentioned previously that i had a Ubiqititi networks EdgeRouter POE in the home lab. Originally, the plan was to use a Virtual PFSense box for my core router&amp;hellip; Given the power usage of the current PfSense Box (I have 2 MPower Pro&amp;rsquo;s watching power in the lab) I am now thinking of moving to just the EdgeRouter for, well, edge routing&amp;hellip; below is the usage of the ProLiant for the last 12 hours or so:" id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Networking,PFSense,Hardware,HomeLab,Ubiquiti" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-4/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
+
+    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-proliant-power-usage.PNG" as="image" />
+    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-edgerouter-power-usage.PNG" as="image" />
+    <script>var _paq = undefined;</script></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="site-container">
+      <div id="site-header">
+        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
+          <header class="small-text-center medium-text-left row">
+            <div class="row-item">
+              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet</span>
+              <br/><span id="site-tagline">morning...</span>
+            </div>
+          </header>
+        </a>
+        </div>
+      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
+        
+        
+        
+<main class="row-item small-full medium-two-thirds" >
+  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <header id="page-header">
+      <h1 itemprop="headline">Network and HomeLab V.Next (Part 4)</h1><p id="post-metadata" class="row"><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Published:</strong>
+          <time datetime="2015-09-16" content="2015-09-16" itemprop="datePublished">September 16, 2015</time>
+        </span><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Last Updated:</strong>
+          <time datetime="2018-07-04" content="2018-07-04" itemprop="dateModified">July 04, 2018</time>
+        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">2 minutes</span></span></p>
+      
+    </header>
+    
+    <div id="post-content">
+      <span itemprop="articleBody"><p>So, after some messing, tweaking, and thinking, I have made some progress with the home lab&hellip; or at least broken some stuff&hellip; I mentioned previously that i had a <a href="https://www.tiernanotoole.ie/2015/08/05/Ubiquiti-EdgeRouter-POE-In-the-lab.html">Ubiqititi networks EdgeRouter POE</a> in the home lab. Originally, the plan was to use a Virtual <a href="http://www.pfsense.org">PFSense</a> box for my core router&hellip; Given the power usage of the current PfSense Box (I have 2 <a href="https://www.ubnt.com/mfi/mpower/">MPower Pro</a>&rsquo;s watching power in the lab) I am now thinking of moving to just the EdgeRouter for, well, edge routing&hellip;  below is the usage of the ProLiant for the last 12 hours or so:</p>
+
+<p><img src="https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-proliant-power-usage.PNG" alt="Proliant Power Usage" /></p>
+
+<p>for the same period, here is the usage for the <a href="https://www.ubnt.com/edgemax/edgerouter-poe/">Edge Router</a>:</p>
+
+<p><img src="https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-edgerouter-power-usage.PNG" alt="EdgeRouter POE Power Usage" /></p>
+
+<p>I am also setting up a DMZ for front facing services, and then a LAN for inside facing machines. There will be a firewall (currently thinking <a href="https://www.sophos.com/en-us/products/unified-threat-management.aspx">Sophos UTM</a> or similar) between the DMZ and the network. Some machines will be able to access the DMZ, and there may be machines allowed into the LAN, but only some things&hellip; not even sure if that would be done&hellip;</p>
+
+<p>I also need to work out the VLAN side of things. I have currently though of the following VLAN setup:</p>
+
+<ul>
+<li>WAN 1 (connected directly to the Cable modem)</li>
+<li>WAN 2 (again, direct to cable modem)</li>
+<li>LAN Network</li>
+<li>DMZ Network</li>
+<li>VoIP Network</li>
+<li>IOT (stuff for running the house, like <a href="https://nest.com/ie/thermostat/meet-nest-thermostat/">Nest</a>, the MPower devices or the like)</li>
+<li>Media Network (Plex, Roku, Apple TV, Chrome Cast, etc. Not sure if i need to separate this, but it might be done&hellip;)</li>
+</ul>
+
+<p>The current <a href="http://www.cisco.com/c/en/us/products/switches/catalyst-3560-series-switches/index.html">Cisco 3560G switch</a> should do all that, without problems, so no new switch needed&hellip; lets see what i can break over the next while&hellip;</p>
+</span>
+    </div><div id="post-tags">
+    	<ul class="menu">
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/networking" rel="tag" itemprop="url">networking</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/pfsense" rel="tag" itemprop="url">p f sense</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/hardware" rel="tag" itemprop="url">hardware</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/homelab" rel="tag" itemprop="url">home lab</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ubiquiti" rel="tag" itemprop="url">ubiquiti</a>
+    		</li></ul>
+    </div></article>
+
+  </main>
+
+        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+  
+	
+  
+	
+	
+</aside>
+
+      </div>
+      <footer class="row">
+        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
+          <div class="small-full">
+            <small>
+              &copy; 2018
+              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">Tiernan&#39;s Comms Closet</span>
+              </span>
+            </small>
+          </div>
+          <div class="small-full row">
+            
+            
+            <div class="row-item small-only-full">
+              
+                
+  
+  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+<script type="text/javascript">
+(function (w,d) {
+  var loader = function () {
+    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+    s.src = "//cdn.iubenda.com/iubenda.js";
+    tag.parentNode.insertBefore(s,tag);
+  };
+  if (w.addEventListener) {
+    w.addEventListener("load", loader, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", loader);
+  } else {
+    w.onload = loader;
+  }
+})(window, document);
+</script>
+
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
+
+
+</div>
+      </footer>
+    </div>
+    
+  </body>
+</html>

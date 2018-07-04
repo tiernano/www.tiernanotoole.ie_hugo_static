@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zerotier and Minio Followup</title>
+
+    
+    
+    
+    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+
+    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
+    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
+
+    
+
+    <meta name="description" itemprop="description" content="in a previous post, I talked about setting up a distributed S3 like data storage system using Minio and ZeroTier. Well, this week, the ZeroTier guys tweeted about this. Distributed S3 data storage using @minio and #ZeroTier -- https://t.co/MAXTjo3muh &amp;mdash; ZeroTier, Inc. (@ZeroTier) May 2, 2017  A few people then started asking questions, and looking for a follow up, so here it is&amp;hellip; First, a quick recap. I had 4 machines, all running Linux." id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Networking,IPv6,HomeLab" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/zerotier-minio-update/">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
+
+    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2017/05/05/ftpdownload-zerotier-rs.png" as="image" />
+    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2017/05/05/ftpdownload-direct-rs.png" as="image" />
+    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2017/05/05/networkseed-rs.png" as="image" />
+    <script>var _paq = undefined;</script></head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="site-container">
+      <div id="site-header">
+        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
+          <header class="small-text-center medium-text-left row">
+            <div class="row-item">
+              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet</span>
+              <br/><span id="site-tagline">morning...</span>
+            </div>
+          </header>
+        </a>
+        </div>
+      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
+        
+        
+        
+<main class="row-item small-full medium-two-thirds" >
+  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
+    <header id="page-header">
+      <h1 itemprop="headline">Zerotier and Minio Followup</h1><p id="post-metadata" class="row"><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Published:</strong>
+          <time datetime="2017-05-05" content="2017-05-05" itemprop="datePublished">May 05, 2017</time>
+        </span><span class="row-item">
+          <span class="fa fa-clock-o"></span>
+          <strong>Last Updated:</strong>
+          <time datetime="2018-07-04" content="2018-07-04" itemprop="dateModified">July 04, 2018</time>
+        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">3 minutes</span></span></p>
+      
+    </header>
+    
+    <div id="post-content">
+      <span itemprop="articleBody"><p>in a <a href="https://www.tiernanotoole.ie/2017/01/19/distributed-s3-storage-minio-zerotier.html">previous post</a>, I talked about setting up a distributed S3 like data storage system using <a href="https://minio.io/">Minio</a> and <a href="https://www.zerotier.com/">ZeroTier</a>. Well, this week, the ZeroTier guys tweeted about this.</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Distributed S3 data storage using <a href="https://twitter.com/Minio?ref_src=twsrc%5Etfw">@minio</a> and <a href="https://twitter.com/hashtag/ZeroTier?src=hash&amp;ref_src=twsrc%5Etfw">#ZeroTier</a> -- <a href="https://t.co/MAXTjo3muh">https://t.co/MAXTjo3muh</a></p>&mdash; ZeroTier, Inc. (@ZeroTier) <a href="https://twitter.com/ZeroTier/status/859557214997970944?ref_src=twsrc%5Etfw">May 2, 2017</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>A few people then started asking questions, and looking for a follow up, so here it is&hellip;</p>
+
+<p>First, a quick recap. I had 4 machines, all running Linux. Three of them were in 1 time zone (GMT+1) and one was in another (GMT). Looking at the <a href="https://docs.minio.io/docs/distributed-minio-quickstart-guide">Distributed Minio Quickstart Guide</a> again, there is a mention of times being in sync&hellip; which is probably why this did not work as planned&hellip; and by &ldquo;not work as planed&rdquo;, I mean that Minio would crash, or not be responsive, or not write data in the place it should have&hellip; which was a pain. But looking at the documentation again, they do mention that Windows support is &ldquo;experimental&rdquo; which means, hopefully, some day it will be not so experimental, and might work&hellip; Given that most of my machines in house are Windows boxes, this would be a nice feature.</p>
+
+<p>Now, what about ZeroTier? Given they posted it to their twitter? Well, it worked. it did the inter connect stuff well, and, given bandwidth limitations on a home broadband connection, it was still quite fast.</p>
+
+<p>So, the question is, how fast? Well, on my <a href="https://www.tiernanotoole.ie/Computers/surfacebook.html">Surface Book</a> on a WiFi connection in the house, behind a <a href="http://www.meraki.com">Meraki</a> <a href="https://meraki.cisco.com/products/appliances/mx64">MX64</a> firewall, connecting to <a href="https://www.tiernanotoole.ie/Computers/GodBoxV2.html">the GodBoxV2</a> over FTP though ZeroTier, i get the following result:</p>
+
+<p><a href="https://www.tiernanotoole.ie/post_images/2017/05/05/ftpdownload-zerotier.png"><img src="https://www.tiernanotoole.ie/post_images/2017/05/05/ftpdownload-zerotier-rs.png" alt="FTP over ZeroTier" /></a></p>
+
+<p>the same download over FTP direct (no ZeroTier) does the following:</p>
+
+<p><a href="https://www.tiernanotoole.ie/post_images/2017/05/05/ftpdownload-direct.png"><img src="https://www.tiernanotoole.ie/post_images/2017/05/05/ftpdownload-direct-rs.png" alt="FTP direct" /></a></p>
+
+<p>So, direct over FTP is faster&hellip; in this instance by about 70%, but, over the download, it did get slower (seen it hit 12 at one stage) and because its over WiFi, those are a bit wonky&hellip;</p>
+
+<p>I did get one last screen shot:</p>
+
+<p><a href="https://www.tiernanotoole.ie/post_images/2017/05/05/networkspeed.png"><img src="https://www.tiernanotoole.ie/post_images/2017/05/05/networkseed-rs.png" alt="network speed" /></a></p>
+
+<p>as you can see, the Zerotier network adapter is showing 77.3Mbps, but the main network adapter is showing 80.8Mbps. There would be other traffic there, but if we assume there is nothing but ZeroTier traffic being sent, there is about 5% of an overhead.</p>
+
+<p>So, to wrap up: Minio and its distributed storage system over ZeroTier needs more testing. Ideally, all hosts need to be in the same time zone, or at least have the same time&hellip; Will try work on that soon. As for ZeroTier? I am extremely happy with them. Its fast, easy to setup, and easy to configure. What more could you ask for? Oh, and free, unless you need a pro account!</p>
+</span>
+    </div><div id="post-tags">
+    	<ul class="menu">
+        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/networking" rel="tag" itemprop="url">networking</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ipv6" rel="tag" itemprop="url">i pv6</a>
+    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/homelab" rel="tag" itemprop="url">home lab</a>
+    		</li></ul>
+    </div></article>
+
+  </main>
+
+        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  
+  
+  
+	
+  
+	
+	
+</aside>
+
+      </div>
+      <footer class="row">
+        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
+          <div class="small-full">
+            <small>
+              &copy; 2018
+              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <span itemprop="name">Tiernan&#39;s Comms Closet</span>
+              </span>
+            </small>
+          </div>
+          <div class="small-full row">
+            
+            
+            <div class="row-item small-only-full">
+              
+                
+  
+  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+<script type="text/javascript">
+(function (w,d) {
+  var loader = function () {
+    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
+    s.src = "//cdn.iubenda.com/iubenda.js";
+    tag.parentNode.insertBefore(s,tag);
+  };
+  if (w.addEventListener) {
+    w.addEventListener("load", loader, false);
+  } else if (w.attachEvent) {
+    w.attachEvent("onload", loader);
+  } else {
+    w.onload = loader;
+  }
+})(window, document);
+</script>
+
+              
+            </div>
+            
+            
+          </div>
+        </div>
+        
+        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
+
+
+</div>
+      </footer>
+    </div>
+    
+  </body>
+</html>
