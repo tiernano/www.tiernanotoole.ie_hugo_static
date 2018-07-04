@@ -7,48 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 30 May 2015 18:50:00 +0000</lastBuildDate>
-    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>PFSense with Multiple Public IPs</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/pfsense-with-multiple-public-ips/</link>
       <pubDate>Sat, 30 May 2015 18:50:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/pfsense-with-multiple-public-ips/</guid>
-      <description>&lt;p&gt;So, a few weeks back, i got my hands on a &lt;a href=&#34;http://www.hetzner.de/en&#34;&gt;Hetzner&lt;/a&gt; Dedicated box. It has a quad core Xeon, 32Gb ram, 3x3Tb hdds, RAID controller and KVMoIP. one of the first thing i did was get myself a /29 IP pool (8 total, 6 usable IPs). There where already 3 IPs given to me: 1 for the KVM, one for the box itself, and 1 as the router for the IP block.&lt;/p&gt;
-
-&lt;p&gt;So, i need to setup my own router, so i picked &lt;a href=&#34;http://www.pfsense.org&#34;&gt;PFSense&lt;/a&gt; since its what i run in house. I gave it 2 network connections: 1 connected to the main network adapter on the VMWare ESXi box (public) and one to a virtual switch, which is only used by VMs. The public is the WAN link and it gets a static IP from Hetzner, and the virtual switch is then my &amp;ldquo;LAN&amp;rdquo; link. This allows me to have standard NATed network connections to any VM i have, but then, what do i do with those IPs?&lt;/p&gt;
-
-&lt;p&gt;So, after a lot of digging, i found the answer. So, this should help.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Under firewall, click on Virtual IPs.&lt;/li&gt;
-&lt;li&gt;click the plus. I then selected IP alias, selected the WAN interface and set the IP to my first public IP i wanted to give. in my case, i was given a /29 block, and my first address was 176. This is the network address. I used 177. Likewise, my last address is 183, but that cannot be used either as its a broadcast address. give it a description and then hit OK. Repease for all IPs you want to use. TIP: Give each a meaningful description!&lt;/li&gt;
-&lt;li&gt;Next, click firewall, NAT and 1:1. Click the add button and select your interface as WAN. set the External Subnet IP as the one you want to use and your internal IP as the machine that will have it. Thats all i did on that screen&amp;hellip;&lt;/li&gt;
-&lt;li&gt;Then go to Firewall, NAT, outbound&amp;hellip; this is where things got complicated. Set the mode to &amp;ldquo;Manual outbound NAT rule generation (AON - Advanced Outbound NAT)&amp;rdquo; and click save.&lt;/li&gt;
-&lt;li&gt;Then create a new rule: Interface: WAN, Source, Network, IP of the internal machine and then under translation, under address select the IP you want to give it. If you followed my tip in step 2, you should see the descriptions in here.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;After saving everything and reloading the firewall, visiting a page like &lt;a href=&#34;http://www.whatsmyip.org&#34;&gt;WhatsMyIP&lt;/a&gt; or &lt;a href=&#34;http://icanhazip.com&#34;&gt;ICanHazIP&lt;/a&gt; should show you your public IP. You can then create firewall rules to allow access. Quick idea would be:&lt;/p&gt;
-
-&lt;p&gt;Firewall/Rules, Add, Interface WAN, Destination: Local IP you want to use, and give whatever &amp;ldquo;normal&amp;rdquo; rules you would (HTTP, lock down to source address, etc). Click apply and hitting that address using what ever method (SSH, HTTP, etc) should work.&lt;/p&gt;
-
-&lt;p&gt;YMMV, but hopefully this helps! Any questions, leave a comment.&lt;/p&gt;
-</description>
+      <description>So, a few weeks back, i got my hands on a Hetzner Dedicated box. It has a quad core Xeon, 32Gb ram, 3x3Tb hdds, RAID controller and KVMoIP. one of the first thing i did was get myself a /29 IP pool (8 total, 6 usable IPs). There where already 3 IPs given to me: 1 for the KVM, one for the box itself, and 1 as the router for the IP block.</description>
     </item>
     
     <item>
       <title>Quick tip for internet facing ESXi servers</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/quick-tip-for-internet-facing-esxi/</link>
       <pubDate>Wed, 20 May 2015 08:12:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/quick-tip-for-internet-facing-esxi/</guid>
-      <description>&lt;p&gt;Quick tip for all you with internet facing &lt;a href=&#34;http://www.vmware.com/products/vsphere-hypervisor&#34;&gt;VMWare ESXi&lt;/a&gt; Hosts. I
-have just got my hands on a box on the &lt;a href=&#34;http://www.hetzner.de/en&#34;&gt;Hetzner&lt;/a&gt; network (more on
-that later) and using their LARA system i installed ESXi on it. All was good, then I tried login in a couple hours later and i kept getting errors about my password being wrong&amp;hellip; So, i tried a few more times,  got pissed off and rebooted the box (had to do a hard reboot, since i couldn&amp;rsquo;t even get in over KVM). I though this was a hardware issue, or a config issue, and left it&amp;hellip; yesterday, i had the console open most of the day, and when looking at something i noticed this:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://res.cloudinary.com/tiernanotoole/image/upload/v1530620877/20150520-esxi-login-errors.png&#34; alt=&#34;ESXi Errors&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Well, that&amp;rsquo;s why I couldn&amp;rsquo;t login! So, tip: create a second user account, name it something other than root, give it a secure password and use that to login to your ESXi box. Ideally, your ESXi box should be behind a firewall, but in the case of a dedicated server, that may not be financially feasible&amp;hellip; Hope this helps someone!&lt;/p&gt;
-</description>
+      <description>Quick tip for all you with internet facing VMWare ESXi Hosts. I have just got my hands on a box on the Hetzner network (more on that later) and using their LARA system i installed ESXi on it. All was good, then I tried login in a couple hours later and i kept getting errors about my password being wrong&amp;hellip; So, i tried a few more times, got pissed off and rebooted the box (had to do a hard reboot, since i couldn&amp;rsquo;t even get in over KVM).</description>
     </item>
     
   </channel>

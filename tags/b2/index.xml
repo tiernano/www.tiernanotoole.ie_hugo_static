@@ -7,25 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 15 Jan 2016 23:55:00 +0000</lastBuildDate>
-    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/b2/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/b2/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Announcing B2 Uploader and Hubic Testing 2.0</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/announcing-b2uploader-hubictesting20/</link>
       <pubDate>Fri, 15 Jan 2016 23:55:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/announcing-b2uploader-hubictesting20/</guid>
-      <description>&lt;p&gt;I have 2 new side projects to announce on the site today. First has been running for a while (first check-in was December 28th) and it’s called &lt;a href=&#34;https://github.com/tiernano/b2uploader&#34;&gt;B2Uploader&lt;/a&gt;. Its a fairly simple Windows application to upload files to &lt;a href=&#34;https://www.backblaze.com/b2/cloud-storage.html&#34;&gt;BackBlaze B2&lt;/a&gt;. If you are not familiar with &lt;a href=&#34;https://secure.backblaze.com/r/01px2w&#34;&gt;BackBlaze&lt;/a&gt;, they provide unlimited backup storage for the low price of a fiver a month. They are the guys who design the &lt;a href=&#34;https://www.backblaze.com/blog/cloud-storage-hardware/&#34;&gt;BackBlaze storage pods&lt;/a&gt; (I want one, by the way!) that allow them to provide unlimited storage for the fiver a month (I currently backup over 4Tb to them!), and late last year, they started offing &lt;a href=&#34;https://www.backblaze.com/b2/cloud-storage.html&#34;&gt;B2&lt;/a&gt; which is a storage platform on their pods, and it has a (somewhat) easy to use API. AND ITS CHEAP! half a cent, up 0.5c, per gig stored per month! That’s crazy cheap!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/tiernano/b2uploader&#34;&gt;B2Uploader&lt;/a&gt; uses the B2 API to upload files (it could do more, but currently, as the name suggests, its upload only). Its quite simple, and all the code is available. More stuff coming over the next few weeks. some of the usual badges for open source applications are below. if you want to shout at me, shout in the &lt;a href=&#34;https://Gitter.im/tiernano/b2uploader&#34;&gt;Gitter chatroom&lt;/a&gt; and I will reply. You can see the latest builds over on &lt;a href=&#34;https://travis-ci.org/tiernano/b2uploader&#34;&gt;travis-ci&lt;/a&gt;, and the &lt;a href=&#34;https://github.com/tiernano/b2uploader/releases&#34;&gt;latest releases&lt;/a&gt; are available on GitHub.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://Gitter.im/tiernano/b2uploader?utm_source=badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=pr-badge&amp;amp;utm_content=badge&#34;&gt;&lt;img src=&#34;https://badges.Gitter.im/tiernano/b2uploader.svg&#34; alt=&#34;Join the chat at https://Gitter.im/tiernano/b2uploader&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://travis-ci.org/tiernano/b2uploader&#34;&gt;&lt;img src=&#34;https://travis-ci.org/tiernano/b2uploader.svg?branch=master&#34; alt=&#34;Build Status&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The second project is still in the planning phase, and it’s an update to an older project I was working on called &lt;a href=&#34;https://github.com/tiernano/HubicTesting&#34;&gt;HubicTesting&lt;/a&gt;. The name is very cleverly called, wait for it&amp;hellip; &lt;a href=&#34;https://github.com/tiernano/HubicTesting2.0&#34;&gt;HubicTesting 2.0&lt;/a&gt;! I have mentioned &lt;a href=&#34;http://www.hubic.com&#34;&gt;Hubic&lt;/a&gt; before &lt;a href=&#34;https://www.tiernanotoole.ie/2015/03/31/HubiC_SWIFT_CURL.html&#34;&gt;here&lt;/a&gt;. Cheap (about a tenner a month) for lots of storage (10TB!) but an odd API.. It uses &lt;a href=&#34;http://docs.openstack.org/developer/swift/&#34;&gt;Swift&lt;/a&gt; for storage, but has a weird(ish) API for authentication. Anyway, more details will be on the site once I write it up.&lt;/p&gt;
-
-&lt;p&gt;So, anyone needing to upload files to B2, check out &lt;a href=&#34;https://github.com/tiernano/b2uploader&#34;&gt;B2Uploader&lt;/a&gt;. Want to work with stuff on Hubic, check out &lt;a href=&#34;https://github.com/tiernano/HubicTesting2.0&#34;&gt;HubicTesting 2.0&lt;/a&gt;. Any questions, drop me a mail or find me on the Gitter channel. Have a good one!&lt;/p&gt;
-</description>
+      <description>I have 2 new side projects to announce on the site today. First has been running for a while (first check-in was December 28th) and it’s called B2Uploader. Its a fairly simple Windows application to upload files to BackBlaze B2. If you are not familiar with BackBlaze, they provide unlimited backup storage for the low price of a fiver a month. They are the guys who design the BackBlaze storage pods (I want one, by the way!</description>
     </item>
     
   </channel>

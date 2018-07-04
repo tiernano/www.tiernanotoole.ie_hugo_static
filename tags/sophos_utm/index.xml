@@ -7,29 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 30 Sep 2015 20:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/sophos_utm/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/sophos_utm/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Edge Router, Sophos UTM, DMZ and LAN Networks</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/edgerouter-sophosutm-dmz-lan-firwwalls/</link>
       <pubDate>Wed, 30 Sep 2015 20:00:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/edgerouter-sophosutm-dmz-lan-firwwalls/</guid>
-      <description>&lt;p&gt;I have been using an &lt;a href=&#34;https://www.ubnt.com/edgemax/edgerouter-poe/&#34;&gt;EdgeRouer POE&lt;/a&gt; as my main router for most of the network (some of the network still uses &lt;a href=&#34;http://www.pfsense.org&#34;&gt;PFSense&lt;/a&gt; as a router, but thats being removed soon) for the last few weeks, and i am quite happy with it. I also have a second router, a &lt;a href=&#34;https://www.sophos.com/en-us/products/unified-threat-management.aspx&#34;&gt;Sophos UTM&lt;/a&gt; VM between my first LAN (essentially a DMZ) and my client LAN (there will be more &amp;ldquo;LANs&amp;rdquo; over there soon). The Client LAN is NATed between the DMZ and the LAN, which means anything on the LAN i want to access from the DMZ has to be port forwarded&amp;hellip; Ideally, not much from the LAN should be accessible though the DMZ, but in my initial setup, stuff like &lt;a href=&#34;http://www.plex.tv&#34;&gt;Plex&lt;/a&gt;, etc, is&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;What i wanted to do was setup a proper firewall between both networks, without the use of NAT&amp;hellip; Do do this, i first had to disable th masquerading rules in Sophos:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/v1530620916/20150930-masquerading-off.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;next, on the EdgeRouter, i added a static route to point at the new network:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/v1530620916/20150930-static-route.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;And finally, under firewall rules, i allowed what i wanted to allow (in this case, SSH from any DMZ client (not advised) to my Mac Mini).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/v1530620916/20150930-firewall-rules.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;And that, as they say, is that! So far, so good!&lt;/p&gt;
-</description>
+      <description>I have been using an EdgeRouer POE as my main router for most of the network (some of the network still uses PFSense as a router, but thats being removed soon) for the last few weeks, and i am quite happy with it. I also have a second router, a Sophos UTM VM between my first LAN (essentially a DMZ) and my client LAN (there will be more &amp;ldquo;LANs&amp;rdquo; over there soon).</description>
     </item>
     
   </channel>

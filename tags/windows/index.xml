@@ -7,61 +7,45 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 23 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Useful Web and Desktop Apps 2016 edition</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/useful-web-and-desktop-apps-2016-edition/</link>
       <pubDate>Sat, 23 Apr 2016 00:00:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/useful-web-and-desktop-apps-2016-edition/</guid>
-      <description>&lt;p&gt;I have decided to do a post on some of my favourite tools to use for development, administration, etc. It’s kind of like &lt;a href=&#34;http://www.hanselman.com/blog/ScottHanselmans2014UltimateDeveloperAndPowerUsersToolListForWindows.aspx&#34;&gt;Hanselman&amp;rsquo;s Ultimate Tools list&lt;/a&gt;, but not as popular and about 2 years newer&amp;hellip; Anyway, the &lt;a href=&#34;https://www.tiernanotoole.ie/ToolsList/&#34;&gt;list is available here&lt;/a&gt;, and will be updated over time, much like my &lt;a href=&#34;https://www.tiernanotoole.ie/DailyCarry/&#34;&gt;Daily Carry&lt;/a&gt; and &lt;a href=&#34;https://www.tiernanotoole.ie/Computers/&#34;&gt;Computers&lt;/a&gt; pages. If you are interested, you add links though &lt;a href=&#34;https://www.github.com&#34;&gt;GitHub&lt;/a&gt; by editing the &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie/blob/master/_data/toolslist.yml&#34;&gt;toolslist.yml data file&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>I have decided to do a post on some of my favourite tools to use for development, administration, etc. It’s kind of like Hanselman&amp;rsquo;s Ultimate Tools list, but not as popular and about 2 years newer&amp;hellip; Anyway, the list is available here, and will be updated over time, much like my Daily Carry and Computers pages. If you are interested, you add links though GitHub by editing the toolslist.yml data file.</description>
     </item>
     
     <item>
       <title>Bash on Ubuntu on Windows</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/bash-on-ubuntu-on-windows/</link>
       <pubDate>Thu, 31 Mar 2016 07:00:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/bash-on-ubuntu-on-windows/</guid>
-      <description>&lt;p&gt;Microsoft &lt;a href=&#34;http://www.buildwindows.com/&#34;&gt;Build 2016&lt;/a&gt; is on this week, and there were a lot of interesting developments yesterday, but the one that interested me the most is &lt;a href=&#34;http://www.hanselman.com/blog/DevelopersCanRunBashShellAndUsermodeUbuntuLinuxBinariesOnWindows10.aspx&#34;&gt;Bash on Ubuntu on Windows&lt;/a&gt;. &lt;a href=&#34;http://blog.dustinkirkland.com/2016/03/ubuntu-on-windows.html&#34;&gt;Dustin from Ubuntu&lt;/a&gt; has a more details, and Scott Hanselman has posted &lt;a href=&#34;https://channel9.msdn.com/Events/Build/2016/C906&#34;&gt;a technical video&lt;/a&gt; about this. This is very interesting, and I CANT WAIT TO GET MY HANDS ON IT! But, I do have some questions, which I thought I would put down in blog format:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Based on the post by Dustin, it seems that low level Linux calls are being handled and translated to Windows system calls. Which makes me think, could &lt;strong&gt;any&lt;/strong&gt; Linux Distro work? Could &lt;a href=&#34;http://www.archlinux.org&#34;&gt;Arch Linux&lt;/a&gt;, &lt;a href=&#34;http://www.redhat.com&#34;&gt;RedHat&lt;/a&gt; or &lt;a href=&#34;http://www.centos.org&#34;&gt;Centos&lt;/a&gt; work in the same way?&lt;/li&gt;
-&lt;li&gt;Will this Work on Windows Server 2016 when it launches?&lt;/li&gt;
-&lt;li&gt;Given that it calling down to a low level, could GUI applications work too?&lt;/li&gt;
-&lt;li&gt;Shut up and take my money! I WANT IT NOW!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So, there are my questions&amp;hellip; This is very cool, and I cannot wait to get my hands on this. Just wondering if this will be available to &lt;a href=&#34;https://insider.windows.com/&#34;&gt;Windows Insiders&lt;/a&gt; sooner, rather than later?&lt;/p&gt;
-</description>
+      <description>Microsoft Build 2016 is on this week, and there were a lot of interesting developments yesterday, but the one that interested me the most is Bash on Ubuntu on Windows. Dustin from Ubuntu has a more details, and Scott Hanselman has posted a technical video about this. This is very interesting, and I CANT WAIT TO GET MY HANDS ON IT! But, I do have some questions, which I thought I would put down in blog format:</description>
     </item>
     
     <item>
       <title>IPv6 &#43; MikroTik &#43; Linux &#43; Windows</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/ipv6_%2b_mikrotik_%2b_linux_%2b_windows/</link>
       <pubDate>Wed, 19 Dec 2012 16:24:07 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/ipv6_%2b_mikrotik_%2b_linux_%2b_windows/</guid>
-      <description>&lt;p&gt;I have been wanting to setup an &lt;a href=&#34;http://en.wikipedia.org/wiki/Ipv6&#34;&gt;IPv6&lt;/a&gt; network for a while now, but never had the hardware or network to support it. My broadband Modem, a Cisco EPC3925, was pretty useless&amp;hellip; But with the advent of &lt;a href=&#34;http://tiernanotoole.ie/2012/10/02/Enabling-true-briding-mode-on-Cisco-EPC3925.html&#34;&gt;Bridging on the Cisco EPC3925&lt;/a&gt; it now works!&lt;/p&gt;
-
-&lt;p&gt;The first thing i needed to do was setup a &lt;a href=&#34;http://www.tunnelbroker.net/&#34;&gt;Tunnel Broker Account&lt;/a&gt; with &lt;a href=&#34;http://www.he.net&#34;&gt;Hurricane Electric&lt;/a&gt;. I got a /64 block of IPv6 addresses, which should do me for a while&amp;hellip; :)&lt;/p&gt;
-
-&lt;p&gt;Next, I followed the config example from the MikroTik Wiki Page: &lt;a href=&#34;http://wiki.mikrotik.com/wiki/Manual:My_First_IPv6_Network&#34;&gt;My First IPv6 Network&lt;/a&gt;. In my case, i only ran though most of router 1&amp;rsquo;s config, and did not create the &amp;ldquo;routing between segments&amp;rdquo; and &amp;ldquo;ospv-v3&amp;rdquo; backbone&amp;hellip; I did give my internal LAN port an IPv6 address, as well as an IPv4 address.&lt;/p&gt;
-
-&lt;p&gt;Next, on my Windows Server machine, i gave it a static IPv6 address (since i dont have an IPv6 DHCP setup&amp;hellip; yet&amp;hellip;) and told it to use the IPv6 address i gave the RouteBoard as its gateway. Then i told it to use the &lt;a href=&#34;http://www.opendns.com&#34;&gt;OpenDNS&lt;/a&gt; &lt;a href=&#34;http://www.opendns.com/ipv6&#34;&gt;public IPv6&lt;/a&gt; address. I then visited &lt;a href=&#34;http://www.ipv6-test.com&#34;&gt;IPv6 Test&lt;/a&gt; and &lt;a href=&#34;http://ipv6.google.com&#34;&gt;Google&amp;rsquo;s IPv6 page&lt;/a&gt; to confirm connectivity&amp;hellip; SUCCESS!!!&lt;/p&gt;
-
-&lt;p&gt;On my Linux box, I followed &lt;a href=&#34;http://knowledgelayer.softlayer.com/questions/468/Adding+IPv6+to+Ubuntu+systems&#34;&gt;Soflayer&amp;rsquo;s Adding an IPv6 IP&lt;/a&gt; tutorial.&lt;/p&gt;
-
-&lt;p&gt;So far, so good&amp;hellip;&lt;/p&gt;
-</description>
+      <description>I have been wanting to setup an IPv6 network for a while now, but never had the hardware or network to support it. My broadband Modem, a Cisco EPC3925, was pretty useless&amp;hellip; But with the advent of Bridging on the Cisco EPC3925 it now works!
+The first thing i needed to do was setup a Tunnel Broker Account with Hurricane Electric. I got a /64 block of IPv6 addresses, which should do me for a while&amp;hellip; :)</description>
     </item>
     
     <item>
       <title>Understanding Storage Spaces in Windows 8 and Windows Server 2012</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/understanding-windows8-storage-spaces/</link>
       <pubDate>Fri, 31 Aug 2012 09:04:14 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/understanding-windows8-storage-spaces/</guid>
-      <description>&lt;p&gt;So, Windows Server 2012 and Windows 8 have both RTMed in the last couple of weeks and will be available to the public in the next month or so (September for Server, October for Client). If you are an MSDN Subscriber, you already have Client, and will (hopefully) get server in the next couple of weeks&amp;hellip; Fingers crossed&amp;hellip; Anyway, one of the interesting features i am waiting for is &lt;a href=&#34;http://blogs.msdn.com/b/b8/archive/2012/01/05/virtualizing-storage-for-scale-resiliency-and-efficiency.aspx&#34;&gt;Storage Spaces&lt;/a&gt;. Tim Anderson&amp;rsquo;s Gadget Writing blog has some information on &lt;a href=&#34;http://gadgets.itwriting.com/1462-understanding-windows-8-storage-spaces-confusing-but-powerful.html&#34;&gt;how Storage Spaces works&lt;/a&gt;. handy notes on what to do and what not to do.&lt;/p&gt;
-</description>
+      <description>So, Windows Server 2012 and Windows 8 have both RTMed in the last couple of weeks and will be available to the public in the next month or so (September for Server, October for Client). If you are an MSDN Subscriber, you already have Client, and will (hopefully) get server in the next couple of weeks&amp;hellip; Fingers crossed&amp;hellip; Anyway, one of the interesting features i am waiting for is Storage Spaces.</description>
     </item>
     
   </channel>

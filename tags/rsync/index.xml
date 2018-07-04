@@ -7,31 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 15 Jan 2013 19:23:02 +0000</lastBuildDate>
-    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Moving sites to NearlyFreeSpeech</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/moving_sites_to_nearlyfreespeech/</link>
       <pubDate>Tue, 15 Jan 2013 19:23:02 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/moving_sites_to_nearlyfreespeech/</guid>
-      <description>&lt;p&gt;I have been running a Dedicated Server from &lt;a href=&#34;http://www.hetzner.de/en&#34;&gt;Hetzner&lt;/a&gt; for a while now, but have started to look at what i am running on the site, and reailized i under utilize the machine a lot&amp;hellip; For example, this site is generated using &lt;a href=&#34;http://www.vmware.com/products/vsphere-hypervisor/overview.html&#34;&gt;Jekyll&lt;/a&gt;, which takes up very little power, and becomes static HTML files. My other blogs (&lt;a href=&#34;http://blog.lotas-smartman.net&#34;&gt;Tiernan&amp;rsquo;s Comms Closet&lt;/a&gt; and &lt;a href=&#34;http://www.geekphotographer.com&#34;&gt;GeekPhotographer&lt;/a&gt;) are both low traffic &lt;a href=&#34;http://www.wordpress.org&#34;&gt;Wordpress&lt;/a&gt; sites, and I run a couple of other static sites also for friends&amp;hellip; All in all, not a lot of power&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;Its not a fortune to run the server, the box i have has a Quad Core, Hyper threaded Intel i7, 32Gb RAM, 2 3TB Hdds (not raid&amp;hellip;) and runs a copy of &lt;a href=&#34;https://github.com/mojombo/jekyll&#34;&gt;VMWare ESXi&lt;/a&gt;, and it costs about EUR60 a month, including a couple of IP addresses&amp;hellip; But, i dont use it all that often&amp;hellip; So, i am in the process of getting rid of it&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;So, the 2 other blogs (&lt;a href=&#34;http://www.geekphotographer.com&#34;&gt;GeekPhotographer&lt;/a&gt; and &lt;a href=&#34;http://blog.lotas-smartman.net&#34;&gt;Tiernan&amp;rsquo;s Comms Closet&lt;/a&gt;) have already moved. They where easy enough&amp;hellip; Export the Wordpress DB, copy the file up, tweak the config, import the DB, DNS updates, etc&amp;hellip; All done&amp;hellip; but this site&amp;hellip; that is more &amp;ldquo;Complicated&amp;rdquo;&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;Since it is generated on a &amp;lsquo;&lt;a href=&#34;http://tiernanotoole.ie/2012/08/29/NewSite.html&#34;&gt;git push&lt;/a&gt;&amp;rsquo;, Jekyll and Ruby needs to be installed on the box&amp;hellip; I am using static sites on &lt;a href=&#34;http://www.nearlyfreespeech.net/&#34;&gt;NearlyFreeSpeech&lt;/a&gt; which only charge me per meg (about 0.1c, but that reduces as you transfer more) transfered and per 5 meg stored (1c). Thats for STATIC sites&amp;hellip; if you are running a dynamic site, its about 1c per 1mb stored, plus 1c per day, plus another 2c for MySQL instances. Check out their &lt;a href=&#34;https://www.nearlyfreespeech.net/estimate&#34;&gt;pricing calculator&lt;/a&gt; to see the magic at work!&lt;/p&gt;
-
-&lt;p&gt;Anyway, my GIT repo is on a machine in the house. It has Jekyll and all required bits installed. In the &amp;lsquo;post-receive&amp;rsquo; hook (check &lt;a href=&#34;http://blog.zerosum.org/2010/11/01/pure-git-deploy-workflow.html&#34;&gt;the original zerosum post&lt;/a&gt;), i generate the site, and then do an rsync copy to NFSN servers. That is it!&lt;/p&gt;
-
-&lt;p&gt;Any question, leave a comment.&lt;/p&gt;
-
-&lt;p&gt;[update] forgot to add the &lt;a href=&#34;https://gist.github.com/4545178&#34;&gt;gist&lt;/a&gt; which shows how i do the rsync call&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;{% gist 4545178 %}&lt;/p&gt;
-
-&lt;p&gt;[update2] you in my case, the folder that Jekyll is being built in needed to be chmoded and chowned&amp;hellip; I chowned the the folder to the gitolite user and i chmodded the folder to 777&amp;hellip; before i did this, some files where unreadable on NFSN&amp;hellip; with this, all works grand&amp;hellip;&lt;/p&gt;
-</description>
+      <description>I have been running a Dedicated Server from Hetzner for a while now, but have started to look at what i am running on the site, and reailized i under utilize the machine a lot&amp;hellip; For example, this site is generated using Jekyll, which takes up very little power, and becomes static HTML files. My other blogs (Tiernan&amp;rsquo;s Comms Closet and GeekPhotographer) are both low traffic Wordpress sites, and I run a couple of other static sites also for friends&amp;hellip; All in all, not a lot of power&amp;hellip;</description>
     </item>
     
   </channel>

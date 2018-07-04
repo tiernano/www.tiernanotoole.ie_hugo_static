@@ -7,218 +7,58 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 11 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Installing Jekyll on Bash On Ubuntu on Windows</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/installing-jekyll-on-bash-on-ubuntu-on-windows/</link>
       <pubDate>Mon, 11 Apr 2016 00:00:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/installing-jekyll-on-bash-on-ubuntu-on-windows/</guid>
-      <description>&lt;p&gt;At the 2016 Build conference, Microsoft announced that &lt;a href=&#34;https://www.tiernanotoole.ie/2016/03/31/bash-on-ubuntu-on-windows.html&#34;&gt;Bash on Ubuntu on Windows&lt;/a&gt; was coming. Well, it &lt;a href=&#34;https://blogs.msdn.microsoft.com/commandline/2016/04/06/bash-on-ubuntu-on-windows-download-now-3/&#34;&gt;came out last week&lt;/a&gt;, and I installed it as soon as I could! My next challenge was to get &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; to run and install on it, so I can build and preview this site on my &lt;a href=&#34;https://www.microsoft.com/surface/en-us/devices/surface-book&#34;&gt;Surface Book&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;So, first, I needed to install version 2.0 of Ruby. There is a bit of messing involved for this, but first&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;apt-get update
-apt-get install ruby2.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, when you run&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ruby -v
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;you will still see ruby 1.9.x installed&amp;hellip; and the github-pages gem, which includes Jekyll 3, requires ruby 2.0&amp;hellip; ugh. after reading &lt;a href=&#34;https://bugs.launchpad.net/ubuntu/+source/ruby2.0/+bug/1310292&#34;&gt;this very long bug report&lt;/a&gt; I got this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# Rename original out of the way, so updates / reinstalls don&#39;t squash our hack fix
-dpkg-divert --add --rename --divert /usr/bin/ruby.divert /usr/bin/ruby
-dpkg-divert --add --rename --divert /usr/bin/gem.divert /usr/bin/gem
-# Create an alternatives entry pointing ruby -&amp;gt; ruby2.0
-update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby2.0 1
-update-alternatives --install /usr/bin/gem gem /usr/bin/gem2.0 1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, when I run ruby -v, I am told I am on version 2.0! Happy days! Next, i installed bundler using&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;gem install bundler
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;which uses a &lt;a href=&#34;https://github.com/tiernano/www.tiernanotoole.ie/blob/master/Gemfile&#34;&gt;Gemfile&lt;/a&gt; to install the required gems, so running&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;bundle install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;should&lt;/em&gt; install all required gems but no luck&amp;hellip; I tried adding ruby2.0 dev to the mix&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;apt-get install ruby2.0-dev
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;but running jekyll from bash said it did not exist, and running&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;bundle exec jekyll build
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;failed with a memory issue&amp;hellip; ugh&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;Anyway, next, I tried&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;gem install github-pages -V
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;-v makes it verbose, so you can see what&amp;rsquo;s going on&amp;hellip; after a bit of time, and lots of output to the screen&amp;hellip;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;jekyll build
-bash: /usr/bin/jekyll: No such file or directory
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;FECK! So, after a bit more digging, i find that jekyll is actually in /usr/local/bin/jekyll&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ln /usr/local/bin/jekyll /usr/bin/jekyll
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;solves that problem!&lt;/p&gt;
-
-&lt;p&gt;now running&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;jekyll build
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;works perfectly, as does&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;jekyll serve
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;HAPPY DAYS! Mind you, I am only using this as a testing and writing system. I have not tried &lt;a href=&#34;https://github.com/laurilehmijoki/s3_website&#34;&gt;s3_website&lt;/a&gt; just yet, but that is being sorted elsewhere anyway. Maybe my next post will explain that&amp;hellip;&lt;/p&gt;
-</description>
+      <description>At the 2016 Build conference, Microsoft announced that Bash on Ubuntu on Windows was coming. Well, it came out last week, and I installed it as soon as I could! My next challenge was to get Jekyll to run and install on it, so I can build and preview this site on my Surface Book.
+So, first, I needed to install version 2.0 of Ruby. There is a bit of messing involved for this, but first</description>
     </item>
     
     <item>
       <title>Announcing B2 Uploader and Hubic Testing 2.0</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/announcing-b2uploader-hubictesting20/</link>
       <pubDate>Fri, 15 Jan 2016 23:55:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/announcing-b2uploader-hubictesting20/</guid>
-      <description>&lt;p&gt;I have 2 new side projects to announce on the site today. First has been running for a while (first check-in was December 28th) and it’s called &lt;a href=&#34;https://github.com/tiernano/b2uploader&#34;&gt;B2Uploader&lt;/a&gt;. Its a fairly simple Windows application to upload files to &lt;a href=&#34;https://www.backblaze.com/b2/cloud-storage.html&#34;&gt;BackBlaze B2&lt;/a&gt;. If you are not familiar with &lt;a href=&#34;https://secure.backblaze.com/r/01px2w&#34;&gt;BackBlaze&lt;/a&gt;, they provide unlimited backup storage for the low price of a fiver a month. They are the guys who design the &lt;a href=&#34;https://www.backblaze.com/blog/cloud-storage-hardware/&#34;&gt;BackBlaze storage pods&lt;/a&gt; (I want one, by the way!) that allow them to provide unlimited storage for the fiver a month (I currently backup over 4Tb to them!), and late last year, they started offing &lt;a href=&#34;https://www.backblaze.com/b2/cloud-storage.html&#34;&gt;B2&lt;/a&gt; which is a storage platform on their pods, and it has a (somewhat) easy to use API. AND ITS CHEAP! half a cent, up 0.5c, per gig stored per month! That’s crazy cheap!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/tiernano/b2uploader&#34;&gt;B2Uploader&lt;/a&gt; uses the B2 API to upload files (it could do more, but currently, as the name suggests, its upload only). Its quite simple, and all the code is available. More stuff coming over the next few weeks. some of the usual badges for open source applications are below. if you want to shout at me, shout in the &lt;a href=&#34;https://Gitter.im/tiernano/b2uploader&#34;&gt;Gitter chatroom&lt;/a&gt; and I will reply. You can see the latest builds over on &lt;a href=&#34;https://travis-ci.org/tiernano/b2uploader&#34;&gt;travis-ci&lt;/a&gt;, and the &lt;a href=&#34;https://github.com/tiernano/b2uploader/releases&#34;&gt;latest releases&lt;/a&gt; are available on GitHub.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://Gitter.im/tiernano/b2uploader?utm_source=badge&amp;amp;utm_medium=badge&amp;amp;utm_campaign=pr-badge&amp;amp;utm_content=badge&#34;&gt;&lt;img src=&#34;https://badges.Gitter.im/tiernano/b2uploader.svg&#34; alt=&#34;Join the chat at https://Gitter.im/tiernano/b2uploader&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://travis-ci.org/tiernano/b2uploader&#34;&gt;&lt;img src=&#34;https://travis-ci.org/tiernano/b2uploader.svg?branch=master&#34; alt=&#34;Build Status&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The second project is still in the planning phase, and it’s an update to an older project I was working on called &lt;a href=&#34;https://github.com/tiernano/HubicTesting&#34;&gt;HubicTesting&lt;/a&gt;. The name is very cleverly called, wait for it&amp;hellip; &lt;a href=&#34;https://github.com/tiernano/HubicTesting2.0&#34;&gt;HubicTesting 2.0&lt;/a&gt;! I have mentioned &lt;a href=&#34;http://www.hubic.com&#34;&gt;Hubic&lt;/a&gt; before &lt;a href=&#34;https://www.tiernanotoole.ie/2015/03/31/HubiC_SWIFT_CURL.html&#34;&gt;here&lt;/a&gt;. Cheap (about a tenner a month) for lots of storage (10TB!) but an odd API.. It uses &lt;a href=&#34;http://docs.openstack.org/developer/swift/&#34;&gt;Swift&lt;/a&gt; for storage, but has a weird(ish) API for authentication. Anyway, more details will be on the site once I write it up.&lt;/p&gt;
-
-&lt;p&gt;So, anyone needing to upload files to B2, check out &lt;a href=&#34;https://github.com/tiernano/b2uploader&#34;&gt;B2Uploader&lt;/a&gt;. Want to work with stuff on Hubic, check out &lt;a href=&#34;https://github.com/tiernano/HubicTesting2.0&#34;&gt;HubicTesting 2.0&lt;/a&gt;. Any questions, drop me a mail or find me on the Gitter channel. Have a good one!&lt;/p&gt;
-</description>
+      <description>I have 2 new side projects to announce on the site today. First has been running for a while (first check-in was December 28th) and it’s called B2Uploader. Its a fairly simple Windows application to upload files to BackBlaze B2. If you are not familiar with BackBlaze, they provide unlimited backup storage for the low price of a fiver a month. They are the guys who design the BackBlaze storage pods (I want one, by the way!</description>
     </item>
     
     <item>
       <title>Hubic and Duplicity</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/duplicity_hubic/</link>
       <pubDate>Wed, 01 Apr 2015 07:00:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/duplicity_hubic/</guid>
-      <description>&lt;p&gt;I mentioned &lt;a href=&#34;https://hubic.com/home/new/?referral=GMSQVQ&#34;&gt;HubiC&lt;/a&gt; in my &lt;a href=&#34;https://www.tiernanotoole.ie/2015/03/31/HubiC_SWIFT_CURL.html&#34;&gt;last post&lt;/a&gt;, and in it i said that you could use &lt;a href=&#34;http://duplicity.nongnu.org/&#34;&gt;Duplicity&lt;/a&gt; for backups. Well, this is how you get it to work&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;First, i am using Ubuntu 14.04 (i think&amp;hellip;). I use &lt;a href=&#34;http://www.ubuntu.com&#34;&gt;Ubuntu&lt;/a&gt; in house for a few things:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;its running &lt;a href=&#34;http://blog.lotas-smartman.net&#34;&gt;Tiernan&amp;rsquo;s Comms Closet&lt;/a&gt;, &lt;a href=&#34;http://www.geekphotographer.com&#34;&gt;GeekPhotographer&lt;/a&gt; and &lt;a href=&#34;http://podcast.tiernanotoole.ie&#34;&gt;Tiernan&amp;rsquo;s Podcast&lt;/a&gt; all in house, aswell as being used to &lt;a href=&#34;http://tiernanotoole.ie/2012/08/29/NewSite.html&#34;&gt;build this site&lt;/a&gt;. The Web Server and MySQL Server are seperated, MySQL running on Windows, web on Ubuntu&amp;hellip; but thats a different story&amp;hellip;&lt;/li&gt;
-&lt;li&gt;I have a couple of proxy servers running Ubuntu also&lt;/li&gt;
-&lt;li&gt;Other general servers running Ubuntu&amp;hellip; dont ask, cause i cant remember what they do half the time&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So, &lt;a href=&#34;http://duplicity.nongnu.org/&#34;&gt;Duplicity&lt;/a&gt; is a backup application. From their website:&lt;/p&gt;
-
-&lt;p&gt;What is it?&lt;/p&gt;
-
-&lt;p&gt;Duplicity backs directories by producing encrypted tar-format volumes and uploading them to a remote or local file server. Because duplicity uses librsync, the incremental archives are space efficient and only record the parts of files that have changed since the last backup. Because duplicity uses GnuPG to encrypt and/or sign these archives, they will be safe from spying and/or modification by the server.&lt;/p&gt;
-
-&lt;p&gt;The duplicity package also includes the rdiffdir utility. Rdiffdir is an extension of librsync&amp;rsquo;s rdiff to directories&amp;mdash;it can be used to produce signatures and deltas of directories as well as regular files. These signatures and deltas are in GNU tar format.&lt;/p&gt;
-
-&lt;p&gt;So, how do we get it working? Well, givin that i am on Ubuntu, these are the steps i needed to do:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;first, we need some credentials and API keys&amp;hellip; If you havent signed up for &lt;a href=&#34;https://hubic.com/home/new/?referral=GMSQVQ&#34;&gt;HubiC&lt;/a&gt; Do so now&amp;hellip; That url gets you an extra 5Gb if you sign up for free (usually 25Gb) or if you pay 1EUR a month, you get 110Gb (usually 100Gb) and 5EUR a month gets you a staggering 10TB (yup! Terabytes!).&lt;/li&gt;
-&lt;li&gt;Login to Hubic, and in the menu go to &amp;lsquo;My Account&amp;rsquo;, &amp;lsquo;Developers&amp;rsquo;. in here, create a new application (name and URL to redirect to&amp;hellip; &lt;a href=&#34;http://localhost&#34;&gt;http://localhost&lt;/a&gt; seems to work correctly). Get the Client ID and Secret ID that was given to you.&lt;/li&gt;
-&lt;li&gt;take the contents of &lt;a href=&#34;https://gist.github.com/tiernano/86ab2e08ba4e588a343a&#34;&gt;the following gist&lt;/a&gt; and replace your own details&amp;hellip; I know, i am not a fan of sticking my password in a txt file&amp;hellip; but it should be your local machine&amp;hellip;&lt;/li&gt;
-&lt;li&gt;that file should be in your home directory and should be called .hubic_credentials.&lt;/li&gt;
-&lt;li&gt;add the duplicity PPA project (&lt;a href=&#34;https://launchpad.net/~duplicity-team/+archive/ubuntu/ppa&#34;&gt;https://launchpad.net/~duplicity-team/+archive/ubuntu/ppa&lt;/a&gt;) to ubuntu using the add-apt-repository command (details on the link above, under the link &amp;lsquo;read about installing&amp;rsquo;). for me, i just called &amp;lsquo;sudo add-apt-repository ppa:duplicity-team/ppa&amp;rsquo;&lt;/li&gt;
-&lt;li&gt;install duplicity by doing &amp;lsquo;sudo apt-get install duplicity&amp;rsquo;. Dont forget (its in the tutorial above!) to do an &amp;lsquo;sudo apt-get update&amp;rsquo; first!&lt;/li&gt;
-&lt;li&gt;When i ran that, there where a few extra Python packages to be installed, so i was asked did i want to install them&amp;hellip; Say, yes.&lt;/li&gt;
-&lt;li&gt;Now, to run a backup we run the following command:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;duplicity ~/ cf+hubic://location&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;cf+hubic is the backend to use, ~/ is the url to backup (my home directory in this case) and location is where on Hubic we want it stored. If this doesent exist, not a problem&amp;hellip; it will create it.&lt;/li&gt;
-&lt;li&gt;after we run this we&amp;hellip; ahhh&amp;hellip; i get an error:
-&lt;pre&gt;BackendException: This backend requires the pyrax library available from Rackspace.&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;right&amp;hellip; &lt;a href=&#34;https://github.com/rackspace/pyrax&#34;&gt;pyrax library&lt;/a&gt; is from Rackspace and is available to download though pip&amp;hellip;&lt;/li&gt;
-&lt;li&gt;I seem to have python and a few other bits installed on this machine, so running &amp;lsquo;sudo pip install pyrax&amp;rsquo; works&amp;hellip; Your millage may vary&amp;hellip; [eg, this is out of scope for this tutorial! your on your own!]&lt;/li&gt;
-&lt;li&gt;Other problem&amp;hellip; I got a load of weird and wondering errors like this:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;AttributeError: &#39;Module_six_moves_urllib_parse&#39; object has no attribute &#39;SplitResult&#39;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;I fixed these by running:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt; sudo pip install furl --upgrade&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;FINALLY! ITS ALIVE!!! by default, it asks you for a key for the GnuPG encryption&amp;hellip; and its all good! the first backup creates the directories, required files, etc. the next time you run the command, it will only upload changes. it will also ask for your GnuPG code you entered, so remember it!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;And thats all folks! Any questions, leave them in the comments!&lt;/p&gt;
-</description>
+      <description>I mentioned HubiC in my last post, and in it i said that you could use Duplicity for backups. Well, this is how you get it to work&amp;hellip;
+First, i am using Ubuntu 14.04 (i think&amp;hellip;). I use Ubuntu in house for a few things:
+ its running Tiernan&amp;rsquo;s Comms Closet, GeekPhotographer and Tiernan&amp;rsquo;s Podcast all in house, aswell as being used to build this site. The Web Server and MySQL Server are seperated, MySQL running on Windows, web on Ubuntu&amp;hellip; but thats a different story&amp;hellip; I have a couple of proxy servers running Ubuntu also Other general servers running Ubuntu&amp;hellip; dont ask, cause i cant remember what they do half the time&amp;hellip;  So, Duplicity is a backup application.</description>
     </item>
     
     <item>
       <title>Hubic, OpenStack Swift and Curl</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/hubic_swift_curl/</link>
       <pubDate>Tue, 31 Mar 2015 22:40:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/hubic_swift_curl/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://hubic.com/home/new/?referral=GMSQVQ&#34;&gt;HubiC&lt;/a&gt; is an online storage site, built by the guys at &lt;a href=&#34;http://www.ovh.com&#34;&gt;OVH&lt;/a&gt;. They are currently offering 30Gb free (if you use the link above) or if you pay, you get 110Gb (insted of the usual 100Gb) for EUR1 a month, or 10.5TB (yup&amp;hellip; TERABYTES!) for EUR5 a month&amp;hellip; Thats a crazy amount of storage for a not crazy amount of money!&lt;/p&gt;
-
-&lt;p&gt;So, while playing around with different things, I found they have an &lt;a href=&#34;https://api.hubic.com/&#34;&gt;API&lt;/a&gt;, so other than the usual apps to play with (like the Hubic Apps for iPhone, Android, Windows Phone, Windows Desktop and OSX, &lt;a href=&#34;http://duplicity.nongnu.org/&#34;&gt;Duplicity&lt;/a&gt; for backing up *nix boxes, and a few others) you can build your own&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;But first, i needed to figure out how&amp;hellip; So, after a lot of arsing around in Linux shells with &lt;a href=&#34;http://curl.haxx.se/&#34;&gt;curl&lt;/a&gt; i finally got some stuff working!&lt;/p&gt;
-
-&lt;p&gt;First, i used the &lt;a href=&#34;https://api.hubic.com/sandbox/&#34;&gt;Hubic sandbox&lt;/a&gt; to get the keys&amp;hellip; its quite simple to walk though&amp;hellip; this gets you your Access Token (see step 3). next, we need to get the Endpoint from Hubic: &lt;a href=&#34;https://gist.github.com/tiernano/9c061ae8d1312190f152#file-gistfile1-txt&#34;&gt;This GIST shows more&lt;/a&gt;:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/tiernano/9c061ae8d1312190f152.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;Quick walkthough:&lt;/p&gt;
-
-&lt;p&gt;the first CURL request is to the HubiC API to get the credentials&amp;hellip; this gives you a JSON response with a token and a endpoint URL aswell with an expire time&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;The next request gets you a list of all files (or at least a load of files in my case) of whats in your folder. the &lt;pre&gt;default&lt;/pre&gt; name here is my folder&amp;hellip; I think its what everyone starts out with in HubiC&amp;hellip; if you remove it, you will see all your top level folders.&lt;/p&gt;
-
-&lt;p&gt;next request i tried was to upload a file&amp;hellip; the &lt;pre&gt;filename&lt;/pre&gt; part is where you want it to be stored. this must exist on your local machine.&lt;/p&gt;
-
-&lt;p&gt;finally, downloading of a file&amp;hellip; pass in the location of the file on the server (listing files will give you the location) and then &lt;pre&gt;-o&lt;/pre&gt; in curl shows the output location&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;Simples! now to get this working in c#&amp;hellip; &lt;a href=&#34;http://developer.openstack.org/api-ref-objectstorage-v1.html&#34;&gt;Full OpenStack Swift API is available&lt;/a&gt; to show how to do more&amp;hellip; hopefully it will help in my C# coding&amp;hellip;&lt;/p&gt;
-</description>
+      <description>HubiC is an online storage site, built by the guys at OVH. They are currently offering 30Gb free (if you use the link above) or if you pay, you get 110Gb (insted of the usual 100Gb) for EUR1 a month, or 10.5TB (yup&amp;hellip; TERABYTES!) for EUR5 a month&amp;hellip; Thats a crazy amount of storage for a not crazy amount of money!
+So, while playing around with different things, I found they have an API, so other than the usual apps to play with (like the Hubic Apps for iPhone, Android, Windows Phone, Windows Desktop and OSX, Duplicity for backing up *nix boxes, and a few others) you can build your own&amp;hellip;</description>
     </item>
     
     <item>
       <title>Compressing and UnCompressing Protobuf items in C#</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/compressing_and_uncompressing_protobuf_items_in_c/</link>
       <pubDate>Wed, 12 Dec 2012 11:29:32 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/compressing_and_uncompressing_protobuf_items_in_c/</guid>
-      <description>&lt;p&gt;Part of a project i am working on required sending large amounts of data between different instances. To get this to work efficially, we started using the &lt;a href=&#34;http://code.google.com/p/protobuf/&#34;&gt;ProtoBuf&lt;/a&gt; using &lt;a href=&#34;http://code.google.com/p/protobuf-net/&#34;&gt;ProtoBuf-net&lt;/a&gt; in .NET. but the files where still quite large (17mb, give or take). So, we looked into compression&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;here is some examples of how we managed to compress the protobuf files. We got some decient compression: 3mb files, down from 17mb. very happy.&lt;/p&gt;
-
-&lt;p&gt;to compress an object (obj) and write to a temp file (tmpfile):&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/4267147.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;to decompress the object back to a known type:&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/4267157.js&#34;&gt;&lt;/script&gt;
-</description>
+      <description>Part of a project i am working on required sending large amounts of data between different instances. To get this to work efficially, we started using the ProtoBuf using ProtoBuf-net in .NET. but the files where still quite large (17mb, give or take). So, we looked into compression&amp;hellip;
+here is some examples of how we managed to compress the protobuf files. We got some decient compression: 3mb files, down from 17mb.</description>
     </item>
     
   </channel>

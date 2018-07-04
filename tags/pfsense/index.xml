@@ -7,140 +7,56 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Sep 2015 14:15:00 +0000</lastBuildDate>
-    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/pfsense/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/pfsense/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Network and HomeLab V.Next (Part 4)</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-4/</link>
       <pubDate>Wed, 16 Sep 2015 14:15:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-4/</guid>
-      <description>&lt;p&gt;So, after some messing, tweaking, and thinking, I have made some progress with the home lab&amp;hellip; or at least broken some stuff&amp;hellip; I mentioned previously that i had a &lt;a href=&#34;https://www.tiernanotoole.ie/2015/08/05/Ubiquiti-EdgeRouter-POE-In-the-lab.html&#34;&gt;Ubiqititi networks EdgeRouter POE&lt;/a&gt; in the home lab. Originally, the plan was to use a Virtual &lt;a href=&#34;http://www.pfsense.org&#34;&gt;PFSense&lt;/a&gt; box for my core router&amp;hellip; Given the power usage of the current PfSense Box (I have 2 &lt;a href=&#34;https://www.ubnt.com/mfi/mpower/&#34;&gt;MPower Pro&lt;/a&gt;&amp;rsquo;s watching power in the lab) I am now thinking of moving to just the EdgeRouter for, well, edge routing&amp;hellip;  below is the usage of the ProLiant for the last 12 hours or so:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-proliant-power-usage.PNG&#34; alt=&#34;Proliant Power Usage&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;for the same period, here is the usage for the &lt;a href=&#34;https://www.ubnt.com/edgemax/edgerouter-poe/&#34;&gt;Edge Router&lt;/a&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-edgerouter-power-usage.PNG&#34; alt=&#34;EdgeRouter POE Power Usage&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I am also setting up a DMZ for front facing services, and then a LAN for inside facing machines. There will be a firewall (currently thinking &lt;a href=&#34;https://www.sophos.com/en-us/products/unified-threat-management.aspx&#34;&gt;Sophos UTM&lt;/a&gt; or similar) between the DMZ and the network. Some machines will be able to access the DMZ, and there may be machines allowed into the LAN, but only some things&amp;hellip; not even sure if that would be done&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;I also need to work out the VLAN side of things. I have currently though of the following VLAN setup:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;WAN 1 (connected directly to the Cable modem)&lt;/li&gt;
-&lt;li&gt;WAN 2 (again, direct to cable modem)&lt;/li&gt;
-&lt;li&gt;LAN Network&lt;/li&gt;
-&lt;li&gt;DMZ Network&lt;/li&gt;
-&lt;li&gt;VoIP Network&lt;/li&gt;
-&lt;li&gt;IOT (stuff for running the house, like &lt;a href=&#34;https://nest.com/ie/thermostat/meet-nest-thermostat/&#34;&gt;Nest&lt;/a&gt;, the MPower devices or the like)&lt;/li&gt;
-&lt;li&gt;Media Network (Plex, Roku, Apple TV, Chrome Cast, etc. Not sure if i need to separate this, but it might be done&amp;hellip;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The current &lt;a href=&#34;http://www.cisco.com/c/en/us/products/switches/catalyst-3560-series-switches/index.html&#34;&gt;Cisco 3560G switch&lt;/a&gt; should do all that, without problems, so no new switch needed&amp;hellip; lets see what i can break over the next while&amp;hellip;&lt;/p&gt;
-</description>
+      <description>So, after some messing, tweaking, and thinking, I have made some progress with the home lab&amp;hellip; or at least broken some stuff&amp;hellip; I mentioned previously that i had a Ubiqititi networks EdgeRouter POE in the home lab. Originally, the plan was to use a Virtual PFSense box for my core router&amp;hellip; Given the power usage of the current PfSense Box (I have 2 MPower Pro&amp;rsquo;s watching power in the lab) I am now thinking of moving to just the EdgeRouter for, well, edge routing&amp;hellip; below is the usage of the ProLiant for the last 12 hours or so:</description>
     </item>
     
     <item>
       <title>Network and HomeLab V.Next (Part 3)</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-3/</link>
       <pubDate>Wed, 15 Jul 2015 13:15:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-3/</guid>
-      <description>&lt;p&gt;So, this part of my article set will be talking specifically about the router and wireless network. At the moment, my router is way overkill:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Old HP Proliant ML110 G5&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://ark.intel.com/products/29765/Intel-Core2-Quad-Processor-Q6600-8M-Cache-2_40-GHz-1066-MHz-FSB?q=Q6600&#34;&gt;Intel Core2Quad Q6600&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;8 Gb RAM&lt;/li&gt;
-&lt;li&gt;total of 12 Gigabit network cards (of which 4 are currently used&amp;hellip;)&lt;/li&gt;
-&lt;li&gt;500Gb HDD&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I have been playing with some networking in the house and have managed to build some VLANs. The modems are connected both directly to the Router
-and to a dedicated switch port for a given VLAN. The plan for the upgrade, which i hope to complete sooner than the rest of the network is as
-follows:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;get the ML110 running &lt;a href=&#34;https://www.vmware.com/products/vsphere-hypervisor&#34;&gt;ESXi&lt;/a&gt; and visualize &lt;a href=&#34;http://www.pfsense.org&#34;&gt;PFSense&lt;/a&gt;. Give it 2gb of RAM and some processor.&lt;/li&gt;
-&lt;li&gt;take some of the network cards out of the box. It does not need 12 ports, but maybe leave the 2 quad ports in there. They should be connected
-to the main switch trunked. 8 may be overkill, but i never do things by half.&lt;/li&gt;
-&lt;li&gt;the PFSEnse VM should be connected to all 3 WAN VlANs (900, 901 and 902) and should also have at least one port to the LAN. There may also be
-other ports for other internal VLANs.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;with the spare processor, i can then add other (small) VMs to this machine.&lt;/p&gt;
-</description>
+      <description>So, this part of my article set will be talking specifically about the router and wireless network. At the moment, my router is way overkill:
+ Old HP Proliant ML110 G5 Intel Core2Quad Q6600 8 Gb RAM total of 12 Gigabit network cards (of which 4 are currently used&amp;hellip;) 500Gb HDD  I have been playing with some networking in the house and have managed to build some VLANs. The modems are connected both directly to the Router and to a dedicated switch port for a given VLAN.</description>
     </item>
     
     <item>
       <title>Network and HomeLab V.Next (Part 2)</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part2/</link>
       <pubDate>Tue, 23 Jun 2015 10:30:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part2/</guid>
-      <description>&lt;p&gt;So, in my last post i talked about the requirements for the home lab, and in this post, im going to talk about a few more updates i have made in the last few weeks.&lt;/p&gt;
-
-&lt;p&gt;First, the processors: in the first post, i talked about Xeon D or Xeon E3&amp;hellip; Well, i missed one&amp;hellip; The Xeon E5. I have 2 of these in GodBox 2, and you can get them into a &lt;a href=&#34;http://www.servethehome.com/asrock-rack-epc612d4i-review-mitx-xeon-e5-platform/&#34;&gt;microATX board&lt;/a&gt;. There does seem to be some limits with the microatx boards, but hopefully enough searching will find me what i am looking for. Ideally, i want it to take &amp;ldquo;normal&amp;rdquo; DDR3/4 memory (not SODIMMs like the ASRock one above) and also take enough of them to run 64 or 128Gb of ram (thinking 8 would do the job!). Also, i would like to have 4 GigE ports onboard and 1 management port. 4 onboard is not a hard requirement: If i can get one with 2 ports, i can always get a 4 port card for the PCI-Express slot&amp;hellip; Finally, i would like it to have at least 6 SATA ports and possibly an MSATA port. Thinking Boot off MSATA (&lt;a href=&#34;https://en.m.wikipedia.org/wiki/Windows_Server_2016&#34;&gt;Windows Server 2016 Nano Server&lt;/a&gt; would be used), 2 SSDs and 4 HDDs. Using Storage Spaces, use the 2 SSDs as &amp;ldquo;Fast&amp;rdquo; storage for the pool.&lt;/p&gt;
-
-&lt;p&gt;I also think i moved off the idea of 10Gb. I like the idea of it, but given a small 10Gb switch costs upwards of a grand, and the plan is to build a machine for that price, i would prefer a fifth machine and using my existing Cisco 48 port switch and leave 10Gb as a future upgrade.&lt;/p&gt;
-
-&lt;p&gt;Also, changed from last time round is machine count. Originally i was saying 3-4 machines&amp;hellip; now i am thinking 6-7&amp;hellip; 5-6 of them should be Hyper-V boxes and the last one would be a Media Box.&lt;/p&gt;
-
-&lt;p&gt;I also think the Synology or SAN requirement is out&amp;hellip; Hyper-V can be setup to do replication between hosts, and with a 4Gb link to the LAN, i think i should be OK. Also, if i have the media box separate, i should be ok there too. I will detail the media center in a later post.&lt;/p&gt;
-
-&lt;p&gt;So, any suggestions or thoughts on what should and shouldn&amp;rsquo;t be looked at?&lt;/p&gt;
-</description>
+      <description>So, in my last post i talked about the requirements for the home lab, and in this post, im going to talk about a few more updates i have made in the last few weeks.
+First, the processors: in the first post, i talked about Xeon D or Xeon E3&amp;hellip; Well, i missed one&amp;hellip; The Xeon E5. I have 2 of these in GodBox 2, and you can get them into a microATX board.</description>
     </item>
     
     <item>
       <title>Network and Homelab V.Next (Part 1)</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-1/</link>
       <pubDate>Sun, 14 Jun 2015 16:05:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-1/</guid>
-      <description>&lt;p&gt;So, its that time again&amp;hellip; &lt;a href=&#34;http://tiernanotoole.ie/Computers&#34;&gt;HomeLab&lt;/a&gt; upgrade time&amp;hellip; Or at least the planning for it. I am in the process of rebuilding my home lab, which involves pull all old servers out of the rack and replacing them with new ones&amp;hellip; It also means rewriting the network, possibly upgrading some existing gear and hopefully getting the whole lot done on a budget of some sort&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;So, why? Well, biggest reason for all this is currently heat and power usage. We use about 4-6x more electricity than the average house here in Ireland, which means our electricity bill is fairly high. It also means that the lab, which is also my office/bedroom, gets quite warm and uncomfortable during the summer month. There is an Air-Con unit in the room, and, well, that&amp;rsquo;s costing the most on electricity!&lt;/p&gt;
-
-&lt;p&gt;So, what I got is a basic overview of what I want from the homelab and hopefully in the next post, I will have an idea of what it will look like..&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;3-4 machines running a Hyper Visor (HyperV, VMWare ESXi or other). Leaning more towards Hyper-V purely because its what I got currently and its what we use in our main office.&lt;/li&gt;
-&lt;li&gt;each machine should be connected to at least 2 networks: one for storage and migration, one for &amp;ldquo;public&amp;rdquo; to the LAN. There may be more VLANs for other networks, but 2 is a start.&lt;/li&gt;
-&lt;li&gt;ideally, 10Gb connections would be nice, but multiple 1Gb connections would also work.&lt;/li&gt;
-&lt;li&gt;shared storage (iSCSI, SMB3, etc) would also be a nice to have, but may bump up the server count (not actually a problem) but would increase power and cooling costs. An off the shelf box, like a &lt;a href=&#34;http://www.synology.com&#34;&gt;Synology&lt;/a&gt; could do the job&amp;hellip;&lt;/li&gt;
-&lt;li&gt;Lower power usage and less heat produced is also a major requirement. Most of the boxes I am decommissioning are older Xeon hardware (&lt;a href=&#34;http://ark.intel.com/products/family/28144/Intel-Xeon-Processor-5000-Sequence#@All&#34;&gt;5000&lt;/a&gt; series upto a &lt;a href=&#34;http://ark.intel.com/products/series/33092/Intel-Xeon-Processor-5200-Series#@All&#34;&gt;5200&lt;/a&gt; series process and even an &lt;a href=&#34;https://en.wikipedia.org/wiki/Xeon#Netburst-based_Xeon&#34;&gt;older Xeon P4&lt;/a&gt;!). The newer &lt;a href=&#34;http://www.intel.ie/content/www/ie/en/processors/xeon/xeon-processor-e3-family.html&#34;&gt;Xeon E3&lt;/a&gt; and the even newer &lt;a href=&#34;http://www.intel.ie/content/www/ie/en/processors/xeon/xeon-processor-d-family.html&#34;&gt;Xeon D&lt;/a&gt; are a lot more efficient, use less power, produce less heat and are way faster than what I currently have. The E3 can use up to 32Gb of RAM and the Xeon D top out at 128Gb&amp;hellip; Me being me would like more than 32Gb RAM&amp;hellip; :)&lt;/li&gt;
-&lt;li&gt;smaller machines would also be nice. I have been looking at both Xeon D and Xeon E3 Mini-ITX boards and cases for them. I do have a half height Dell Rack, which I host these machines, and ideally, these machines should be rack mountable, but micro ATX cases could work. 2 per shelf would work grand.&lt;/li&gt;
-&lt;li&gt;Onboard IPMI and KVM support is something I want too&amp;hellip; I do have a KVMoIP switch in the house, and it works, most of the time, but getting a box that has this embedded into the board would be ideal&amp;hellip; A lot of the server boards had it as standard or allowed it to be speced, so that&amp;rsquo;s all good.&lt;/li&gt;
-&lt;li&gt;I am also thinking of upgrading the router to a similar spec board&amp;hellip; Possibly a Xeon E3, or even an i5&amp;hellip;. Ideally it should have IPMI and KVMoIP on board and should produce less heat. Biggest issues is getting enough network cards into the box&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;These are my requirements at a  high level overview. Over time things may change, but lets see how we get on&amp;hellip;&lt;/p&gt;
-</description>
+      <description>So, its that time again&amp;hellip; HomeLab upgrade time&amp;hellip; Or at least the planning for it. I am in the process of rebuilding my home lab, which involves pull all old servers out of the rack and replacing them with new ones&amp;hellip; It also means rewriting the network, possibly upgrading some existing gear and hopefully getting the whole lot done on a budget of some sort&amp;hellip;
+So, why? Well, biggest reason for all this is currently heat and power usage.</description>
     </item>
     
     <item>
       <title>PFSense with Multiple Public IPs</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/pfsense-with-multiple-public-ips/</link>
       <pubDate>Sat, 30 May 2015 18:50:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/pfsense-with-multiple-public-ips/</guid>
-      <description>&lt;p&gt;So, a few weeks back, i got my hands on a &lt;a href=&#34;http://www.hetzner.de/en&#34;&gt;Hetzner&lt;/a&gt; Dedicated box. It has a quad core Xeon, 32Gb ram, 3x3Tb hdds, RAID controller and KVMoIP. one of the first thing i did was get myself a /29 IP pool (8 total, 6 usable IPs). There where already 3 IPs given to me: 1 for the KVM, one for the box itself, and 1 as the router for the IP block.&lt;/p&gt;
-
-&lt;p&gt;So, i need to setup my own router, so i picked &lt;a href=&#34;http://www.pfsense.org&#34;&gt;PFSense&lt;/a&gt; since its what i run in house. I gave it 2 network connections: 1 connected to the main network adapter on the VMWare ESXi box (public) and one to a virtual switch, which is only used by VMs. The public is the WAN link and it gets a static IP from Hetzner, and the virtual switch is then my &amp;ldquo;LAN&amp;rdquo; link. This allows me to have standard NATed network connections to any VM i have, but then, what do i do with those IPs?&lt;/p&gt;
-
-&lt;p&gt;So, after a lot of digging, i found the answer. So, this should help.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Under firewall, click on Virtual IPs.&lt;/li&gt;
-&lt;li&gt;click the plus. I then selected IP alias, selected the WAN interface and set the IP to my first public IP i wanted to give. in my case, i was given a /29 block, and my first address was 176. This is the network address. I used 177. Likewise, my last address is 183, but that cannot be used either as its a broadcast address. give it a description and then hit OK. Repease for all IPs you want to use. TIP: Give each a meaningful description!&lt;/li&gt;
-&lt;li&gt;Next, click firewall, NAT and 1:1. Click the add button and select your interface as WAN. set the External Subnet IP as the one you want to use and your internal IP as the machine that will have it. Thats all i did on that screen&amp;hellip;&lt;/li&gt;
-&lt;li&gt;Then go to Firewall, NAT, outbound&amp;hellip; this is where things got complicated. Set the mode to &amp;ldquo;Manual outbound NAT rule generation (AON - Advanced Outbound NAT)&amp;rdquo; and click save.&lt;/li&gt;
-&lt;li&gt;Then create a new rule: Interface: WAN, Source, Network, IP of the internal machine and then under translation, under address select the IP you want to give it. If you followed my tip in step 2, you should see the descriptions in here.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;After saving everything and reloading the firewall, visiting a page like &lt;a href=&#34;http://www.whatsmyip.org&#34;&gt;WhatsMyIP&lt;/a&gt; or &lt;a href=&#34;http://icanhazip.com&#34;&gt;ICanHazIP&lt;/a&gt; should show you your public IP. You can then create firewall rules to allow access. Quick idea would be:&lt;/p&gt;
-
-&lt;p&gt;Firewall/Rules, Add, Interface WAN, Destination: Local IP you want to use, and give whatever &amp;ldquo;normal&amp;rdquo; rules you would (HTTP, lock down to source address, etc). Click apply and hitting that address using what ever method (SSH, HTTP, etc) should work.&lt;/p&gt;
-
-&lt;p&gt;YMMV, but hopefully this helps! Any questions, leave a comment.&lt;/p&gt;
-</description>
+      <description>So, a few weeks back, i got my hands on a Hetzner Dedicated box. It has a quad core Xeon, 32Gb ram, 3x3Tb hdds, RAID controller and KVMoIP. one of the first thing i did was get myself a /29 IP pool (8 total, 6 usable IPs). There where already 3 IPs given to me: 1 for the KVM, one for the box itself, and 1 as the router for the IP block.</description>
     </item>
     
   </channel>

@@ -7,41 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 12 Oct 2012 07:43:17 +0000</lastBuildDate>
-    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/firewall/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/firewall/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>RouterOS Using Host names in Firewall Rules</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/routeros_using_host_names_in_firewall_rules/</link>
       <pubDate>Fri, 12 Oct 2012 07:43:17 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/routeros_using_host_names_in_firewall_rules/</guid>
-      <description>&lt;p&gt;As a follow up to yesterday&amp;rsquo;s post on &lt;a href=&#34;http://tiernanotoole.ie/2012/10/11/routeros_blocking_machine_access.html&#34;&gt;RouterOS Blocking Machine access to all but one IP&lt;/a&gt; I tought i would show how to add extra IPs to that list, without having a shedload of firewall filters.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;First things first, get your list of IPs you allow access to. In my case, i just did an NSLOOKUP on the name and got the IPs.&lt;/li&gt;
-&lt;li&gt;Create an &amp;ldquo;Address List&amp;rdquo; in RouterOS. This can be done on the Web Interface by going to IP / Firewall / Address List and clicking Add. I had none previously, so i created a new rule, naming it &lt;a href=&#34;www.expressvpn.com/?referrer_email=tiernan@tiernanotoole.ie/&#34;&gt;ExpressVPN&lt;/a&gt; (the lads i use for VPN access) and added the first address.&lt;/li&gt;
-&lt;li&gt;this is where things get interesting. for extra IP (for ExpressVPN, i have 4) you create a new address with the SAME name, but different IP.&lt;/li&gt;
-&lt;li&gt;in your firewall rule, you should have either a src address or dst address. in my case, i had both, but this was a change for the dst address. I removed the address from the rule, i added it as a dst address list entry. If you have multiple address lists, you will see them here.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;to do this at the command prompt:&lt;/p&gt;
-
-&lt;p&gt;{% gist 3877692 %}&lt;/p&gt;
-
-&lt;p&gt;this will block any traffic, other than the IPs in the expressVPN address list, for the machine 192.168.0.123.&lt;/p&gt;
-</description>
+      <description>As a follow up to yesterday&amp;rsquo;s post on RouterOS Blocking Machine access to all but one IP I tought i would show how to add extra IPs to that list, without having a shedload of firewall filters.
+ First things first, get your list of IPs you allow access to. In my case, i just did an NSLOOKUP on the name and got the IPs. Create an &amp;ldquo;Address List&amp;rdquo; in RouterOS.</description>
     </item>
     
     <item>
       <title>RouterOS Blocking Machine access to all but one IP</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/routeros_blocking_machine_access/</link>
       <pubDate>Thu, 11 Oct 2012 13:09:20 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/routeros_blocking_machine_access/</guid>
-      <description>&lt;p&gt;So, i have a machine on my network, which should be only connecting to the internet though a VPN. I needed to tell my RouterOS box to block all access, except to this said IP address&amp;hellip; The following &lt;em&gt;should&lt;/em&gt; do the trick&amp;hellip; YMMV&lt;/p&gt;
-
-&lt;p&gt;{% gist 3871919 %}&lt;/p&gt;
-
-&lt;p&gt;this will drop any packets from the srcaddress (IP address) that are not for destination dstaddress (IP address). in my case, dstaddress is the VPN server i want to connect to. So, in theory, all packets should just go though the VPN and not leak out in to the rest of the network&amp;hellip; again, still testing this so be careful!&lt;/p&gt;
-</description>
+      <description>So, i have a machine on my network, which should be only connecting to the internet though a VPN. I needed to tell my RouterOS box to block all access, except to this said IP address&amp;hellip; The following should do the trick&amp;hellip; YMMV
+{% gist 3871919 %}
+this will drop any packets from the srcaddress (IP address) that are not for destination dstaddress (IP address). in my case, dstaddress is the VPN server i want to connect to.</description>
     </item>
     
   </channel>

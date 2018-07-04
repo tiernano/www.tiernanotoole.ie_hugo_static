@@ -7,43 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 30 Nov 2012 09:13:27 +0000</lastBuildDate>
-    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/p2p/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/p2p/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Symform - P2P Backup</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/symform_-_p2p_backup/</link>
       <pubDate>Fri, 30 Nov 2012 09:13:27 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/symform_-_p2p_backup/</guid>
-      <description>&lt;p&gt;I have previously &lt;a href=&#34;http://tiernanotoole.ie/2012/08/30/CrashPlan-Backups.html&#34;&gt;posted about CrashPlan&lt;/a&gt; as my Backup System. I also, a long time ago, talked about &lt;a href=&#34;http://blog.lotas-smartman.net/new-backup-plan-out-with-jungle-disk-and-zmanda-cloud-backup-in-with-crashplan-mysqlbf-and-sqlbf/&#34;&gt;Backing up SQL, MySQL and other stuff&lt;/a&gt; on my other blog. Well, CrashPlan is all good, but there are 2 &amp;ldquo;niggly&amp;rdquo; bits with it&amp;hellip;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Its not FREE (well, this year i got it Free on Black Friday&amp;hellip;) but it is cheap ($120 a year to backup 10 machines to the cloud aint bad.)&lt;/li&gt;
-&lt;li&gt;Its NOT FAST! The CrashPlan Datacenters all live in the US, and my servers live in Europe (either Dublin or Germany). So, bandwidth is limited&amp;hellip; Getting less than 1Mbit/s most times, but have seen it reach 3&amp;hellip; I have 20Mbits/s upload&amp;hellip; even half that would be nice&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So, thats where &lt;a href=&#34;https://control.symform.com/Organization/Referral?referralId=96E53D9DC4501633F2294EF202734DB08C00F044&#34;&gt;Symform&lt;/a&gt; comes in. Symform is a P2P Backup Service, which runs on Windows, Linux and MacOSX. In theory, it should run anywhere that has a &lt;a href=&#34;http://www.mono-project.com/Main_Page&#34;&gt;Mono&lt;/a&gt; runtime since its written in .NET. Anyway, you start with 10Gb of free storage, and you can increese that by one of 2 ways:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Pay money: for $0.15 per month, you get 1Gb of storage in the cloud&lt;/li&gt;
-&lt;li&gt;Pay Bytes: For every 2Gb &amp;ldquo;Contributed&amp;rdquo; (which is actually more like a pledge than a contribution&amp;hellip; more on that later) you get 1Gb storage in the cloud.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It works very well, and is nice a fast too. I have a few machines in house which are contribting stoage, a total of about 2Tb, and I have been given 1Tb storage in &amp;ldquo;The Cloud&amp;rdquo;. There is a lot more on how this works on their &amp;ldquo;&lt;a href=&#34;http://www.symform.com/join-the-revolution/how-symform-works/&#34;&gt;How Symform Works&lt;/a&gt;&amp;rdquo; section of their site.&lt;/p&gt;
-
-&lt;p&gt;I mentioned the &amp;ldquo;Contribution&amp;rdquo; VS &amp;ldquo;Pledge&amp;rdquo; up above&amp;hellip; I have a machine in the house where i have Pledged 1Tb of storage. In reality, Symform can use the full 1Tb of storage, if it needs to, but is currently only using 168Gb. Now, that could just be that the machine is still getting files, and it will end up using the full 1Tb eventually, but either way, its all good.&lt;/p&gt;
-
-&lt;p&gt;Also, as a couple of notes on Contribution and Backups:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The machine needs to be online and accessable on the internet at least 80% of the time, but &lt;sup&gt;24&lt;/sup&gt;&amp;frasl;&lt;sub&gt;7&lt;/sub&gt; is ideal. If you drop below the 80%, your account can be suspended.&lt;/li&gt;
-&lt;li&gt;your machine needs to be publically accessable, meaning port forwarded. I have a couple contribution machines in house, so they each have seperate ports forwarded to them.&lt;/li&gt;
-&lt;li&gt;Given the P2P nature of the software, lots of connections to different machines are made&amp;hellip; if you are behind a firewall, you may need to allow all or most outgoing connections. If you are on a really restrictive firewall, you may want to stick a contribution box in your &lt;a href=&#34;http://en.wikipedia.org/wiki/DMZ_(computing)&#34;&gt;DMZ&lt;/a&gt; and probably use the &lt;a href=&#34;http://www.symform.com/our-solutions/key-features/turbo-seeding/&#34;&gt;Turbo Seeding&lt;/a&gt; feature.&lt;/li&gt;
-&lt;li&gt;Turbo Seeding is a handy feature, especially for Laptops&amp;hellip; only problem is its Windows Only&amp;hellip; So, importing and exporting does not work on Linux or OSX.&lt;/li&gt;
-&lt;li&gt;The software can managed Work and Non Work hours, and will limit the upload and download speed during this time. Also a nice feature&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So far, so good. Very happy with the software, but would like a nicer interface to see whats going on. At the moment, you are either limited to using the web interface, which aint bad, but not great, or watching the log files&amp;hellip; I would also like the ability to prioritize certain files or folders, so, for example, upload my documents folder before anything else, and if anything changes in there, even if its uploading from somewhere else, pause and upload the documents folder&amp;hellip; Just a thought&amp;hellip;&lt;/p&gt;
-</description>
+      <description>I have previously posted about CrashPlan as my Backup System. I also, a long time ago, talked about Backing up SQL, MySQL and other stuff on my other blog. Well, CrashPlan is all good, but there are 2 &amp;ldquo;niggly&amp;rdquo; bits with it&amp;hellip;
+ Its not FREE (well, this year i got it Free on Black Friday&amp;hellip;) but it is cheap ($120 a year to backup 10 machines to the cloud aint bad.</description>
     </item>
     
   </channel>

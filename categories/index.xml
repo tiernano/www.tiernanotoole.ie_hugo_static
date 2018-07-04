@@ -6,7 +6,9 @@
     <description>Recent content in Categories on Tiernan&#39;s Comms Closet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/categories/index.xml" rel="self" type="application/rss+xml" />
+    
     
   </channel>
 </rss>

@@ -7,23 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 12 Oct 2012 15:13:53 +0000</lastBuildDate>
-    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/camera/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/camera/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>more raspberry pi and camera antics</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/more_raspberry_pi_and_camera_antics/</link>
       <pubDate>Fri, 12 Oct 2012 15:13:53 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/more_raspberry_pi_and_camera_antics/</guid>
-      <description>&lt;p&gt;A while back I &lt;a href=&#34;http://tiernanotoole.ie/2012/09/06/Rasberry-Stuff.html&#34;&gt;posted&lt;/a&gt; about the &lt;a href=&#34;http://www.raspberrypi.org/&#34;&gt;Raspberry Pi&lt;/a&gt;, and in the post was a link to a Photographer who was &lt;a href=&#34;http://davidhunt.ie/?p=2641&#34;&gt;embeding a Raspberry Pi into a Canon 5D MKII battery grip&lt;/a&gt;. Well, its been a while, and i have been thinking about the Pi and Cameras, so I went looking around&amp;hellip; Here is what i found.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://islandinthenet.com/2012/08/23/hdr-photography-with-raspberry-pi-and-gphoto2/&#34;&gt;HDR Photography with a Raspberry Pi and GPhoto2&lt;/a&gt;: It was linked at the end of David&amp;rsquo;s post, and i missed it completely. David mentions he was using &lt;a href=&#34;http://gphoto.org/proj/gphoto2/&#34;&gt;GPhoto2&lt;/a&gt; to take photos from the Pi, so its a good place to start.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://skowron.biz/artikel/gphoto-raspberry/&#34;&gt;GPhoto2 and the Raspberry Pi&lt;/a&gt;: starters guide on getting the Pi to talk to your Camera.&lt;/li&gt;
-&lt;li&gt;Not specifically Pi+Camera released, but the &lt;a href=&#34;http://raspberrypi.stackexchange.com/&#34;&gt;Stackoverflow Raspberry Pi Page&lt;/a&gt; is a handy resource for asking questions&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The one thing i have not been able to figure out is how to tell the Pi to take the photos out of the camera &lt;strong&gt;wihtout having a monitor plugged in&lt;/strong&gt;. I was thinking either tell it, on boot, to start monitoring the camera and download everything. This way, if you have it plugged into a external power source, it will be monitoring and downloading to somewhere&amp;hellip; USB HDD, USB Key, etc. If there is a Wifi spot around, try uploading them to a location, posibily manageable via web interface of some sort&amp;hellip; Lots of interesting ideas can be done&amp;hellip; its just a matter of doing them&amp;hellip; :)&lt;/p&gt;
-</description>
+      <description>A while back I posted about the Raspberry Pi, and in the post was a link to a Photographer who was embeding a Raspberry Pi into a Canon 5D MKII battery grip. Well, its been a while, and i have been thinking about the Pi and Cameras, so I went looking around&amp;hellip; Here is what i found.
+ HDR Photography with a Raspberry Pi and GPhoto2: It was linked at the end of David&amp;rsquo;s post, and i missed it completely.</description>
     </item>
     
   </channel>

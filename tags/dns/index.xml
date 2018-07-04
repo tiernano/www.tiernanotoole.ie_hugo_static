@@ -7,58 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 May 2015 20:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Using git and Route53 together</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/using-git-and-route53/</link>
       <pubDate>Thu, 07 May 2015 20:00:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/using-git-and-route53/</guid>
-      <description>&lt;p&gt;so, earlier on today, i was talking about using &lt;a href=&#34;http://tiernanotoole.ie/2015/05/07/git-push-dns.html&#34;&gt;Git with a DNS service called LuaDNS&lt;/a&gt; to update your DNS records. Well, thing is, i have 30+ domains registered, and of them about 25 are hosted on &lt;a href=&#34;http://aws.amazon.com/route53&#34;&gt;Amazon&amp;rsquo;s Route53&lt;/a&gt;. So, moving ALL of them seems, well at the moment, excessive&amp;hellip; So, i went digging&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;there is a tool called &lt;a href=&#34;https://github.com/barnybug/cli53&#34;&gt;cli53&lt;/a&gt; which will allow you to manage route53 objects from the command line. It can also export your zones to BIND format and then re-import them if you have made changes&amp;hellip; This all came out of a blog post by the guys and gals at &lt;a href=&#34;https://netguru.co/blog/ci-your-dns-setup&#34;&gt;netguru&lt;/a&gt; who showed how they integrate their DNS records with their Continuous Integration&amp;hellip; Now, i have not gotten to that stage, just yet, but its only 1 step more down the road&amp;hellip; but I don&amp;rsquo;t have my zones in bind format&amp;hellip; So, how do i do that?&lt;/p&gt;
-
-&lt;p&gt;I tweaked their block of ruby code (first time playing with ruby, be gentle with me) and got the following:&lt;/p&gt;
-
-&lt;p&gt;{% gist f11fbec2075b8bf19d57 %}&lt;/p&gt;
-
-&lt;p&gt;essentially, it runs cli53 (you may need to change your path) and then creates .bind files for each zone.&lt;/p&gt;
-
-&lt;p&gt;then, using their code below, you can re-import them to Route53:&lt;/p&gt;
-
-&lt;p&gt;{% gist 7249547 %}&lt;/p&gt;
-
-&lt;p&gt;i have exported all mine, added them to git and done some testing&amp;hellip; All seems to be in order&amp;hellip; once i do some tweaks, i can get that CI piece working and it should be all magic&amp;hellip;&lt;/p&gt;
-</description>
+      <description>so, earlier on today, i was talking about using Git with a DNS service called LuaDNS to update your DNS records. Well, thing is, i have 30+ domains registered, and of them about 25 are hosted on Amazon&amp;rsquo;s Route53. So, moving ALL of them seems, well at the moment, excessive&amp;hellip; So, i went digging&amp;hellip;
+there is a tool called cli53 which will allow you to manage route53 objects from the command line.</description>
     </item>
     
     <item>
       <title>Git Push DNS</title>
       <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git-push-dns/</link>
       <pubDate>Thu, 07 May 2015 15:30:00 +0000</pubDate>
+      
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/git-push-dns/</guid>
-      <description>&lt;p&gt;There are now a lot of services that have &amp;ldquo;git push&amp;rdquo; options available&amp;hellip; you can build websites with
-&lt;a href=&#34;http://www.azure.com&#34;&gt;Azure&lt;/a&gt; and &lt;a href=&#34;http://www.github.com&#34;&gt;Github&lt;/a&gt;, books using &lt;a href=&#34;https://www.sharelatex.com/&#34;&gt;ShareLaTeX&lt;/a&gt; and now, DNS using &lt;a href=&#34;http://luadns.com&#34;&gt;LuaDNS&lt;/a&gt;. I have one zone
-running at the moment (&lt;a href=&#34;http://www.tiernanotoole.net&#34;&gt;tiernanotoole.net&lt;/a&gt;) and you can see the DNS records on &lt;a href=&#34;https://github.com/tiernano/dns&#34;&gt;github here&lt;/a&gt;. I am
-tempted at moving other records over soon&amp;hellip; but i am currently on &lt;a href=&#34;http://aws.amazon.com/route53&#34;&gt;Amazon Route53&lt;/a&gt; and 1: its works, so
-dont break it, and 2, not sure how to bulk export records from Route53 to Bind or &lt;a href=&#34;http://www.luadns.com/help.html#lua-zone-file-format&#34;&gt;Lua&lt;/a&gt; format.&lt;/p&gt;
-
-&lt;p&gt;[update] 2 quick updates: 1) their free account, which is what i am using, allows 3 domains and 30 host
-records. they also charge less than &lt;a href=&#34;http://aws.amazon.com/route53&#34;&gt;Route53&lt;/a&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;route 53 for 10 domains per year cost 50c per domain (first 25) per month, then query charges. total,
-about $60 + queries (@40c per million).&lt;/li&gt;
-&lt;li&gt;luadns cost $29 a year for 10 domains, 5 million (ish) querys a month and 500 host records&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I think i have nearly 30 domain on AWS&amp;hellip; so, their $59 a year package, which include 30 domains, would
-probably save me money&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;and 2) i forgot about one of those git push services&amp;hellip; &lt;a href=&#34;https://developermail.io/&#34;&gt;DeveloperMail&lt;/a&gt; is a service, for developers,
-for managing email servers. IMAP, SMTP, Git&amp;hellip; all supported! just signed up&amp;hellip; $2 a month per user. Lets
-see how this works&amp;hellip;&lt;/p&gt;
-</description>
+      <description>There are now a lot of services that have &amp;ldquo;git push&amp;rdquo; options available&amp;hellip; you can build websites with Azure and Github, books using ShareLaTeX and now, DNS using LuaDNS. I have one zone running at the moment (tiernanotoole.net) and you can see the DNS records on github here. I am tempted at moving other records over soon&amp;hellip; but i am currently on Amazon Route53 and 1: its works, so dont break it, and 2, not sure how to bulk export records from Route53 to Bind or Lua format.</description>
     </item>
     
   </channel>
