@@ -1,1 +1,3 @@
+Sitemap: https://tiernano.github.iositemap.xml
+
 User-agent: *

@@ -1,30 +1,194 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
   <head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<meta property="og:title" content="Using git and Route53 together" />
+<meta property="og:description" content="so, earlier on today, i was talking about using Git with a DNS service called LuaDNS to update your DNS records. Well, thing is, i have 30&#43; domains registered, and of them about 25 are hosted on Amazon&rsquo;s Route53. So, moving ALL of them seems, well at the moment, excessive&hellip; So, i went digging&hellip;
+there is a tool called cli53 which will allow you to manage route53 objects from the command line." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tiernano.github.io/post/using-git-and-route53/" />
+
+
+
+<meta property="article:published_time" content="2015-05-07T20:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-04T16:12:05&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Using git and Route53 together">
+<meta itemprop="description" content="so, earlier on today, i was talking about using Git with a DNS service called LuaDNS to update your DNS records. Well, thing is, i have 30&#43; domains registered, and of them about 25 are hosted on Amazon&rsquo;s Route53. So, moving ALL of them seems, well at the moment, excessive&hellip; So, i went digging&hellip;
+there is a tool called cli53 which will allow you to manage route53 objects from the command line.">
+
+
+<meta itemprop="datePublished" content="2015-05-07T20:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-05-07T20:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="238">
+
+
+
+<meta itemprop="keywords" content="DNS,Networking,Git,Development," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using git and Route53 together"/>
+<meta name="twitter:description" content="so, earlier on today, i was talking about using Git with a DNS service called LuaDNS to update your DNS records. Well, thing is, i have 30&#43; domains registered, and of them about 25 are hosted on Amazon&rsquo;s Route53. So, moving ALL of them seems, well at the moment, excessive&hellip; So, i went digging&hellip;
+there is a tool called cli53 which will allow you to manage route53 objects from the command line."/>
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+    <base href="https://tiernano.github.io">
+    <link rel="canonical" href="https://tiernano.github.io/post/using-git-and-route53/">
     <title>Using git and Route53 together | Tiernan&#39;s Comms Closet</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+
+    <!-- CSS -->
+    <link href="https://tiernano.github.iocss/app.css" rel="stylesheet">
+
     
+
+    
+
+    
+    
+
+
   </head>
-
   <body>
-    <nav>
-    <ul class="menu">
-      
-    </ul>
-    <hr/>
-    </nav>
 
-<div class="article-meta">
-<h1><span class="title">Using git and Route53 together</span></h1>
+    <header class="nav">
+      <div class="top-bar">
+        <div class="row column">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li><a href="https://tiernano.github.io">
+                  Tiernan's Comms Closet
+                </a></li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu">
+              <li class=""><a href="https://tiernano.github.io">
+                Home
+              </a></li>
+              
+                
+                  <li><a href="https://example.org">
+                    Link 1
+                  </a></li>
+                
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
 
-<h2 class="date">2015/05/07</h2>
-</div>
+    <header class="blog-header">
+      <div class="callout large">
+        <div class="row column text-center">
+          <h1>
+            <a href="https://tiernano.github.io" rel="home">Tiernan's Comms Closet</a>
+          </h1>
+          
+            <p>
+              Geek, Programmer, Photographer&hellip;
+            </p>
+          
+        </div>
+      </div>
+    </header>
 
-<main>
-<p>so, earlier on today, i was talking about using <a href="http://tiernanotoole.ie/2015/05/07/git-push-dns.html">Git with a DNS service called LuaDNS</a> to update your DNS records. Well, thing is, i have 30+ domains registered, and of them about 25 are hosted on <a href="http://aws.amazon.com/route53">Amazon&rsquo;s Route53</a>. So, moving ALL of them seems, well at the moment, excessive&hellip; So, i went digging&hellip;</p>
+    <main>
+      <div class="row" id="content">
+        <div class="medium-8 columns">
+          
+  
+
+
+  <div class="blog-post">
+    <h3>
+      <a href="https://tiernano.github.io/post/using-git-and-route53/">Using git and Route53 together</a>
+    </h3>
+    <div class="callout small">
+      <small>
+        <time datetime="2015-05-07T20:00:00Z">
+          Thu May 7, 2015
+        </time> by .
+        
+        Tags: 
+  
+    
+      <a href="/tags/dns">
+        DNS
+      </a>
+  
+    ,
+    
+      <a href="/tags/networking">
+        Networking
+      </a>
+  
+    ,
+    
+      <a href="/tags/git">
+        Git
+      </a>
+  
+    ,
+    
+      <a href="/tags/development">
+        Development
+      </a>
+  
+
+.
+        <br>
+        
+          Share
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftiernano.github.io%2fpost%2fusing-git-and-route53%2f" title="Share on Facebook">
+      Facebook
+    </a>,
+
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2ftiernano.github.io%2fpost%2fusing-git-and-route53%2f" title="Share on Google+">
+      Google+
+    </a>,
+
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ftiernano.github.io%2fpost%2fusing-git-and-route53%2f" title="Share on LinkedIn">
+      LinkedIn
+    </a>,
+
+
+    <a href="https://twitter.com/home?status=https%3a%2f%2ftiernano.github.io%2fpost%2fusing-git-and-route53%2f" title="Tweet this">
+      Twitter
+    </a>
+
+
+        
+      </small>
+    </div>
+    <p>
+      <p>so, earlier on today, i was talking about using <a href="http://tiernanotoole.ie/2015/05/07/git-push-dns.html">Git with a DNS service called LuaDNS</a> to update your DNS records. Well, thing is, i have 30+ domains registered, and of them about 25 are hosted on <a href="http://aws.amazon.com/route53">Amazon&rsquo;s Route53</a>. So, moving ALL of them seems, well at the moment, excessive&hellip; So, i went digging&hellip;</p>
 
 <p>there is a tool called <a href="https://github.com/barnybug/cli53">cli53</a> which will allow you to manage route53 objects from the command line. It can also export your zones to BIND format and then re-import them if you have made changes&hellip; This all came out of a blog post by the guys and gals at <a href="https://netguru.co/blog/ci-your-dns-setup">netguru</a> who showed how they integrate their DNS records with their Continuous Integration&hellip; Now, i have not gotten to that stage, just yet, but its only 1 step more down the road&hellip; but I don&rsquo;t have my zones in bind format&hellip; So, how do i do that?</p>
 
@@ -40,12 +204,113 @@
 
 <p>i have exported all mine, added them to git and done some testing&hellip; All seems to be in order&hellip; once i do some tweaks, i can get that CI piece working and it should be all magic&hellip;</p>
 
-</main>
+    </p>
+    
+    <hr>
+  </div>
 
-  <footer>
+  
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
   
   
-  </footer>
+  if (window.location.hostname == "localhost")
+    return;
+
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  var disqus_shortname = 'tiernanotooleie';
+
+   var disqus_config = function () {
+        this.page.url = "https:\/\/tiernanotoole.ie\/2015\/05\/07\/using-git-and-route53.html";  
+        this.page.identifier = "https:\/\/tiernanotoole.ie\/2015\/05\/07\/using-git-and-route53.html"; 
+    };
+
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+
+
+        </div>
+          <div class="medium-3 columns" data-sticky-container>
+  <div class="sticky" data-sticky data-anchor="content">
+
+  
+    <h4>About</h4>
+    <p>homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</p>
+  
+
+  
+
+  <h4>Recent Posts</h4>
+  <ul>
+    
+      <li><a href="/post/playing-with-amd-epyc/">
+        Playing with AMD&rsquo;s Epyc
+      </a></li>
+    
+      <li><a href="/post/as204994-own-ip-space-and-anycast/">
+        AS204994, Own IP Space and Anycast
+      </a></li>
+    
+      <li><a href="/post/blogging-on-ipad/">
+        Blogging on an iPad Pro
+      </a></li>
+    
+      <li><a href="/post/new-backup-plans/">
+        New Backup Plans
+      </a></li>
+    
+      <li><a href="/post/testing-forestry/">
+        Testing Forestry
+      </a></li>
+    
+  </ul>
+
+  
+    <h4>Links</h4>
+    <ul>
+      
+        <li><a href="https://example.com">
+          Link 1
+        </a></li>
+      
+        <li><a href="https://example.org">
+          Link 2
+        </a></li>
+      
+    </ul>
+  
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="blog-footer">
+      <div class="row column">
+        <p>
+          
+          2018 Tiernan OToole
+          
+        </p>
+        <p>
+          <a href="https://tiernano.github.io/post/using-git-and-route53/#">Back to top</a>
+        </p>
+      </div>
+    </footer>
+
+  <foot>
+
+    <script src="https://tiernano.github.iojs/app.js"></script>
+
+  </foot>
   </body>
 </html>
-

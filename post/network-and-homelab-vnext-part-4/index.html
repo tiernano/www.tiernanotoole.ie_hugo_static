@@ -1,30 +1,197 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
   <head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<meta property="og:title" content="Network and HomeLab V.Next (Part 4)" />
+<meta property="og:description" content="So, after some messing, tweaking, and thinking, I have made some progress with the home lab&hellip; or at least broken some stuff&hellip; I mentioned previously that i had a Ubiqititi networks EdgeRouter POE in the home lab. Originally, the plan was to use a Virtual PFSense box for my core router&hellip; Given the power usage of the current PfSense Box (I have 2 MPower Pro&rsquo;s watching power in the lab) I am now thinking of moving to just the EdgeRouter for, well, edge routing&hellip; below is the usage of the ProLiant for the last 12 hours or so:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tiernano.github.io/post/network-and-homelab-vnext-part-4/" />
+
+
+
+<meta property="article:published_time" content="2015-09-16T14:15:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-04T16:12:05&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Network and HomeLab V.Next (Part 4)">
+<meta itemprop="description" content="So, after some messing, tweaking, and thinking, I have made some progress with the home lab&hellip; or at least broken some stuff&hellip; I mentioned previously that i had a Ubiqititi networks EdgeRouter POE in the home lab. Originally, the plan was to use a Virtual PFSense box for my core router&hellip; Given the power usage of the current PfSense Box (I have 2 MPower Pro&rsquo;s watching power in the lab) I am now thinking of moving to just the EdgeRouter for, well, edge routing&hellip; below is the usage of the ProLiant for the last 12 hours or so:">
+
+
+<meta itemprop="datePublished" content="2015-09-16T14:15:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-09-16T14:15:00&#43;00:00" />
+<meta itemprop="wordCount" content="279">
+
+
+
+<meta itemprop="keywords" content="Networking,PFSense,Hardware,HomeLab,Ubiquiti," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Network and HomeLab V.Next (Part 4)"/>
+<meta name="twitter:description" content="So, after some messing, tweaking, and thinking, I have made some progress with the home lab&hellip; or at least broken some stuff&hellip; I mentioned previously that i had a Ubiqititi networks EdgeRouter POE in the home lab. Originally, the plan was to use a Virtual PFSense box for my core router&hellip; Given the power usage of the current PfSense Box (I have 2 MPower Pro&rsquo;s watching power in the lab) I am now thinking of moving to just the EdgeRouter for, well, edge routing&hellip; below is the usage of the ProLiant for the last 12 hours or so:"/>
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+    <base href="https://tiernano.github.io">
+    <link rel="canonical" href="https://tiernano.github.io/post/network-and-homelab-vnext-part-4/">
     <title>Network and HomeLab V.Next (Part 4) | Tiernan&#39;s Comms Closet</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+
+    <!-- CSS -->
+    <link href="https://tiernano.github.iocss/app.css" rel="stylesheet">
+
     
+
+    
+
+    
+    
+
+
   </head>
-
   <body>
-    <nav>
-    <ul class="menu">
-      
-    </ul>
-    <hr/>
-    </nav>
 
-<div class="article-meta">
-<h1><span class="title">Network and HomeLab V.Next (Part 4)</span></h1>
+    <header class="nav">
+      <div class="top-bar">
+        <div class="row column">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li><a href="https://tiernano.github.io">
+                  Tiernan's Comms Closet
+                </a></li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu">
+              <li class=""><a href="https://tiernano.github.io">
+                Home
+              </a></li>
+              
+                
+                  <li><a href="https://example.org">
+                    Link 1
+                  </a></li>
+                
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
 
-<h2 class="date">2015/09/16</h2>
-</div>
+    <header class="blog-header">
+      <div class="callout large">
+        <div class="row column text-center">
+          <h1>
+            <a href="https://tiernano.github.io" rel="home">Tiernan's Comms Closet</a>
+          </h1>
+          
+            <p>
+              Geek, Programmer, Photographer&hellip;
+            </p>
+          
+        </div>
+      </div>
+    </header>
 
-<main>
-<p>So, after some messing, tweaking, and thinking, I have made some progress with the home lab&hellip; or at least broken some stuff&hellip; I mentioned previously that i had a <a href="https://www.tiernanotoole.ie/2015/08/05/Ubiquiti-EdgeRouter-POE-In-the-lab.html">Ubiqititi networks EdgeRouter POE</a> in the home lab. Originally, the plan was to use a Virtual <a href="http://www.pfsense.org">PFSense</a> box for my core router&hellip; Given the power usage of the current PfSense Box (I have 2 <a href="https://www.ubnt.com/mfi/mpower/">MPower Pro</a>&rsquo;s watching power in the lab) I am now thinking of moving to just the EdgeRouter for, well, edge routing&hellip;  below is the usage of the ProLiant for the last 12 hours or so:</p>
+    <main>
+      <div class="row" id="content">
+        <div class="medium-8 columns">
+          
+  
+
+
+  <div class="blog-post">
+    <h3>
+      <a href="https://tiernano.github.io/post/network-and-homelab-vnext-part-4/">Network and HomeLab V.Next (Part 4)</a>
+    </h3>
+    <div class="callout small">
+      <small>
+        <time datetime="2015-09-16T14:15:00Z">
+          Wed Sep 16, 2015
+        </time> by .
+        
+        Tags: 
+  
+    
+      <a href="/tags/networking">
+        Networking
+      </a>
+  
+    ,
+    
+      <a href="/tags/pfsense">
+        PFSense
+      </a>
+  
+    ,
+    
+      <a href="/tags/hardware">
+        Hardware
+      </a>
+  
+    ,
+    
+      <a href="/tags/homelab">
+        HomeLab
+      </a>
+  
+    ,
+    
+      <a href="/tags/ubiquiti">
+        Ubiquiti
+      </a>
+  
+
+.
+        <br>
+        
+          Share
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftiernano.github.io%2fpost%2fnetwork-and-homelab-vnext-part-4%2f" title="Share on Facebook">
+      Facebook
+    </a>,
+
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2ftiernano.github.io%2fpost%2fnetwork-and-homelab-vnext-part-4%2f" title="Share on Google+">
+      Google+
+    </a>,
+
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ftiernano.github.io%2fpost%2fnetwork-and-homelab-vnext-part-4%2f" title="Share on LinkedIn">
+      LinkedIn
+    </a>,
+
+
+    <a href="https://twitter.com/home?status=https%3a%2f%2ftiernano.github.io%2fpost%2fnetwork-and-homelab-vnext-part-4%2f" title="Tweet this">
+      Twitter
+    </a>
+
+
+        
+      </small>
+    </div>
+    <p>
+      <p>So, after some messing, tweaking, and thinking, I have made some progress with the home lab&hellip; or at least broken some stuff&hellip; I mentioned previously that i had a <a href="https://www.tiernanotoole.ie/2015/08/05/Ubiquiti-EdgeRouter-POE-In-the-lab.html">Ubiqititi networks EdgeRouter POE</a> in the home lab. Originally, the plan was to use a Virtual <a href="http://www.pfsense.org">PFSense</a> box for my core router&hellip; Given the power usage of the current PfSense Box (I have 2 <a href="https://www.ubnt.com/mfi/mpower/">MPower Pro</a>&rsquo;s watching power in the lab) I am now thinking of moving to just the EdgeRouter for, well, edge routing&hellip;  below is the usage of the ProLiant for the last 12 hours or so:</p>
 
 
 <a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/20150916-proliant-power-usage.PNG"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20150916-proliant-power-usage.PNG" alt=""></a>
@@ -54,12 +221,113 @@
 
 <p>The current <a href="http://www.cisco.com/c/en/us/products/switches/catalyst-3560-series-switches/index.html">Cisco 3560G switch</a> should do all that, without problems, so no new switch needed&hellip; lets see what i can break over the next while&hellip;</p>
 
-</main>
+    </p>
+    
+    <hr>
+  </div>
 
-  <footer>
+  
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
   
   
-  </footer>
+  if (window.location.hostname == "localhost")
+    return;
+
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  var disqus_shortname = 'tiernanotooleie';
+
+   var disqus_config = function () {
+        this.page.url = "https:\/\/tiernanotoole.ie\/2015\/09\/16\/Network-and-HomeLab-vnext-part-4.html";  
+        this.page.identifier = "https:\/\/tiernanotoole.ie\/2015\/09\/16\/Network-and-HomeLab-vnext-part-4.html"; 
+    };
+
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+
+
+        </div>
+          <div class="medium-3 columns" data-sticky-container>
+  <div class="sticky" data-sticky data-anchor="content">
+
+  
+    <h4>About</h4>
+    <p>homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</p>
+  
+
+  
+
+  <h4>Recent Posts</h4>
+  <ul>
+    
+      <li><a href="/post/playing-with-amd-epyc/">
+        Playing with AMD&rsquo;s Epyc
+      </a></li>
+    
+      <li><a href="/post/as204994-own-ip-space-and-anycast/">
+        AS204994, Own IP Space and Anycast
+      </a></li>
+    
+      <li><a href="/post/blogging-on-ipad/">
+        Blogging on an iPad Pro
+      </a></li>
+    
+      <li><a href="/post/new-backup-plans/">
+        New Backup Plans
+      </a></li>
+    
+      <li><a href="/post/testing-forestry/">
+        Testing Forestry
+      </a></li>
+    
+  </ul>
+
+  
+    <h4>Links</h4>
+    <ul>
+      
+        <li><a href="https://example.com">
+          Link 1
+        </a></li>
+      
+        <li><a href="https://example.org">
+          Link 2
+        </a></li>
+      
+    </ul>
+  
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="blog-footer">
+      <div class="row column">
+        <p>
+          
+          2018 Tiernan OToole
+          
+        </p>
+        <p>
+          <a href="https://tiernano.github.io/post/network-and-homelab-vnext-part-4/#">Back to top</a>
+        </p>
+      </div>
+    </footer>
+
+  <foot>
+
+    <script src="https://tiernano.github.iojs/app.js"></script>
+
+  </foot>
   </body>
 </html>
-

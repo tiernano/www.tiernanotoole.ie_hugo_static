@@ -1,30 +1,185 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
   <head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<meta property="og:title" content="PFSense with Multiple Public IPs" />
+<meta property="og:description" content="So, a few weeks back, i got my hands on a Hetzner Dedicated box. It has a quad core Xeon, 32Gb ram, 3x3Tb hdds, RAID controller and KVMoIP. one of the first thing i did was get myself a /29 IP pool (8 total, 6 usable IPs). There where already 3 IPs given to me: 1 for the KVM, one for the box itself, and 1 as the router for the IP block." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tiernano.github.io/post/pfsense-with-multiple-public-ips/" />
+
+
+
+<meta property="article:published_time" content="2015-05-30T18:50:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-04T16:12:05&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="PFSense with Multiple Public IPs">
+<meta itemprop="description" content="So, a few weeks back, i got my hands on a Hetzner Dedicated box. It has a quad core Xeon, 32Gb ram, 3x3Tb hdds, RAID controller and KVMoIP. one of the first thing i did was get myself a /29 IP pool (8 total, 6 usable IPs). There where already 3 IPs given to me: 1 for the KVM, one for the box itself, and 1 as the router for the IP block.">
+
+
+<meta itemprop="datePublished" content="2015-05-30T18:50:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-05-30T18:50:00&#43;00:00" />
+<meta itemprop="wordCount" content="477">
+
+
+
+<meta itemprop="keywords" content="Networking,VMWare,PFSense," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PFSense with Multiple Public IPs"/>
+<meta name="twitter:description" content="So, a few weeks back, i got my hands on a Hetzner Dedicated box. It has a quad core Xeon, 32Gb ram, 3x3Tb hdds, RAID controller and KVMoIP. one of the first thing i did was get myself a /29 IP pool (8 total, 6 usable IPs). There where already 3 IPs given to me: 1 for the KVM, one for the box itself, and 1 as the router for the IP block."/>
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+    <base href="https://tiernano.github.io">
+    <link rel="canonical" href="https://tiernano.github.io/post/pfsense-with-multiple-public-ips/">
     <title>PFSense with Multiple Public IPs | Tiernan&#39;s Comms Closet</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+
+    <!-- CSS -->
+    <link href="https://tiernano.github.iocss/app.css" rel="stylesheet">
+
     
+
+    
+
+    
+    
+
+
   </head>
-
   <body>
-    <nav>
-    <ul class="menu">
-      
-    </ul>
-    <hr/>
-    </nav>
 
-<div class="article-meta">
-<h1><span class="title">PFSense with Multiple Public IPs</span></h1>
+    <header class="nav">
+      <div class="top-bar">
+        <div class="row column">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li><a href="https://tiernano.github.io">
+                  Tiernan's Comms Closet
+                </a></li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu">
+              <li class=""><a href="https://tiernano.github.io">
+                Home
+              </a></li>
+              
+                
+                  <li><a href="https://example.org">
+                    Link 1
+                  </a></li>
+                
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
 
-<h2 class="date">2015/05/30</h2>
-</div>
+    <header class="blog-header">
+      <div class="callout large">
+        <div class="row column text-center">
+          <h1>
+            <a href="https://tiernano.github.io" rel="home">Tiernan's Comms Closet</a>
+          </h1>
+          
+            <p>
+              Geek, Programmer, Photographer&hellip;
+            </p>
+          
+        </div>
+      </div>
+    </header>
 
-<main>
-<p>So, a few weeks back, i got my hands on a <a href="http://www.hetzner.de/en">Hetzner</a> Dedicated box. It has a quad core Xeon, 32Gb ram, 3x3Tb hdds, RAID controller and KVMoIP. one of the first thing i did was get myself a /29 IP pool (8 total, 6 usable IPs). There where already 3 IPs given to me: 1 for the KVM, one for the box itself, and 1 as the router for the IP block.</p>
+    <main>
+      <div class="row" id="content">
+        <div class="medium-8 columns">
+          
+  
+
+
+  <div class="blog-post">
+    <h3>
+      <a href="https://tiernano.github.io/post/pfsense-with-multiple-public-ips/">PFSense with Multiple Public IPs</a>
+    </h3>
+    <div class="callout small">
+      <small>
+        <time datetime="2015-05-30T18:50:00Z">
+          Sat May 30, 2015
+        </time> by .
+        
+        Tags: 
+  
+    
+      <a href="/tags/networking">
+        Networking
+      </a>
+  
+    ,
+    
+      <a href="/tags/vmware">
+        VMWare
+      </a>
+  
+    ,
+    
+      <a href="/tags/pfsense">
+        PFSense
+      </a>
+  
+
+.
+        <br>
+        
+          Share
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftiernano.github.io%2fpost%2fpfsense-with-multiple-public-ips%2f" title="Share on Facebook">
+      Facebook
+    </a>,
+
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2ftiernano.github.io%2fpost%2fpfsense-with-multiple-public-ips%2f" title="Share on Google+">
+      Google+
+    </a>,
+
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ftiernano.github.io%2fpost%2fpfsense-with-multiple-public-ips%2f" title="Share on LinkedIn">
+      LinkedIn
+    </a>,
+
+
+    <a href="https://twitter.com/home?status=https%3a%2f%2ftiernano.github.io%2fpost%2fpfsense-with-multiple-public-ips%2f" title="Tweet this">
+      Twitter
+    </a>
+
+
+        
+      </small>
+    </div>
+    <p>
+      <p>So, a few weeks back, i got my hands on a <a href="http://www.hetzner.de/en">Hetzner</a> Dedicated box. It has a quad core Xeon, 32Gb ram, 3x3Tb hdds, RAID controller and KVMoIP. one of the first thing i did was get myself a /29 IP pool (8 total, 6 usable IPs). There where already 3 IPs given to me: 1 for the KVM, one for the box itself, and 1 as the router for the IP block.</p>
 
 <p>So, i need to setup my own router, so i picked <a href="http://www.pfsense.org">PFSense</a> since its what i run in house. I gave it 2 network connections: 1 connected to the main network adapter on the VMWare ESXi box (public) and one to a virtual switch, which is only used by VMs. The public is the WAN link and it gets a static IP from Hetzner, and the virtual switch is then my &ldquo;LAN&rdquo; link. This allows me to have standard NATed network connections to any VM i have, but then, what do i do with those IPs?</p>
 
@@ -44,12 +199,113 @@
 
 <p>YMMV, but hopefully this helps! Any questions, leave a comment.</p>
 
-</main>
+    </p>
+    
+    <hr>
+  </div>
 
-  <footer>
+  
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
   
   
-  </footer>
+  if (window.location.hostname == "localhost")
+    return;
+
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  var disqus_shortname = 'tiernanotooleie';
+
+   var disqus_config = function () {
+        this.page.url = "https:\/\/tiernanotoole.ie\/2015\/05\/30\/PFSense-with-multiple-public-ips.html";  
+        this.page.identifier = "https:\/\/tiernanotoole.ie\/2015\/05\/30\/PFSense-with-multiple-public-ips.html"; 
+    };
+
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+
+
+        </div>
+          <div class="medium-3 columns" data-sticky-container>
+  <div class="sticky" data-sticky data-anchor="content">
+
+  
+    <h4>About</h4>
+    <p>homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</p>
+  
+
+  
+
+  <h4>Recent Posts</h4>
+  <ul>
+    
+      <li><a href="/post/playing-with-amd-epyc/">
+        Playing with AMD&rsquo;s Epyc
+      </a></li>
+    
+      <li><a href="/post/as204994-own-ip-space-and-anycast/">
+        AS204994, Own IP Space and Anycast
+      </a></li>
+    
+      <li><a href="/post/blogging-on-ipad/">
+        Blogging on an iPad Pro
+      </a></li>
+    
+      <li><a href="/post/new-backup-plans/">
+        New Backup Plans
+      </a></li>
+    
+      <li><a href="/post/testing-forestry/">
+        Testing Forestry
+      </a></li>
+    
+  </ul>
+
+  
+    <h4>Links</h4>
+    <ul>
+      
+        <li><a href="https://example.com">
+          Link 1
+        </a></li>
+      
+        <li><a href="https://example.org">
+          Link 2
+        </a></li>
+      
+    </ul>
+  
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="blog-footer">
+      <div class="row column">
+        <p>
+          
+          2018 Tiernan OToole
+          
+        </p>
+        <p>
+          <a href="https://tiernano.github.io/post/pfsense-with-multiple-public-ips/#">Back to top</a>
+        </p>
+      </div>
+    </footer>
+
+  <foot>
+
+    <script src="https://tiernano.github.iojs/app.js"></script>
+
+  </foot>
   </body>
 </html>
-

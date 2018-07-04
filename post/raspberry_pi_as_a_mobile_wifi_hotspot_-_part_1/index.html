@@ -1,30 +1,188 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
   <head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<meta property="og:title" content="Raspberry Pi as a Mobile WiFi HotSpot (part 1)" />
+<meta property="og:description" content="I have been using an iPhone 4 as a wifi hotspot for a while now. It does not have a &ldquo;phone&rdquo; SIM in it, with calls and texts enabled, instead it has a 3G Data SIM from a dongle&hellip; It works OK, but there are a few issues i have with it&hellip;
+ No easy way to see how much data is being used, unless you Jail Break, and then battery life goes away&hellip; not very hackable&hellip; other than Jail Break, and thats not hackable enough&hellip; not a lot of storage: 16Gb, and most of that is takin up by Music and Apps no background network daemons&hellip; more on that in a second&hellip;  The Network Daemons i am thinking would be useful for a WiFi Hotspot would be Squid, WANProxy, SSH, PPTP or OpenVPN Client and possibly a downloader of some sort." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tiernano.github.io/post/raspberry_pi_as_a_mobile_wifi_hotspot_-_part_1/" />
+
+
+
+<meta property="article:published_time" content="2013-01-18T07:57:16&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-04T16:12:05&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Raspberry Pi as a Mobile WiFi HotSpot (part 1)">
+<meta itemprop="description" content="I have been using an iPhone 4 as a wifi hotspot for a while now. It does not have a &ldquo;phone&rdquo; SIM in it, with calls and texts enabled, instead it has a 3G Data SIM from a dongle&hellip; It works OK, but there are a few issues i have with it&hellip;
+ No easy way to see how much data is being used, unless you Jail Break, and then battery life goes away&hellip; not very hackable&hellip; other than Jail Break, and thats not hackable enough&hellip; not a lot of storage: 16Gb, and most of that is takin up by Music and Apps no background network daemons&hellip; more on that in a second&hellip;  The Network Daemons i am thinking would be useful for a WiFi Hotspot would be Squid, WANProxy, SSH, PPTP or OpenVPN Client and possibly a downloader of some sort.">
+
+
+<meta itemprop="datePublished" content="2013-01-18T07:57:16&#43;00:00" />
+<meta itemprop="dateModified" content="2013-01-18T07:57:16&#43;00:00" />
+<meta itemprop="wordCount" content="642">
+
+
+
+<meta itemprop="keywords" content="Raspberry_Pi,Networking,Projects," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Raspberry Pi as a Mobile WiFi HotSpot (part 1)"/>
+<meta name="twitter:description" content="I have been using an iPhone 4 as a wifi hotspot for a while now. It does not have a &ldquo;phone&rdquo; SIM in it, with calls and texts enabled, instead it has a 3G Data SIM from a dongle&hellip; It works OK, but there are a few issues i have with it&hellip;
+ No easy way to see how much data is being used, unless you Jail Break, and then battery life goes away&hellip; not very hackable&hellip; other than Jail Break, and thats not hackable enough&hellip; not a lot of storage: 16Gb, and most of that is takin up by Music and Apps no background network daemons&hellip; more on that in a second&hellip;  The Network Daemons i am thinking would be useful for a WiFi Hotspot would be Squid, WANProxy, SSH, PPTP or OpenVPN Client and possibly a downloader of some sort."/>
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+    <base href="https://tiernano.github.io">
+    <link rel="canonical" href="https://tiernano.github.io/post/raspberry_pi_as_a_mobile_wifi_hotspot_-_part_1/">
     <title>Raspberry Pi as a Mobile WiFi HotSpot (part 1) | Tiernan&#39;s Comms Closet</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/fonts.css" />
+
+    <!-- CSS -->
+    <link href="https://tiernano.github.iocss/app.css" rel="stylesheet">
+
     
+
+    
+
+    
+    
+
+
   </head>
-
   <body>
-    <nav>
-    <ul class="menu">
-      
-    </ul>
-    <hr/>
-    </nav>
 
-<div class="article-meta">
-<h1><span class="title">Raspberry Pi as a Mobile WiFi HotSpot (part 1)</span></h1>
+    <header class="nav">
+      <div class="top-bar">
+        <div class="row column">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li><a href="https://tiernano.github.io">
+                  Tiernan's Comms Closet
+                </a></li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu">
+              <li class=""><a href="https://tiernano.github.io">
+                Home
+              </a></li>
+              
+                
+                  <li><a href="https://example.org">
+                    Link 1
+                  </a></li>
+                
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
 
-<h2 class="date">2013/01/18</h2>
-</div>
+    <header class="blog-header">
+      <div class="callout large">
+        <div class="row column text-center">
+          <h1>
+            <a href="https://tiernano.github.io" rel="home">Tiernan's Comms Closet</a>
+          </h1>
+          
+            <p>
+              Geek, Programmer, Photographer&hellip;
+            </p>
+          
+        </div>
+      </div>
+    </header>
 
-<main>
-<p>I have been using an iPhone 4 as a wifi hotspot for a while now. It does not have a &ldquo;phone&rdquo; SIM in it, with calls and texts enabled, instead it has a 3G Data SIM from a dongle&hellip; It works OK, but there are a few issues i have with it&hellip;</p>
+    <main>
+      <div class="row" id="content">
+        <div class="medium-8 columns">
+          
+  
+
+
+  <div class="blog-post">
+    <h3>
+      <a href="https://tiernano.github.io/post/raspberry_pi_as_a_mobile_wifi_hotspot_-_part_1/">Raspberry Pi as a Mobile WiFi HotSpot (part 1)</a>
+    </h3>
+    <div class="callout small">
+      <small>
+        <time datetime="2013-01-18T07:57:16Z">
+          Fri Jan 18, 2013
+        </time> by .
+        
+        Tags: 
+  
+    
+      <a href="/tags/raspberry_pi">
+        Raspberry_Pi
+      </a>
+  
+    ,
+    
+      <a href="/tags/networking">
+        Networking
+      </a>
+  
+    ,
+    
+      <a href="/tags/projects">
+        Projects
+      </a>
+  
+
+.
+        <br>
+        
+          Share
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftiernano.github.io%2fpost%2fraspberry_pi_as_a_mobile_wifi_hotspot_-_part_1%2f" title="Share on Facebook">
+      Facebook
+    </a>,
+
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2ftiernano.github.io%2fpost%2fraspberry_pi_as_a_mobile_wifi_hotspot_-_part_1%2f" title="Share on Google+">
+      Google+
+    </a>,
+
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ftiernano.github.io%2fpost%2fraspberry_pi_as_a_mobile_wifi_hotspot_-_part_1%2f" title="Share on LinkedIn">
+      LinkedIn
+    </a>,
+
+
+    <a href="https://twitter.com/home?status=https%3a%2f%2ftiernano.github.io%2fpost%2fraspberry_pi_as_a_mobile_wifi_hotspot_-_part_1%2f" title="Tweet this">
+      Twitter
+    </a>
+
+
+        
+      </small>
+    </div>
+    <p>
+      <p>I have been using an iPhone 4 as a wifi hotspot for a while now. It does not have a &ldquo;phone&rdquo; SIM in it, with calls and texts enabled, instead it has a 3G Data SIM from a dongle&hellip; It works OK, but there are a few issues i have with it&hellip;</p>
 
 <ul>
 <li>No easy way to see how much data is being used, unless you Jail Break, and then battery life goes away&hellip;</li>
@@ -58,12 +216,113 @@
 
 <p>So, there are a few more bits and pieces to get done over the next while&hellip; I will keep posting here&hellip;</p>
 
-</main>
+    </p>
+    
+    <hr>
+  </div>
 
-  <footer>
+  
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
   
   
-  </footer>
+  if (window.location.hostname == "localhost")
+    return;
+
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  var disqus_shortname = 'tiernanotooleie';
+
+   var disqus_config = function () {
+        this.page.url = "https:\/\/tiernanotoole.ie\/2013\/01\/18\/raspberry_pi_as_a_mobile_wifi_hotspot_-_part_1.html";  
+        this.page.identifier = "https:\/\/tiernanotoole.ie\/2013\/01\/18\/raspberry_pi_as_a_mobile_wifi_hotspot_-_part_1.html"; 
+    };
+
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  
+
+
+        </div>
+          <div class="medium-3 columns" data-sticky-container>
+  <div class="sticky" data-sticky data-anchor="content">
+
+  
+    <h4>About</h4>
+    <p>homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</p>
+  
+
+  
+
+  <h4>Recent Posts</h4>
+  <ul>
+    
+      <li><a href="/post/playing-with-amd-epyc/">
+        Playing with AMD&rsquo;s Epyc
+      </a></li>
+    
+      <li><a href="/post/as204994-own-ip-space-and-anycast/">
+        AS204994, Own IP Space and Anycast
+      </a></li>
+    
+      <li><a href="/post/blogging-on-ipad/">
+        Blogging on an iPad Pro
+      </a></li>
+    
+      <li><a href="/post/new-backup-plans/">
+        New Backup Plans
+      </a></li>
+    
+      <li><a href="/post/testing-forestry/">
+        Testing Forestry
+      </a></li>
+    
+  </ul>
+
+  
+    <h4>Links</h4>
+    <ul>
+      
+        <li><a href="https://example.com">
+          Link 1
+        </a></li>
+      
+        <li><a href="https://example.org">
+          Link 2
+        </a></li>
+      
+    </ul>
+  
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="blog-footer">
+      <div class="row column">
+        <p>
+          
+          2018 Tiernan OToole
+          
+        </p>
+        <p>
+          <a href="https://tiernano.github.io/post/raspberry_pi_as_a_mobile_wifi_hotspot_-_part_1/#">Back to top</a>
+        </p>
+      </div>
+    </footer>
+
+  <foot>
+
+    <script src="https://tiernano.github.iojs/app.js"></script>
+
+  </foot>
   </body>
 </html>
-
