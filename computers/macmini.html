@@ -6,11 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<meta property="og:title" content="Computers" />
-<meta property="og:description" content="My Home Lab This page is a link of some of the machines and network devices I have in house.
-{% for computer in site.data.computers %}  {{ computer.name }}. {% if computer.decommissioned %} Status: Is decommissioned {% elsif computer.inuse %} Status: Is in use {% else %} Status: Unknown {% endif %}  {% endfor %}" />
+<meta property="og:title" content="Mac Mini" />
+<meta property="og:description" content="Late 2012 Mac Mini Specs:
+ 2.3 Gz Intel i7 (Quad core) 12GB RAM 1.25Tb Fusion Drive (256Gb SSD and a 1Tb HDD) OSX El Capitan Drobo Mini with 4 2TB HDDs  Currently acts as a Plex Media Server for the house." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.tiernanotoole.ie/computers/" />
+<meta property="og:url" content="https://www.tiernanotoole.ie/computers/macmini.html" />
 
 
 
@@ -28,22 +28,22 @@
 
 
 
-<meta itemprop="name" content="Computers">
-<meta itemprop="description" content="My Home Lab This page is a link of some of the machines and network devices I have in house.
-{% for computer in site.data.computers %}  {{ computer.name }}. {% if computer.decommissioned %} Status: Is decommissioned {% elsif computer.inuse %} Status: Is in use {% else %} Status: Unknown {% endif %}  {% endfor %}">
+<meta itemprop="name" content="Mac Mini">
+<meta itemprop="description" content="Late 2012 Mac Mini Specs:
+ 2.3 Gz Intel i7 (Quad core) 12GB RAM 1.25Tb Fusion Drive (256Gb SSD and a 1Tb HDD) OSX El Capitan Drobo Mini with 4 2TB HDDs  Currently acts as a Plex Media Server for the house.">
 
 
 
-<meta itemprop="wordCount" content="55">
+<meta itemprop="wordCount" content="41">
 
 
 
 <meta itemprop="keywords" content="" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Computers"/>
-<meta name="twitter:description" content="My Home Lab This page is a link of some of the machines and network devices I have in house.
-{% for computer in site.data.computers %}  {{ computer.name }}. {% if computer.decommissioned %} Status: Is decommissioned {% elsif computer.inuse %} Status: Is in use {% else %} Status: Unknown {% endif %}  {% endfor %}"/>
+<meta name="twitter:title" content="Mac Mini"/>
+<meta name="twitter:description" content="Late 2012 Mac Mini Specs:
+ 2.3 Gz Intel i7 (Quad core) 12GB RAM 1.25Tb Fusion Drive (256Gb SSD and a 1Tb HDD) OSX El Capitan Drobo Mini with 4 2TB HDDs  Currently acts as a Plex Media Server for the house."/>
 
 
 
@@ -54,8 +54,8 @@
 
 
     <base href="https://www.tiernanotoole.ie/">
-    <link rel="canonical" href="https://www.tiernanotoole.ie/computers/">
-    <title>Computers | Tiernan&#39;s Comms Closet</title>
+    <link rel="canonical" href="https://www.tiernanotoole.ie/computers/macmini.html">
+    <title>Mac Mini | Tiernan&#39;s Comms Closet</title>
 
     <!-- CSS -->
     <link href="https://www.tiernanotoole.ie/css/app.css" rel="stylesheet">
@@ -134,7 +134,7 @@ if (!doNotTrack) {
 
   <div class="blog-post">
     <h3>
-      <a href="https://www.tiernanotoole.ie/computers/">Computers</a>
+      <a href="https://www.tiernanotoole.ie/computers/macmini.html">Mac Mini</a>
     </h3>
     <div class="callout small">
       <small>
@@ -147,22 +147,22 @@ if (!doNotTrack) {
         
           Share
 
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.tiernanotoole.ie%2fcomputers%2f" title="Share on Facebook">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.tiernanotoole.ie%2fcomputers%2fmacmini.html" title="Share on Facebook">
       Facebook
     </a>,
 
 
-    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.tiernanotoole.ie%2fcomputers%2f" title="Share on Google+">
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.tiernanotoole.ie%2fcomputers%2fmacmini.html" title="Share on Google+">
       Google+
     </a>,
 
 
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.tiernanotoole.ie%2fcomputers%2f" title="Share on LinkedIn">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.tiernanotoole.ie%2fcomputers%2fmacmini.html" title="Share on LinkedIn">
       LinkedIn
     </a>,
 
 
-    <a href="https://twitter.com/home?status=https%3a%2f%2fwww.tiernanotoole.ie%2fcomputers%2f" title="Tweet this">
+    <a href="https://twitter.com/home?status=https%3a%2f%2fwww.tiernanotoole.ie%2fcomputers%2fmacmini.html" title="Tweet this">
       Twitter
     </a>
 
@@ -184,20 +184,21 @@ if (!doNotTrack) {
 
       
 
-<h1 id="my-home-lab">My Home Lab</h1>
+<h1 id="late-2012-mac-mini">Late 2012 Mac Mini</h1>
 
-<p>This page is a link of some of the machines and network devices I have in house.</p>
+<p><img src="/post_images/2016/03/29/20160329-macmini-system-detail.png" alt="Mac Mini Details" /></p>
 
-<p>{% for computer in site.data.computers %}
-  <li>
-    <a href="{{ computer.url }}">{{ computer.name }}</a>.
-        {% if computer.decommissioned %} Status: Is decommissioned
-        {% elsif computer.inuse %} Status: Is in use
-        {% else %}
-        Status: Unknown
-        {% endif %}
-  </li>
-{% endfor %}</p>
+<p>Specs:</p>
+
+<ul>
+<li>2.3 Gz Intel i7 (Quad core)</li>
+<li>12GB RAM</li>
+<li>1.25Tb Fusion Drive (256Gb SSD and a 1Tb HDD)</li>
+<li>OSX El Capitan</li>
+<li><a href="http://amzn.to/1MPuTNQ">Drobo Mini</a> with 4 2TB HDDs</li>
+</ul>
+
+<p>Currently acts as a <a href="http://www.plex.tv">Plex</a> Media Server for the house.</p>
 
     </p>
     
@@ -237,9 +238,9 @@ s.setAttribute('data-timestamp', +new Date());
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <br>
-<a href="https://www.tiernanotoole.ie/computers/" class="hide-child link primary-color">“Computers”</a> was last updated: 
+<a href="https://www.tiernanotoole.ie/computers/macmini.html" class="hide-child link primary-color">“Mac Mini”</a> was last updated: 
 July 4, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/62729f47ad03ac3fcf86315f96e55ed80d406b3f">moving computer files around 
-  (62729f4)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/computers/index.md">Improve this page</a>
+  (62729f4)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/computers/macmini.md">Improve this page</a>
 
         </div>
           <div class="medium-3 columns" data-sticky-container>
@@ -337,7 +338,7 @@ July 4, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//c
           
         </p>
         <p>
-          <a href="https://www.tiernanotoole.ie/computers/#">Back to top</a>
+          <a href="https://www.tiernanotoole.ie/computers/macmini.html#">Back to top</a>
         </p>
       </div>
     </footer>
