@@ -15,7 +15,7 @@
 
 <meta property="article:published_time" content="2018-07-02T19:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-07-04T21:07:32&#43;01:00"/>
+<meta property="article:modified_time" content="2018-07-04T22:01:47&#43;01:00"/>
 
 
 
@@ -34,7 +34,7 @@
 
 <meta itemprop="datePublished" content="2018-07-02T19:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-07-02T21:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1079">
+<meta itemprop="wordCount" content="1082">
 
 
 
@@ -215,14 +215,14 @@ if (!doNotTrack) {
 
 <p>I then ran fdisk -l to see what disks i had to play with. on my machine sda and sdb where the 480gb SSDs, sdc was a 120gb that was empty and sdd was the boot drive&hellip; i installed the btrfs-progs and then formatted sda and sdb as a RAID0 array, which i then mounted to /mnt. this gave me just under 900gb to play with&hellip;</p>
 
-<p>So, my first test is the usual test: building the Linux Kernel. I know that this is something that the lads at <a href="http://www.servethehome.com">ServeTheHome</a> do a lot but its something i wanted to try my self&hellip; So, first i installed git and build essential, then bison, flex and ncurses-dev, then i cloned Linus&rsquo; git repo at git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git. First things first: this machine has a twin 10gb link, a shead load of cores and some very fast storage. How long did it take to clone? it download 1.02 GiB at 35.32MiB/s (about 30 seconds and aboiut 280Mbit/s) and all in, took 2 min 55 seconds to clone. I then ran &lsquo;time make -j 49&rsquo; to see how long it would take&hellip; hmmm&hellip; no config file&hellip; make menuconfig and just hit save&hellip; defaults are grand&hellip; time make -j 49 again&hellip; and more errors&hellip; after a bit of googling, i find the page from Ubutnu <a href="https://wiki.ubuntu.com/KernelTeam/GitKernelBuild">showing what i need to do to build the kernel</a>. i follow that&hellip; download a LOT more stuff using their instrustions, and finally, we get to build&hellip; Time: 6 min 12 seconds&hellip; this is a FULL default build of the kernel&hellip;</p>
+<p>So, my first test is the usual test: building the Linux Kernel. I know that this is something that the lads at <a href="http://www.servethehome.com">ServeTheHome</a> do a lot but its something i wanted to try my self&hellip; So, first i installed <code>git</code> and <code>build essential</code>, then <code>bison</code>, <code>flex</code> and <code>ncurses-dev</code>, then i cloned Linus&rsquo; git repo at <code>git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git</code>. First things first: this machine has a twin 10gb link, a shead load of cores and some very fast storage. How long did it take to clone? it download 1.02 GiB at 35.32MiB/s (about 30 seconds and aboiut 280Mbit/s) and all in, took 2 min 55 seconds to clone. I then ran <code>time make -j 49</code> to see how long it would take&hellip; hmmm&hellip; no config file&hellip; <code>make menuconfig</code> and just hit save&hellip; defaults are grand&hellip; time <code>make -j 49</code> again&hellip; and more errors&hellip; after a bit of googling, i find the page from Ubutnu <a href="https://wiki.ubuntu.com/KernelTeam/GitKernelBuild">showing what i need to do to build the kernel</a>. i follow that&hellip; download a LOT more stuff using their instrustions, and finally, we get to build&hellip; Time: 6 min 12 seconds&hellip; this is a FULL default build of the kernel&hellip;</p>
 
 
 <a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto//v1530618253/top_kernel_build_epy_hdb0R.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530618253/top_kernel_build_epy_hdb0R.jpg" alt=""></a>
 
 
 
-<p>Same build on a VM on GodboxV2 (which was given 32GB RAM and 16 thread, so a full Xeon E5-4620) took 8min 27s to clone (8.18MiB/s. or about 64Mbit/s) and 36 min&hellip; yea, that is 3x less cores, 2x less memory, slower storage (This is on Spinny Disk, not SSD), slower network and it is also a VM VS bare metal, still, to be essentially 6 times slower? interesting&hellip; I might, at some stage, boot the machine off a live Linux USB and run some more tests, but not tonight&hellip;</p>
+<p>Same build on a VM on GodboxV2 (which was given 32GB RAM and 16 thread, so a full <a href="https://ark.intel.com/products/64607/Intel-Xeon-Processor-E5-4620-16M-Cache-2_20-GHz-7_20-GTs-Intel-QPI">Xeon E5-4620</a>) took 8min 27s to clone (8.18MiB/s. or about 64Mbit/s) and 36 min to build&hellip; yea, that is 3x less cores, 2x less memory, slower storage (This is on Spinny Disk, not SSD), slower network and it is also a VM VS bare metal, still, to be essentially 6 times slower? interesting&hellip; I might, at some stage, boot the machine off a live Linux USB and run some more tests, but not tonight&hellip;</p>
 
 
 <a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto//v1530618253/top-kernel-build-godboxv2.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530618253/top-kernel-build-godboxv2.png" alt=""></a>
@@ -240,7 +240,7 @@ if (!doNotTrack) {
 
 
 
-<p>Running the same code on GodBoxV2 on the bare metal (no VM this time), i got XX min of a run&hellip; Now, GodBoxV2 has other things running in the back ground, but not that much&hellip; I also noticed that, on average, photos were being processed in 3-5 seconds on Epyc, but nearly 13-15, and sometimes 20 and 25 seconds on GodBoxV2. I also noticed that on Epyc, the dotnet process took nearly 45GB of RAM&hellip; to run&hellip; On GodBoxV2, it took over 70!</p>
+<p>Running the same code on GodBoxV2 on the bare metal (no VM this time), i got over 20 min of a run&hellip; Now, GodBoxV2 has other things running in the back ground, but not that much&hellip; I also noticed that, on average, photos were being processed in 3-5 seconds on Epyc, but nearly 13-15, and sometimes 20 and 25 seconds on GodBoxV2. I also noticed that on Epyc, the dotnet process took nearly 45GB of RAM&hellip; to run&hellip; On GodBoxV2, it took over 70!</p>
 
 
 <a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/v1530618252/image_resizer_godbox_f5de0.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/v1530618252/image_resizer_godbox_f5de0.jpg" alt=""></a>
@@ -288,8 +288,8 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <br>
 <a href="https://www.tiernanotoole.ie/2018/07/02/playing-with-amd-epyc.html" class="hide-child link primary-color">“Playing with AMD&#39;s Epyc”</a> was last updated: 
-July 4, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/33d772e037c23ae92f528f078326df5be6c6f0b4">fixing yaml and extra spacing 
-  (33d772e)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2018-07-02-playing-with-amd-epyc.markdown">Improve this page</a>
+July 4, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/683268775dc2ea118ebc7bc8b387defe55261fd0">updating posts and a bit of cleanup 
+  (6832687)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2018-07-02-playing-with-amd-epyc.markdown">Improve this page</a>
 
         </div>
           <div class="medium-3 columns" data-sticky-container>

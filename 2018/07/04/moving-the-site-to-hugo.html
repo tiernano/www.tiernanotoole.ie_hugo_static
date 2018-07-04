@@ -7,7 +7,8 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <meta property="og:title" content="Moving the site to Hugo" />
-<meta property="og:description" content="After a LOT of messing with Jekyll, i have finally moved to Hugo! There are a few things that don&rsquo;t fully work yet, and there will be updates to the site soon enough, but for the moment, I am happy&hellip; Its also a LOT faster to build than Jekyll, and less dependencies&hellip; Happy days!" />
+<meta property="og:description" content="After a LOT of messing with Jekyll, i have finally moved to Hugo! There are a few things that don&rsquo;t fully work yet, and there will be updates to the site soon enough, but for the moment, I am happy&hellip; Its also a LOT faster to build than Jekyll, and less dependencies&hellip; Happy days!
+[update] I though i should probably update this post with a bit more information around hows its built, why i moved to Hugo, and some more links, etc." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.tiernanotoole.ie/2018/07/04/moving-the-site-to-hugo.html" />
 
@@ -15,7 +16,7 @@
 
 <meta property="article:published_time" content="2018-07-04T17:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-07-04T18:23:52&#43;01:00"/>
+<meta property="article:modified_time" content="2018-07-04T22:01:47&#43;01:00"/>
 
 
 
@@ -29,12 +30,13 @@
 
 
 <meta itemprop="name" content="Moving the site to Hugo">
-<meta itemprop="description" content="After a LOT of messing with Jekyll, i have finally moved to Hugo! There are a few things that don&rsquo;t fully work yet, and there will be updates to the site soon enough, but for the moment, I am happy&hellip; Its also a LOT faster to build than Jekyll, and less dependencies&hellip; Happy days!">
+<meta itemprop="description" content="After a LOT of messing with Jekyll, i have finally moved to Hugo! There are a few things that don&rsquo;t fully work yet, and there will be updates to the site soon enough, but for the moment, I am happy&hellip; Its also a LOT faster to build than Jekyll, and less dependencies&hellip; Happy days!
+[update] I though i should probably update this post with a bit more information around hows its built, why i moved to Hugo, and some more links, etc.">
 
 
 <meta itemprop="datePublished" content="2018-07-04T17:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-07-04T17:10:16&#43;00:00" />
-<meta itemprop="wordCount" content="54">
+<meta itemprop="wordCount" content="646">
 
 
 
@@ -42,7 +44,8 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Moving the site to Hugo"/>
-<meta name="twitter:description" content="After a LOT of messing with Jekyll, i have finally moved to Hugo! There are a few things that don&rsquo;t fully work yet, and there will be updates to the site soon enough, but for the moment, I am happy&hellip; Its also a LOT faster to build than Jekyll, and less dependencies&hellip; Happy days!"/>
+<meta name="twitter:description" content="After a LOT of messing with Jekyll, i have finally moved to Hugo! There are a few things that don&rsquo;t fully work yet, and there will be updates to the site soon enough, but for the moment, I am happy&hellip; Its also a LOT faster to build than Jekyll, and less dependencies&hellip; Happy days!
+[update] I though i should probably update this post with a bit more information around hows its built, why i moved to Hugo, and some more links, etc."/>
 
 
 
@@ -191,6 +194,45 @@ if (!doNotTrack) {
 
       <p>After a LOT of messing with <a href="https://jekyllrb.com/">Jekyll</a>, i have finally moved to <a href="https://gohugo.io/">Hugo</a>! There are a few things that don&rsquo;t fully work yet, and there will be updates to the site soon enough, but for the moment, I am happy&hellip; Its also a LOT faster to build than Jekyll, and less dependencies&hellip; Happy days!</p>
 
+<p>[update] I though i should probably update this post with a bit more information around hows its built, why i moved to Hugo, and some more links, etc.</p>
+
+<p>First, it is currently being built using <a href="http://www.forestry.io">Forestry.io</a>. I use it for both editing the documents (mind you i also use VScode for this too) and ii also builds the site now too. I have 2 Github repos. <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo">The main code</a> and the <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo_static">Static HTML</a>. When i check into Github, it it sends a webhook to Forestry, which then pulls the latest code and builds the site, and then checks the resulting files into the static HTML repo. Currently its a manual process to get it on to my server. This site is currently hosted on a server in London with my own <a href="https://www.tiernanotoole.ie/2018/04/01/as204994-own-ip-space-and-anycast.html">AS204994</a> serving the pages. I plan on adding other servers to the list so its proper anycast, but currently only 1 is running as a web server currently (there are 4 others, if you include the one in the house: 3 in total hosted on <a href="https://www.vultr.com/?ref=6925432">Vultr</a> (Lon, Fra, NYC) 1 in <a href="http://www.devcapsule.com">DevCapsule</a> and then the house) but that is my next challange&hellip;</p>
+
+<p>Next question is why? Well, over the last few months, its taking longer and longer to build the site using Jekyll&hellip; Its also getting more painful to maintain, since you have to mess with dependancy hell when updates come out&hellip;</p>
+
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/v1530736063/jekyll-build-docker.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/v1530736063/jekyll-build-docker.png" alt=""></a>
+
+
+
+<p>then when it finally builds, it takes more than 4 min in most cases&hellip;</p>
+
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/v1530736221/jekyll-build-docker-time.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/v1530736221/jekyll-build-docker-time.png" alt=""></a>
+
+
+
+<p>Now, in all fairness, this is building on a clean machine with no bundle caching, and i did have builde caching at some stage, but its still takes a long enough (30-40 seconds in some cases) to build compaired to Hugo:</p>
+
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/v1530736323/hugo-build.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/v1530736323/hugo-build.png" alt=""></a>
+
+
+
+<p>the other big advantage is that Hugo arrives in a single EXE (or other binary format for other platforms) and runs on Windows without any extra stuff to install&hellip; drop the EXE in your path, cd into the folder, and <code>hugo serve</code> and you have a web server running with your files&hellip; if you want to deploy them, run <code>hugo</code> and it builds the project and sticks it in your <code>public</code> folder. Do what you want with it from there! Happy day!</p>
+
+<p>So, finally, some links i have found useful while building this site.</p>
+
+<ul>
+<li><a href="https://gohugo.io/documentation/">The Hugo Documentation site</a> should be your first point of call&hellip; Lots of handy stuff in there&hellip;</li>
+<li><a href="https://forestry.io/blog/search-with-algolia-in-hugo/">Adding Search with Algoia</a> Since the site is static, search doesnt currently work&hellip; but with the help of a hosted service named <a href="https://algolia.com/">Algoia</a> you can get around that easily enough&hellip;</li>
+<li><a href="https://forestry.io/blog/build-a-json-api-with-hugo/">Turn your static site into a JSON API</a>: I am thinking of tweaking the Computers pages (they stopped working as planned when i moved over) and using a JSON API for it&hellip; Same with the tools list&hellip;</li>
+<li><a href="https://gohugo.io/content-management/shortcodes/">Short Codes</a>: Hugo doesn&rsquo;t really have a plugin model like Jekyll did&hellip; but there is still a lot of interesting things you can do&hellip; Short codes lets you write custom HTML that gets generated when you put in a particular block of code&hellip; Have a look at the link on the bottom of the page to see the code used to generate this page.</li>
+<li><a href="https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/odc5hvptjxifri3jusn9">Cloudinary</a>: Since moving so static sites, i have found images to be a pain in the ass&hellip; Found these guys the other day, and they integrate well with Forestry. and their free version works grand for smaller sites&hellip;</li>
+</ul>
+
+<p>so, any comments, questions, etc, just leave a message below. and dont forget to <a href="http://feeds.feedburner.com/tiernanotoole">subscrbe to the RSS</a> for updates as they come out!</p>
+
     </p>
     
     <hr>
@@ -230,8 +272,8 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <br>
 <a href="https://www.tiernanotoole.ie/2018/07/04/moving-the-site-to-hugo.html" class="hide-child link primary-color">“Moving the site to Hugo”</a> was last updated: 
-July 4, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/682afadc338583717ec687482ed8f3ff12b183be">trying to fix tags 
-  (682afad)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/moving-the-site-to-hugo.md">Improve this page</a>
+July 4, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/683268775dc2ea118ebc7bc8b387defe55261fd0">updating posts and a bit of cleanup 
+  (6832687)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/moving-the-site-to-hugo.md">Improve this page</a>
 
         </div>
           <div class="medium-3 columns" data-sticky-container>
