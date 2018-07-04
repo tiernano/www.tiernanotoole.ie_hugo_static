@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<meta property="og:title" content="SSH Tunneling made simple" />
+<meta property="og:description" content="Something I do on a regular basis is use the internet while &ldquo;out and about&rdquo;. This could be college, which has a semi open network, or it could be a coffee shop, which also usually has a semi open connection. There is also the possibility of using the a mobile internet connection on my iPhone, which can be slow, but at least its only shared with me&hellip; Anyway, over on RevSys." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tiernanotoole.ie/2012/09/17/ssh-tunneling-made-simple.html" />
+
+
+
+<meta property="article:published_time" content="2012-09-17T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-04T17:48:09&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="SSH Tunneling made simple">
+<meta itemprop="description" content="Something I do on a regular basis is use the internet while &ldquo;out and about&rdquo;. This could be college, which has a semi open network, or it could be a coffee shop, which also usually has a semi open connection. There is also the possibility of using the a mobile internet connection on my iPhone, which can be slow, but at least its only shared with me&hellip; Anyway, over on RevSys.">
+
+
+<meta itemprop="datePublished" content="2012-09-17T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-09-17T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="249">
+
+
+
+<meta itemprop="keywords" content="Linux,SSH,Networking," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SSH Tunneling made simple"/>
+<meta name="twitter:description" content="Something I do on a regular basis is use the internet while &ldquo;out and about&rdquo;. This could be college, which has a semi open network, or it could be a coffee shop, which also usually has a semi open connection. There is also the possibility of using the a mobile internet connection on my iPhone, which can be slow, but at least its only shared with me&hellip; Anyway, over on RevSys."/>
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+    <base href="https://www.tiernanotoole.ie/">
+    <link rel="canonical" href="https://www.tiernanotoole.ie/2012/09/17/ssh-tunneling-made-simple.html">
+    <title>SSH Tunneling made simple | Tiernan&#39;s Comms Closet</title>
+
+    <!-- CSS -->
+    <link href="https://www.tiernanotoole.ie/css/app.css" rel="stylesheet">
+
+    
+
+    
+
+    
+    
+
+
+  </head>
+  <body>
+
+    <header class="nav">
+      <div class="top-bar">
+        <div class="row column">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li><a href="https://www.tiernanotoole.ie/">
+                  Tiernan's Comms Closet
+                </a></li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu">
+              <li class=""><a href="https://www.tiernanotoole.ie/">
+                Home
+              </a></li>
+              
+                
+                  <li><a href="https://example.org">
+                    Link 1
+                  </a></li>
+                
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <header class="blog-header">
+      <div class="callout large">
+        <div class="row column text-center">
+          <h1>
+            <a href="https://www.tiernanotoole.ie/" rel="home">Tiernan's Comms Closet</a>
+          </h1>
+          
+            <p>
+              Geek, Programmer, Photographer&hellip;
+            </p>
+          
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="row" id="content">
+        <div class="medium-8 columns">
+          
+  
+
+
+  <div class="blog-post">
+    <h3>
+      <a href="https://www.tiernanotoole.ie/2012/09/17/ssh-tunneling-made-simple.html">SSH Tunneling made simple</a>
+    </h3>
+    <div class="callout small">
+      <small>
+        <time datetime="2012-09-17T00:00:00Z">
+          Mon Sep 17, 2012
+        </time> by .
+        
+        Tags: 
+  
+    
+      <a href="/tags/linux">
+        Linux
+      </a>
+  
+    ,
+    
+      <a href="/tags/ssh">
+        SSH
+      </a>
+  
+    ,
+    
+      <a href="/tags/networking">
+        Networking
+      </a>
+  
+
+.
+        <br>
+        
+          Share
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.tiernanotoole.ie%2f2012%2f09%2f17%2fssh-tunneling-made-simple.html" title="Share on Facebook">
+      Facebook
+    </a>,
+
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.tiernanotoole.ie%2f2012%2f09%2f17%2fssh-tunneling-made-simple.html" title="Share on Google+">
+      Google+
+    </a>,
+
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.tiernanotoole.ie%2f2012%2f09%2f17%2fssh-tunneling-made-simple.html" title="Share on LinkedIn">
+      LinkedIn
+    </a>,
+
+
+    <a href="https://twitter.com/home?status=https%3a%2f%2fwww.tiernanotoole.ie%2f2012%2f09%2f17%2fssh-tunneling-made-simple.html" title="Tweet this">
+      Twitter
+    </a>
+
+
+        
+      </small>
+    </div>
+    <p>
+      <p>Something I do on a regular basis is use the internet while &ldquo;out and about&rdquo;. This could be college, which has a semi open network, or it could be a coffee shop, which also usually has a semi open connection. There is also the possibility of using the a mobile internet connection on my iPhone, which can be slow, but at least its only shared with me&hellip; Anyway, over on RevSys.com, there is a post <a href="http://www.revsys.com/writings/quicktips/ssh-tunnel.html">SSH Tunneling made simple</a> which shows you how to open an SSH tunnel to your machine somewhere else (could be at home, as is my case, or a VPS/Dedicated server somewhere, or even on Amazon&hellip;) and use that for different things&hellip; In the case he shows, its for SMTP access. For my case, i am forwarding my local port 3128 to my Microsoft TMG 2010 Server in house on port 8080. Then my system proxy on my laptop is set to use localhost:3128 for all web and HTTPS requests. Very handy. One other tip: Using the -C flag, so your command may look like:</p>
+
+<pre><code>ssh yourname@remotemachine -L 3128:remoteMachine:8080 -C
+</code></pre>
+
+<p>will compress data between you and the SSH server, which for basic web browsing (HTML, CSS, JS) will make things faster, but for stuff like images, etc, may not work so well&hellip; Your Mileage may Vary&hellip;</p>
+
+<p>Also, while on the subject of SSH, Linux Journal has an article on <a href="http://www.linuxjournal.com/article/6602">Eleven SSH tricks</a> which mentions compression, Encryption Cyphers, X11 Forwarding, Config files and other interesting bits.</p>
+
+    </p>
+    
+    <hr>
+  </div>
+
+  
+    
+<div id="disqus_thread"></div>
+<script>
+
+ var disqus_config = function () {
+        this.page.url = "https://www.tiernanotoole.ie/2012/09/17/SSH-Tunneling-Made-Simple.html";  
+        this.page.identifier = "https://www.tiernanotoole.ie/2012/09/17/SSH-Tunneling-Made-Simple.html"; 
+    };
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://tiernanotooleie.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+
+  
+
+<br>
+<a href="https://www.tiernanotoole.ie/2012/09/17/ssh-tunneling-made-simple.html" class="hide-child link primary-color">“SSH Tunneling made simple”</a> was last updated: 
+July 4, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/d8bca1f2b37159178483ca3ce2f9eeb8bd7d451e">fixing disqus 
+  (d8bca1f)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2012-09-17-SSH-Tunneling-Made-Simple.markdown">Improve this page</a>
+
+        </div>
+          <div class="medium-3 columns" data-sticky-container>
+  <div class="sticky" data-sticky data-anchor="content">
+
+  
+    <h4>About</h4>
+    <p>homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</p>
+  
+
+  
+
+  <h4>Recent Posts</h4>
+  <ul>
+    
+      <li><a href="/2018/07/04/moving-the-site-to-hugo.html">
+        Moving the site to Hugo
+      </a></li>
+    
+      <li><a href="/2018/07/02/playing-with-amd-epyc.html">
+        Playing with AMD&rsquo;s Epyc
+      </a></li>
+    
+      <li><a href="/2018/04/01/as204994-own-ip-space-and-anycast.html">
+        AS204994, Own IP Space and Anycast
+      </a></li>
+    
+      <li><a href="/2018/03/06/blogging-on-ipad.html">
+        Blogging on an iPad Pro
+      </a></li>
+    
+      <li><a href="/2017/09/25/new-backup-plans.html">
+        New Backup Plans
+      </a></li>
+    
+  </ul>
+
+  
+    <h4>Links</h4>
+    <ul>
+      
+        <li><a href="https://example.com">
+          Link 1
+        </a></li>
+      
+        <li><a href="https://example.org">
+          Link 2
+        </a></li>
+      
+    </ul>
+  
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="blog-footer">
+      <div class="row column">
+        <p>
+          
+          2018 Tiernan OToole
+          
+        </p>
+        <p>
+          <a href="https://www.tiernanotoole.ie/2012/09/17/ssh-tunneling-made-simple.html#">Back to top</a>
+        </p>
+      </div>
+    </footer>
+
+  <foot>
+
+    <script src="https://www.tiernanotoole.ie/js/app.js"></script>
+
+  </foot>
+  </body>
+</html>
