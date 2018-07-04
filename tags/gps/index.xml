@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gps on Tiernan&#39;s Comms Closet</title>
-    <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/gps.html</link>
+    <link>https://www.tiernanotoole.ie/tags/gps.html</link>
     <description>Recent content in Gps on Tiernan&#39;s Comms Closet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2018 Tiernan OToole</copyright>
     <lastBuildDate>Mon, 15 Oct 2012 16:20:17 +0000</lastBuildDate>
     
-	<atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/gps/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.tiernanotoole.ie/tags/gps/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GPS and Raspberry Pi</title>
-      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/2012/10/15/gps_and_raspberry_pi.html</link>
+      <link>https://www.tiernanotoole.ie/2012/10/15/gps_and_raspberry_pi.html</link>
       <pubDate>Mon, 15 Oct 2012 16:20:17 +0000</pubDate>
       
-      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/2012/10/15/gps_and_raspberry_pi.html</guid>
+      <guid>https://www.tiernanotoole.ie/2012/10/15/gps_and_raspberry_pi.html</guid>
       <description>Need to add GPS to your Raspberry Pi? How do i attach a GPS to a Raspberry answers your question!</description>
     </item>
     
