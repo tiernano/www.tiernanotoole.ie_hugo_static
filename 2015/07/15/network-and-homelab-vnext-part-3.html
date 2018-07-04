@@ -1,1 +1,332 @@
-<!DOCTYPE html><html><head><title>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-3/</title><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-3/"/><meta name="robots" content="noindex"><meta http-equiv="content-type" content="text/html; charset=utf-8" /><meta http-equiv="refresh" content="0; url=https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/network-and-homelab-vnext-part-3/" /></head></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<meta property="og:title" content="Network and HomeLab V.Next (Part 3)" />
+<meta property="og:description" content="So, this part of my article set will be talking specifically about the router and wireless network. At the moment, my router is way overkill:
+ Old HP Proliant ML110 G5 Intel Core2Quad Q6600 8 Gb RAM total of 12 Gigabit network cards (of which 4 are currently used&hellip;) 500Gb HDD  I have been playing with some networking in the house and have managed to build some VLANs. The modems are connected both directly to the Router and to a dedicated switch port for a given VLAN." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/2015/07/15/network-and-homelab-vnext-part-3.html" />
+
+
+
+<meta property="article:published_time" content="2015-07-15T13:15:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-04T17:39:54&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Network and HomeLab V.Next (Part 3)">
+<meta itemprop="description" content="So, this part of my article set will be talking specifically about the router and wireless network. At the moment, my router is way overkill:
+ Old HP Proliant ML110 G5 Intel Core2Quad Q6600 8 Gb RAM total of 12 Gigabit network cards (of which 4 are currently used&hellip;) 500Gb HDD  I have been playing with some networking in the house and have managed to build some VLANs. The modems are connected both directly to the Router and to a dedicated switch port for a given VLAN.">
+
+
+<meta itemprop="datePublished" content="2015-07-15T13:15:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-07-15T13:15:00&#43;00:00" />
+<meta itemprop="wordCount" content="217">
+
+
+
+<meta itemprop="keywords" content="Networking,PFSense,Hardware,HomeLab," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Network and HomeLab V.Next (Part 3)"/>
+<meta name="twitter:description" content="So, this part of my article set will be talking specifically about the router and wireless network. At the moment, my router is way overkill:
+ Old HP Proliant ML110 G5 Intel Core2Quad Q6600 8 Gb RAM total of 12 Gigabit network cards (of which 4 are currently used&hellip;) 500Gb HDD  I have been playing with some networking in the house and have managed to build some VLANs. The modems are connected both directly to the Router and to a dedicated switch port for a given VLAN."/>
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+    <base href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
+    <link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/2015/07/15/network-and-homelab-vnext-part-3.html">
+    <title>Network and HomeLab V.Next (Part 3) | Tiernan&#39;s Comms Closet</title>
+
+    <!-- CSS -->
+    <link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/app.css" rel="stylesheet">
+
+    
+
+    
+
+    
+    
+
+
+  </head>
+  <body>
+
+    <header class="nav">
+      <div class="top-bar">
+        <div class="row column">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
+                  Tiernan's Comms Closet
+                </a></li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu">
+              <li class=""><a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
+                Home
+              </a></li>
+              
+                
+                  <li><a href="https://example.org">
+                    Link 1
+                  </a></li>
+                
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <header class="blog-header">
+      <div class="callout large">
+        <div class="row column text-center">
+          <h1>
+            <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/" rel="home">Tiernan's Comms Closet</a>
+          </h1>
+          
+            <p>
+              Geek, Programmer, Photographer&hellip;
+            </p>
+          
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="row" id="content">
+        <div class="medium-8 columns">
+          
+  
+
+
+  <div class="blog-post">
+    <h3>
+      <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/2015/07/15/network-and-homelab-vnext-part-3.html">Network and HomeLab V.Next (Part 3)</a>
+    </h3>
+    <div class="callout small">
+      <small>
+        <time datetime="2015-07-15T13:15:00Z">
+          Wed Jul 15, 2015
+        </time> by .
+        
+        Tags: 
+  
+    
+      <a href="/www.tiernanotoole.ie_hugo_static/tags/networking">
+        Networking
+      </a>
+  
+    ,
+    
+      <a href="/www.tiernanotoole.ie_hugo_static/tags/pfsense">
+        PFSense
+      </a>
+  
+    ,
+    
+      <a href="/www.tiernanotoole.ie_hugo_static/tags/hardware">
+        Hardware
+      </a>
+  
+    ,
+    
+      <a href="/www.tiernanotoole.ie_hugo_static/tags/homelab">
+        HomeLab
+      </a>
+  
+
+.
+        <br>
+        
+          Share
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftiernano.github.io%2fwww.tiernanotoole.ie_hugo_static%2f2015%2f07%2f15%2fnetwork-and-homelab-vnext-part-3.html" title="Share on Facebook">
+      Facebook
+    </a>,
+
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2ftiernano.github.io%2fwww.tiernanotoole.ie_hugo_static%2f2015%2f07%2f15%2fnetwork-and-homelab-vnext-part-3.html" title="Share on Google+">
+      Google+
+    </a>,
+
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ftiernano.github.io%2fwww.tiernanotoole.ie_hugo_static%2f2015%2f07%2f15%2fnetwork-and-homelab-vnext-part-3.html" title="Share on LinkedIn">
+      LinkedIn
+    </a>,
+
+
+    <a href="https://twitter.com/home?status=https%3a%2f%2ftiernano.github.io%2fwww.tiernanotoole.ie_hugo_static%2f2015%2f07%2f15%2fnetwork-and-homelab-vnext-part-3.html" title="Tweet this">
+      Twitter
+    </a>
+
+
+        
+      </small>
+    </div>
+    <p>
+      <p>So, this part of my article set will be talking specifically about the router and wireless network. At the moment, my router is way overkill:</p>
+
+<ul>
+<li>Old HP Proliant ML110 G5</li>
+<li><a href="http://ark.intel.com/products/29765/Intel-Core2-Quad-Processor-Q6600-8M-Cache-2_40-GHz-1066-MHz-FSB?q=Q6600">Intel Core2Quad Q6600</a></li>
+<li>8 Gb RAM</li>
+<li>total of 12 Gigabit network cards (of which 4 are currently used&hellip;)</li>
+<li>500Gb HDD</li>
+</ul>
+
+<p>I have been playing with some networking in the house and have managed to build some VLANs. The modems are connected both directly to the Router
+and to a dedicated switch port for a given VLAN. The plan for the upgrade, which i hope to complete sooner than the rest of the network is as
+follows:</p>
+
+<ul>
+<li>get the ML110 running <a href="https://www.vmware.com/products/vsphere-hypervisor">ESXi</a> and visualize <a href="http://www.pfsense.org">PFSense</a>. Give it 2gb of RAM and some processor.</li>
+<li>take some of the network cards out of the box. It does not need 12 ports, but maybe leave the 2 quad ports in there. They should be connected
+to the main switch trunked. 8 may be overkill, but i never do things by half.</li>
+<li>the PFSEnse VM should be connected to all 3 WAN VlANs (900, 901 and 902) and should also have at least one port to the LAN. There may also be
+other ports for other internal VLANs.</li>
+</ul>
+
+<p>with the spare processor, i can then add other (small) VMs to this machine.</p>
+
+    </p>
+    
+    <hr>
+  </div>
+
+  
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+  
+  
+  if (window.location.hostname == "localhost")
+    return;
+
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  var disqus_shortname = 'tiernanotooleie';
+
+   var disqus_config = function () {
+        this.page.url = "https://tiernanotoole.ie/2015/07/15/Network-and-HomeLab-vnext-part-3.html";  
+        this.page.identifier = "https://tiernanotoole.ie/2015/07/15/Network-and-HomeLab-vnext-part-3.html"; 
+    };
+
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+"page":&#34;https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/2015/07/15/network-and-homelab-vnext-part-3.html&#34;
+
+
+  
+
+<br>
+<a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/2015/07/15/network-and-homelab-vnext-part-3.html" class="hide-child link primary-color">“Network and HomeLab V.Next (Part 3)”</a> was last updated: 
+July 4, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/a505056a5ed3c56febce02369dd189457b94f60a">fixing urls... again 
+  (a505056)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2015-07-15-Network-and-HomeLab-vnext-part-3.markdown">Improve this page</a>
+
+        </div>
+          <div class="medium-3 columns" data-sticky-container>
+  <div class="sticky" data-sticky data-anchor="content">
+
+  
+    <h4>About</h4>
+    <p>homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</p>
+  
+
+  
+
+  <h4>Recent Posts</h4>
+  <ul>
+    
+      <li><a href="/www.tiernanotoole.ie_hugo_static/2018/07/02/playing-with-amd-epyc.html">
+        Playing with AMD&rsquo;s Epyc
+      </a></li>
+    
+      <li><a href="/www.tiernanotoole.ie_hugo_static/2018/04/01/as204994-own-ip-space-and-anycast.html">
+        AS204994, Own IP Space and Anycast
+      </a></li>
+    
+      <li><a href="/www.tiernanotoole.ie_hugo_static/2018/03/06/blogging-on-ipad.html">
+        Blogging on an iPad Pro
+      </a></li>
+    
+      <li><a href="/www.tiernanotoole.ie_hugo_static/2017/09/25/new-backup-plans.html">
+        New Backup Plans
+      </a></li>
+    
+      <li><a href="/www.tiernanotoole.ie_hugo_static/2017/08/16/testing-forestry.html">
+        Testing Forestry
+      </a></li>
+    
+  </ul>
+
+  
+    <h4>Links</h4>
+    <ul>
+      
+        <li><a href="https://example.com">
+          Link 1
+        </a></li>
+      
+        <li><a href="https://example.org">
+          Link 2
+        </a></li>
+      
+    </ul>
+  
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="blog-footer">
+      <div class="row column">
+        <p>
+          
+          2018 Tiernan OToole
+          
+        </p>
+        <p>
+          <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/2015/07/15/network-and-homelab-vnext-part-3.html#">Back to top</a>
+        </p>
+      </div>
+    </footer>
+
+  <foot>
+
+    <script src="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/js/app.js"></script>
+
+  </foot>
+  </body>
+</html>

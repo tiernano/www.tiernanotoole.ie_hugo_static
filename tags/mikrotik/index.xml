@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mikrotik on Tiernan&#39;s Comms Closet</title>
-    <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/mikrotik/</link>
+    <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/mikrotik.html</link>
     <description>Recent content in Mikrotik on Tiernan&#39;s Comms Closet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -14,20 +14,20 @@
     
     <item>
       <title>VLANs, Wifi and Mikrotik</title>
-      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/vlans-wifi-and-mikrotik/</link>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/2015/05/10/vlans-wifi-and-mikrotik.html</link>
       <pubDate>Sun, 10 May 2015 18:40:00 +0000</pubDate>
       
-      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/vlans-wifi-and-mikrotik/</guid>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/2015/05/10/vlans-wifi-and-mikrotik.html</guid>
       <description>About a month ago, while i was recovering from surgery, i attended a Webinar on Cisco Meraki devices. After the webinar, i was contacted by Maraki and given a MR18 with a 3 year license, to play with and evaluate. So, i set it up in the house and all was good.
 Thing is, the wifi in the house was grand previously. I have a Routerboard RB951G which does the job and has no issues.</description>
     </item>
     
     <item>
       <title>MicroTik RouterOS VPN Setup</title>
-      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/microtik-routeros-vpn-setup/</link>
+      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/2012/09/24/microtik-routeros-vpn-setup.html</link>
       <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/microtik-routeros-vpn-setup/</guid>
+      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/2012/09/24/microtik-routeros-vpn-setup.html</guid>
       <description>I have been running a MikroTik RouterBoard in the house for a couple of months now (the RB750G) and I am very much loving the thing. But one thing you may need to do is setup VPN connections&amp;hellip; Here are some tips on how to create a VPN Server and Client on your RouterBoard.
 Client Setup to setup a client, you need to do the following:
  What does that all do?</description>
