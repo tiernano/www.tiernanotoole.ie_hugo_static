@@ -6,21 +6,8 @@
     <description>Recent content on Tiernan&#39;s Comms Closet</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Jul 2018 13:10:31 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Jul 2018 11:09:57 +0000</lastBuildDate>
     <atom:link href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Daily Carry</title>
-      <link>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/daily-carry/</link>
-      <pubDate>Tue, 03 Jul 2018 13:10:31 +0000</pubDate>
-      
-      <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/daily-carry/</guid>
-      <description>A couple of years back, I did a post about my Daily Carry for college&amp;hellip; Well, I have finished (ish) college, but i still cary a lot of weird and wonderful stuff&amp;hellip; So, this is the update&amp;hellip;
-So, the contents are as follows: {{&amp;lt; cloudinary src=&amp;ldquo;/v1530624866/16317125424_a03f9ec346_m.jpg&amp;rdquo;&amp;gt;}}
- Microsoft SurfaceBook with an i7 processor, 16GB RAM and 512GB Storage, along with the dGPU. Samsung Galaxy Note 3 Beats by Dr. Dre Wireless on ear headphones.</description>
-    </item>
-    
     
     
     <item>
@@ -1050,44 +1037,6 @@ Set-Alias subl &#39;c:\program files\sublime text 2\sublime_text.exe&#39;  I add
       <description>So, this site is brought to you by GIT, Jekyll and Magic&amp;hellip; here is how i did it&amp;hellip;
  I have a Linux VM running the site. Its an Ubuntu 12.04 server. On that i installed Jekyll. I also have gitolite installed for personal git repos. In the Git Repo for this site, under the hooks directory, I added a post-receive file which I got from here originally. Apache is set to serve the directory that Jekyll produces&amp;hellip; That&amp;rsquo;s what you are reading here.</description>
     </item>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     

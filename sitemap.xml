@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/daily-carry/</loc>
-    <lastmod>2018-07-04T12:51:11+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/testing/</loc>
     <lastmod>2018-07-03T11:46:07+00:00</lastmod>
   </url>
@@ -515,7 +510,7 @@
   
   <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/computers/</loc>
-    <lastmod>2018-07-04T12:57:48+01:00</lastmod>
+    <lastmod>2018-07-04T12:59:36+01:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -524,20 +519,6 @@
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/crashplan/</loc>
     <lastmod>2018-07-04T11:35:35+01:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/c6100/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/pe1600sc/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   
   <url>
@@ -589,20 +570,6 @@
   </url>
   
   <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/godboxv2/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/godbox/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/godboxv2/</loc>
     <lastmod>2018-07-04T11:35:35+01:00</lastmod>
     <priority>0</priority>
@@ -618,13 +585,6 @@
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/guide/</loc>
     <lastmod>2018-07-04T11:35:35+01:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/hpstorageworks/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   
   <url>
@@ -658,20 +618,6 @@
   </url>
   
   <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/ibmsrv1/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/ibmsrv2/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ipv6/</loc>
     <lastmod>2018-07-04T11:04:35+00:00</lastmod>
     <priority>0</priority>
@@ -690,50 +636,15 @@
   </url>
   
   <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/macmini/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/macpro/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/macbookpro/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/media-center/</loc>
     <lastmod>2018-07-04T11:35:35+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/surfacebook/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/mikrotik/</loc>
     <lastmod>2018-07-04T11:35:35+01:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/nas/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   
   <url>
@@ -746,13 +657,6 @@
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/office_365/</loc>
     <lastmod>2018-07-04T11:35:35+01:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/opteron/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   
   <url>
@@ -786,30 +690,9 @@
   </url>
   
   <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/pe2900/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/pe2950/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/powershell/</loc>
     <lastmod>2018-07-04T11:35:35+01:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/proliantml110/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   
   <url>
@@ -834,13 +717,6 @@
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/reviews/</loc>
     <lastmod>2018-07-04T12:44:12+01:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/router/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   
   <url>
@@ -886,20 +762,6 @@
   </url>
   
   <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/sun/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tvserver/</loc>
-    <lastmod>2018-07-04T12:06:49+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/</loc>
     <lastmod>2018-07-04T11:35:35+01:00</lastmod>
     <priority>0</priority>
@@ -907,7 +769,7 @@
   
   <url>
     <loc>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/</loc>
-    <lastmod>2018-07-04T12:51:11+01:00</lastmod>
+    <lastmod>2018-07-03T11:46:07+00:00</lastmod>
     <priority>0</priority>
   </url>
   
