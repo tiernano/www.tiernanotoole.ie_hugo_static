@@ -226,28 +226,21 @@ Client Setup to setup a client, you need to do the following:
 <script type="text/javascript">
 
 (function() {
-  
-  
-  if (window.location.hostname == "localhost")
-    return;
-
-  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-  var disqus_shortname = 'tiernanotooleie';
-
-   var disqus_config = function () {
+ var disqus_config = function () {
         this.page.url = "https://www.tiernanotoole.ie/2012/09/24/MicroTik-RouterOS-VPN-Setup.html";  
         this.page.identifier = "https://www.tiernanotoole.ie/2012/09/24/MicroTik-RouterOS-VPN-Setup.html"; 
     };
+    (function() {  
+        var d = document, s = d.createElement('script');
+        s.src = '//tiernanotooleie.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-
-"page":&#34;https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/2012/09/24/microtik-routeros-vpn-setup.html&#34;
 
 
   
