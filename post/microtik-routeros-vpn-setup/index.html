@@ -16,7 +16,7 @@
 
     
 
-    <meta name="description" itemprop="description" content="I have been running a MikroTik RouterBoard in the house for a couple of months now (the RB750G) and I am very much loving the thing. But one thing you may need to do is setup VPN connections&amp;hellip; Here are some tips on how to create a VPN Server and Client on your RouterBoard. Client Setup to setup a client, you need to do the following: {% gist 8581643 %}" id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="RouterOS,Networking,Mikrotik" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/microtik-routeros-vpn-setup/">
+    <meta name="description" itemprop="description" content="I have been running a MikroTik RouterBoard in the house for a couple of months now (the RB750G) and I am very much loving the thing. But one thing you may need to do is setup VPN connections&amp;hellip; Here are some tips on how to create a VPN Server and Client on your RouterBoard. Client Setup to setup a client, you need to do the following:  What does that all do?" id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="RouterOS,Networking,Mikrotik" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/microtik-routeros-vpn-setup/">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
@@ -50,7 +50,7 @@
         </span><span class="row-item">
           <span class="fa fa-clock-o"></span>
           <strong>Last Updated:</strong>
-          <time datetime="2018-07-03" content="2018-07-03" itemprop="dateModified">July 03, 2018</time>
+          <time datetime="2018-07-04" content="2018-07-04" itemprop="dateModified">July 04, 2018</time>
         </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">2 minutes</span></span></p>
       
     </header>
@@ -64,7 +64,7 @@
 
 <p>to setup a client, you need to do the following:</p>
 
-<p>{% gist 8581643 %}</p>
+<script src="//gist.github.com/tiernano/8581643.js"></script>
 
 <p>What does that all do? the first line creates an l2tp-client interface, pointing at &ldquo;servername&rdquo; with the username and password set. encryption, etc is enabled&hellip; Line 2 then enables the client. Line 3 sets all traffic comming from networkaddress/24 (for example, 192.168.0.<sup>1</sup>&frasl;<sub>24</sub>) to be sent though the VPN. any traffic going into networkaddress (same example) is not sent though the VPN. Line 4 creates a gateway, for all addresses (0.0.0.0/0) to use the VPN address. finally, NAT Masquerading is enabled on the VPN interface.</p>
 

@@ -75,9 +75,8 @@ In previous posts, i have talked about using the likes of Visual Studio Code and
       
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/zerotier-minio-update/</guid>
       <description>in a previous post, I talked about setting up a distributed S3 like data storage system using Minio and ZeroTier. Well, this week, the ZeroTier guys tweeted about this.
-Distributed S3 data storage using @minio and #ZeroTier &amp;ndash; https://t.co/MAXTjo3muh
-&amp;mdash; ZeroTier, Inc. (@ZeroTier) May 2, 2017 
-A few people then started asking questions, and looking for a follow up, so here it is&amp;hellip;
+Distributed S3 data storage using @minio and #ZeroTier -- https://t.co/MAXTjo3muh
+&amp;mdash; ZeroTier, Inc. (@ZeroTier) May 2, 2017  A few people then started asking questions, and looking for a follow up, so here it is&amp;hellip;
 First, a quick recap. I had 4 machines, all running Linux.</description>
     </item>
     
@@ -209,7 +208,7 @@ This week, I have been OOF sick, so I have not done much work, but I have been s
       <description>[NOTE] This part 4 in a series of posts. The rest can be found here.
 So, this week I went in a completely different direction that I have been thinking recently&amp;hellip;
 So, the basic theory is as follows:
- I am still using MPTCP kernels on both upstream and local machine now have 2 P2P UDP OpenVPN tunnels between house and cloud. Example config is here all TCP traffic (bar port 80) that hits the router in house is redirected to RedSocks RedSocks uses a socks server, Dante, as an upstream server on the cloud box since the socks traffic is over TCP (inside the UDP OpenVPN tunnel) it uses MPTCP having socks running, gives me quite the download speed, turning it off does not, hence the following tweet  Hmmmm&amp;hellip; If I have socks on, the Internet is fast 400mb/s+).</description>
+ I am still using MPTCP kernels on both upstream and local machine now have 2 P2P UDP OpenVPN tunnels between house and cloud. Example config is here all TCP traffic (bar port 80) that hits the router in house is redirected to RedSocks RedSocks uses a socks server, Dante, as an upstream server on the cloud box since the socks traffic is over TCP (inside the UDP OpenVPN tunnel) it uses MPTCP having socks running, gives me quite the download speed, turning it off does not, hence the following tweet  Hmmmm.</description>
     </item>
     
     <item>
@@ -578,9 +577,9 @@ here is some examples of how we managed to compress the protobuf files. We got s
       
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/enabling_vnc_from_ssh_on_osx/</guid>
       <description>I have a Late 2008 MacBook Pro in the house, and SSH is enabled on it. I usually leave it on when in work. Anyway, SSH is enabled, but VNC access is not&amp;hellip; I found the following command on Ryan&amp;rsquo;s Tech Notes allowing you to enable it though SSH:
-{% gist 4170122 %}
-** NOTE ** Change mypasswd to your own password!!!
-If you need to disable it, use the following:</description>
+ ** NOTE ** Change mypasswd to your own password!!!
+If you need to disable it, use the following:
+ Also, of note, I am using RealVNC client for Windows to connect.</description>
     </item>
     
     <item>
@@ -689,8 +688,7 @@ So, with the news of extra RAM, its started making me think of more things the P
       
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/routeros_blocking_machine_access/</guid>
       <description>So, i have a machine on my network, which should be only connecting to the internet though a VPN. I needed to tell my RouterOS box to block all access, except to this said IP address&amp;hellip; The following should do the trick&amp;hellip; YMMV
-{% gist 3871919 %}
-this will drop any packets from the srcaddress (IP address) that are not for destination dstaddress (IP address). in my case, dstaddress is the VPN server i want to connect to.</description>
+ this will drop any packets from the srcaddress (IP address) that are not for destination dstaddress (IP address). in my case, dstaddress is the VPN server i want to connect to.</description>
     </item>
     
     <item>
@@ -781,7 +779,7 @@ Anyway, The Raspberry Pi, on the other hand, has a 700Mhz processor, 256Mb RAM a
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/microtik-routeros-vpn-setup/</guid>
       <description>I have been running a MikroTik RouterBoard in the house for a couple of months now (the RB750G) and I am very much loving the thing. But one thing you may need to do is setup VPN connections&amp;hellip; Here are some tips on how to create a VPN Server and Client on your RouterBoard.
 Client Setup to setup a client, you need to do the following:
-{% gist 8581643 %}</description>
+ What does that all do?</description>
     </item>
     
     <item>

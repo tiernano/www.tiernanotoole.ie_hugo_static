@@ -28,8 +28,7 @@
       
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/routeros_blocking_machine_access/</guid>
       <description>So, i have a machine on my network, which should be only connecting to the internet though a VPN. I needed to tell my RouterOS box to block all access, except to this said IP address&amp;hellip; The following should do the trick&amp;hellip; YMMV
-{% gist 3871919 %}
-this will drop any packets from the srcaddress (IP address) that are not for destination dstaddress (IP address). in my case, dstaddress is the VPN server i want to connect to.</description>
+ this will drop any packets from the srcaddress (IP address) that are not for destination dstaddress (IP address). in my case, dstaddress is the VPN server i want to connect to.</description>
     </item>
     
   </channel>

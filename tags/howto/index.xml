@@ -82,7 +82,7 @@ This week, I have been OOF sick, so I have not done much work, but I have been s
       <description>[NOTE] This part 4 in a series of posts. The rest can be found here.
 So, this week I went in a completely different direction that I have been thinking recently&amp;hellip;
 So, the basic theory is as follows:
- I am still using MPTCP kernels on both upstream and local machine now have 2 P2P UDP OpenVPN tunnels between house and cloud. Example config is here all TCP traffic (bar port 80) that hits the router in house is redirected to RedSocks RedSocks uses a socks server, Dante, as an upstream server on the cloud box since the socks traffic is over TCP (inside the UDP OpenVPN tunnel) it uses MPTCP having socks running, gives me quite the download speed, turning it off does not, hence the following tweet  Hmmmm&amp;hellip; If I have socks on, the Internet is fast 400mb/s+).</description>
+ I am still using MPTCP kernels on both upstream and local machine now have 2 P2P UDP OpenVPN tunnels between house and cloud. Example config is here all TCP traffic (bar port 80) that hits the router in house is redirected to RedSocks RedSocks uses a socks server, Dante, as an upstream server on the cloud box since the socks traffic is over TCP (inside the UDP OpenVPN tunnel) it uses MPTCP having socks running, gives me quite the download speed, turning it off does not, hence the following tweet  Hmmmm.</description>
     </item>
     
     <item>

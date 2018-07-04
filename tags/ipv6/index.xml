@@ -28,9 +28,8 @@ This all started late last year when i got my hands on an ASN and a /48 block of
       
       <guid>https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/zerotier-minio-update/</guid>
       <description>in a previous post, I talked about setting up a distributed S3 like data storage system using Minio and ZeroTier. Well, this week, the ZeroTier guys tweeted about this.
-Distributed S3 data storage using @minio and #ZeroTier &amp;ndash; https://t.co/MAXTjo3muh
-&amp;mdash; ZeroTier, Inc. (@ZeroTier) May 2, 2017 
-A few people then started asking questions, and looking for a follow up, so here it is&amp;hellip;
+Distributed S3 data storage using @minio and #ZeroTier -- https://t.co/MAXTjo3muh
+&amp;mdash; ZeroTier, Inc. (@ZeroTier) May 2, 2017  A few people then started asking questions, and looking for a follow up, so here it is&amp;hellip;
 First, a quick recap. I had 4 machines, all running Linux.</description>
     </item>
     
@@ -105,7 +104,7 @@ This week, I have been OOF sick, so I have not done much work, but I have been s
       <description>[NOTE] This part 4 in a series of posts. The rest can be found here.
 So, this week I went in a completely different direction that I have been thinking recently&amp;hellip;
 So, the basic theory is as follows:
- I am still using MPTCP kernels on both upstream and local machine now have 2 P2P UDP OpenVPN tunnels between house and cloud. Example config is here all TCP traffic (bar port 80) that hits the router in house is redirected to RedSocks RedSocks uses a socks server, Dante, as an upstream server on the cloud box since the socks traffic is over TCP (inside the UDP OpenVPN tunnel) it uses MPTCP having socks running, gives me quite the download speed, turning it off does not, hence the following tweet  Hmmmm&amp;hellip; If I have socks on, the Internet is fast 400mb/s+).</description>
+ I am still using MPTCP kernels on both upstream and local machine now have 2 P2P UDP OpenVPN tunnels between house and cloud. Example config is here all TCP traffic (bar port 80) that hits the router in house is redirected to RedSocks RedSocks uses a socks server, Dante, as an upstream server on the cloud box since the socks traffic is over TCP (inside the UDP OpenVPN tunnel) it uses MPTCP having socks running, gives me quite the download speed, turning it off does not, hence the following tweet  Hmmmm.</description>
     </item>
     
     <item>
