@@ -77,14 +77,14 @@
 <p>So, my first test is the usual test: building the Linux Kernel. I know that this is something that the lads at <a href="http://www.servethehome.com">ServeTheHome</a> do a lot but its something i wanted to try my self&hellip; So, first i installed git and build essential, then bison, flex and ncurses-dev, then i cloned Linus&rsquo; git repo at git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git. First things first: this machine has a twin 10gb link, a shead load of cores and some very fast storage. How long did it take to clone? it download 1.02 GiB at 35.32MiB/s (about 30 seconds and aboiut 280Mbit/s) and all in, took 2 min 55 seconds to clone. I then ran &lsquo;time make -j 49&rsquo; to see how long it would take&hellip; hmmm&hellip; no config file&hellip; make menuconfig and just hit save&hellip; defaults are grand&hellip; time make -j 49 again&hellip; and more errors&hellip; after a bit of googling, i find the page from Ubutnu <a href="https://wiki.ubuntu.com/KernelTeam/GitKernelBuild">showing what i need to do to build the kernel</a>. i follow that&hellip; download a LOT more stuff using their instrustions, and finally, we get to build&hellip; Time: 6 min 12 seconds&hellip; this is a FULL default build of the kernel&hellip;</p>
 
 
-<img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530618253/top_kernel_build_epy_hdb0R.jpg" alt="">
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto//v1530618253/top_kernel_build_epy_hdb0R.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530618253/top_kernel_build_epy_hdb0R.jpg" alt=""></a>
 
 
 
 <p>Same build on a VM on GodboxV2 (which was given 32GB RAM and 16 thread, so a full Xeon E5-4620) took 8min 27s to clone (8.18MiB/s. or about 64Mbit/s) and 36 min&hellip; yea, that is 3x less cores, 2x less memory, slower storage (This is on Spinny Disk, not SSD), slower network and it is also a VM VS bare metal, still, to be essentially 6 times slower? interesting&hellip; I might, at some stage, boot the machine off a live Linux USB and run some more tests, but not tonight&hellip;</p>
 
 
-<img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530618253/top-kernel-build-godboxv2.png" alt="">
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto//v1530618253/top-kernel-build-godboxv2.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530618253/top-kernel-build-godboxv2.png" alt=""></a>
 
 
 
@@ -95,14 +95,14 @@
 <p>In total, there was 1546 photos exported, and the total file size was 15Gb. First obstical was to get them uploaded to the Packet machine, which took a while (my upload speed is currently 40Mbit/s)&hellip; Once up, i downloaded a copy of dotnet core 2.0 SDK, cloned the repo with the project, built and ran&hellip; and man, its fast! 4 min 43 seconds. And it used all the cores.</p>
 
 
-<img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/v1530618252/image-resizer-epyc.png" alt="">
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/v1530618252/image-resizer-epyc.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/v1530618252/image-resizer-epyc.png" alt=""></a>
 
 
 
 <p>Running the same code on GodBoxV2 on the bare metal (no VM this time), i got XX min of a run&hellip; Now, GodBoxV2 has other things running in the back ground, but not that much&hellip; I also noticed that, on average, photos were being processed in 3-5 seconds on Epyc, but nearly 13-15, and sometimes 20 and 25 seconds on GodBoxV2. I also noticed that on Epyc, the dotnet process took nearly 45GB of RAM&hellip; to run&hellip; On GodBoxV2, it took over 70!</p>
 
 
-<img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/v1530618252/image_resizer_godbox_f5de0.jpg" alt="">
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/v1530618252/image_resizer_godbox_f5de0.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/v1530618252/image_resizer_godbox_f5de0.jpg" alt=""></a>
 
 
 

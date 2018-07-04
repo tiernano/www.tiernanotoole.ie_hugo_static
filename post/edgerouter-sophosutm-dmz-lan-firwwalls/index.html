@@ -23,9 +23,9 @@
     
   <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
 
-    <link rel="preload" href="/v1530620916/20150930-masquerading-off.png" as="image" />
-    <link rel="preload" href="/v1530620916/20150930-static-route.png" as="image" />
-    <link rel="preload" href="/v1530620916/20150930-firewall-rules.png" as="image" />
+    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530620916/20150930-masquerading-off.png" as="image" />
+    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530620916/20150930-static-route.png" as="image" />
+    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530620916/20150930-firewall-rules.png" as="image" />
     <script>var _paq = undefined;</script></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <div id="site-container">
@@ -63,15 +63,24 @@
 
 <p>What i wanted to do was setup a proper firewall between both networks, without the use of NAT&hellip; Do do this, i first had to disable th masquerading rules in Sophos:</p>
 
-<p><img src="/v1530620916/20150930-masquerading-off.png" alt="" /></p>
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto//v1530620916/20150930-masquerading-off.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530620916/20150930-masquerading-off.png" alt=""></a>
+
+
 
 <p>next, on the EdgeRouter, i added a static route to point at the new network:</p>
 
-<p><img src="/v1530620916/20150930-static-route.png" alt="" /></p>
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto//v1530620916/20150930-static-route.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530620916/20150930-static-route.png" alt=""></a>
+
+
 
 <p>And finally, under firewall rules, i allowed what i wanted to allow (in this case, SSH from any DMZ client (not advised) to my Mac Mini).</p>
 
-<p><img src="/v1530620916/20150930-firewall-rules.png" alt="" /></p>
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto//v1530620916/20150930-firewall-rules.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530620916/20150930-firewall-rules.png" alt=""></a>
+
+
 
 <p>And that, as they say, is that! So far, so good!</p>
 </span>

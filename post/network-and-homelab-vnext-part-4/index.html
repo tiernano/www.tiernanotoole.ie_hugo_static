@@ -23,8 +23,8 @@
     
   <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
 
-    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-proliant-power-usage.PNG" as="image" />
-    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-edgerouter-power-usage.PNG" as="image" />
+    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20150916-proliant-power-usage.PNG" as="image" />
+    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20150916-edgerouter-power-usage.PNG" as="image" />
     <script>var _paq = undefined;</script></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <div id="site-container">
@@ -60,11 +60,17 @@
     <div id="post-content">
       <span itemprop="articleBody"><p>So, after some messing, tweaking, and thinking, I have made some progress with the home lab&hellip; or at least broken some stuff&hellip; I mentioned previously that i had a <a href="https://www.tiernanotoole.ie/2015/08/05/Ubiquiti-EdgeRouter-POE-In-the-lab.html">Ubiqititi networks EdgeRouter POE</a> in the home lab. Originally, the plan was to use a Virtual <a href="http://www.pfsense.org">PFSense</a> box for my core router&hellip; Given the power usage of the current PfSense Box (I have 2 <a href="https://www.ubnt.com/mfi/mpower/">MPower Pro</a>&rsquo;s watching power in the lab) I am now thinking of moving to just the EdgeRouter for, well, edge routing&hellip;  below is the usage of the ProLiant for the last 12 hours or so:</p>
 
-<p><img src="https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-proliant-power-usage.PNG" alt="Proliant Power Usage" /></p>
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/20150916-proliant-power-usage.PNG"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20150916-proliant-power-usage.PNG" alt=""></a>
+
+
 
 <p>for the same period, here is the usage for the <a href="https://www.ubnt.com/edgemax/edgerouter-poe/">Edge Router</a>:</p>
 
-<p><img src="https://www.tiernanotoole.ie/post_images/2015/09/16/20150916-edgerouter-power-usage.PNG" alt="EdgeRouter POE Power Usage" /></p>
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/20150916-edgerouter-power-usage.PNG"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20150916-edgerouter-power-usage.PNG" alt=""></a>
+
+
 
 <p>I am also setting up a DMZ for front facing services, and then a LAN for inside facing machines. There will be a firewall (currently thinking <a href="https://www.sophos.com/en-us/products/unified-threat-management.aspx">Sophos UTM</a> or similar) between the DMZ and the network. Some machines will be able to access the DMZ, and there may be machines allowed into the LAN, but only some things&hellip; not even sure if that would be done&hellip;</p>
 

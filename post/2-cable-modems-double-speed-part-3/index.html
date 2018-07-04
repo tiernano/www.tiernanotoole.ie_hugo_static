@@ -23,11 +23,12 @@
     
   <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
 
-    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-downloading-over-mlppp.PNG" as="image" />
-    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-sftp2-over-mlppp.PNG" as="image" />
-    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-sftp-over-mlppp.PNG" as="image" />
-    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-top-view-server.PNG" as="image" />
-    <link rel="preload" href="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-top-view-client.PNG" as="image" />
+    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530620915/20160402-sftp-over-mlppp-orig.png" as="image" />
+    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20160402-downloading-over-mlppp-orig.PNG" as="image" />
+    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20160402-sftp2-over-mlppp-orig.PNG" as="image" />
+    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20160402-sftp-over-mlppp-orig.PNG" as="image" />
+    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20160402-top-view-server-orig.PNG" as="image" />
+    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20160402-top-view-client-orig.PNG" as="image" />
     <script>var _paq = undefined;</script></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <div id="site-container">
@@ -87,15 +88,29 @@
 
 <p>First, using Squid installed on the DO box, i tried using WGET to download a file using it. If I did this on the DO box itself, i was getting 100MBytes/s&hellip; When I ran it over the MLPPP box, well, under 7 was achieved.</p>
 
-<p><a href="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-downloading-over-mlppp-orig.PNG"><img src="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-downloading-over-mlppp.PNG" alt="WGET over Squid over MLPPP" /></a></p>
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto//v1530620915/20160402-sftp-over-mlppp-orig.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530620915/20160402-sftp-over-mlppp-orig.png" alt=""></a>
+
+
+
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/20160402-downloading-over-mlppp-orig.PNG"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20160402-downloading-over-mlppp-orig.PNG" alt=""></a>
+
+
 
 <p>Then i though it might have been Squid. So, since the file had been downloaded to DO, i SFTPed into the box over the MLPPP link, and tried again&hellip; Again, pretty poor result. I think i seen it hit about 7MB a sec at one stage.</p>
 
-<p><a href="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-sftp2-over-mlppp-orig.PNG"><img src="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-sftp2-over-mlppp.PNG" alt="SFTP over MLPPP" /></a></p>
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/20160402-sftp2-over-mlppp-orig.PNG"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20160402-sftp2-over-mlppp-orig.PNG" alt=""></a>
+
+
 
 <p>Here is what is showing on the DO box when running the SFTP download. You can see 2 connections from the 2 WAN links at home hitting the box, and they are balanced. Its just nowhere near the speed they are capable of.</p>
 
-<p><a href="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-sftp-over-mlppp-orig.PNG"><img src="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-sftp-over-mlppp.PNG" alt="iftop running on server" /></a></p>
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/20160402-sftp-over-mlppp-orig.PNG"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20160402-sftp-over-mlppp-orig.PNG" alt=""></a>
+
+
 
 <p>I did not get a screen shot of this, but when I tried with iperf, thinking it might have been overhead of SFTP or Squid, I was getting results matching what I was seeing with SFTP. Downloads in the 55-60mbit/s range for download and 40ish for upload. 40 is still faster than 1 link, mind you&hellip;</p>
 
@@ -107,9 +122,15 @@
 
 <p>Nothing else on his config files have changed. I did not do any of the masquerading stuff, mainly cause this was testing. I just want a tunnel to start with. When reading the vtund.conf file, you can see that encryption and compression are both turned off, and and the same in the ppp configuration. I also don&rsquo;t think the issue is to do with the CPU performance, since these are the screenshots of top running on both boxes:</p>
 
-<p><a href="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-top-view-server-orig.PNG"><img src="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-top-view-server.PNG" alt="Top on Server" /></a></p>
 
-<p><a href="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-top-view-client-orig.PNG"><img src="https://www.tiernanotoole.ie/post_images/2016/04/02/20160402-top-view-client.PNG" alt="Top on Client" /></a></p>
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/20160402-top-view-server-orig.PNG"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20160402-top-view-server-orig.PNG" alt=""></a>
+
+
+
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/20160402-top-view-client-orig.PNG"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/20160402-top-view-client-orig.PNG" alt=""></a>
+
+
 
 <p>in both cases, CPU usage is sub 6% for VTUN and SSH seems to be using less than 10%. So, now, I&rsquo;m baffled as to why this is not performing as expected&hellip; More testing required!</p>
 

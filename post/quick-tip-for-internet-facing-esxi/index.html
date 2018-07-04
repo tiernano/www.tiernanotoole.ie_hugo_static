@@ -23,7 +23,7 @@
     
   <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
 
-    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/v1530620877/20150520-esxi-login-errors.png" as="image" />
+    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530620877/20150520-esxi-login-errors.png" as="image" />
     <script>var _paq = undefined;</script></head>
   <body itemscope itemtype="http://schema.org/WebPage">
     <div id="site-container">
@@ -61,7 +61,10 @@
 have just got my hands on a box on the <a href="http://www.hetzner.de/en">Hetzner</a> network (more on
 that later) and using their LARA system i installed ESXi on it. All was good, then I tried login in a couple hours later and i kept getting errors about my password being wrong&hellip; So, i tried a few more times,  got pissed off and rebooted the box (had to do a hard reboot, since i couldn&rsquo;t even get in over KVM). I though this was a hardware issue, or a config issue, and left it&hellip; yesterday, i had the console open most of the day, and when looking at something i noticed this:</p>
 
-<p><img src="https://res.cloudinary.com/tiernanotoole/image/upload/v1530620877/20150520-esxi-login-errors.png" alt="ESXi Errors" /></p>
+
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto//v1530620877/20150520-esxi-login-errors.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530620877/20150520-esxi-login-errors.png" alt=""></a>
+
+
 
 <p>Well, that&rsquo;s why I couldn&rsquo;t login! So, tip: create a second user account, name it something other than root, give it a secure password and use that to login to your ESXi box. Ideally, your ESXi box should be behind a firewall, but in the case of a dedicated server, that may not be financially feasible&hellip; Hope this helps someone!</p>
 </span>
