@@ -1,62 +1,30 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2 Cable Modems = Double Speed? Part 4</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2 Cable Modems = Double Speed? Part 4 | Tiernan&#39;s Comms Closet</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
     
-    
-    
-    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+  </head>
 
-    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
-    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
-    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
-
-    
-
-    <meta name="description" itemprop="description" content="[NOTE] This part 4 in a series of posts. The rest can be found here. So, this week I went in a completely different direction that I have been thinking recently&amp;hellip; So, the basic theory is as follows:  I am still using MPTCP kernels on both upstream and local machine now have 2 P2P UDP OpenVPN tunnels between house and cloud. Example config is here all TCP traffic (bar port 80) that hits the router in house is redirected to RedSocks RedSocks uses a socks server, Dante, as an upstream server on the cloud box since the socks traffic is over TCP (inside the UDP OpenVPN tunnel) it uses MPTCP having socks running, gives me quite the download speed, turning it off does not, hence the following tweet  Hmmmm." id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Guide,Networking,IPv6,Projects,HowTo,HomeLab,Double_Internet" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/2-cable-modems-double-speed-part-4/">
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-    
-  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
-
-    <script>var _paq = undefined;</script></head>
-  <body itemscope itemtype="http://schema.org/WebPage">
-    <div id="site-container">
-      <div id="site-header">
-        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
-          <header class="small-text-center medium-text-left row">
-            <div class="row-item">
-              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet</span>
-              <br/><span id="site-tagline">morning...</span>
-            </div>
-          </header>
-        </a>
-        </div>
-      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
-        
-        
-        
-<main class="row-item small-full medium-two-thirds" >
-  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
-    <header id="page-header">
-      <h1 itemprop="headline">2 Cable Modems = Double Speed? Part 4</h1><p id="post-metadata" class="row"><span class="row-item">
-          <span class="fa fa-clock-o"></span>
-          <strong>Published:</strong>
-          <time datetime="2016-04-14" content="2016-04-14" itemprop="datePublished">April 14, 2016</time>
-        </span><span class="row-item">
-          <span class="fa fa-clock-o"></span>
-          <strong>Last Updated:</strong>
-          <time datetime="2018-07-04" content="2018-07-04" itemprop="dateModified">July 04, 2018</time>
-        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">2 minutes</span></span></p>
+  <body>
+    <nav>
+    <ul class="menu">
       
-    </header>
-    
-    <div id="post-content">
-      <span itemprop="articleBody"><p>[NOTE] This part 4 in a series of posts. The rest can be found <a href="https://www.tiernanotoole.ie/tag/Double%Internet/">here</a>.</p>
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">2 Cable Modems = Double Speed? Part 4</span></h1>
+
+<h2 class="date">2016/04/14</h2>
+</div>
+
+<main>
+<p>[NOTE] This part 4 in a series of posts. The rest can be found <a href="https://www.tiernanotoole.ie/tag/Double%Internet/">here</a>.</p>
 
 <p>So, this week I went in a completely different direction that I have been thinking recently&hellip;</p>
 
@@ -88,80 +56,13 @@
 
 
 <p>The cunning plan? Well, if I am reading the internet correctly, and I would like to think I am, I <em>think</em> <a href="https://en.wikipedia.org/wiki/Equal-cost_multi-path_routing">ECMP</a>, or Equal Cost Multi-Path Routing, could help&hellip; Again, it’s a fledgling idea currently, and I am still reading the documentation, but if it works&hellip; Well&hellip; I not sure&hellip; let’s see&hellip;</p>
-</span>
-    </div><div id="post-tags">
-    	<ul class="menu">
-        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/guide" rel="tag" itemprop="url">guide</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/networking" rel="tag" itemprop="url">networking</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/ipv6" rel="tag" itemprop="url">i pv6</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/projects" rel="tag" itemprop="url">projects</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/howto" rel="tag" itemprop="url">how to</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/homelab" rel="tag" itemprop="url">home lab</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/double_internet" rel="tag" itemprop="url">double internet</a>
-    		</li></ul>
-    </div></article>
 
-  </main>
+</main>
 
-        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  <footer>
   
   
-  
-	
-  
-	
-	
-</aside>
-
-      </div>
-      <footer class="row">
-        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
-          <div class="small-full">
-            <small>
-              &copy; 2018
-              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                <span itemprop="name">Tiernan&#39;s Comms Closet</span>
-              </span>
-            </small>
-          </div>
-          <div class="small-full row">
-            
-            
-            <div class="row-item small-only-full">
-              
-                
-  
-  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
-<script type="text/javascript">
-(function (w,d) {
-  var loader = function () {
-    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
-    s.src = "//cdn.iubenda.com/iubenda.js";
-    tag.parentNode.insertBefore(s,tag);
-  };
-  if (w.addEventListener) {
-    w.addEventListener("load", loader, false);
-  } else if (w.attachEvent) {
-    w.attachEvent("onload", loader);
-  } else {
-    w.onload = loader;
-  }
-})(window, document);
-</script>
-
-              
-            </div>
-            
-            
-          </div>
-        </div>
-        
-        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
-
-
-</div>
-      </footer>
-    </div>
-    
+  </footer>
   </body>
 </html>
+

@@ -1,62 +1,30 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hubic and Duplicity</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hubic and Duplicity | Tiernan&#39;s Comms Closet</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
     
-    
-    
-    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+  </head>
 
-    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
-    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
-    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
-
-    
-
-    <meta name="description" itemprop="description" content="I mentioned HubiC in my last post, and in it i said that you could use Duplicity for backups. Well, this is how you get it to work&amp;hellip; First, i am using Ubuntu 14.04 (i think&amp;hellip;). I use Ubuntu in house for a few things:  its running Tiernan&amp;rsquo;s Comms Closet, GeekPhotographer and Tiernan&amp;rsquo;s Podcast all in house, aswell as being used to build this site. The Web Server and MySQL Server are seperated, MySQL running on Windows, web on Ubuntu&amp;hellip; but thats a different story&amp;hellip; I have a couple of proxy servers running Ubuntu also Other general servers running Ubuntu&amp;hellip; dont ask, cause i cant remember what they do half the time&amp;hellip;  So, Duplicity is a backup application." id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Storage,Backup,Code" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/duplicity_hubic/">
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-    
-  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
-
-    <script>var _paq = undefined;</script></head>
-  <body itemscope itemtype="http://schema.org/WebPage">
-    <div id="site-container">
-      <div id="site-header">
-        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
-          <header class="small-text-center medium-text-left row">
-            <div class="row-item">
-              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet</span>
-              <br/><span id="site-tagline">morning...</span>
-            </div>
-          </header>
-        </a>
-        </div>
-      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
-        
-        
-        
-<main class="row-item small-full medium-two-thirds" >
-  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
-    <header id="page-header">
-      <h1 itemprop="headline">Hubic and Duplicity</h1><p id="post-metadata" class="row"><span class="row-item">
-          <span class="fa fa-clock-o"></span>
-          <strong>Published:</strong>
-          <time datetime="2015-04-01" content="2015-04-01" itemprop="datePublished">April 01, 2015</time>
-        </span><span class="row-item">
-          <span class="fa fa-clock-o"></span>
-          <strong>Last Updated:</strong>
-          <time datetime="2018-07-04" content="2018-07-04" itemprop="dateModified">July 04, 2018</time>
-        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">4 minutes</span></span></p>
+  <body>
+    <nav>
+    <ul class="menu">
       
-    </header>
-    
-    <div id="post-content">
-      <span itemprop="articleBody"><p>I mentioned <a href="https://hubic.com/home/new/?referral=GMSQVQ">HubiC</a> in my <a href="https://www.tiernanotoole.ie/2015/03/31/HubiC_SWIFT_CURL.html">last post</a>, and in it i said that you could use <a href="http://duplicity.nongnu.org/">Duplicity</a> for backups. Well, this is how you get it to work&hellip;</p>
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Hubic and Duplicity</span></h1>
+
+<h2 class="date">2015/04/01</h2>
+</div>
+
+<main>
+<p>I mentioned <a href="https://hubic.com/home/new/?referral=GMSQVQ">HubiC</a> in my <a href="https://www.tiernanotoole.ie/2015/03/31/HubiC_SWIFT_CURL.html">last post</a>, and in it i said that you could use <a href="http://duplicity.nongnu.org/">Duplicity</a> for backups. Well, this is how you get it to work&hellip;</p>
 
 <p>First, i am using Ubuntu 14.04 (i think&hellip;). I use <a href="http://www.ubuntu.com">Ubuntu</a> in house for a few things:</p>
 
@@ -111,76 +79,13 @@
 </ul>
 
 <p>And thats all folks! Any questions, leave them in the comments!</p>
-</span>
-    </div><div id="post-tags">
-    	<ul class="menu">
-        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/storage" rel="tag" itemprop="url">storage</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/backup" rel="tag" itemprop="url">backup</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/code" rel="tag" itemprop="url">code</a>
-    		</li></ul>
-    </div></article>
 
-  </main>
+</main>
 
-        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  <footer>
   
   
-  
-	
-  
-	
-	
-</aside>
-
-      </div>
-      <footer class="row">
-        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
-          <div class="small-full">
-            <small>
-              &copy; 2018
-              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                <span itemprop="name">Tiernan&#39;s Comms Closet</span>
-              </span>
-            </small>
-          </div>
-          <div class="small-full row">
-            
-            
-            <div class="row-item small-only-full">
-              
-                
-  
-  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
-<script type="text/javascript">
-(function (w,d) {
-  var loader = function () {
-    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
-    s.src = "//cdn.iubenda.com/iubenda.js";
-    tag.parentNode.insertBefore(s,tag);
-  };
-  if (w.addEventListener) {
-    w.addEventListener("load", loader, false);
-  } else if (w.attachEvent) {
-    w.attachEvent("onload", loader);
-  } else {
-    w.onload = loader;
-  }
-})(window, document);
-</script>
-
-              
-            </div>
-            
-            
-          </div>
-        </div>
-        
-        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
-
-
-</div>
-      </footer>
-    </div>
-    
+  </footer>
   </body>
 </html>
+

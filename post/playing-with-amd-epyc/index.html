@@ -1,66 +1,30 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Playing with AMD&#39;s Epyc</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Playing with AMD&#39;s Epyc | Tiernan&#39;s Comms Closet</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
     
-    
-    
-    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+  </head>
 
-    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
-    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
-    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
-
-    
-
-    <meta name="description" itemprop="description" content="So, a few days back I got an email from Packet.net about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an AMD EPYC 7401P which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main stoage." id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Hardware,Programming,Reviews" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/playing-with-amd-epyc/">
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-    
-  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
-
-    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530618253/top_kernel_build_epy_hdb0R.jpg" as="image" />
-    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530618253/top-kernel-build-godboxv2.png" as="image" />
-    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/v1530618252/image-resizer-epyc.png" as="image" />
-    <link rel="preload" href="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/v1530618252/image_resizer_godbox_f5de0.jpg" as="image" />
-    <script>var _paq = undefined;</script></head>
-  <body itemscope itemtype="http://schema.org/WebPage">
-    <div id="site-container">
-      <div id="site-header">
-        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
-          <header class="small-text-center medium-text-left row">
-            <div class="row-item">
-              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet</span>
-              <br/><span id="site-tagline">morning...</span>
-            </div>
-          </header>
-        </a>
-        </div>
-      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
-        
-        
-        
-<main class="row-item small-full medium-two-thirds" >
-  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
-    <header id="page-header">
-      <h1 itemprop="headline">Playing with AMD&#39;s Epyc</h1><p id="post-metadata" class="row"><span class="row-item">
-          <span class="fa fa-clock-o"></span>
-          <strong>Published:</strong>
-          <time datetime="2018-07-02" content="2018-07-02" itemprop="datePublished">July 02, 2018</time>
-        </span><span class="row-item">
-          <span class="fa fa-clock-o"></span>
-          <strong>Last Updated:</strong>
-          <time datetime="2018-07-04" content="2018-07-04" itemprop="dateModified">July 04, 2018</time>
-        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">6 minutes</span></span></p>
+  <body>
+    <nav>
+    <ul class="menu">
       
-    </header>
-    
-    <div id="post-content">
-      <span itemprop="articleBody"><p>So, a few days back I got an email from <a href="http://www.packet.net">Packet.net</a> about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an <a href="https://www.amd.com/en/products/cpu/amd-epyc-7401p">AMD EPYC 7401P</a> which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main stoage. It also has a 20Gb network link (2x10gb bonded) and can run pretty much any OS you can think of (Windows is not on the list officially, but you can boot off your own ISO, so you could probably get it on there&hellip; might not be supported, but it might be possible). all this for $1 per hour! And did i mention they are bare metal machines?</p>
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Playing with AMD&#39;s Epyc</span></h1>
+
+<h2 class="date">2018/07/02</h2>
+</div>
+
+<main>
+<p>So, a few days back I got an email from <a href="http://www.packet.net">Packet.net</a> about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an <a href="https://www.amd.com/en/products/cpu/amd-epyc-7401p">AMD EPYC 7401P</a> which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main stoage. It also has a 20Gb network link (2x10gb bonded) and can run pretty much any OS you can think of (Windows is not on the list officially, but you can boot off your own ISO, so you could probably get it on there&hellip; might not be supported, but it might be possible). all this for $1 per hour! And did i mention they are bare metal machines?</p>
 
 <p>This was the perfect opertunity to play with the new AMD processors. My current and previoius generation workstations (GodBoxv1 and Godboxv2) are both running Intel Xeon processors. the machine previous to this, the mac pro, is also running a Xeon processor. But previous to both of them, my first 2 major workstations ran AMD&hellip; the first ran 2 AMD Athlon MP processors. These were old school processors that were single core, and i cant even remember their speeds, but i do know there were 32bit only and the machine maxed out at about 1.25GB RAM (well, i had it maxed out at that). the second AMD workstation ran 2 AMD Opterons&hellip; again, single core machines, but this time, they ran 64 bit and IIRC maxed out at 8GB ram. This was a limitation of the board, not the processor&hellip;</p>
 
@@ -107,76 +71,13 @@
 
 
 <p>So, there you have it. Some starting tests with these processors. I am well impressed with these processors, and would have no issue getting one for the next GodBox&hellip; And with names like Epyc and Threadripper, why not?!</p>
-</span>
-    </div><div id="post-tags">
-    	<ul class="menu">
-        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/hardware" rel="tag" itemprop="url">hardware</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/programming" rel="tag" itemprop="url">programming</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/reviews" rel="tag" itemprop="url">reviews</a>
-    		</li></ul>
-    </div></article>
 
-  </main>
+</main>
 
-        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
+  <footer>
   
   
-  
-	
-  
-	
-	
-</aside>
-
-      </div>
-      <footer class="row">
-        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
-          <div class="small-full">
-            <small>
-              &copy; 2018
-              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                <span itemprop="name">Tiernan&#39;s Comms Closet</span>
-              </span>
-            </small>
-          </div>
-          <div class="small-full row">
-            
-            
-            <div class="row-item small-only-full">
-              
-                
-  
-  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
-<script type="text/javascript">
-(function (w,d) {
-  var loader = function () {
-    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
-    s.src = "//cdn.iubenda.com/iubenda.js";
-    tag.parentNode.insertBefore(s,tag);
-  };
-  if (w.addEventListener) {
-    w.addEventListener("load", loader, false);
-  } else if (w.attachEvent) {
-    w.attachEvent("onload", loader);
-  } else {
-    w.onload = loader;
-  }
-})(window, document);
-</script>
-
-              
-            </div>
-            
-            
-          </div>
-        </div>
-        
-        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
-
-
-</div>
-      </footer>
-    </div>
-    
+  </footer>
   </body>
 </html>
+

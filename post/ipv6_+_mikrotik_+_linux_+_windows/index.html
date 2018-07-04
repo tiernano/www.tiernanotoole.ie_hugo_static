@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IPv6 &#43; MikroTik &#43; Linux &#43; Windows | Tiernan&#39;s Comms Closet</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">IPv6 &#43; MikroTik &#43; Linux &#43; Windows</span></h1>
+
+<h2 class="date">2012/12/19</h2>
+</div>
+
+<main>
+<p>I have been wanting to setup an <a href="http://en.wikipedia.org/wiki/Ipv6">IPv6</a> network for a while now, but never had the hardware or network to support it. My broadband Modem, a Cisco EPC3925, was pretty useless&hellip; But with the advent of <a href="http://tiernanotoole.ie/2012/10/02/Enabling-true-briding-mode-on-Cisco-EPC3925.html">Bridging on the Cisco EPC3925</a> it now works!</p>
+
+<p>The first thing i needed to do was setup a <a href="http://www.tunnelbroker.net/">Tunnel Broker Account</a> with <a href="http://www.he.net">Hurricane Electric</a>. I got a /64 block of IPv6 addresses, which should do me for a while&hellip; :)</p>
+
+<p>Next, I followed the config example from the MikroTik Wiki Page: <a href="http://wiki.mikrotik.com/wiki/Manual:My_First_IPv6_Network">My First IPv6 Network</a>. In my case, i only ran though most of router 1&rsquo;s config, and did not create the &ldquo;routing between segments&rdquo; and &ldquo;ospv-v3&rdquo; backbone&hellip; I did give my internal LAN port an IPv6 address, as well as an IPv4 address.</p>
+
+<p>Next, on my Windows Server machine, i gave it a static IPv6 address (since i dont have an IPv6 DHCP setup&hellip; yet&hellip;) and told it to use the IPv6 address i gave the RouteBoard as its gateway. Then i told it to use the <a href="http://www.opendns.com">OpenDNS</a> <a href="http://www.opendns.com/ipv6">public IPv6</a> address. I then visited <a href="http://www.ipv6-test.com">IPv6 Test</a> and <a href="http://ipv6.google.com">Google&rsquo;s IPv6 page</a> to confirm connectivity&hellip; SUCCESS!!!</p>
+
+<p>On my Linux box, I followed <a href="http://knowledgelayer.softlayer.com/questions/468/Adding+IPv6+to+Ubuntu+systems">Soflayer&rsquo;s Adding an IPv6 IP</a> tutorial.</p>
+
+<p>So far, so good&hellip;</p>
+
+</main>
+
+  <footer>
+  
+  
+  </footer>
+  </body>
+</html>
+

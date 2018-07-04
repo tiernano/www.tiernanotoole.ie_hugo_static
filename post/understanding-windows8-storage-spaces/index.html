@@ -1,132 +1,37 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Understanding Storage Spaces in Windows 8 and Windows Server 2012</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Understanding Storage Spaces in Windows 8 and Windows Server 2012 | Tiernan&#39;s Comms Closet</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
     
-    
-    
-    <link rel="preload" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css" as="style" />
+  </head>
 
-    <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com/" />
-    <link rel="preconnect" href="https://maxcdn.bootstrapcdn.com/" />
-    <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style">
-
-    
-
-    <meta name="description" itemprop="description" content="So, Windows Server 2012 and Windows 8 have both RTMed in the last couple of weeks and will be available to the public in the next month or so (September for Server, October for Client). If you are an MSDN Subscriber, you already have Client, and will (hopefully) get server in the next couple of weeks&amp;hellip; Fingers crossed&amp;hellip; Anyway, one of the interesting features i am waiting for is Storage Spaces." id="desc"><meta name="generator" content="Hugo 0.42.1" /><meta name="keywords" itemprop="keywords" content="Server_2012,Windows,Storage" id="keywords"><link rel="canonical" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/post/understanding-windows8-storage-spaces/">
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-    
-  <link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/css/dark.css"><link rel="stylesheet" type="text/css" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/styles.css">
-
-    <script>var _paq = undefined;</script></head>
-  <body itemscope itemtype="http://schema.org/WebPage">
-    <div id="site-container">
-      <div id="site-header">
-        <a href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/">
-          <header class="small-text-center medium-text-left row">
-            <div class="row-item">
-              <span id="site-title" itemprop="name">Tiernan&#39;s Comms Closet</span>
-              <br/><span id="site-tagline">morning...</span>
-            </div>
-          </header>
-        </a>
-        </div>
-      <div id="main-container" class="row" role="main" itemprop="mainContentOfPage">
-        
-        
-        
-<main class="row-item small-full medium-two-thirds" >
-  <article id="post-article" itemscope itemtype="http://schema.org/Article" itemref="keywords desc">
-    <header id="page-header">
-      <h1 itemprop="headline">Understanding Storage Spaces in Windows 8 and Windows Server 2012</h1><p id="post-metadata" class="row"><span class="row-item">
-          <span class="fa fa-clock-o"></span>
-          <strong>Published:</strong>
-          <time datetime="2012-08-31" content="2012-08-31" itemprop="datePublished">August 31, 2012</time>
-        </span><span class="row-item">
-          <span class="fa fa-clock-o"></span>
-          <strong>Last Updated:</strong>
-          <time datetime="2018-07-04" content="2018-07-04" itemprop="dateModified">July 04, 2018</time>
-        </span><span class="row-item"><span class="fa fa-book"></span> <strong>Estimated reading time:</strong> ~<span itemprop="timeRequired">1 minutes</span></span></p>
+  <body>
+    <nav>
+    <ul class="menu">
       
-    </header>
-    
-    <div id="post-content">
-      <span itemprop="articleBody"><p>So, Windows Server 2012 and Windows 8 have both RTMed in the last couple of weeks and will be available to the public in the next month or so (September for Server, October for Client). If you are an MSDN Subscriber, you already have Client, and will (hopefully) get server in the next couple of weeks&hellip; Fingers crossed&hellip; Anyway, one of the interesting features i am waiting for is <a href="http://blogs.msdn.com/b/b8/archive/2012/01/05/virtualizing-storage-for-scale-resiliency-and-efficiency.aspx">Storage Spaces</a>. Tim Anderson&rsquo;s Gadget Writing blog has some information on <a href="http://gadgets.itwriting.com/1462-understanding-windows-8-storage-spaces-confusing-but-powerful.html">how Storage Spaces works</a>. handy notes on what to do and what not to do.</p>
-</span>
-    </div><div id="post-tags">
-    	<ul class="menu">
-        <li class="row-item"><i class="fa fa-tags"></i>&nbsp;&nbsp;</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/server_2012" rel="tag" itemprop="url">server 2012</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/windows" rel="tag" itemprop="url">windows</a>
-    		</li><li itemprop="relatedUrl" itemscope itemtype="http://schema.org/URL"><a class="row-item button" href="https://tiernano.github.io/www.tiernanotoole.ie_hugo_static/tags/storage" rel="tag" itemprop="url">storage</a>
-    		</li></ul>
-    </div></article>
+    </ul>
+    <hr/>
+    </nav>
 
-  </main>
+<div class="article-meta">
+<h1><span class="title">Understanding Storage Spaces in Windows 8 and Windows Server 2012</span></h1>
 
-        <aside class="row-item small-full medium-third right" itemscope itemtype="http://schema.org/WPSideBar">
-  
-  
-  
-	
-  
-	
-	
-</aside>
-
-      </div>
-      <footer class="row">
-        <div class="small-full medium-half small-text-center medium-text-left medium-left row">
-          <div class="small-full">
-            <small>
-              &copy; 2018
-              <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                <span itemprop="name">Tiernan&#39;s Comms Closet</span>
-              </span>
-            </small>
-          </div>
-          <div class="small-full row">
-            
-            
-            <div class="row-item small-only-full">
-              
-                
-  
-  <a href="//www.iubenda.com/privacy-policy/21904595" class="iubenda-black  iubenda-embed" title="Privacy Policy">Privacy Policy</a>
-<script type="text/javascript">
-(function (w,d) {
-  var loader = function () {
-    var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0];
-    s.src = "//cdn.iubenda.com/iubenda.js";
-    tag.parentNode.insertBefore(s,tag);
-  };
-  if (w.addEventListener) {
-    w.addEventListener("load", loader, false);
-  } else if (w.attachEvent) {
-    w.attachEvent("onload", loader);
-  } else {
-    w.onload = loader;
-  }
-})(window, document);
-</script>
-
-              
-            </div>
-            
-            
-          </div>
-        </div>
-        
-        <div id="social-icons" class="row small-full medium-half small-text-center medium-text-right" style="align-self: center;">
-
-
+<h2 class="date">2012/08/31</h2>
 </div>
-      </footer>
-    </div>
-    
+
+<main>
+<p>So, Windows Server 2012 and Windows 8 have both RTMed in the last couple of weeks and will be available to the public in the next month or so (September for Server, October for Client). If you are an MSDN Subscriber, you already have Client, and will (hopefully) get server in the next couple of weeks&hellip; Fingers crossed&hellip; Anyway, one of the interesting features i am waiting for is <a href="http://blogs.msdn.com/b/b8/archive/2012/01/05/virtualizing-storage-for-scale-resiliency-and-efficiency.aspx">Storage Spaces</a>. Tim Anderson&rsquo;s Gadget Writing blog has some information on <a href="http://gadgets.itwriting.com/1462-understanding-windows-8-storage-spaces-confusing-but-powerful.html">how Storage Spaces works</a>. handy notes on what to do and what not to do.</p>
+
+</main>
+
+  <footer>
+  
+  
+  </footer>
   </body>
 </html>
+
