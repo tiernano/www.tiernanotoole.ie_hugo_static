@@ -19,7 +19,8 @@
       
       <guid>https://www.tiernanotoole.ie/computers/daily-carry.html</guid>
       <description>A couple of years back, I did a post about my Daily Carry for college&amp;hellip; Well, I have finished (ish) college, but i still cary a lot of weird and wonderful stuff&amp;hellip; So, this is the update&amp;hellip;
-So, the contents are as follows:   Microsoft SurfaceBook with an i7 processor, 16GB RAM and 512GB Storage, along with the dGPU. Samsung Galaxy Note 3 Beats by Dr. Dre Wireless on ear headphones.</description>
+So, the contents are as follows:
+  Microsoft SurfaceBook with an i7 processor, 16GB RAM and 512GB Storage, along with the dGPU. Samsung Galaxy Note 3 Beats by Dr. Dre Wireless on ear headphones.</description>
     </item>
     
     <item>
@@ -48,8 +49,8 @@ These machines are running Windows Server 2016, and have a mix of drives, mostly
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.tiernanotoole.ie/computers/godboxv2.html</guid>
-      <description> GodBox V2 Dell Precision T7600 Workstation:
- Dual 8 Core Xeons (E5-4620 @ 2.2Gz each) 160Gb RAM (DDR3) 5x 2Tbs with 2x256Gb Samsung 850 Pro SSDs and a third unknown 256GB (SSDs in RAID 0, the 5 drives are in 2 Windows Storage Spaces pool, 3 in a 5400RPM pool and 2 in a 7200RPM pool) Drobo 5D with 4X4Tb drives and 1Tb drive (17Tb RAW, ~13Tb usable) NVidia Geforce GTX 970 graphics card 2 Dell 2007WFP Monitors and 2 Dell P2815Q (4k) Monitors Currently running [Windows Server 2016 Datacenter]   </description>
+      <description>GodBox V2 Dell Precision T7600 Workstation:
+ Dual 8 Core Xeons (E5-4620 @ 2.2Gz each) 160Gb RAM (DDR3) 3x 2Tbs with 2x256Gb Samsung 850 Pro SSDs and a third unknown 256GB (SSDs in RAID 0, the 3 drives are in 2 Windows Storage Spaces pools) Drobo 5D with 5X4Tb drives and a 256Gb SSD for performance (about 20Tb RAW, ~16Tb usable) NVidia Geforce GTX 970 graphics card 2 Dell 2007WFP Monitors and 2 [Dell P2815Q]https://amzn.</description>
     </item>
     
     <item>
@@ -59,7 +60,7 @@ These machines are running Windows Server 2016, and have a mix of drives, mostly
       
       <guid>https://www.tiernanotoole.ie/computers/godbox.html</guid>
       <description>GodBox V1 The GodBox is my main Hyper-V server and backup workstation. Its specs are as follows:
- Dual Intel Xeon E5520 processors at 2.26Gz each. They are Quad core and are Hyper Threaded&amp;hellip; Windows sees 16 processors! 84Gb RAM (DDR3) 2 300GB Western Digital VelociRaptors in RAID 0 for boot. 4 hard drives in a storage pool. cant remember the sizes. these are connected to a Dell Perc H200, but no raid is used on the card.</description>
+ Dual Intel Xeon E5520 processors at 2.26Gz each. They are Quad core and are Hyper Threaded&amp;hellip; Windows sees 16 processors! 84Gb RAM (DDR3 ECC) 2 300GB Western Digital VelociRaptors in RAID 0 for boot. 4 hard drives in a storage pool. 2X1TB Western Digital Green Drives, 2Tb Seagate Barrcuda Green drive, 500GB Samsung Spinpoint drive.</description>
     </item>
     
     <item>
