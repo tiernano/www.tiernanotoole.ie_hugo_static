@@ -15,7 +15,7 @@
 
 <meta property="article:published_time" content="2018-07-02T19:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-07-04T22:01:47&#43;01:00"/>
+<meta property="article:modified_time" content="2018-07-05T07:15:21&#43;01:00"/>
 
 
 
@@ -34,7 +34,7 @@
 
 <meta itemprop="datePublished" content="2018-07-02T19:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-07-02T21:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1082">
+<meta itemprop="wordCount" content="1083">
 
 
 
@@ -76,7 +76,48 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
     
+<script src="cloudinary-core-shrinkwrap.js" type="text/javascript"></script>
 
+   
+<script type="text/javascript">
+    var appInsights = window.appInsights || function(a) {
+        function b(a) {
+            c[a] = function() {
+                var b = arguments;
+                c.queue.push(function() {
+                    c[a].apply(c, b)
+                })
+            }
+        }
+        var c = {
+                config: a
+            },
+            d = document,
+            e = window;
+        setTimeout(function() {
+            var b = d.createElement("script");
+            b.src = a.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js", d.getElementsByTagName("script")[0].parentNode.appendChild(b)
+        });
+        try {
+            c.cookie = d.cookie
+        } catch (a) {}
+        c.queue = [];
+        for (var f = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; f.length;) b("track" + f.pop());
+        if (b("setAuthenticatedUserContext"), b("clearAuthenticatedUserContext"), b("startTrackEvent"), b("stopTrackEvent"), b("startTrackPage"), b("stopTrackPage"), b("flush"), !a.disableExceptionTracking) {
+            f = "onerror", b("_" + f);
+            var g = e[f];
+            e[f] = function(a, b, d, e, h) {
+                var i = g && g(a, b, d, e, h);
+                return !0 !== i && c["_" + f](a, b, d, e, h), i
+            }
+        }
+        return c
+    }({
+        instrumentationKey: "6ba6d0d3-8f0c-43c9-bea2-1547cb66b576"
+    });
+
+    window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length && appInsights.trackPageView();
+</script>
 
   </head>
   <body>
@@ -201,7 +242,7 @@ if (!doNotTrack) {
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
 
-      <p>So, a few days back I got an email from <a href="http://www.packet.net">Packet.net</a> about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an <a href="https://www.amd.com/en/products/cpu/amd-epyc-7401p">AMD EPYC 7401P</a> which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main stoage. It also has a 20Gb network link (2x10gb bonded) and can run pretty much any OS you can think of (Windows is not on the list officially, but you can boot off your own ISO, so you could probably get it on there&hellip; might not be supported, but it might be possible). all this for $1 per hour! And did i mention they are bare metal machines?</p>
+      <p>So, a few days back I got an email from <a href="http://www.packet.net">Packet.net</a> about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their <a href="https://www.packet.net/bare-metal/servers/c2-medium-epyc/">c2.medium</a> machines. A c2.medium comes with an <a href="https://www.amd.com/en/products/cpu/amd-epyc-7401p">AMD EPYC 7401P</a> which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main stoage. It also has a 20Gb network link (2x10gb bonded) and can run pretty much any OS you can think of (Windows is not on the list officially, but you can boot off your own ISO, so you could probably get it on there&hellip; might not be supported, but it might be possible). all this for $1 per hour! And did i mention they are bare metal machines?</p>
 
 <p>This was the perfect opertunity to play with the new AMD processors. My current and previoius generation workstations (GodBoxv1 and Godboxv2) are both running Intel Xeon processors. the machine previous to this, the mac pro, is also running a Xeon processor. But previous to both of them, my first 2 major workstations ran AMD&hellip; the first ran 2 AMD Athlon MP processors. These were old school processors that were single core, and i cant even remember their speeds, but i do know there were 32bit only and the machine maxed out at about 1.25GB RAM (well, i had it maxed out at that). the second AMD workstation ran 2 AMD Opterons&hellip; again, single core machines, but this time, they ran 64 bit and IIRC maxed out at 8GB ram. This was a limitation of the board, not the processor&hellip;</p>
 
@@ -215,17 +256,17 @@ if (!doNotTrack) {
 
 <p>I then ran fdisk -l to see what disks i had to play with. on my machine sda and sdb where the 480gb SSDs, sdc was a 120gb that was empty and sdd was the boot drive&hellip; i installed the btrfs-progs and then formatted sda and sdb as a RAID0 array, which i then mounted to /mnt. this gave me just under 900gb to play with&hellip;</p>
 
-<p>So, my first test is the usual test: building the Linux Kernel. I know that this is something that the lads at <a href="http://www.servethehome.com">ServeTheHome</a> do a lot but its something i wanted to try my self&hellip; So, first i installed <code>git</code> and <code>build essential</code>, then <code>bison</code>, <code>flex</code> and <code>ncurses-dev</code>, then i cloned Linus&rsquo; git repo at <code>git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git</code>. First things first: this machine has a twin 10gb link, a shead load of cores and some very fast storage. How long did it take to clone? it download 1.02 GiB at 35.32MiB/s (about 30 seconds and aboiut 280Mbit/s) and all in, took 2 min 55 seconds to clone. I then ran <code>time make -j 49</code> to see how long it would take&hellip; hmmm&hellip; no config file&hellip; <code>make menuconfig</code> and just hit save&hellip; defaults are grand&hellip; time <code>make -j 49</code> again&hellip; and more errors&hellip; after a bit of googling, i find the page from Ubutnu <a href="https://wiki.ubuntu.com/KernelTeam/GitKernelBuild">showing what i need to do to build the kernel</a>. i follow that&hellip; download a LOT more stuff using their instrustions, and finally, we get to build&hellip; Time: 6 min 12 seconds&hellip; this is a FULL default build of the kernel&hellip;</p>
+<p>So, my first test is the usual test: building the Linux Kernel. I know that this is something that the lads at <a href="http://www.servethehome.com">ServeTheHome</a> do a lot but its something i wanted to try my self&hellip; So, first i installed <code>git</code> and <code>build essential</code>, then <code>bison</code>, <code>flex</code> and <code>ncurses-dev</code>, then i cloned Linus&rsquo; git repo at <code>git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git</code>. First things first: this machine has a twin 10gb link, a shead load of cores and some very fast storage. How long did it take to clone? it download 1.02 GiB at 35.32MiB/s (about 30 seconds and aboiut 280Mbit/s) and all in, took <strong>2 min 55 seconds</strong> to clone. I then ran <code>time make -j 49</code> to see how long it would take&hellip; hmmm&hellip; no config file&hellip; <code>make menuconfig</code> and just hit save&hellip; defaults are grand&hellip; time <code>make -j 49</code> again&hellip; and more errors&hellip; after a bit of googling, i find the page from Ubutnu <a href="https://wiki.ubuntu.com/KernelTeam/GitKernelBuild">showing what i need to do to build the kernel</a>. i follow that&hellip; download a LOT more stuff using their instrustions, and finally, we get to build&hellip; Time: <strong>6 min 12 seconds</strong>&hellip; this is a FULL default build of the kernel&hellip;</p>
 
 
-<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto//v1530618253/top_kernel_build_epy_hdb0R.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530618253/top_kernel_build_epy_hdb0R.jpg" alt=""></a>
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale//v1530618253/top_kernel_build_epy_hdb0R.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale//v1530618253/top_kernel_build_epy_hdb0R.jpg" alt=""></a>
 
 
 
-<p>Same build on a VM on GodboxV2 (which was given 32GB RAM and 16 thread, so a full <a href="https://ark.intel.com/products/64607/Intel-Xeon-Processor-E5-4620-16M-Cache-2_20-GHz-7_20-GTs-Intel-QPI">Xeon E5-4620</a>) took 8min 27s to clone (8.18MiB/s. or about 64Mbit/s) and 36 min to build&hellip; yea, that is 3x less cores, 2x less memory, slower storage (This is on Spinny Disk, not SSD), slower network and it is also a VM VS bare metal, still, to be essentially 6 times slower? interesting&hellip; I might, at some stage, boot the machine off a live Linux USB and run some more tests, but not tonight&hellip;</p>
+<p>Same build on a VM on GodboxV2 (which was given 32GB RAM and 16 thread, so a full <a href="https://ark.intel.com/products/64607/Intel-Xeon-Processor-E5-4620-16M-Cache-2_20-GHz-7_20-GTs-Intel-QPI">Xeon E5-4620</a>) took <strong>8min 27s</strong> to clone (8.18MiB/s. or about 64Mbit/s) and <strong>36 min to build</strong>&hellip; yea, that is 3x less cores, 2x less memory, slower storage (This is on Spinny Disk, not SSD), slower network and it is also a VM VS bare metal, still, to be essentially 6 times slower? interesting&hellip; I might, at some stage, boot the machine off a live Linux USB and run some more tests, but not tonight&hellip;</p>
 
 
-<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto//v1530618253/top-kernel-build-godboxv2.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto//v1530618253/top-kernel-build-godboxv2.png" alt=""></a>
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale//v1530618253/top-kernel-build-godboxv2.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale//v1530618253/top-kernel-build-godboxv2.png" alt=""></a>
 
 
 
@@ -233,17 +274,17 @@ if (!doNotTrack) {
 
 <p>so, i devised a test: Export a bunch of photos (mix of photos taken on my 5Ds, 5D MKII, iPhone 6 Plus and iPhone 7Plus) that are stored in light room as full  and run them though a basic .NET Core app i wrote. the code for the app is <a href="https://github.com/tiernano/imageresizer-testapp">available here</a>. The app fully utilizes the machine by using multiple threads, and because its 64 bit, it will use as much memory as it can get its hands on. It just does some basic processing: open the file, resize to 1024X1024 and then save it&hellip; the 1024X1024 part is just a test&hellip; i was a bit under the gun on time, so couldnt spend as much time working on it as i wanted to&hellip;</p>
 
-<p>In total, there was 1546 photos exported, and the total file size was 15Gb. First obstical was to get them uploaded to the Packet machine, which took a while (my upload speed is currently 40Mbit/s)&hellip; Once up, i downloaded a copy of dotnet core 2.0 SDK, cloned the repo with the project, built and ran&hellip; and man, its fast! 4 min 43 seconds. And it used all the cores.</p>
+<p>In total, there was 1546 photos exported, and the total file size was 15Gb. First obstical was to get them uploaded to the Packet machine, which took a while (my upload speed is currently 40Mbit/s)&hellip; Once up, i downloaded a copy of dotnet core 2.0 SDK, cloned the repo with the project, built and ran&hellip; and man, its fast! <strong>4 min 43 seconds</strong>. And it used all the cores.</p>
 
 
-<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/v1530618252/image-resizer-epyc.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/v1530618252/image-resizer-epyc.png" alt=""></a>
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530618252/image-resizer-epyc.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530618252/image-resizer-epyc.png" alt=""></a>
 
 
 
-<p>Running the same code on GodBoxV2 on the bare metal (no VM this time), i got over 20 min of a run&hellip; Now, GodBoxV2 has other things running in the back ground, but not that much&hellip; I also noticed that, on average, photos were being processed in 3-5 seconds on Epyc, but nearly 13-15, and sometimes 20 and 25 seconds on GodBoxV2. I also noticed that on Epyc, the dotnet process took nearly 45GB of RAM&hellip; to run&hellip; On GodBoxV2, it took over 70!</p>
+<p>Running the same code on GodBoxV2 on the bare metal (no VM this time), i got <strong>17 min 35 seconds</strong> of a run&hellip; Now, GodBoxV2 has other things running in the back ground, but not that much&hellip; I also noticed that, on average, photos were being processed in 3-5 seconds on Epyc, but nearly 13-15, and sometimes 20 and 25 seconds on GodBoxV2. I also noticed that on Epyc, the dotnet process took nearly 45GB of RAM&hellip; to run&hellip; On GodBoxV2, it took over 70!</p>
 
 
-<a href="https://res.cloudinary.com/tiernanotoole/image/upload/q_auto,f_auto/v1530618252/image_resizer_godbox_f5de0.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_500,q_auto,f_auto/v1530618252/image_resizer_godbox_f5de0.jpg" alt=""></a>
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530618252/image_resizer_godbox_f5de0.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530618252/image_resizer_godbox_f5de0.jpg" alt=""></a>
 
 
 
@@ -288,8 +329,8 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <br>
 <a href="https://www.tiernanotoole.ie/2018/07/02/playing-with-amd-epyc.html" class="hide-child link primary-color">“Playing with AMD&#39;s Epyc”</a> was last updated: 
-July 4, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/683268775dc2ea118ebc7bc8b387defe55261fd0">updating posts and a bit of cleanup 
-  (6832687)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2018-07-02-playing-with-amd-epyc.markdown">Improve this page</a>
+July 5, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/dd18783ff36f0f1b726dbae824b1e4d6352de78a">tweaking posts 
+  (dd18783)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2018-07-02-playing-with-amd-epyc.markdown">Improve this page</a>
 
         </div>
           <div class="medium-3 columns" data-sticky-container>
