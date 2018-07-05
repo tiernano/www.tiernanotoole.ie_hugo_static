@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<meta property="og:title" content="Raspberry Pi Stuff" />
+<meta property="og:description" content="A couple months back, I got my hands on a Raspberry Pi, a tiny development board that can run a full copy of Linux, has a HDMI port, a couple USB ports, Ethernet and a few other little bits and pieces. The full specs, from the Wikipedia Article are as follows:
+ Operating system: Linux (Debian GNU/Linux, Fedora, and Arch Linux ARM) Power: 2.5 W (model A), 3.5 W (model B) CPU: ARM1176JZF-S (armv6k) 700 MHz Storage capacity: SD card slot (SD or SDHC card) Memory: 256 MByte Graphics: Broadcom VideoCore IV  There have been a few things i have wanted to play with it for, but have not implemented all them yet&hellip; still learning&hellip; but some interesting projects have come to my attention&hellip; here they are, in no particular order:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tiernanotoole.ie/2012/09/06/rasberry-stuff.html" />
+
+
+
+<meta property="article:published_time" content="2012-09-06T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-04T22:01:47&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Raspberry Pi Stuff">
+<meta itemprop="description" content="A couple months back, I got my hands on a Raspberry Pi, a tiny development board that can run a full copy of Linux, has a HDMI port, a couple USB ports, Ethernet and a few other little bits and pieces. The full specs, from the Wikipedia Article are as follows:
+ Operating system: Linux (Debian GNU/Linux, Fedora, and Arch Linux ARM) Power: 2.5 W (model A), 3.5 W (model B) CPU: ARM1176JZF-S (armv6k) 700 MHz Storage capacity: SD card slot (SD or SDHC card) Memory: 256 MByte Graphics: Broadcom VideoCore IV  There have been a few things i have wanted to play with it for, but have not implemented all them yet&hellip; still learning&hellip; but some interesting projects have come to my attention&hellip; here they are, in no particular order:">
+
+
+<meta itemprop="datePublished" content="2012-09-06T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-09-06T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="302">
+
+
+
+<meta itemprop="keywords" content="Hardware,Raspberry_Pi," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Raspberry Pi Stuff"/>
+<meta name="twitter:description" content="A couple months back, I got my hands on a Raspberry Pi, a tiny development board that can run a full copy of Linux, has a HDMI port, a couple USB ports, Ethernet and a few other little bits and pieces. The full specs, from the Wikipedia Article are as follows:
+ Operating system: Linux (Debian GNU/Linux, Fedora, and Arch Linux ARM) Power: 2.5 W (model A), 3.5 W (model B) CPU: ARM1176JZF-S (armv6k) 700 MHz Storage capacity: SD card slot (SD or SDHC card) Memory: 256 MByte Graphics: Broadcom VideoCore IV  There have been a few things i have wanted to play with it for, but have not implemented all them yet&hellip; still learning&hellip; but some interesting projects have come to my attention&hellip; here they are, in no particular order:"/>
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+    <base href="https://www.tiernanotoole.ie/">
+    <link rel="canonical" href="https://www.tiernanotoole.ie/2012/09/06/rasberry-stuff.html">
+    <title>Raspberry Pi Stuff | Tiernan&#39;s Comms Closet</title>
+
+    <!-- CSS -->
+    <link href="https://www.tiernanotoole.ie/css/app.css" rel="stylesheet">
+
+    
+
+    
+
+    
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-220614-15', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+<script src="cloudinary-core-shrinkwrap.js" type="text/javascript"></script>
+
+   
+<script type="text/javascript">
+    var appInsights = window.appInsights || function(a) {
+        function b(a) {
+            c[a] = function() {
+                var b = arguments;
+                c.queue.push(function() {
+                    c[a].apply(c, b)
+                })
+            }
+        }
+        var c = {
+                config: a
+            },
+            d = document,
+            e = window;
+        setTimeout(function() {
+            var b = d.createElement("script");
+            b.src = a.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js", d.getElementsByTagName("script")[0].parentNode.appendChild(b)
+        });
+        try {
+            c.cookie = d.cookie
+        } catch (a) {}
+        c.queue = [];
+        for (var f = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; f.length;) b("track" + f.pop());
+        if (b("setAuthenticatedUserContext"), b("clearAuthenticatedUserContext"), b("startTrackEvent"), b("stopTrackEvent"), b("startTrackPage"), b("stopTrackPage"), b("flush"), !a.disableExceptionTracking) {
+            f = "onerror", b("_" + f);
+            var g = e[f];
+            e[f] = function(a, b, d, e, h) {
+                var i = g && g(a, b, d, e, h);
+                return !0 !== i && c["_" + f](a, b, d, e, h), i
+            }
+        }
+        return c
+    }({
+        instrumentationKey: "6ba6d0d3-8f0c-43c9-bea2-1547cb66b576"
+    });
+
+    window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length && appInsights.trackPageView();
+</script>
+
+  </head>
+  <body>
+
+    <header class="nav">
+      <div class="top-bar">
+        <div class="row column">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li><a href="https://www.tiernanotoole.ie/">
+                  Tiernan's Comms Closet
+                </a></li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu">
+              <li class=""><a href="https://www.tiernanotoole.ie/">
+                Home
+              </a></li>
+              
+                
+                  <li><a href="https://www.tiernanotoole.ie/dailycarry/">
+                    Daily Carry
+                  </a></li>
+                
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <header class="blog-header">
+      <div class="callout large">
+        <div class="row column text-center">
+          <h1>
+            <a href="https://www.tiernanotoole.ie/" rel="home">Tiernan's Comms Closet</a>
+          </h1>
+          
+            <p>
+              Geek, Programmer, Photographer&hellip;
+            </p>
+          
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="row" id="content">
+        <div class="medium-8 columns">
+          
+  
+
+
+  <div class="blog-post">
+    <h3>
+      <a href="https://www.tiernanotoole.ie/2012/09/06/rasberry-stuff.html">Raspberry Pi Stuff</a>
+    </h3>
+    <div class="callout small">
+      <small>
+        <time datetime="2012-09-06T00:00:00Z">
+          Thu Sep 6, 2012
+        </time> by .
+        
+        Tags: 
+  
+    
+      <a href="/tags/hardware.html">
+        Hardware
+      </a>
+  
+    ,
+    
+      <a href="/tags/raspberry_pi.html">
+        Raspberry_Pi
+      </a>
+  
+
+.
+        <br>
+        
+          Share
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.tiernanotoole.ie%2f2012%2f09%2f06%2frasberry-stuff.html" title="Share on Facebook">
+      Facebook
+    </a>,
+
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.tiernanotoole.ie%2f2012%2f09%2f06%2frasberry-stuff.html" title="Share on Google+">
+      Google+
+    </a>,
+
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.tiernanotoole.ie%2f2012%2f09%2f06%2frasberry-stuff.html" title="Share on LinkedIn">
+      LinkedIn
+    </a>,
+
+
+    <a href="https://twitter.com/home?status=https%3a%2f%2fwww.tiernanotoole.ie%2f2012%2f09%2f06%2frasberry-stuff.html" title="Tweet this">
+      Twitter
+    </a>
+
+
+        
+      </small>
+    </div>
+    <p>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6435972961836580"
+             data-ad-slot="5573260001"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+      <p>A couple months back, I got my hands on a <a href="http://www.raspberrypi.org/">Raspberry Pi</a>, a tiny development board that can run a full copy of Linux, has a HDMI port, a couple USB ports, Ethernet and a few other little bits and pieces. The full specs, from the <a href="http://en.wikipedia.org/wiki/Raspberry_Pi">Wikipedia Article</a> are as follows:</p>
+
+<ul>
+<li>Operating system: Linux (Debian GNU/Linux, Fedora, and Arch Linux ARM)</li>
+<li>Power: 2.5 W (model A), 3.5 W (model B)</li>
+<li>CPU: ARM1176JZF-S (armv6k) 700 MHz</li>
+<li>Storage capacity: SD card slot (SD or SDHC card)</li>
+<li>Memory: 256 MByte</li>
+<li>Graphics: Broadcom VideoCore IV</li>
+</ul>
+
+<p>There have been a few things i have wanted to play with it for, but have not implemented all them yet&hellip; still learning&hellip; but some interesting projects have come to my attention&hellip; here they are, in no particular order:</p>
+
+<ul>
+<li><a href="http://davidhunt.ie/?p=2641">Raspberry Pi embedded into a Canon 5D MKII Battery Grip</a>: The idea of this is epic! the possibilities are endless&hellip; GPS, Wifi, FTP, Processing RAW images (ok, maybe not with a 700Mhz processor&hellip;), auto upload to the internet, auto add watermark, resize images before upload, send to iPad&hellip; I could go on and on&hellip;. :)</li>
+<li><a href="http://liliputing.com/2012/08/raspberry-pi-mini-pc-crammed-into-a-keyboard.html">Embedding a Raspberry Pi into a Keyboard</a>: this is pretty cool too&hellip;</li>
+<li><a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?f=26&amp;t=12017&amp;p=129471#p129471">Quick setup of a Web Server on the Raspberry PI</a>: Install Apache, SSH, PHP, MySQL and an FTP server, all on your Pi!</li>
+</ul>
+
+<p>In all fairness, the Pi makes a lot of ideas possible. with such a small size, and such a cheap price ($25-35), you are only limited by your imagination&hellip; Wonder could i get Windows 8 installed on one of these&hellip;</p>
+
+<p>there are also a few interesting things that may make the Pi work more portable&hellip;</p>
+
+<ul>
+<li><a href="http://www.seeedstudio.com/depot/lipo-rider-pro-p-992.html?cPath=155">LiPo Rider Pro</a>: takes input from Batteries and Solar Panels and outputs as USB 5V. should run the Pi off solar and batteries for a while&hellip; :)</li>
+</ul>
+
+    </p>
+    
+    <hr>
+  </div>
+
+  
+    
+<div id="disqus_thread"></div>
+<script>
+
+ var disqus_config = function () {
+        this.page.url = "https://www.tiernanotoole.ie/2012/09/06/Rasberry-Stuff.html";  
+        this.page.identifier = "https://www.tiernanotoole.ie/2012/09/06/Rasberry-Stuff.html"; 
+    };
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://tiernanotooleie.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6435972961836580"
+     data-ad-slot="1003459608"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+<a href="https://www.tiernanotoole.ie/2012/09/06/rasberry-stuff.html" class="hide-child link primary-color">“Raspberry Pi Stuff”</a> was last updated: 
+July 4, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/683268775dc2ea118ebc7bc8b387defe55261fd0">updating posts and a bit of cleanup 
+  (6832687)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2012-09-06-Rasberry-Stuff.markdown">Improve this page</a>
+
+        </div>
+          <div class="medium-3 columns" data-sticky-container>
+  <div class="sticky" data-sticky data-anchor="content">
+
+  
+    <h4>About</h4>
+    <p>homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</p>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-6435972961836580"
+       data-ad-slot="2480192807"
+       data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  
+
+  <h4>Recent Posts</h4>
+  <ul>
+    
+      <li><a href="/2018/07/04/moving-the-site-to-hugo.html">
+        Moving the site to Hugo
+      </a></li>
+    
+      <li><a href="/2018/07/02/playing-with-amd-epyc.html">
+        Playing with AMD&rsquo;s Epyc
+      </a></li>
+    
+      <li><a href="/2018/04/01/as204994-own-ip-space-and-anycast.html">
+        AS204994, Own IP Space and Anycast
+      </a></li>
+    
+      <li><a href="/2018/03/06/blogging-on-ipad.html">
+        Blogging on an iPad Pro
+      </a></li>
+    
+      <li><a href="/2017/09/25/new-backup-plans.html">
+        New Backup Plans
+      </a></li>
+    
+      <li><a href="/2017/08/16/testing-forestry.html">
+        Testing Forestry
+      </a></li>
+    
+      <li><a href="/2017/05/06/vscode-with-powershell.html">
+        VSCode and Markdown Monster with Powershell
+      </a></li>
+    
+      <li><a href="/2017/05/05/zerotier-minio-update.html">
+        Zerotier and Minio Followup
+      </a></li>
+    
+      <li><a href="/2017/03/09/business-class-broadband.html">
+        Business Class Broadband&hellip; finally here&hellip;.
+      </a></li>
+    
+      <li><a href="/2017/01/19/distributed-s3-storage-minio-zerotier.html">
+        Distributed S3 data storage using Minio (and Zerotier)
+      </a></li>
+    
+  </ul>
+
+  
+    <h4>Links</h4>
+    <ul>
+      
+        <li><a href="https://www.tiernanotoole.ie/dailycarry/">
+          Daily Carry
+        </a></li>
+      
+        <li><a href="https://geekphotographer.com">
+          Geek Photographer
+        </a></li>
+      
+    </ul>
+  
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="blog-footer">
+      <div class="row column">
+        <p>
+          
+          2018 Tiernan OToole
+          
+        </p>
+        <p>
+          <a href="https://www.tiernanotoole.ie/2012/09/06/rasberry-stuff.html#">Back to top</a>
+        </p>
+      </div>
+    </footer>
+
+  <foot>
+
+    <script src="https://www.tiernanotoole.ie/js/app.js"></script>
+
+
+    <script type="text/javascript">
+      var vglnk = {
+          key: 'aecb90add8b6f7192e42ddfa3e65b611'
+      };
+  
+      (function(d, t) {
+          var s = d.createElement(t);
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = '//cdn.viglink.com/api/vglnk.js';
+          var r = d.getElementsByTagName(t)[0];
+          r.parentNode.insertBefore(s, r);
+      }(document, 'script'));
+  </script>
+  
+
+  </foot>
+  </body>
+</html>

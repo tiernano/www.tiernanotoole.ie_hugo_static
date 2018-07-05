@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<meta property="og:title" content="Network and Homelab V.Next (Part 1)" />
+<meta property="og:description" content="So, its that time again&hellip; HomeLab upgrade time&hellip; Or at least the planning for it. I am in the process of rebuilding my home lab, which involves pull all old servers out of the rack and replacing them with new ones&hellip; It also means rewriting the network, possibly upgrading some existing gear and hopefully getting the whole lot done on a budget of some sort&hellip;
+So, why? Well, biggest reason for all this is currently heat and power usage." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tiernanotoole.ie/2015/06/14/network-and-homelab-vnext-part-1.html" />
+
+
+
+<meta property="article:published_time" content="2015-06-14T16:05:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-04T22:01:47&#43;01:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Network and Homelab V.Next (Part 1)">
+<meta itemprop="description" content="So, its that time again&hellip; HomeLab upgrade time&hellip; Or at least the planning for it. I am in the process of rebuilding my home lab, which involves pull all old servers out of the rack and replacing them with new ones&hellip; It also means rewriting the network, possibly upgrading some existing gear and hopefully getting the whole lot done on a budget of some sort&hellip;
+So, why? Well, biggest reason for all this is currently heat and power usage.">
+
+
+<meta itemprop="datePublished" content="2015-06-14T16:05:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-06-14T16:05:00&#43;00:00" />
+<meta itemprop="wordCount" content="563">
+
+
+
+<meta itemprop="keywords" content="Networking,PFSense,Hardware,HomeLab," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Network and Homelab V.Next (Part 1)"/>
+<meta name="twitter:description" content="So, its that time again&hellip; HomeLab upgrade time&hellip; Or at least the planning for it. I am in the process of rebuilding my home lab, which involves pull all old servers out of the rack and replacing them with new ones&hellip; It also means rewriting the network, possibly upgrading some existing gear and hopefully getting the whole lot done on a budget of some sort&hellip;
+So, why? Well, biggest reason for all this is currently heat and power usage."/>
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.42.1" />
+
+
+    <base href="https://www.tiernanotoole.ie/">
+    <link rel="canonical" href="https://www.tiernanotoole.ie/2015/06/14/network-and-homelab-vnext-part-1.html">
+    <title>Network and Homelab V.Next (Part 1) | Tiernan&#39;s Comms Closet</title>
+
+    <!-- CSS -->
+    <link href="https://www.tiernanotoole.ie/css/app.css" rel="stylesheet">
+
+    
+
+    
+
+    
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-220614-15', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+<script src="cloudinary-core-shrinkwrap.js" type="text/javascript"></script>
+
+   
+<script type="text/javascript">
+    var appInsights = window.appInsights || function(a) {
+        function b(a) {
+            c[a] = function() {
+                var b = arguments;
+                c.queue.push(function() {
+                    c[a].apply(c, b)
+                })
+            }
+        }
+        var c = {
+                config: a
+            },
+            d = document,
+            e = window;
+        setTimeout(function() {
+            var b = d.createElement("script");
+            b.src = a.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js", d.getElementsByTagName("script")[0].parentNode.appendChild(b)
+        });
+        try {
+            c.cookie = d.cookie
+        } catch (a) {}
+        c.queue = [];
+        for (var f = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; f.length;) b("track" + f.pop());
+        if (b("setAuthenticatedUserContext"), b("clearAuthenticatedUserContext"), b("startTrackEvent"), b("stopTrackEvent"), b("startTrackPage"), b("stopTrackPage"), b("flush"), !a.disableExceptionTracking) {
+            f = "onerror", b("_" + f);
+            var g = e[f];
+            e[f] = function(a, b, d, e, h) {
+                var i = g && g(a, b, d, e, h);
+                return !0 !== i && c["_" + f](a, b, d, e, h), i
+            }
+        }
+        return c
+    }({
+        instrumentationKey: "6ba6d0d3-8f0c-43c9-bea2-1547cb66b576"
+    });
+
+    window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length && appInsights.trackPageView();
+</script>
+
+  </head>
+  <body>
+
+    <header class="nav">
+      <div class="top-bar">
+        <div class="row column">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li><a href="https://www.tiernanotoole.ie/">
+                  Tiernan's Comms Closet
+                </a></li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu">
+              <li class=""><a href="https://www.tiernanotoole.ie/">
+                Home
+              </a></li>
+              
+                
+                  <li><a href="https://www.tiernanotoole.ie/dailycarry/">
+                    Daily Carry
+                  </a></li>
+                
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <header class="blog-header">
+      <div class="callout large">
+        <div class="row column text-center">
+          <h1>
+            <a href="https://www.tiernanotoole.ie/" rel="home">Tiernan's Comms Closet</a>
+          </h1>
+          
+            <p>
+              Geek, Programmer, Photographer&hellip;
+            </p>
+          
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="row" id="content">
+        <div class="medium-8 columns">
+          
+  
+
+
+  <div class="blog-post">
+    <h3>
+      <a href="https://www.tiernanotoole.ie/2015/06/14/network-and-homelab-vnext-part-1.html">Network and Homelab V.Next (Part 1)</a>
+    </h3>
+    <div class="callout small">
+      <small>
+        <time datetime="2015-06-14T16:05:00Z">
+          Sun Jun 14, 2015
+        </time> by .
+        
+        Tags: 
+  
+    
+      <a href="/tags/networking.html">
+        Networking
+      </a>
+  
+    ,
+    
+      <a href="/tags/pfsense.html">
+        PFSense
+      </a>
+  
+    ,
+    
+      <a href="/tags/hardware.html">
+        Hardware
+      </a>
+  
+    ,
+    
+      <a href="/tags/homelab.html">
+        HomeLab
+      </a>
+  
+
+.
+        <br>
+        
+          Share
+
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.tiernanotoole.ie%2f2015%2f06%2f14%2fnetwork-and-homelab-vnext-part-1.html" title="Share on Facebook">
+      Facebook
+    </a>,
+
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.tiernanotoole.ie%2f2015%2f06%2f14%2fnetwork-and-homelab-vnext-part-1.html" title="Share on Google+">
+      Google+
+    </a>,
+
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.tiernanotoole.ie%2f2015%2f06%2f14%2fnetwork-and-homelab-vnext-part-1.html" title="Share on LinkedIn">
+      LinkedIn
+    </a>,
+
+
+    <a href="https://twitter.com/home?status=https%3a%2f%2fwww.tiernanotoole.ie%2f2015%2f06%2f14%2fnetwork-and-homelab-vnext-part-1.html" title="Tweet this">
+      Twitter
+    </a>
+
+
+        
+      </small>
+    </div>
+    <p>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6435972961836580"
+             data-ad-slot="5573260001"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+      <p>So, its that time again&hellip; <a href="http://tiernanotoole.ie/Computers">HomeLab</a> upgrade time&hellip; Or at least the planning for it. I am in the process of rebuilding my home lab, which involves pull all old servers out of the rack and replacing them with new ones&hellip; It also means rewriting the network, possibly upgrading some existing gear and hopefully getting the whole lot done on a budget of some sort&hellip;</p>
+
+<p>So, why? Well, biggest reason for all this is currently heat and power usage. We use about 4-6x more electricity than the average house here in Ireland, which means our electricity bill is fairly high. It also means that the lab, which is also my office/bedroom, gets quite warm and uncomfortable during the summer month. There is an Air-Con unit in the room, and, well, that&rsquo;s costing the most on electricity!</p>
+
+<p>So, what I got is a basic overview of what I want from the homelab and hopefully in the next post, I will have an idea of what it will look like..</p>
+
+<ul>
+<li>3-4 machines running a Hyper Visor (HyperV, VMWare ESXi or other). Leaning more towards Hyper-V purely because its what I got currently and its what we use in our main office.</li>
+<li>each machine should be connected to at least 2 networks: one for storage and migration, one for &ldquo;public&rdquo; to the LAN. There may be more VLANs for other networks, but 2 is a start.</li>
+<li>ideally, 10Gb connections would be nice, but multiple 1Gb connections would also work.</li>
+<li>shared storage (iSCSI, SMB3, etc) would also be a nice to have, but may bump up the server count (not actually a problem) but would increase power and cooling costs. An off the shelf box, like a <a href="http://www.synology.com">Synology</a> could do the job&hellip;</li>
+<li>Lower power usage and less heat produced is also a major requirement. Most of the boxes I am decommissioning are older Xeon hardware (<a href="http://ark.intel.com/products/family/28144/Intel-Xeon-Processor-5000-Sequence#@All">5000</a> series upto a <a href="http://ark.intel.com/products/series/33092/Intel-Xeon-Processor-5200-Series#@All">5200</a> series process and even an <a href="https://en.wikipedia.org/wiki/Xeon#Netburst-based_Xeon">older Xeon P4</a>!). The newer <a href="http://www.intel.ie/content/www/ie/en/processors/xeon/xeon-processor-e3-family.html">Xeon E3</a> and the even newer <a href="http://www.intel.ie/content/www/ie/en/processors/xeon/xeon-processor-d-family.html">Xeon D</a> are a lot more efficient, use less power, produce less heat and are way faster than what I currently have. The E3 can use up to 32Gb of RAM and the Xeon D top out at 128Gb&hellip; Me being me would like more than 32Gb RAM&hellip; :)</li>
+<li>smaller machines would also be nice. I have been looking at both Xeon D and Xeon E3 Mini-ITX boards and cases for them. I do have a half height Dell Rack, which I host these machines, and ideally, these machines should be rack mountable, but micro ATX cases could work. 2 per shelf would work grand.</li>
+<li>Onboard IPMI and KVM support is something I want too&hellip; I do have a KVMoIP switch in the house, and it works, most of the time, but getting a box that has this embedded into the board would be ideal&hellip; A lot of the server boards had it as standard or allowed it to be speced, so that&rsquo;s all good.</li>
+<li>I am also thinking of upgrading the router to a similar spec board&hellip; Possibly a Xeon E3, or even an i5&hellip;. Ideally it should have IPMI and KVMoIP on board and should produce less heat. Biggest issues is getting enough network cards into the box&hellip;</li>
+</ul>
+
+<p>These are my requirements at a  high level overview. Over time things may change, but lets see how we get on&hellip;</p>
+
+    </p>
+    
+    <hr>
+  </div>
+
+  
+    
+<div id="disqus_thread"></div>
+<script>
+
+ var disqus_config = function () {
+        this.page.url = "https://www.tiernanotoole.ie/2015/06/14/Network-and-homelab-vnext-part-1.html";  
+        this.page.identifier = "https://www.tiernanotoole.ie/2015/06/14/Network-and-homelab-vnext-part-1.html"; 
+    };
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://tiernanotooleie.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6435972961836580"
+     data-ad-slot="1003459608"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+<a href="https://www.tiernanotoole.ie/2015/06/14/network-and-homelab-vnext-part-1.html" class="hide-child link primary-color">“Network and Homelab V.Next (Part 1)”</a> was last updated: 
+July 4, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/683268775dc2ea118ebc7bc8b387defe55261fd0">updating posts and a bit of cleanup 
+  (6832687)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2015-06-14-Network-and-homelab-vnext-part-1.markdown">Improve this page</a>
+
+        </div>
+          <div class="medium-3 columns" data-sticky-container>
+  <div class="sticky" data-sticky data-anchor="content">
+
+  
+    <h4>About</h4>
+    <p>homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</p>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-6435972961836580"
+       data-ad-slot="2480192807"
+       data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  
+
+  <h4>Recent Posts</h4>
+  <ul>
+    
+      <li><a href="/2018/07/04/moving-the-site-to-hugo.html">
+        Moving the site to Hugo
+      </a></li>
+    
+      <li><a href="/2018/07/02/playing-with-amd-epyc.html">
+        Playing with AMD&rsquo;s Epyc
+      </a></li>
+    
+      <li><a href="/2018/04/01/as204994-own-ip-space-and-anycast.html">
+        AS204994, Own IP Space and Anycast
+      </a></li>
+    
+      <li><a href="/2018/03/06/blogging-on-ipad.html">
+        Blogging on an iPad Pro
+      </a></li>
+    
+      <li><a href="/2017/09/25/new-backup-plans.html">
+        New Backup Plans
+      </a></li>
+    
+      <li><a href="/2017/08/16/testing-forestry.html">
+        Testing Forestry
+      </a></li>
+    
+      <li><a href="/2017/05/06/vscode-with-powershell.html">
+        VSCode and Markdown Monster with Powershell
+      </a></li>
+    
+      <li><a href="/2017/05/05/zerotier-minio-update.html">
+        Zerotier and Minio Followup
+      </a></li>
+    
+      <li><a href="/2017/03/09/business-class-broadband.html">
+        Business Class Broadband&hellip; finally here&hellip;.
+      </a></li>
+    
+      <li><a href="/2017/01/19/distributed-s3-storage-minio-zerotier.html">
+        Distributed S3 data storage using Minio (and Zerotier)
+      </a></li>
+    
+  </ul>
+
+  
+    <h4>Links</h4>
+    <ul>
+      
+        <li><a href="https://www.tiernanotoole.ie/dailycarry/">
+          Daily Carry
+        </a></li>
+      
+        <li><a href="https://geekphotographer.com">
+          Geek Photographer
+        </a></li>
+      
+    </ul>
+  
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="blog-footer">
+      <div class="row column">
+        <p>
+          
+          2018 Tiernan OToole
+          
+        </p>
+        <p>
+          <a href="https://www.tiernanotoole.ie/2015/06/14/network-and-homelab-vnext-part-1.html#">Back to top</a>
+        </p>
+      </div>
+    </footer>
+
+  <foot>
+
+    <script src="https://www.tiernanotoole.ie/js/app.js"></script>
+
+
+    <script type="text/javascript">
+      var vglnk = {
+          key: 'aecb90add8b6f7192e42ddfa3e65b611'
+      };
+  
+      (function(d, t) {
+          var s = d.createElement(t);
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = '//cdn.viglink.com/api/vglnk.js';
+          var r = d.getElementsByTagName(t)[0];
+          r.parentNode.insertBefore(s, r);
+      }(document, 'script'));
+  </script>
+  
+
+  </foot>
+  </body>
+</html>
