@@ -16,7 +16,7 @@
 
 <meta property="article:published_time" content="2018-07-05T16:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-07-05T17:12:48&#43;00:00"/>
+<meta property="article:modified_time" content="2018-07-06T06:42:43&#43;00:00"/>
 
 
 
@@ -36,7 +36,7 @@
 
 <meta itemprop="datePublished" content="2018-07-05T16:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-07-05T16:40:23&#43;00:00" />
-<meta itemprop="wordCount" content="311">
+<meta itemprop="wordCount" content="400">
 
 
 
@@ -294,6 +294,8 @@ if (!doNotTrack) {
 
 <p>So, there you have it. A complete automated deploy across multiple servers! Any questions, leave a comment below!</p>
 
+<p>[UPDATE] yesterday i mentioned i had to modify the <a href="https://github.com/adnanh/webhook/blob/master/docs/Hook-Examples.md">sample that was included</a> on the webhook site. Well, i noticed something this morning. The reason i needed it modified was the trigger rule was checking the header and the reference for the branch, but any time i ran it, it would not trigger&hellip; The reason was simple: the webhook app is expecting <code>application/json</code> but i had it set to <code>application/x-www-form-urlencoded</code> which is the default&hellip; the webhook app then couldent parse it correctly&hellip; changing that fixes the problem! happy days!</p>
+
     </p>
     
     <hr>
@@ -333,8 +335,8 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <br>
 <a href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html" class="hide-child link primary-color">“Auto deploying to multiple servers with GitHub and Webhooks”</a> was last updated: 
-July 5, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/b64c9ae2124cc6f4ac72e9c7dcec9a37d077da0b">Update from Forestry.io - Updated auto-deploying-to-multiple-servers-with-github-and-webhooks.md 
-  (b64c9ae)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/auto-deploying-to-multiple-servers-with-github-and-webhooks.md">Improve this page</a>
+July 6, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/bea51d15f83c7077af6d78a9328ece436591cba1">Update from Forestry.io - Updated auto-deploying-to-multiple-servers-with-github-and-webhooks.md 
+  (bea51d1)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/auto-deploying-to-multiple-servers-with-github-and-webhooks.md">Improve this page</a>
 
         </div>
           <div class="medium-3 columns" data-sticky-container>
