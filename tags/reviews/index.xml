@@ -18,7 +18,7 @@
       <pubDate>Mon, 02 Jul 2018 21:00:00 +0000</pubDate>
       
       <guid>https://www.tiernanotoole.ie/2018/07/02/playing-with-amd-epyc.html</guid>
-      <description>So, a few days back I got an email from Packet.net about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an AMD EPYC 7401P which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main stoage.</description>
+      <description>So, a few days back I got an email from Packet.net about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an AMD EPYC 7401P which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main storage.</description>
     </item>
     
   </channel>

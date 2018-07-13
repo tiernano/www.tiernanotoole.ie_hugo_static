@@ -16,7 +16,7 @@
 
 <meta property="article:published_time" content="2018-07-04T17:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-07-05T16:57:14&#43;01:00"/>
+<meta property="article:modified_time" content="2018-07-13T16:56:39&#43;01:00"/>
 
 
 
@@ -237,7 +237,7 @@ if (!doNotTrack) {
 
 <p>[update] I though i should probably update this post with a bit more information around hows its built, why i moved to Hugo, and some more links, etc.</p>
 
-<p>First, it is currently being built using <a href="http://www.forestry.io">Forestry.io</a>. I use it for both editing the documents (mind you i also use VScode for this too) and ii also builds the site now too. I have 2 Github repos. <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo">The main code</a> and the <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo_static">Static HTML</a>. When i check into Github, it it sends a webhook to Forestry, which then pulls the latest code and builds the site, and then checks the resulting files into the static HTML repo. Currently its a manual process to get it on to my server. This site is currently hosted on a server in London with my own <a href="https://www.tiernanotoole.ie/2018/04/01/as204994-own-ip-space-and-anycast.html">AS204994</a> serving the pages. I plan on adding other servers to the list so its proper anycast, but currently only 1 is running as a web server currently (there are 4 others, if you include the one in the house: 3 in total hosted on <a href="https://www.vultr.com/?ref=6925432">Vultr</a> (Lon, Fra, NYC) 1 in <a href="http://www.devcapsule.com">DevCapsule</a> and then the house) but that is my next challange&hellip;</p>
+<p>First, it is currently being built using <a href="http://www.forestry.io">Forestry.io</a>. I use it for both editing the documents (mind you i also use VScode for this too) and ii also builds the site now too. I have 2 Github repos. <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo">The main code</a> and the <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo_static">Static HTML</a>. When i check into Github, it it sends a webhook to Forestry, which then pulls the latest code and builds the site, and then checks the resulting files into the static HTML repo. Currently its a manual process to get it on to my server. This site is currently hosted on a server in London with my own <a href="https://www.tiernanotoole.ie/2018/04/01/as204994-own-ip-space-and-anycast.html">AS204994</a> serving the pages. I plan on adding other servers to the list so its proper any-cast, but currently only 1 is running as a web server currently (there are 4 others, if you include the one in the house: 3 in total hosted on <a href="https://www.vultr.com/?ref=6925432">Vultr</a> (LON, FRA, NYC) 1 in <a href="http://www.devcapsule.com">DevCapsule</a> and then the house) but that is my next challenge&hellip;</p>
 
 <p>Next question is why? Well, over the last few months, its taking longer and longer to build the site using Jekyll&hellip; Its also getting more painful to maintain, since you have to mess with dependancy hell when updates come out&hellip;</p>
 
@@ -253,7 +253,7 @@ if (!doNotTrack) {
 
 
 
-<p>Now, in all fairness, this is building on a clean machine with no bundle caching, and i did have builde caching at some stage, but its still takes a long enough (30-40 seconds in some cases) to build compaired to Hugo:</p>
+<p>Now, in all fairness, this is building on a clean machine with no bundle caching, and i did have bundle caching at some stage, but its still takes a long enough (30-40 seconds in some cases) to build compared to Hugo:</p>
 
 
 <a href="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530736323/hugo-build.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530736323/hugo-build.png" alt=""></a>
@@ -266,7 +266,7 @@ if (!doNotTrack) {
 
 <ul>
 <li><a href="https://gohugo.io/documentation/">The Hugo Documentation site</a> should be your first point of call&hellip; Lots of handy stuff in there&hellip;</li>
-<li><a href="https://forestry.io/blog/search-with-algolia-in-hugo/">Adding Search with Algoia</a> Since the site is static, search doesnt currently work&hellip; but with the help of a hosted service named <a href="https://algolia.com/">Algoia</a> you can get around that easily enough&hellip;</li>
+<li><a href="https://forestry.io/blog/search-with-algolia-in-hugo/">Adding Search with Algoia</a> Since the site is static, search doesn&rsquo;t currently work&hellip; but with the help of a hosted service named <a href="https://algolia.com/">Algoia</a> you can get around that easily enough&hellip;</li>
 <li><a href="https://forestry.io/blog/build-a-json-api-with-hugo/">Turn your static site into a JSON API</a>: I am thinking of tweaking the Computers pages (they stopped working as planned when i moved over) and using a JSON API for it&hellip; Same with the tools list&hellip;</li>
 <li><a href="https://gohugo.io/content-management/shortcodes/">Short Codes</a>: Hugo doesn&rsquo;t really have a plugin model like Jekyll did&hellip; but there is still a lot of interesting things you can do&hellip; Short codes lets you write custom HTML that gets generated when you put in a particular block of code&hellip; Have a look at the link on the bottom of the page to see the code used to generate this page.</li>
 <li><a href="https://cloudinary.com/invites/lpov9zyyucivvxsnalc5/odc5hvptjxifri3jusn9">Cloudinary</a>: Since moving so static sites, i have found images to be a pain in the ass&hellip; Found these guys the other day, and they integrate well with Forestry. and their free version works grand for smaller sites&hellip;</li>
@@ -315,8 +315,8 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <br>
 <a href="https://www.tiernanotoole.ie/2018/07/04/moving-the-site-to-hugo.html" class="hide-child link primary-color">“Moving the site to Hugo”</a> was last updated: 
-July 5, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/1b2f1da3324878cbfd5a37a19e4adbc2f39ef806">post tweaks 
-  (1b2f1da)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/moving-the-site-to-hugo.md">Improve this page</a>
+July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/c1d01f304c7d3fd2a7af19670f9b491aa1cb6e1f">fixing spelling issues with my iPad... 
+  (c1d01f3)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/moving-the-site-to-hugo.md">Improve this page</a>
 
         </div>
           <div class="medium-3 columns" data-sticky-container>
