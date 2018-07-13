@@ -15,7 +15,7 @@
 
 <meta property="article:published_time" content="2012-09-17T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-07-13T08:18:50&#43;01:00"/>
+<meta property="article:modified_time" content="2018-07-13T08:19:06&#43;01:00"/>
 
 
 
@@ -49,7 +49,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.42.1" />
+<meta name="generator" content="Hugo 0.44-DEV" />
 
 
     <base href="https://www.tiernanotoole.ie/">
@@ -244,8 +244,7 @@ if (!doNotTrack) {
 
       <p>Something I do on a regular basis is use the internet while &ldquo;out and about&rdquo;. This could be college, which has a semi open network, or it could be a coffee shop, which also usually has a semi open connection. There is also the possibility of using the a mobile internet connection on my iPhone, which can be slow, but at least its only shared with me&hellip; Anyway, over on RevSys.com, there is a post <a href="http://www.revsys.com/writings/quicktips/ssh-tunnel.html">SSH Tunneling made simple</a> which shows you how to open an SSH tunnel to your machine somewhere else (could be at home, as is my case, or a VPS/Dedicated server somewhere, or even on Amazon&hellip;) and use that for different things&hellip; In the case he shows, its for SMTP access. For my case, i am forwarding my local port 3128 to my Microsoft TMG 2010 Server in house on port 8080. Then my system proxy on my laptop is set to use localhost:3128 for all web and HTTPS requests. Very handy. One other tip: Using the -C flag, so your command may look like:</p>
 
-<pre><code>ssh yourname@remotemachine -L 3128:remoteMachine:8080 -C
-</code></pre>
+<p><code>ssh yourname@remotemachine -L 3128:remoteMachine:8080 -C</code></p>
 
 <p>will compress data between you and the SSH server, which for basic web browsing (HTML, CSS, JS) will make things faster, but for stuff like images, etc, may not work so well&hellip; Your Mileage may Vary&hellip;</p>
 
@@ -290,8 +289,8 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <br>
 <a href="https://www.tiernanotoole.ie/2012/09/17/ssh-tunneling-made-simple.html" class="hide-child link primary-color">“SSH Tunneling made simple”</a> was last updated: 
-July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/c8b9f0df3f01f8a0f0f761335f0d3c75153d94ef">fixing aliases 
-  (c8b9f0d)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2012-09-17-SSH-Tunneling-Made-Simple.markdown">Improve this page</a>
+July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/41e62ff9093a7ef1014ed157de9d8c2c5d15a99a">tweaks 
+  (41e62ff)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2012-09-17-SSH-Tunneling-Made-Simple.markdown">Improve this page</a>
 
         </div>
           <div class="medium-3 columns" data-sticky-container>

@@ -799,7 +799,8 @@ Anyway, The Raspberry Pi, on the other hand, has a 700Mhz processor, 256Mb RAM a
       
       <guid>https://www.tiernanotoole.ie/2012/09/24/microtik-routeros-vpn-setup.html</guid>
       <description>I have been running a MikroTik RouterBoard in the house for a couple of months now (the RB750G) and I am very much loving the thing. But one thing you may need to do is setup VPN connections&amp;hellip; Here are some tips on how to create a VPN Server and Client on your RouterBoard.
-Client Setup to setup a client, you need to do the following:
+##Client Setup
+to setup a client, you need to do the following:
  What does that all do?</description>
     </item>
     
@@ -857,7 +858,8 @@ Client Setup to setup a client, you need to do the following:
       
       <guid>https://www.tiernanotoole.ie/2012/08/31/sublimetext-with-powershell.html</guid>
       <description>My new Favorite cross platform text editor is Sublime Text 2. It works on Windows, Mac OS and Linux, and i am very happy with it. My only problem is the path to start it is not exactly easy to type&amp;hellip; So, with the help of PowerShell, my new favorite command line tool on Windows, i added an alias:
-Set-Alias subl &#39;c:\program files\sublime text 2\sublime_text.exe&#39;  I added this to my Microsoft.</description>
+Set-Alias subl &#39;c:\program files\sublime text 2\sublime_text.exe&#39;
+I added this to my Microsoft.</description>
     </item>
     
     <item>
