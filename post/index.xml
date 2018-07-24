@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2018 Tiernan OToole</copyright>
-    <lastBuildDate>Thu, 05 Jul 2018 16:40:23 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jul 2018 17:25:19 +0100</lastBuildDate>
     
 	<atom:link href="https://www.tiernanotoole.ie/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Finally going all in on VoIP</title>
+      <link>https://www.tiernanotoole.ie/2018/07/24/finally-going-all-in-on-voip.html</link>
+      <pubDate>Tue, 24 Jul 2018 17:25:19 +0100</pubDate>
+      
+      <guid>https://www.tiernanotoole.ie/2018/07/24/finally-going-all-in-on-voip.html</guid>
+      <description>After many years, I am finally trying to move to a proper VoIP system for the house. This post will explain what I am using, how I am setting it up, and some other details you might (or might not) find useful.
+First, backstory. I have been interested in VoIP for many years. The first post I wrote about Ito this site was here back in 2012, but I had posted about it on my other site back in 2008.</description>
+    </item>
     
     <item>
       <title>Auto deploying to multiple servers with GitHub and Webhooks</title>
