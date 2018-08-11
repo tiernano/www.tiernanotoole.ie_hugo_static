@@ -125,6 +125,11 @@ if (!doNotTrack) {
     window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length && appInsights.trackPageView();
 </script>
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.0/dist/instantsearch.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.0"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.0/dist/instantsearch-theme-algolia.min.css">
+
   </head>
   <body>
 
@@ -316,6 +321,16 @@ July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//
     <p>homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</p>
   
 
+    
+  <div id="search-box">
+    
+  </div>
+
+  <div id="hits">
+    
+  </div>
+
+
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
   <ins class="adsbygoogle"
@@ -428,6 +443,33 @@ July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//
       }(document, 'script'));
   </script>
   
+  <script type="text/javascript">
+    const search = instantsearch({
+    appId: '1T1XKYZNL5',
+    apiKey: '7bbbf8cd1d237b7ef691bdf6d39d44e3',
+    indexName: 'staticsite',
+    routing: true
+    });
+
+    search.addWidget(
+    instantsearch.widgets.hits({
+      container: '#hits',
+      templates: {
+          empty: 'No results',
+          item: '<div><a href="{{{permalink}}}">{{{ _highlightResult.title.value }}}</a></div>'
+        }
+      })
+    );
+
+     search.addWidget(
+    instantsearch.widgets.searchBox({
+      container: '#search-box',
+      placeholder: 'Search for posts'
+    })
+    );
+
+    search.start();
+  </script>
 
   </foot>
   </body>

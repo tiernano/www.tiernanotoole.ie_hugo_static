@@ -15,7 +15,7 @@
 
 <meta property="article:published_time" content="2012-09-03T10:28:11&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-07-13T08:18:50&#43;01:00"/>
+<meta property="article:modified_time" content="2018-08-11T01:04:42&#43;01:00"/>
 
 
 
@@ -118,6 +118,11 @@ if (!doNotTrack) {
 
     window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length && appInsights.trackPageView();
 </script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.0/dist/instantsearch.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.0"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.0/dist/instantsearch-theme-algolia.min.css">
 
   </head>
   <body>
@@ -277,8 +282,8 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <br>
 <a href="https://www.tiernanotoole.ie/2012/09/03/build-your-own-private-git-server.html" class="hide-child link primary-color">“Build your own Private GIT server”</a> was last updated: 
-July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/c8b9f0df3f01f8a0f0f761335f0d3c75153d94ef">fixing aliases 
-  (c8b9f0d)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2012-09-03-Build-Your-Own-Private-Git-Server.markdown">Improve this page</a>
+August 11, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/f6269582b09db8f774960ccccdaef6aa9faf6ea3">adding proper search 
+  (f626958)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2012-09-03-Build-Your-Own-Private-Git-Server.markdown">Improve this page</a>
 
         </div>
           <div class="medium-3 columns" data-sticky-container>
@@ -288,6 +293,16 @@ July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//
     <h4>About</h4>
     <p>homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</p>
   
+
+    
+  <div id="search-box">
+    
+  </div>
+
+  <div id="hits">
+    
+  </div>
+
 
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
@@ -401,6 +416,33 @@ July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//
       }(document, 'script'));
   </script>
   
+  <script type="text/javascript">
+    const search = instantsearch({
+    appId: '1T1XKYZNL5',
+    apiKey: '7bbbf8cd1d237b7ef691bdf6d39d44e3',
+    indexName: 'staticsite',
+    routing: true
+    });
+
+    search.addWidget(
+    instantsearch.widgets.hits({
+      container: '#hits',
+      templates: {
+          empty: 'No results',
+          item: '<div><a href="{{{permalink}}}">{{{ _highlightResult.title.value }}}</a></div>'
+        }
+      })
+    );
+
+     search.addWidget(
+    instantsearch.widgets.searchBox({
+      container: '#search-box',
+      placeholder: 'Search for posts'
+    })
+    );
+
+    search.start();
+  </script>
 
   </foot>
   </body>
