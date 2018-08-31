@@ -248,14 +248,14 @@ if (!doNotTrack) {
 <p>So, my first test is the usual test: building the Linux Kernel. I know that this is something that the lads at <a href="http://www.servethehome.com">ServeTheHome</a> do a lot but its something i wanted to try my self&hellip; So, first i installed <code>git</code> and <code>build essential</code>, then <code>bison</code>, <code>flex</code> and <code>ncurses-dev</code>, then i cloned Linus&rsquo; git repo at <code>git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git</code>. First things first: this machine has a twin 10gb link, a shead load of cores and some very fast storage. How long did it take to clone? it download 1.02 GiB at 35.32MiB/s (about 30 seconds and about 280Mbit/s) and all in, took <strong>2 min 55 seconds</strong> to clone. I then ran <code>time make -j 49</code> to see how long it would take&hellip; hmmm&hellip; no config file&hellip; <code>make menuconfig</code> and just hit save&hellip; defaults are grand&hellip; time <code>make -j 49</code> again&hellip; and more errors&hellip; after a bit of googling, i find the page from Ubuntu <a href="https://wiki.ubuntu.com/KernelTeam/GitKernelBuild">showing what i need to do to build the kernel</a>. i follow that&hellip; download a LOT more stuff using their instructions, and finally, we get to build&hellip; Time: <strong>6 min 12 seconds</strong>&hellip; this is a FULL default build of the kernel&hellip;</p>
 
 
-<a href="https://res.cloudinary.com/tiernanotoole/image/upload/c_scale,f_auto,q_jpegmini:1,w_auto//v1530618253/top_kernel_build_epy_hdb0R.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/c_scale,f_auto,q_jpegmini:1,w_auto//v1530618253/top_kernel_build_epy_hdb0R.jpg" alt=""></a>
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale//v1530618253/top_kernel_build_epy_hdb0R.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale//v1530618253/top_kernel_build_epy_hdb0R.jpg" alt=""></a>
 
 
 
 <p>Same build on a VM on GodboxV2 (which was given 32GB RAM and 16 thread, so a full <a href="https://ark.intel.com/products/64607/Intel-Xeon-Processor-E5-4620-16M-Cache-2_20-GHz-7_20-GTs-Intel-QPI">Xeon E5-4620</a>) took <strong>8min 27s</strong> to clone (8.18MiB/s. or about 64Mbit/s) and <strong>36 min to build</strong>&hellip; yea, that is 3x less cores, 2x less memory, slower storage (This is on Spinny Disk, not SSD), slower network and it is also a VM VS bare metal, still, to be essentially 6 times slower? interesting&hellip; I might, at some stage, boot the machine off a live Linux USB and run some more tests, but not tonight&hellip;</p>
 
 
-<a href="https://res.cloudinary.com/tiernanotoole/image/upload/c_scale,f_auto,q_jpegmini:1,w_auto//v1530618253/top-kernel-build-godboxv2.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/c_scale,f_auto,q_jpegmini:1,w_auto//v1530618253/top-kernel-build-godboxv2.png" alt=""></a>
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale//v1530618253/top-kernel-build-godboxv2.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale//v1530618253/top-kernel-build-godboxv2.png" alt=""></a>
 
 
 
@@ -266,14 +266,14 @@ if (!doNotTrack) {
 <p>In total, there was 1546 photos exported, and the total file size was 15Gb. First obstacle was to get them uploaded to the Packet machine, which took a while (my upload speed is currently 40Mbit/s)&hellip; Once up, i downloaded a copy of dotnet core 2.0 SDK, cloned the repo with the project, built and ran&hellip; and man, its fast! <strong>4 min 43 seconds</strong>. And it used all the cores.</p>
 
 
-<a href="https://res.cloudinary.com/tiernanotoole/image/upload/c_scale,f_auto,q_jpegmini:1,w_auto/v1530618252/image-resizer-epyc.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/c_scale,f_auto,q_jpegmini:1,w_auto/v1530618252/image-resizer-epyc.png" alt=""></a>
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530618252/image-resizer-epyc.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530618252/image-resizer-epyc.png" alt=""></a>
 
 
 
 <p>Running the same code on GodBoxV2 on the bare metal (no VM this time), i got <strong>17 min 35 seconds</strong> of a run&hellip; Now, GodBoxV2 has other things running in the back ground, but not that much&hellip; I also noticed that, on average, photos were being processed in 3-5 seconds on Epyc, but nearly 13-15, and sometimes 20 and 25 seconds on GodBoxV2. I also noticed that on Epyc, the dotnet process took nearly 45GB of RAM&hellip; to run&hellip; On GodBoxV2, it took over 70!</p>
 
 
-<a href="https://res.cloudinary.com/tiernanotoole/image/upload/c_scale,f_auto,q_jpegmini:1,w_auto/v1530618252/image_resizer_godbox_f5de0.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/c_scale,f_auto,q_jpegmini:1,w_auto/v1530618252/image_resizer_godbox_f5de0.jpg" alt=""></a>
+<a href="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530618252/image_resizer_godbox_f5de0.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530618252/image_resizer_godbox_f5de0.jpg" alt=""></a>
 
 
 
