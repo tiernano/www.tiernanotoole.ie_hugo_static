@@ -11,24 +11,8 @@
 First things first, the pool consists of 4 2Tb hard drives and 1 128Gb SSD. Its setup in RAIDZ1 (equivilent of RAID 5) and then the SSD is set for caching.
 To create the pool i ran" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.tiernanotoole.ie/2015/08/10/zfs-home-dir.html" />
-
-
-
-<meta property="article:published_time" content="2015-08-10T11:40:00&#43;00:00"/>
-
+<meta property="og:url" content="https://www.tiernanotoole.ie/2015/08/10/zfs-home-dir.html" /><meta property="article:published_time" content="2015-08-10T11:40:00&#43;00:00"/>
 <meta property="article:modified_time" content="2018-07-13T08:18:50&#43;01:00"/>
-
-
-
-
-
-
-
-
-
-
-
 
 <meta itemprop="name" content="ZFS Home storage pool">
 <meta itemprop="description" content="Over the weekend, my BTRFS pool for my /home directory on Linux failed&hellip; Not sure what happened, but it made me do something i wanted to do for a while: Build a ZFS pool for my home dir.
@@ -55,7 +39,7 @@ To create the pool i ran"/>
 
 
 
-<meta name="generator" content="Hugo 0.45" />
+<meta name="generator" content="Hugo 0.48" />
 
 
     <base href="https://www.tiernanotoole.ie/">
@@ -70,7 +54,7 @@ To create the pool i ran"/>
     
 
     
-<script>
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -266,7 +250,7 @@ and then the SSD is set for caching.</p>
 <p>the pool (in my case) got mounted to /home, and then i restored my backup to it. to do some tests, i can the
 following&hellip;</p>
 
-<script src="//gist.github.com/tiernano/638891a7d9acac8e396f.js"></script>
+<script type="application/javascript" src="//gist.github.com/tiernano/638891a7d9acac8e396f.js"></script>
 
 <p>614MB/s write and 5.3GB a second read is nothing to be sniffed at! :)</p>
 

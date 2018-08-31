@@ -12,24 +12,8 @@
 to setup a client, you need to do the following:
  What does that all do?" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.tiernanotoole.ie/2012/09/24/microtik-routeros-vpn-setup.html" />
-
-
-
-<meta property="article:published_time" content="2012-09-24T00:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://www.tiernanotoole.ie/2012/09/24/microtik-routeros-vpn-setup.html" /><meta property="article:published_time" content="2012-09-24T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2018-07-13T08:19:06&#43;01:00"/>
-
-
-
-
-
-
-
-
-
-
-
 
 <meta itemprop="name" content="MicroTik RouterOS VPN Setup">
 <meta itemprop="description" content="I have been running a MikroTik RouterBoard in the house for a couple of months now (the RB750G) and I am very much loving the thing. But one thing you may need to do is setup VPN connections&hellip; Here are some tips on how to create a VPN Server and Client on your RouterBoard.
@@ -58,7 +42,7 @@ to setup a client, you need to do the following:
 
 
 
-<meta name="generator" content="Hugo 0.45" />
+<meta name="generator" content="Hugo 0.48" />
 
 
     <base href="https://www.tiernanotoole.ie/">
@@ -73,7 +57,7 @@ to setup a client, you need to do the following:
     
 
     
-<script>
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -264,7 +248,7 @@ if (!doNotTrack) {
 
 <p>to setup a client, you need to do the following:</p>
 
-<script src="//gist.github.com/tiernano/8581643.js"></script>
+<script type="application/javascript" src="//gist.github.com/tiernano/8581643.js"></script>
 
 <p>What does that all do? the first line creates an l2tp-client interface, pointing at &ldquo;servername&rdquo; with the username and password set. encryption, etc is enabled&hellip; Line 2 then enables the client. Line 3 sets all traffic comming from networkaddress/24 (for example, 192.168.0.<sup>1</sup>&frasl;<sub>24</sub>) to be sent though the VPN. any traffic going into networkaddress (same example) is not sent though the VPN. Line 4 creates a gateway, for all addresses (0.0.0.0/0) to use the VPN address. finally, NAT Masquerading is enabled on the VPN interface.</p>
 

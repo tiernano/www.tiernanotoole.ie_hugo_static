@@ -9,24 +9,8 @@
 <meta property="og:title" content="Playing with AMD&#39;s Epyc" />
 <meta property="og:description" content="So, a few days back I got an email from Packet.net about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an AMD EPYC 7401P which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main storage." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.tiernanotoole.ie/2018/07/02/playing-with-amd-epyc.html" />
-
-
-
-<meta property="article:published_time" content="2018-07-02T19:00:00&#43;00:00"/>
-
+<meta property="og:url" content="https://www.tiernanotoole.ie/2018/07/02/playing-with-amd-epyc.html" /><meta property="article:published_time" content="2018-07-02T19:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2018-07-13T16:56:39&#43;01:00"/>
-
-
-
-
-
-
-
-
-
-
-
 
 <meta itemprop="name" content="Playing with AMD&#39;s Epyc">
 <meta itemprop="description" content="So, a few days back I got an email from Packet.net about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an AMD EPYC 7401P which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main storage.">
@@ -49,7 +33,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.45" />
+<meta name="generator" content="Hugo 0.48" />
 
 
     <base href="https://www.tiernanotoole.ie/">
@@ -64,7 +48,7 @@
     
 
     
-<script>
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -257,7 +241,7 @@ if (!doNotTrack) {
 
 <p>First, i ran lscpu on the box to see what i was playing with:</p>
 
-<script src="//gist.github.com/tiernano/4877abe19c89f1e45e617da1b4d46447.js"></script>
+<script type="application/javascript" src="//gist.github.com/tiernano/4877abe19c89f1e45e617da1b4d46447.js"></script>
 
 <p>I then ran &lsquo;fdisk -l&rsquo; to see what disks i had to play with. on my machine sda and sdb where the 480gb SSDs, sdc was a 120gb that was empty and sdd was the boot drive&hellip; i installed the &lsquo;btrfs-progs&rsquo; and then formatted sda and sdb as a RAID0 array, which i then mounted to /mnt. this gave me just under 900gb to play with&hellip;</p>
 
