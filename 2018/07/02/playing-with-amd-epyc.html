@@ -10,7 +10,7 @@
 <meta property="og:description" content="So, a few days back I got an email from Packet.net about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an AMD EPYC 7401P which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main storage." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.tiernanotoole.ie/2018/07/02/playing-with-amd-epyc.html" /><meta property="article:published_time" content="2018-07-02T19:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2018-07-13T16:56:39&#43;01:00"/>
+<meta property="article:modified_time" content="2018-09-03T16:06:42&#43;01:00"/>
 
 <meta itemprop="name" content="Playing with AMD&#39;s Epyc">
 <meta itemprop="description" content="So, a few days back I got an email from Packet.net about a promotion they and AMD where running. Essentially, they gave me some credit for their service (i am an existing customer) to play with one of their c2.medium machines. A c2.medium comes with an AMD EPYC 7401P which consists of 24 physical cores clocked at 2Gz with an all core boost at 2.8Gb and a max clock of 3Gz, 48 threads, 64GB ECC Memory, 2x120GB SSDs for boot and 2x480GB SSDs for main storage.">
@@ -248,14 +248,14 @@ if (!doNotTrack) {
 <p>So, my first test is the usual test: building the Linux Kernel. I know that this is something that the lads at <a href="http://www.servethehome.com">ServeTheHome</a> do a lot but its something i wanted to try my self&hellip; So, first i installed <code>git</code> and <code>build essential</code>, then <code>bison</code>, <code>flex</code> and <code>ncurses-dev</code>, then i cloned Linus&rsquo; git repo at <code>git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git</code>. First things first: this machine has a twin 10gb link, a shead load of cores and some very fast storage. How long did it take to clone? it download 1.02 GiB at 35.32MiB/s (about 30 seconds and about 280Mbit/s) and all in, took <strong>2 min 55 seconds</strong> to clone. I then ran <code>time make -j 49</code> to see how long it would take&hellip; hmmm&hellip; no config file&hellip; <code>make menuconfig</code> and just hit save&hellip; defaults are grand&hellip; time <code>make -j 49</code> again&hellip; and more errors&hellip; after a bit of googling, i find the page from Ubuntu <a href="https://wiki.ubuntu.com/KernelTeam/GitKernelBuild">showing what i need to do to build the kernel</a>. i follow that&hellip; download a LOT more stuff using their instructions, and finally, we get to build&hellip; Time: <strong>6 min 12 seconds</strong>&hellip; this is a FULL default build of the kernel&hellip;</p>
 
 
-<a href="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale//v1530618253/top_kernel_build_epy_hdb0R.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale//v1530618253/top_kernel_build_epy_hdb0R.jpg" alt=""></a>
+<a href="https://images.tiernanotoole.net/Image/?inputImage=v1530618253%2ftop_kernel_build_epy_hdb0R.jpg"><img src="https://images.tiernanotoole.net/Image/?inputImage=v1530618253%2ftop_kernel_build_epy_hdb0R.jpg" alt=""></a>
 
 
 
 <p>Same build on a VM on GodboxV2 (which was given 32GB RAM and 16 thread, so a full <a href="https://ark.intel.com/products/64607/Intel-Xeon-Processor-E5-4620-16M-Cache-2_20-GHz-7_20-GTs-Intel-QPI">Xeon E5-4620</a>) took <strong>8min 27s</strong> to clone (8.18MiB/s. or about 64Mbit/s) and <strong>36 min to build</strong>&hellip; yea, that is 3x less cores, 2x less memory, slower storage (This is on Spinny Disk, not SSD), slower network and it is also a VM VS bare metal, still, to be essentially 6 times slower? interesting&hellip; I might, at some stage, boot the machine off a live Linux USB and run some more tests, but not tonight&hellip;</p>
 
 
-<a href="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale//v1530618253/top-kernel-build-godboxv2.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale//v1530618253/top-kernel-build-godboxv2.png" alt=""></a>
+<a href="https://images.tiernanotoole.net/Image/?inputImage=v1530618253%2ftop-kernel-build-godboxv2.png"><img src="https://images.tiernanotoole.net/Image/?inputImage=v1530618253%2ftop-kernel-build-godboxv2.png" alt=""></a>
 
 
 
@@ -266,14 +266,14 @@ if (!doNotTrack) {
 <p>In total, there was 1546 photos exported, and the total file size was 15Gb. First obstacle was to get them uploaded to the Packet machine, which took a while (my upload speed is currently 40Mbit/s)&hellip; Once up, i downloaded a copy of dotnet core 2.0 SDK, cloned the repo with the project, built and ran&hellip; and man, its fast! <strong>4 min 43 seconds</strong>. And it used all the cores.</p>
 
 
-<a href="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530618252/image-resizer-epyc.png"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530618252/image-resizer-epyc.png" alt=""></a>
+<a href="https://images.tiernanotoole.net/Image/?inputImage=v1530618252%2fimage-resizer-epyc.png"><img src="https://images.tiernanotoole.net/Image/?inputImage=v1530618252%2fimage-resizer-epyc.png" alt=""></a>
 
 
 
 <p>Running the same code on GodBoxV2 on the bare metal (no VM this time), i got <strong>17 min 35 seconds</strong> of a run&hellip; Now, GodBoxV2 has other things running in the back ground, but not that much&hellip; I also noticed that, on average, photos were being processed in 3-5 seconds on Epyc, but nearly 13-15, and sometimes 20 and 25 seconds on GodBoxV2. I also noticed that on Epyc, the dotnet process took nearly 45GB of RAM&hellip; to run&hellip; On GodBoxV2, it took over 70!</p>
 
 
-<a href="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530618252/image_resizer_godbox_f5de0.jpg"><img src="https://res.cloudinary.com/tiernanotoole/image/upload/w_auto,c_scale/v1530618252/image_resizer_godbox_f5de0.jpg" alt=""></a>
+<a href="https://images.tiernanotoole.net/Image/?inputImage=v1530618252%2fimage_resizer_godbox_f5de0.jpg"><img src="https://images.tiernanotoole.net/Image/?inputImage=v1530618252%2fimage_resizer_godbox_f5de0.jpg" alt=""></a>
 
 
 
@@ -318,8 +318,8 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <br>
 <a href="https://www.tiernanotoole.ie/2018/07/02/playing-with-amd-epyc.html" class="hide-child link primary-color">“Playing with AMD&#39;s Epyc”</a> was last updated: 
-July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/c1d01f304c7d3fd2a7af19670f9b491aa1cb6e1f">fixing spelling issues with my iPad... 
-  (c1d01f3)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2018-07-02-playing-with-amd-epyc.markdown">Improve this page</a>
+September 3, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/1089a3a90e13d2d4142dec14495858df1ae334cb">tweaking images url 
+  (1089a3a)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2018-07-02-playing-with-amd-epyc.markdown">Improve this page</a>
 
         </div>
           <div class="medium-3 columns" data-sticky-container>
