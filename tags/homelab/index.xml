@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2018 Tiernan OToole</copyright>
-    <lastBuildDate>Fri, 05 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Sep 2018 16:00:00 +0100</lastBuildDate>
     
 	<atom:link href="https://www.tiernanotoole.ie/tags/homelab/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Adding a Netgear LB2120 to the homelab</title>
+      <link>https://www.tiernanotoole.ie/2018/09/06/adding-netgear-lb2120-to-homelab.html</link>
+      <pubDate>Thu, 06 Sep 2018 16:00:00 +0100</pubDate>
+      
+      <guid>https://www.tiernanotoole.ie/2018/09/06/adding-netgear-lb2120-to-homelab.html</guid>
+      <description>A few months back, Three Ireland came out with an LTE broadband offer: Unlimited* LTE broadband for EUR30 per month. It did come with a 18 month contract, but I pulled the trigger and got it as a backup link. I picked this up in the local Three store, and they had a couple of options for modems: a couple of Huawei mobile Wifi hotspots (E5573 or E5577) or a Huawei B525 Modem, which is designed for home use.</description>
+    </item>
     
     <item>
       <title>Zerotier and Minio Followup</title>

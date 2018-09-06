@@ -10,7 +10,7 @@
 <meta property="og:description" content="Geek, Programmer, Photographer..." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.tiernanotoole.ie/tags/networking.html" />
-<meta property="og:updated_time" content="2016-04-02T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2016-04-14T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="Networking">
 <meta itemprop="description" content="Geek, Programmer, Photographer...">
@@ -155,6 +155,76 @@ if (!doNotTrack) {
         <div class="medium-8 columns">
           
 
+
+
+  
+
+<div class="blog-post">
+  <h3>
+    <a href="https://www.tiernanotoole.ie/2016/04/14/2-cable-modems-double-speed-part-4.html">2 Cable Modems = Double Speed? Part 4</a>
+  </h3>
+  <div class="callout small">
+    <small>
+      <time datetime="2016-04-14T00:00:00Z">
+        Thu Apr 14, 2016
+      </time> by .
+      
+      Tags: 
+  
+    
+      <a href="/tags/guide.html">
+        Guide
+      </a>
+  
+    ,
+    
+      <a href="/tags/networking.html">
+        Networking
+      </a>
+  
+    ,
+    
+      <a href="/tags/ipv6.html">
+        IPv6
+      </a>
+  
+    ,
+    
+      <a href="/tags/projects.html">
+        Projects
+      </a>
+  
+    ,
+    
+      <a href="/tags/howto.html">
+        HowTo
+      </a>
+  
+    ,
+    
+      <a href="/tags/homelab.html">
+        HomeLab
+      </a>
+  
+    ,
+    
+      <a href="/tags/double_internet.html">
+        Double_Internet
+      </a>
+  
+
+.
+    </small>
+  </div>
+  <p>
+    [NOTE] This part 4 in a series of posts. The rest can be found here.
+So, this week I went in a completely different direction that I have been thinking recently&hellip;
+So, the basic theory is as follows:
+ I am still using MPTCP kernels on both upstream and local machine now have 2 P2P UDP OpenVPN tunnels between house and cloud. Example config is here all TCP traffic (bar port 80) that hits the router in house is redirected to RedSocks RedSocks uses a socks server, Dante, as an upstream server on the cloud box since the socks traffic is over TCP (inside the UDP OpenVPN tunnel) it uses MPTCP having socks running, gives me quite the download speed, turning it off does not, hence the following tweet  Hmmmm.
+  </p>
+  <a href='https://www.tiernanotoole.ie/2016/04/14/2-cable-modems-double-speed-part-4.html'>Read more →</a>
+  <hr>
+</div>
 
 
   
@@ -654,49 +724,6 @@ So, why? Well, biggest reason for all this is currently heat and power usage.
 </div>
 
 
-  
-
-<div class="blog-post">
-  <h3>
-    <a href="https://www.tiernanotoole.ie/2015/05/30/pfsense-with-multiple-public-ips.html">PFSense with Multiple Public IPs</a>
-  </h3>
-  <div class="callout small">
-    <small>
-      <time datetime="2015-05-30T18:50:00Z">
-        Sat May 30, 2015
-      </time> by .
-      
-      Tags: 
-  
-    
-      <a href="/tags/networking.html">
-        Networking
-      </a>
-  
-    ,
-    
-      <a href="/tags/vmware.html">
-        VMWare
-      </a>
-  
-    ,
-    
-      <a href="/tags/pfsense.html">
-        PFSense
-      </a>
-  
-
-.
-    </small>
-  </div>
-  <p>
-    So, a few weeks back, i got my hands on a Hetzner Dedicated box. It has a quad core Xeon, 32Gb ram, 3x3Tb hdds, RAID controller and KVMoIP. one of the first thing i did was get myself a /29 IP pool (8 total, 6 usable IPs). There where already 3 IPs given to me: 1 for the KVM, one for the box itself, and 1 as the router for the IP block.
-  </p>
-  <a href='https://www.tiernanotoole.ie/2015/05/30/pfsense-with-multiple-public-ips.html'>Read more →</a>
-  <hr>
-</div>
-
-
 
 
   <div>
@@ -746,6 +773,10 @@ So, why? Well, biggest reason for all this is currently heat and power usage.
   <h4>Recent Posts</h4>
   <ul>
     
+      <li><a href="/2018/09/06/adding-netgear-lb2120-to-homelab.html">
+        Adding a Netgear LB2120 to the homelab
+      </a></li>
+    
       <li><a href="/2018/07/24/finally-going-all-in-on-voip.html">
         Finally going all in on VoIP
       </a></li>
@@ -780,10 +811,6 @@ So, why? Well, biggest reason for all this is currently heat and power usage.
     
       <li><a href="/2017/05/06/vscode-with-powershell.html">
         VSCode and Markdown Monster with Powershell
-      </a></li>
-    
-      <li><a href="/2017/05/05/zerotier-minio-update.html">
-        Zerotier and Minio Followup
       </a></li>
     
   </ul>
