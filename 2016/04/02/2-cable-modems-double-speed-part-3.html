@@ -285,26 +285,58 @@ if (!doNotTrack) {
 <p>First, using Squid installed on the DO box, i tried using WGET to download a file using it. If I did this on the DO box itself, i was getting 100MBytes/s&hellip; When I ran it over the MLPPP box, well, under 7 was achieved.</p>
 
 
-<a href="https://images.tiernanotoole.net/Image/?inputImage=v1530620915%2f20160402-sftp-over-mlppp-orig.png"><img src="https://images.tiernanotoole.net/Image/?inputImage=v1530620915%2f20160402-sftp-over-mlppp-orig.png" alt=""></a>
+<img 
+srcset="
+https://images.tiernanotoole.net/Image/?inputImage=v1530620915/20160402-sftp-over-mlppp-orig.png&width=500 500w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530620915/20160402-sftp-over-mlppp-orig.png&width=710 710w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530620915/20160402-sftp-over-mlppp-orig.png&width=1000 1000w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530620915/20160402-sftp-over-mlppp-orig.png&width=1420 1420w"
+src="https://images.tiernanotoole.net/Image/?inputImage=v1530620915%2f20160402-sftp-over-mlppp-orig.png&width=500" alt="">
 
 
 
 
-<a href="https://images.tiernanotoole.net/Image/?inputImage=20160402-downloading-over-mlppp-orig.PNG"><img src="https://images.tiernanotoole.net/Image/?inputImage=20160402-downloading-over-mlppp-orig.PNG" alt=""></a>
+
+
+<img 
+srcset="
+https://images.tiernanotoole.net/Image/?inputImage=20160402-downloading-over-mlppp-orig.PNG&width=500 500w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-downloading-over-mlppp-orig.PNG&width=710 710w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-downloading-over-mlppp-orig.PNG&width=1000 1000w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-downloading-over-mlppp-orig.PNG&width=1420 1420w"
+src="https://images.tiernanotoole.net/Image/?inputImage=20160402-downloading-over-mlppp-orig.PNG&width=500" alt="">
+
+
 
 
 
 <p>Then i though it might have been Squid. So, since the file had been downloaded to DO, i SFTPed into the box over the MLPPP link, and tried again&hellip; Again, pretty poor result. I think i seen it hit about 7MB a sec at one stage.</p>
 
 
-<a href="https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp2-over-mlppp-orig.PNG"><img src="https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp2-over-mlppp-orig.PNG" alt=""></a>
+<img 
+srcset="
+https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp2-over-mlppp-orig.PNG&width=500 500w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp2-over-mlppp-orig.PNG&width=710 710w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp2-over-mlppp-orig.PNG&width=1000 1000w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp2-over-mlppp-orig.PNG&width=1420 1420w"
+src="https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp2-over-mlppp-orig.PNG&width=500" alt="">
+
+
 
 
 
 <p>Here is what is showing on the DO box when running the SFTP download. You can see 2 connections from the 2 WAN links at home hitting the box, and they are balanced. Its just nowhere near the speed they are capable of.</p>
 
 
-<a href="https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp-over-mlppp-orig.PNG"><img src="https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp-over-mlppp-orig.PNG" alt=""></a>
+<img 
+srcset="
+https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp-over-mlppp-orig.PNG&width=500 500w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp-over-mlppp-orig.PNG&width=710 710w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp-over-mlppp-orig.PNG&width=1000 1000w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp-over-mlppp-orig.PNG&width=1420 1420w"
+src="https://images.tiernanotoole.net/Image/?inputImage=20160402-sftp-over-mlppp-orig.PNG&width=500" alt="">
+
+
 
 
 
@@ -319,12 +351,28 @@ if (!doNotTrack) {
 <p>Nothing else on his config files have changed. I did not do any of the masquerading stuff, mainly cause this was testing. I just want a tunnel to start with. When reading the vtund.conf file, you can see that encryption and compression are both turned off, and and the same in the ppp configuration. I also don&rsquo;t think the issue is to do with the CPU performance, since these are the screenshots of top running on both boxes:</p>
 
 
-<a href="https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-server-orig.PNG"><img src="https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-server-orig.PNG" alt=""></a>
+<img 
+srcset="
+https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-server-orig.PNG&width=500 500w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-server-orig.PNG&width=710 710w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-server-orig.PNG&width=1000 1000w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-server-orig.PNG&width=1420 1420w"
+src="https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-server-orig.PNG&width=500" alt="">
 
 
 
 
-<a href="https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-client-orig.PNG"><img src="https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-client-orig.PNG" alt=""></a>
+
+
+<img 
+srcset="
+https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-client-orig.PNG&width=500 500w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-client-orig.PNG&width=710 710w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-client-orig.PNG&width=1000 1000w,
+https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-client-orig.PNG&width=1420 1420w"
+src="https://images.tiernanotoole.net/Image/?inputImage=20160402-top-view-client-orig.PNG&width=500" alt="">
+
+
 
 
 

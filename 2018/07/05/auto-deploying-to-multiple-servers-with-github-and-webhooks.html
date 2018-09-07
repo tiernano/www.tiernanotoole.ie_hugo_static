@@ -8,14 +8,14 @@
 
 <meta property="og:title" content="Auto deploying to multiple servers with GitHub and Webhooks" />
 <meta property="og:description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
- using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;" />
+using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html" /><meta property="article:published_time" content="2018-07-05T16:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2018-09-03T16:06:42&#43;01:00"/>
 
 <meta itemprop="name" content="Auto deploying to multiple servers with GitHub and Webhooks">
 <meta itemprop="description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
- using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;">
+using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;">
 
 
 <meta itemprop="datePublished" content="2018-07-05T16:00:00&#43;00:00" />
@@ -29,7 +29,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Auto deploying to multiple servers with GitHub and Webhooks"/>
 <meta name="twitter:description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
- using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;"/>
+using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;"/>
 
 
 
@@ -231,7 +231,15 @@ if (!doNotTrack) {
       <p>In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!</p>
 
 
-<a href="https://images.tiernanotoole.net/Image/?inputImage=v1530809017%2fgithub-webhook.png"><img src="https://images.tiernanotoole.net/Image/?inputImage=v1530809017%2fgithub-webhook.png" alt=""></a>
+<img 
+srcset="
+https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=500 500w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=710 710w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=1000 1000w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=1420 1420w"
+src="https://images.tiernanotoole.net/Image/?inputImage=v1530809017%2fgithub-webhook.png&width=500" alt="">
+
+
 
 
 
@@ -254,28 +262,60 @@ if (!doNotTrack) {
 <p>next, head over to your project on Github and go to settings:</p>
 
 
-<a href="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-settings.png"><img src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-settings.png" alt=""></a>
+<img 
+srcset="
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=500 500w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=710 710w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=1000 1000w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=1420 1420w"
+src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-settings.png&width=500" alt="">
+
+
 
 
 
 <p>select webhooks and add new web hook</p>
 
 
-<a href="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-list.png"><img src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-list.png" alt=""></a>
+<img 
+srcset="
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=500 500w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=710 710w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=1000 1000w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=1420 1420w"
+src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-list.png&width=500" alt="">
+
+
 
 
 
 <p>Fill in the required details on the page, and click save.</p>
 
 
-<a href="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-create-webhook.png"><img src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-create-webhook.png" alt=""></a>
+<img 
+srcset="
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=500 500w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=710 710w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=1000 1000w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=1420 1420w"
+src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-create-webhook.png&width=500" alt="">
+
+
 
 
 
 <p>Github will go out and have a chat with the webhook and verify it can send and recieve stuff from the hook. You can see this in the deliveries section:</p>
 
 
-<a href="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-deliveries.png"><img src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-deliveries.png" alt=""></a>
+<img 
+srcset="
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=500 500w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=710 710w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=1000 1000w,
+https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=1420 1420w"
+src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-deliveries.png&width=500" alt="">
+
+
 
 
 

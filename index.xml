@@ -38,7 +38,7 @@ First, backstory. I have been interested in VoIP for many years. The first post 
       
       <guid>https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html</guid>
       <description>In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&amp;hellip; Well, not any more!
- using the magic of Github&amp;rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&amp;hellip;</description>
+using the magic of Github&amp;rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&amp;hellip;</description>
     </item>
     
     <item>
@@ -59,7 +59,7 @@ First, backstory. I have been interested in VoIP for many years. The first post 
       <guid>https://www.tiernanotoole.ie/computers/daily-carry.html</guid>
       <description>A couple of years back, I did a post about my Daily Carry for college&amp;hellip; Well, I have finished (ish) college, but i still cary a lot of weird and wonderful stuff&amp;hellip; So, this is the update&amp;hellip;
 So, the contents are as follows:
-  Microsoft SurfaceBook with an i7 processor, 16GB RAM and 512GB Storage, along with the dGPU. Samsung Galaxy Note 3 Beats by Dr. Dre Wireless on ear headphones.</description>
+ Microsoft SurfaceBook with an i7 processor, 16GB RAM and 512GB Storage, along with the dGPU. Samsung Galaxy Note 3 Beats by Dr. Dre Wireless on ear headphones.</description>
     </item>
     
     <item>
