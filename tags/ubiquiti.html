@@ -329,15 +329,6 @@ if (!doNotTrack) {
     <p>homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</p>
   
 
-
-  <div id="current-refined-values">
-    
-  </div>
-  
-  <div id="clear-all">
-    
-  </div>
-
   <div id="search-box">
     
   </div>
@@ -346,10 +337,11 @@ if (!doNotTrack) {
     
   </div>
 
-  <div id="pagination">
-    
+  <div id="poweredby">
+    <h4>Powered By</h4>
+    <p><a href="https://www.algolia.com"><img src="/logo-algolia-nebula-blue-full.svg" alt="search powered by Algolia"></a></p>
+    <p><a href="https://www.gohugo.io"><img src="/hugo-logo-wide.svg" alt="Hugo CMS"></a></p>
   </div>
-  
 
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
@@ -473,17 +465,6 @@ if (!doNotTrack) {
     searchClient
     });
 
-
-  
-  search.addWidget(
-    instantsearch.widgets.pagination({
-      container: '#pagination',
-      maxPages: 20,
-      
-      scrollTo: false
-    })
-  );
-
     search.addWidget(
     instantsearch.widgets.hits({
       container: '#hits',
@@ -494,7 +475,7 @@ if (!doNotTrack) {
       })
     );
 
-     search.addWidget(
+    search.addWidget(
     instantsearch.widgets.searchBox({
       container: '#search-box',
       placeholder: 'Search for posts',

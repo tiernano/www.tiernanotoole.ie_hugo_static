@@ -282,15 +282,6 @@ July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//
     <p>homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</p>
   
 
-
-  <div id="current-refined-values">
-    
-  </div>
-  
-  <div id="clear-all">
-    
-  </div>
-
   <div id="search-box">
     
   </div>
@@ -299,10 +290,11 @@ July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//
     
   </div>
 
-  <div id="pagination">
-    
+  <div id="poweredby">
+    <h4>Powered By</h4>
+    <p><a href="https://www.algolia.com"><img src="/logo-algolia-nebula-blue-full.svg" alt="search powered by Algolia"></a></p>
+    <p><a href="https://www.gohugo.io"><img src="/hugo-logo-wide.svg" alt="Hugo CMS"></a></p>
   </div>
-  
 
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
@@ -426,17 +418,6 @@ July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//
     searchClient
     });
 
-
-  
-  search.addWidget(
-    instantsearch.widgets.pagination({
-      container: '#pagination',
-      maxPages: 20,
-      
-      scrollTo: false
-    })
-  );
-
     search.addWidget(
     instantsearch.widgets.hits({
       container: '#hits',
@@ -447,7 +428,7 @@ July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//
       })
     );
 
-     search.addWidget(
+    search.addWidget(
     instantsearch.widgets.searchBox({
       container: '#search-box',
       placeholder: 'Search for posts',
