@@ -109,11 +109,10 @@ if (!doNotTrack) {
     window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length && appInsights.trackPageView();
 </script>
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.0/dist/instantsearch.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3.32.1/dist/algoliasearchLite.js" integrity="sha256-pMaJf0I78weeXGkRMBDO6jSulxC/q3sb0aPdtV2N8n0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@3.2.0" integrity="sha256-/8usMtTwZ01jujD7KAZctG0UMk2S2NDNirGFVBbBZCM=" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.0/dist/instantsearch-theme-algolia.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.1.1/themes/reset-min.css" integrity="sha256-JQ2nnTmybhOWSjfV3sa8mG0ZVhTCcORER4cyXc5HL10=" crossorigin="anonymous">
   </head>
   <body>
 
@@ -320,7 +319,15 @@ July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//
     <p>homepage of Tiernan OToole, Geek, photographer, GeekPhotographer, and lazy git.</p>
   
 
+
+  <div id="current-refined-values">
     
+  </div>
+  
+  <div id="clear-all">
+    
+  </div>
+
   <div id="search-box">
     
   </div>
@@ -329,6 +336,10 @@ July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//
     
   </div>
 
+  <div id="pagination">
+    
+  </div>
+  
 
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
@@ -413,7 +424,7 @@ July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//
       <div class="row column">
         <p>
           
-          2018 Tiernan OToole
+          2019 Tiernan OToole
           
         </p>
         <p>
@@ -443,12 +454,25 @@ July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//
   </script>
   
   <script type="text/javascript">
+
+    const searchClient = algoliasearch('1T1XKYZNL5', '7bbbf8cd1d237b7ef691bdf6d39d44e3');
+
     const search = instantsearch({
-    appId: '1T1XKYZNL5',
-    apiKey: '7bbbf8cd1d237b7ef691bdf6d39d44e3',
     indexName: 'staticsite',
-    routing: true
+    routing: true,
+    searchClient
     });
+
+
+  
+  search.addWidget(
+    instantsearch.widgets.pagination({
+      container: '#pagination',
+      maxPages: 20,
+      
+      scrollTo: false
+    })
+  );
 
     search.addWidget(
     instantsearch.widgets.hits({
@@ -463,7 +487,8 @@ July 13, 2018: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//
      search.addWidget(
     instantsearch.widgets.searchBox({
       container: '#search-box',
-      placeholder: 'Search for posts'
+      placeholder: 'Search for posts',
+      autoFocus: false
     })
     );
 
