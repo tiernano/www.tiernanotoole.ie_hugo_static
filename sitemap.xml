@@ -8,8 +8,44 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/homelab.html</loc>
+    <lastmod>2018-09-06T17:51:10+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/networking.html</loc>
+    <lastmod>2019-04-18T15:16:05+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/post.html</loc>
+    <lastmod>2019-04-18T15:16:05+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags.html</loc>
+    <lastmod>2019-04-18T15:16:05+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/</loc>
+    <lastmod>2019-04-18T15:16:05+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2018/07/24/finally-going-all-in-on-voip.html</loc>
     <lastmod>2018-07-24T16:34:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/voip.html</loc>
+    <lastmod>2018-07-24T16:34:06+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -18,8 +54,26 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/blogging.html</loc>
+    <lastmod>2019-03-20T15:21:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/tutorial.html</loc>
+    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2018/07/04/moving-the-site-to-hugo.html</loc>
     <lastmod>2018-07-24T10:41:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/computers.html</loc>
+    <lastmod>2019-03-20T13:46:04+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -28,8 +82,26 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/hardware.html</loc>
+    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2018/07/02/playing-with-amd-epyc.html</loc>
     <lastmod>2018-09-03T16:06:42+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/programming.html</loc>
+    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/reviews.html</loc>
+    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -38,8 +110,38 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/ipv6.html</loc>
+    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2018/03/06/blogging-on-ipad.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/tools.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/backblaze.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/backup.html</loc>
+    <lastmod>2018-07-13T08:24:11+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/crashplan.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -48,8 +150,32 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/tutorials.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/jekyll.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2017/08/16/testing-forestry.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/website.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/powershell.html</loc>
+    <lastmod>2019-03-20T15:21:17+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -73,6 +199,30 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/s3.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/storage.html</loc>
+    <lastmod>2018-07-13T08:24:11+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/development.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/docker.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2016/11/15/docker-jekyll-and-mr-ngrock.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
   </url>
@@ -85,6 +235,42 @@
   <url>
     <loc>https://www.tiernanotoole.ie/2016/09/14/cloud-desktop-becoming-reality..html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/cloud_desktop.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/workstation.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/double_internet.html</loc>
+    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/guide.html</loc>
+    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/howto.html</loc>
+    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/projects.html</loc>
+    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -113,8 +299,26 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/linux.html</loc>
+    <lastmod>2018-08-11T01:04:42+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/tips.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2016/04/23/useful-web-and-desktop-apps-2016-edition.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/windows.html</loc>
+    <lastmod>2018-07-13T08:19:06+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -125,6 +329,12 @@
   <url>
     <loc>https://www.tiernanotoole.ie/2016/04/14/2-cable-modems-double-speed-part-4.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/code.html</loc>
+    <lastmod>2018-07-13T08:24:11+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -148,6 +358,12 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/announcements.html</loc>
+    <lastmod>2018-07-13T08:24:11+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2016/03/24/continuous-integration-and-blogging.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
   </url>
@@ -163,13 +379,49 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/b2.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/hubic.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2015/09/30/edgerouter-sophosutm-dmz-lan-firwwalls.html</loc>
     <lastmod>2018-09-03T16:06:42+01:00</lastmod>
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/sophos_utm.html</loc>
+    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/ubiquiti.html</loc>
+    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2015/09/16/network-and-homelab-vnext-part-4.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/pfsense.html</loc>
+    <lastmod>2019-04-18T15:16:05+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/godboxv2.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -208,13 +460,43 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/vmware.html</loc>
+    <lastmod>2019-04-18T15:16:05+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2015/05/20/quick-tip-for-internet-facing-esxi.html</loc>
     <lastmod>2018-09-03T16:06:42+01:00</lastmod>
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/mikrotik.html</loc>
+    <lastmod>2018-07-13T08:19:06+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/routeros.html</loc>
+    <lastmod>2018-07-13T08:19:06+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2015/05/10/vlans-wifi-and-mikrotik.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/dns.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/git.html</loc>
+    <lastmod>2018-08-11T01:04:42+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -230,6 +512,12 @@
   <url>
     <loc>https://www.tiernanotoole.ie/2015/04/29/bulk-compressing-images-for-the-web.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/web.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -253,8 +541,20 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/gadgets.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2015/02/15/mobile_phone_as_a_service.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/raspberry_pi.html</loc>
+    <lastmod>2018-07-13T08:19:06+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -263,8 +563,20 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/cloud.html</loc>
+    <lastmod>2018-07-13T08:24:11+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2013/05/29/raspberrypi_astrisk_box.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/college.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -280,6 +592,24 @@
   <url>
     <loc>https://www.tiernanotoole.ie/2013/01/15/moving_sites_to_nearlyfreespeech.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/rsync.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/email.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/office_365.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -308,13 +638,31 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/p2p.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2012/11/30/symform_-_p2p_backup.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/osx.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2012/11/29/enabling_vnc_from_ssh_on_osx.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/tmg.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -348,6 +696,12 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/gps.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2012/10/15/gps_and_raspberry_pi.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
   </url>
@@ -358,8 +712,26 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/camera.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/photography.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2012/10/12/more_raspberry_pi_and_camera_antics.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/firewall.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -370,6 +742,18 @@
   <url>
     <loc>https://www.tiernanotoole.ie/2012/10/11/routeros_blocking_machine_access.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/hyper-v.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/zfs.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -385,6 +769,12 @@
   <url>
     <loc>https://www.tiernanotoole.ie/2012/10/03/handbrake-cluster.html</loc>
     <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/media-center.html</loc>
+    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -418,6 +808,12 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/ssh.html</loc>
+    <lastmod>2018-07-13T08:19:06+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2012/09/17/ssh-tunneling-made-simple.html</loc>
     <lastmod>2018-07-13T08:19:06+01:00</lastmod>
   </url>
@@ -438,6 +834,12 @@
   </url>
   
   <url>
+    <loc>https://www.tiernanotoole.ie/tags/server_2012.html</loc>
+    <lastmod>2018-07-13T08:19:06+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.tiernanotoole.ie/2012/08/31/understanding-windows8-storage-spaces.html</loc>
     <lastmod>2018-07-13T08:19:06+01:00</lastmod>
   </url>
@@ -445,6 +847,12 @@
   <url>
     <loc>https://www.tiernanotoole.ie/2012/08/31/sublimetext-with-powershell.html</loc>
     <lastmod>2018-07-13T08:19:06+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiernanotoole.ie/tags/aws.html</loc>
+    <lastmod>2018-07-13T08:24:11+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -458,85 +866,7 @@
   </url>
   
   <url>
-    <loc>https://www.tiernanotoole.ie/tags/announcements.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/aws.html</loc>
-    <lastmod>2018-07-13T08:24:11+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/b2.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/backblaze.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/backup.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/blogging.html</loc>
-    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/camera.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.tiernanotoole.ie/categories.html</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/cloud.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/cloud_desktop.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/code.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/college.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/computers.html</loc>
-    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/crashplan.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -555,54 +885,6 @@
   </url>
   
   <url>
-    <loc>https://www.tiernanotoole.ie/tags/development.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/dns.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/docker.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/double_internet.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/email.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/firewall.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/gadgets.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/git.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.tiernanotoole.ie/computers/godboxv2.html</loc>
     <lastmod>2019-03-20T13:46:04+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -617,58 +899,10 @@
   </url>
   
   <url>
-    <loc>https://www.tiernanotoole.ie/tags/godboxv2.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/gps.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/guide.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.tiernanotoole.ie/computers/hpstorageworks.html</loc>
     <lastmod>2019-03-20T13:46:04+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/hardware.html</loc>
-    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/homelab.html</loc>
-    <lastmod>2018-09-06T17:51:10+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/howto.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/hubic.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/hyper-v.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -683,24 +917,6 @@
     <lastmod>2019-03-20T13:46:04+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/ipv6.html</loc>
-    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/jekyll.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/linux.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -725,22 +941,10 @@
   </url>
   
   <url>
-    <loc>https://www.tiernanotoole.ie/tags/media-center.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.tiernanotoole.ie/computers/surfacebook.html</loc>
     <lastmod>2019-03-20T13:46:04+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/mikrotik.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -751,52 +955,10 @@
   </url>
   
   <url>
-    <loc>https://www.tiernanotoole.ie/tags/networking.html</loc>
-    <lastmod>2018-09-06T17:51:10+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/office_365.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.tiernanotoole.ie/computers/opteron.html</loc>
     <lastmod>2019-03-20T13:46:04+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/osx.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/p2p.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/pfsense.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/photography.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/post.html</loc>
-    <lastmod>2018-09-06T17:51:10+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -814,12 +976,6 @@
   </url>
   
   <url>
-    <loc>https://www.tiernanotoole.ie/tags/powershell.html</loc>
-    <lastmod>2019-03-20T15:21:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.tiernanotoole.ie/computers/proliantml110.html</loc>
     <lastmod>2019-03-20T13:46:04+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -827,76 +983,10 @@
   </url>
   
   <url>
-    <loc>https://www.tiernanotoole.ie/tags/programming.html</loc>
-    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/projects.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/raspberry_pi.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/reviews.html</loc>
-    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.tiernanotoole.ie/computers/router.html</loc>
     <lastmod>2019-03-20T13:46:04+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/routeros.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/rsync.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/s3.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/server_2012.html</loc>
-    <lastmod>2018-07-13T08:19:06+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/sophos_utm.html</loc>
-    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/ssh.html</loc>
-    <lastmod>2018-07-13T08:19:06+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/storage.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -911,96 +1001,6 @@
     <lastmod>2019-03-20T13:46:04+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/</loc>
-    <lastmod>2018-09-06T17:51:10+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/tips.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/tmg.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/tools.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/tutorial.html</loc>
-    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/tutorials.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/ubiquiti.html</loc>
-    <lastmod>2018-09-03T16:06:42+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/vmware.html</loc>
-    <lastmod>2019-04-18T15:16:05+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/voip.html</loc>
-    <lastmod>2018-07-24T16:34:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/web.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/website.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/windows.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/workstation.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.tiernanotoole.ie/tags/zfs.html</loc>
-    <lastmod>2018-07-13T08:18:50+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>
