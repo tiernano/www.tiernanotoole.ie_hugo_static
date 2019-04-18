@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>2019 Tiernan OToole</copyright>
-    <lastBuildDate>Thu, 06 Sep 2018 16:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 18 Apr 2019 18:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.tiernanotoole.ie/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Network Update Info April 2019</title>
+      <link>https://www.tiernanotoole.ie/2019/04/18/network-update-info-april-2019.html</link>
+      <pubDate>Thu, 18 Apr 2019 18:00:00 +0000</pubDate>
+      
+      <guid>https://www.tiernanotoole.ie/2019/04/18/network-update-info-april-2019.html</guid>
+      <description>So, this post has been a long time coming! A load of different things to talk about, so lets get started!
+GodBox V3 So, for a long time, I have been thinking about GodBoxV3, the replacement to GodBoxV2. And when planning this, i had some ideas of what it should be:
+ Minimum of 2x16 cores (double godboxv2) About the same RAM, if not more FAST STORAGE! Is able to run my twin 30&amp;rdquo; 4K monitors Would like 10Gb/s NICs  Well, It finally happened!</description>
+    </item>
     
     <item>
       <title>Adding a Netgear LB2120 to the homelab</title>
