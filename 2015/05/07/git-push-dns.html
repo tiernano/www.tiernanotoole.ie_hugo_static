@@ -6,32 +6,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<meta property="og:title" content="Auto deploying to multiple servers with GitHub and Webhooks" />
-<meta property="og:description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
-using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;" />
+<meta property="og:title" content="Git Push DNS" />
+<meta property="og:description" content="There are now a lot of services that have &ldquo;git push&rdquo; options available&hellip; you can build websites with Azure and Github, books using ShareLaTeX and now, DNS using LuaDNS. I have one zone running at the moment (tiernanotoole.net) and you can see the DNS records on github here. I am tempted at moving other records over soon&hellip; but i am currently on Amazon Route53 and 1: its works, so dont break it, and 2, not sure how to bulk export records from Route53 to Bind or Lua format." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html" />
-<meta property="article:published_time" content="2018-07-05T16:00:00&#43;00:00"/>
+<meta property="og:url" content="https://www.tiernanotoole.ie/2015/05/07/git-push-dns.html" />
+<meta property="article:published_time" content="2015-05-07T15:30:00&#43;00:00"/>
 <meta property="article:modified_time" content="2019-07-05T07:38:16&#43;01:00"/>
 
 
-<meta itemprop="name" content="Auto deploying to multiple servers with GitHub and Webhooks">
-<meta itemprop="description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
-using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;">
+<meta itemprop="name" content="Git Push DNS">
+<meta itemprop="description" content="There are now a lot of services that have &ldquo;git push&rdquo; options available&hellip; you can build websites with Azure and Github, books using ShareLaTeX and now, DNS using LuaDNS. I have one zone running at the moment (tiernanotoole.net) and you can see the DNS records on github here. I am tempted at moving other records over soon&hellip; but i am currently on Amazon Route53 and 1: its works, so dont break it, and 2, not sure how to bulk export records from Route53 to Bind or Lua format.">
 
 
-<meta itemprop="datePublished" content="2018-07-05T16:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2015-05-07T15:30:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-07-05T07:38:16&#43;01:00" />
-<meta itemprop="wordCount" content="400">
+<meta itemprop="wordCount" content="222">
 
 
 
-<meta itemprop="keywords" content="Tutorial,Blogging," />
+<meta itemprop="keywords" content="DNS,Networking,Development,Git," />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Auto deploying to multiple servers with GitHub and Webhooks"/>
-<meta name="twitter:description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
-using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;"/>
+<meta name="twitter:title" content="Git Push DNS"/>
+<meta name="twitter:description" content="There are now a lot of services that have &ldquo;git push&rdquo; options available&hellip; you can build websites with Azure and Github, books using ShareLaTeX and now, DNS using LuaDNS. I have one zone running at the moment (tiernanotoole.net) and you can see the DNS records on github here. I am tempted at moving other records over soon&hellip; but i am currently on Amazon Route53 and 1: its works, so dont break it, and 2, not sure how to bulk export records from Route53 to Bind or Lua format."/>
 
 
 
@@ -42,8 +39,8 @@ using the magic of Github&rsquo;s Web hooks, the Webhook project and a small pie
 
 
     <base href="https://www.tiernanotoole.ie/">
-    <link rel="canonical" href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html">
-    <title>Auto deploying to multiple servers with GitHub and Webhooks | Tiernan&#39;s Comms Closet</title>
+    <link rel="canonical" href="https://www.tiernanotoole.ie/2015/05/07/git-push-dns.html">
+    <title>Git Push DNS | Tiernan&#39;s Comms Closet</title>
 
     <!-- CSS -->
     <link href="https://www.tiernanotoole.ie/css/app.css" rel="stylesheet">
@@ -168,25 +165,37 @@ if (!doNotTrack) {
 
   <div class="blog-post">
     <h3>
-      <a href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html">Auto deploying to multiple servers with GitHub and Webhooks</a>
+      <a href="https://www.tiernanotoole.ie/2015/05/07/git-push-dns.html">Git Push DNS</a>
     </h3>
     <div class="callout small">
       <small>
-        <time datetime="2018-07-05T16:40:23Z">
-          Thu Jul 5, 2018
+        <time datetime="2015-05-07T15:30:00Z">
+          Thu May 7, 2015
         </time> by .
         
         Tags: 
   
     
-      <a href="/tags/tutorial.html">
-        Tutorial
+      <a href="/tags/dns.html">
+        DNS
       </a>
   
     ,
     
-      <a href="/tags/blogging.html">
-        Blogging
+      <a href="/tags/networking.html">
+        Networking
+      </a>
+  
+    ,
+    
+      <a href="/tags/development.html">
+        Development
+      </a>
+  
+    ,
+    
+      <a href="/tags/git.html">
+        Git
       </a>
   
 
@@ -195,22 +204,22 @@ if (!doNotTrack) {
         
           Share
 
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Share on Facebook">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.tiernanotoole.ie%2f2015%2f05%2f07%2fgit-push-dns.html" title="Share on Facebook">
       Facebook
     </a>,
 
 
-    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Share on Google+">
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.tiernanotoole.ie%2f2015%2f05%2f07%2fgit-push-dns.html" title="Share on Google+">
       Google+
     </a>,
 
 
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Share on LinkedIn">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.tiernanotoole.ie%2f2015%2f05%2f07%2fgit-push-dns.html" title="Share on LinkedIn">
       LinkedIn
     </a>,
 
 
-    <a href="https://twitter.com/home?status=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Tweet this">
+    <a href="https://twitter.com/home?status=https%3a%2f%2fwww.tiernanotoole.ie%2f2015%2f05%2f07%2fgit-push-dns.html" title="Tweet this">
       Twitter
     </a>
 
@@ -230,102 +239,27 @@ if (!doNotTrack) {
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
 
-      <p>In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!</p>
+      <p>There are now a lot of services that have &ldquo;git push&rdquo; options available&hellip; you can build websites with
+<a href="http://www.azure.com">Azure</a> and <a href="http://www.github.com">Github</a>, books using <a href="https://www.sharelatex.com/">ShareLaTeX</a> and now, DNS using <a href="http://luadns.com">LuaDNS</a>. I have one zone
+running at the moment (<a href="http://www.tiernanotoole.net">tiernanotoole.net</a>) and you can see the DNS records on <a href="https://github.com/tiernano/dns">github here</a>. I am
+tempted at moving other records over soon&hellip; but i am currently on <a href="http://aws.amazon.com/route53">Amazon Route53</a> and 1: its works, so
+dont break it, and 2, not sure how to bulk export records from Route53 to Bind or <a href="http://www.luadns.com/help.html#lua-zone-file-format">Lua</a> format.</p>
 
+<p>[update] 2 quick updates: 1) their free account, which is what i am using, allows 3 domains and 30 host
+records. they also charge less than <a href="http://aws.amazon.com/route53">Route53</a>:</p>
 
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530809017%2fgithub-webhook.png&width=500" alt="">
+<ul>
+<li>route 53 for 10 domains per year cost 50c per domain (first 25) per month, then query charges. total,
+about $60 + queries (@40c per million).</li>
+<li>luadns cost $29 a year for 10 domains, 5 million (ish) querys a month and 500 host records&hellip;</li>
+</ul>
 
+<p>I think i have nearly 30 domain on AWS&hellip; so, their $59 a year package, which include 30 domains, would
+probably save me money&hellip;</p>
 
-
-
-
-<p>using the magic of <a href="https://developer.github.com/webhooks/">Github&rsquo;s Web hooks</a>, the <a href="https://github.com/adnanh/webhook">Webhook project</a> and a small piece of bash shell script, i have managed to get this auto deploying&hellip;</p>
-
-<p>First, Download the Webhook project (its a <a href="https://golang.org/">Go</a> application, so it works pretty much anywhere). Copy it somewhere on your machine. Next, you need a config. I used the <a href="https://github.com/adnanh/webhook/blob/master/docs/Hook-Examples.md">Github sample config</a> from the project site and made tweaks to what script to run and what i was passing in.</p>
-
-<script type="application/javascript" src="//gist.github.com/tiernano/1a2329461702b20e347f907b00752abb.js"></script>
-
-<p>next, the script to pull from Github was simple enough:</p>
-
-<script type="application/javascript" src="//gist.github.com/tiernano/005f0211787de9ec73a683d84a7d81ce.js"></script>
-
-<p>The repo should already be cloned into the folder, <code>/var/www/localfolder</code> and your web server should be pointing at that also. Then, its just a matter of running the command:</p>
-
-<p><code>./webhook --hooks github.json --verbose</code></p>
-
-<p>The <code>--verbose</code> tag gives you lots of info, so its handy for testing. and then your app is running and listening on the default port, 9000.</p>
-
-<p>next, head over to your project on Github and go to settings:</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-settings.png&width=500" alt="">
-
-
-
-
-
-<p>select webhooks and add new web hook</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-list.png&width=500" alt="">
-
-
-
-
-
-<p>Fill in the required details on the page, and click save.</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-create-webhook.png&width=500" alt="">
-
-
-
-
-
-<p>Github will go out and have a chat with the webhook and verify it can send and recieve stuff from the hook. You can see this in the deliveries section:</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-deliveries.png&width=500" alt="">
-
-
-
-
-
-<p>Clicking on these will show you the headers that were sent, along with the payload, and you can also see the response from your server. Finally, you have the option of resending the payload, just in case anything goes wrong.</p>
-
-<p>So, there you have it. A complete automated deploy across multiple servers! Any questions, leave a comment below!</p>
-
-<p>[UPDATE] yesterday i mentioned i had to modify the <a href="https://github.com/adnanh/webhook/blob/master/docs/Hook-Examples.md">sample that was included</a> on the webhook site. Well, i noticed something this morning. The reason i needed it modified was the trigger rule was checking the header and the reference for the branch, but any time i ran it, it would not trigger&hellip; The reason was simple: the webhook app is expecting <code>application/json</code> but i had it set to <code>application/x-www-form-urlencoded</code> which is the default&hellip; the webhook app then couldn&rsquo;t parse it correctly&hellip; changing that fixes the problem! happy days!</p>
+<p>and 2) i forgot about one of those git push services&hellip; <a href="https://developermail.io/">DeveloperMail</a> is a service, for developers,
+for managing email servers. IMAP, SMTP, Git&hellip; all supported! just signed up&hellip; $2 a month per user. Lets
+see how this works&hellip;</p>
 
     </p>
     
@@ -338,8 +272,8 @@ src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-web
 <script>
 
  var disqus_config = function () {
-        this.page.url =  null ;  
-        this.page.identifier =  null ; 
+        this.page.url = "https://www.tiernanotoole.ie/2015/05/07/git-push-dns.html";  
+        this.page.identifier = "https://www.tiernanotoole.ie/2015/05/07/git-push-dns.html"; 
     };
 (function() { 
 var d = document, s = d.createElement('script');
@@ -365,9 +299,9 @@ s.setAttribute('data-timestamp', +new Date());
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <br>
-<a href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html" class="hide-child link primary-color">“Auto deploying to multiple servers with GitHub and Webhooks”</a> was last updated: 
+<a href="https://www.tiernanotoole.ie/2015/05/07/git-push-dns.html" class="hide-child link primary-color">“Git Push DNS”</a> was last updated: 
 July 5, 2019: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/41ef786094d1e32c52b59dee6c484a378ec6ad62">fixing all aliases and build issues 
-  (41ef786)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/auto-deploying-to-multiple-servers-with-github-and-webhooks.md">Improve this page</a>
+  (41ef786)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2015-05-07-git-push-dns.markdown">Improve this page</a>
 
         </div>
           <div class="medium-3 columns" data-sticky-container>
@@ -479,7 +413,7 @@ July 5, 2019: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//c
           
         </p>
         <p>
-          <a href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html#">Back to top</a>
+          <a href="https://www.tiernanotoole.ie/2015/05/07/git-push-dns.html#">Back to top</a>
         </p>
       </div>
     </footer>

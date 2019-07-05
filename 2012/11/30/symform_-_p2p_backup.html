@@ -6,32 +6,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<meta property="og:title" content="Auto deploying to multiple servers with GitHub and Webhooks" />
-<meta property="og:description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
-using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;" />
+<meta property="og:title" content="Symform - P2P Backup" />
+<meta property="og:description" content="I have previously posted about CrashPlan as my Backup System. I also, a long time ago, talked about Backing up SQL, MySQL and other stuff on my other blog. Well, CrashPlan is all good, but there are 2 &ldquo;niggly&rdquo; bits with it&hellip;
+ Its not FREE (well, this year i got it Free on Black Friday&hellip;) but it is cheap ($120 a year to backup 10 machines to the cloud aint bad." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html" />
-<meta property="article:published_time" content="2018-07-05T16:00:00&#43;00:00"/>
+<meta property="og:url" content="https://www.tiernanotoole.ie/2012/11/30/symform_-_p2p_backup.html" />
+<meta property="article:published_time" content="2012-11-30T09:13:27&#43;00:00"/>
 <meta property="article:modified_time" content="2019-07-05T07:38:16&#43;01:00"/>
 
 
-<meta itemprop="name" content="Auto deploying to multiple servers with GitHub and Webhooks">
-<meta itemprop="description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
-using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;">
+<meta itemprop="name" content="Symform - P2P Backup">
+<meta itemprop="description" content="I have previously posted about CrashPlan as my Backup System. I also, a long time ago, talked about Backing up SQL, MySQL and other stuff on my other blog. Well, CrashPlan is all good, but there are 2 &ldquo;niggly&rdquo; bits with it&hellip;
+ Its not FREE (well, this year i got it Free on Black Friday&hellip;) but it is cheap ($120 a year to backup 10 machines to the cloud aint bad.">
 
 
-<meta itemprop="datePublished" content="2018-07-05T16:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2012-11-30T09:13:27&#43;00:00" />
 <meta itemprop="dateModified" content="2019-07-05T07:38:16&#43;01:00" />
-<meta itemprop="wordCount" content="400">
+<meta itemprop="wordCount" content="599">
 
 
 
-<meta itemprop="keywords" content="Tutorial,Blogging," />
+<meta itemprop="keywords" content="Backup,Storage,Networking,P2P," />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Auto deploying to multiple servers with GitHub and Webhooks"/>
-<meta name="twitter:description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
-using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;"/>
+<meta name="twitter:title" content="Symform - P2P Backup"/>
+<meta name="twitter:description" content="I have previously posted about CrashPlan as my Backup System. I also, a long time ago, talked about Backing up SQL, MySQL and other stuff on my other blog. Well, CrashPlan is all good, but there are 2 &ldquo;niggly&rdquo; bits with it&hellip;
+ Its not FREE (well, this year i got it Free on Black Friday&hellip;) but it is cheap ($120 a year to backup 10 machines to the cloud aint bad."/>
 
 
 
@@ -42,8 +42,8 @@ using the magic of Github&rsquo;s Web hooks, the Webhook project and a small pie
 
 
     <base href="https://www.tiernanotoole.ie/">
-    <link rel="canonical" href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html">
-    <title>Auto deploying to multiple servers with GitHub and Webhooks | Tiernan&#39;s Comms Closet</title>
+    <link rel="canonical" href="https://www.tiernanotoole.ie/2012/11/30/symform_-_p2p_backup.html">
+    <title>Symform - P2P Backup | Tiernan&#39;s Comms Closet</title>
 
     <!-- CSS -->
     <link href="https://www.tiernanotoole.ie/css/app.css" rel="stylesheet">
@@ -168,25 +168,37 @@ if (!doNotTrack) {
 
   <div class="blog-post">
     <h3>
-      <a href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html">Auto deploying to multiple servers with GitHub and Webhooks</a>
+      <a href="https://www.tiernanotoole.ie/2012/11/30/symform_-_p2p_backup.html">Symform - P2P Backup</a>
     </h3>
     <div class="callout small">
       <small>
-        <time datetime="2018-07-05T16:40:23Z">
-          Thu Jul 5, 2018
+        <time datetime="2012-11-30T09:13:27Z">
+          Fri Nov 30, 2012
         </time> by .
         
         Tags: 
   
     
-      <a href="/tags/tutorial.html">
-        Tutorial
+      <a href="/tags/backup.html">
+        Backup
       </a>
   
     ,
     
-      <a href="/tags/blogging.html">
-        Blogging
+      <a href="/tags/storage.html">
+        Storage
+      </a>
+  
+    ,
+    
+      <a href="/tags/networking.html">
+        Networking
+      </a>
+  
+    ,
+    
+      <a href="/tags/p2p.html">
+        P2P
       </a>
   
 
@@ -195,22 +207,22 @@ if (!doNotTrack) {
         
           Share
 
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Share on Facebook">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.tiernanotoole.ie%2f2012%2f11%2f30%2fsymform_-_p2p_backup.html" title="Share on Facebook">
       Facebook
     </a>,
 
 
-    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Share on Google+">
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.tiernanotoole.ie%2f2012%2f11%2f30%2fsymform_-_p2p_backup.html" title="Share on Google+">
       Google+
     </a>,
 
 
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Share on LinkedIn">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.tiernanotoole.ie%2f2012%2f11%2f30%2fsymform_-_p2p_backup.html" title="Share on LinkedIn">
       LinkedIn
     </a>,
 
 
-    <a href="https://twitter.com/home?status=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Tweet this">
+    <a href="https://twitter.com/home?status=https%3a%2f%2fwww.tiernanotoole.ie%2f2012%2f11%2f30%2fsymform_-_p2p_backup.html" title="Tweet this">
       Twitter
     </a>
 
@@ -230,102 +242,35 @@ if (!doNotTrack) {
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
 
-      <p>In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!</p>
+      <p>I have previously <a href="http://tiernanotoole.ie/2012/08/30/CrashPlan-Backups.html">posted about CrashPlan</a> as my Backup System. I also, a long time ago, talked about <a href="http://blog.lotas-smartman.net/new-backup-plan-out-with-jungle-disk-and-zmanda-cloud-backup-in-with-crashplan-mysqlbf-and-sqlbf/">Backing up SQL, MySQL and other stuff</a> on my other blog. Well, CrashPlan is all good, but there are 2 &ldquo;niggly&rdquo; bits with it&hellip;</p>
 
+<ul>
+<li>Its not FREE (well, this year i got it Free on Black Friday&hellip;) but it is cheap ($120 a year to backup 10 machines to the cloud aint bad.)</li>
+<li>Its NOT FAST! The CrashPlan Datacenters all live in the US, and my servers live in Europe (either Dublin or Germany). So, bandwidth is limited&hellip; Getting less than 1Mbit/s most times, but have seen it reach 3&hellip; I have 20Mbits/s upload&hellip; even half that would be nice&hellip;</li>
+</ul>
 
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530809017%2fgithub-webhook.png&width=500" alt="">
+<p>So, thats where <a href="https://control.symform.com/Organization/Referral?referralId=96E53D9DC4501633F2294EF202734DB08C00F044">Symform</a> comes in. Symform is a P2P Backup Service, which runs on Windows, Linux and MacOSX. In theory, it should run anywhere that has a <a href="http://www.mono-project.com/Main_Page">Mono</a> runtime since its written in .NET. Anyway, you start with 10Gb of free storage, and you can increese that by one of 2 ways:</p>
 
+<ul>
+<li>Pay money: for $0.15 per month, you get 1Gb of storage in the cloud</li>
+<li>Pay Bytes: For every 2Gb &ldquo;Contributed&rdquo; (which is actually more like a pledge than a contribution&hellip; more on that later) you get 1Gb storage in the cloud.</li>
+</ul>
 
+<p>It works very well, and is nice a fast too. I have a few machines in house which are contribting stoage, a total of about 2Tb, and I have been given 1Tb storage in &ldquo;The Cloud&rdquo;. There is a lot more on how this works on their &ldquo;<a href="http://www.symform.com/join-the-revolution/how-symform-works/">How Symform Works</a>&rdquo; section of their site.</p>
 
+<p>I mentioned the &ldquo;Contribution&rdquo; VS &ldquo;Pledge&rdquo; up above&hellip; I have a machine in the house where i have Pledged 1Tb of storage. In reality, Symform can use the full 1Tb of storage, if it needs to, but is currently only using 168Gb. Now, that could just be that the machine is still getting files, and it will end up using the full 1Tb eventually, but either way, its all good.</p>
 
+<p>Also, as a couple of notes on Contribution and Backups:</p>
 
-<p>using the magic of <a href="https://developer.github.com/webhooks/">Github&rsquo;s Web hooks</a>, the <a href="https://github.com/adnanh/webhook">Webhook project</a> and a small piece of bash shell script, i have managed to get this auto deploying&hellip;</p>
+<ul>
+<li>The machine needs to be online and accessable on the internet at least 80% of the time, but <sup>24</sup>&frasl;<sub>7</sub> is ideal. If you drop below the 80%, your account can be suspended.</li>
+<li>your machine needs to be publically accessable, meaning port forwarded. I have a couple contribution machines in house, so they each have seperate ports forwarded to them.</li>
+<li>Given the P2P nature of the software, lots of connections to different machines are made&hellip; if you are behind a firewall, you may need to allow all or most outgoing connections. If you are on a really restrictive firewall, you may want to stick a contribution box in your <a href="http://en.wikipedia.org/wiki/DMZ_(computing)">DMZ</a> and probably use the <a href="http://www.symform.com/our-solutions/key-features/turbo-seeding/">Turbo Seeding</a> feature.</li>
+<li>Turbo Seeding is a handy feature, especially for Laptops&hellip; only problem is its Windows Only&hellip; So, importing and exporting does not work on Linux or OSX.</li>
+<li>The software can managed Work and Non Work hours, and will limit the upload and download speed during this time. Also a nice feature&hellip;</li>
+</ul>
 
-<p>First, Download the Webhook project (its a <a href="https://golang.org/">Go</a> application, so it works pretty much anywhere). Copy it somewhere on your machine. Next, you need a config. I used the <a href="https://github.com/adnanh/webhook/blob/master/docs/Hook-Examples.md">Github sample config</a> from the project site and made tweaks to what script to run and what i was passing in.</p>
-
-<script type="application/javascript" src="//gist.github.com/tiernano/1a2329461702b20e347f907b00752abb.js"></script>
-
-<p>next, the script to pull from Github was simple enough:</p>
-
-<script type="application/javascript" src="//gist.github.com/tiernano/005f0211787de9ec73a683d84a7d81ce.js"></script>
-
-<p>The repo should already be cloned into the folder, <code>/var/www/localfolder</code> and your web server should be pointing at that also. Then, its just a matter of running the command:</p>
-
-<p><code>./webhook --hooks github.json --verbose</code></p>
-
-<p>The <code>--verbose</code> tag gives you lots of info, so its handy for testing. and then your app is running and listening on the default port, 9000.</p>
-
-<p>next, head over to your project on Github and go to settings:</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-settings.png&width=500" alt="">
-
-
-
-
-
-<p>select webhooks and add new web hook</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-list.png&width=500" alt="">
-
-
-
-
-
-<p>Fill in the required details on the page, and click save.</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-create-webhook.png&width=500" alt="">
-
-
-
-
-
-<p>Github will go out and have a chat with the webhook and verify it can send and recieve stuff from the hook. You can see this in the deliveries section:</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-deliveries.png&width=500" alt="">
-
-
-
-
-
-<p>Clicking on these will show you the headers that were sent, along with the payload, and you can also see the response from your server. Finally, you have the option of resending the payload, just in case anything goes wrong.</p>
-
-<p>So, there you have it. A complete automated deploy across multiple servers! Any questions, leave a comment below!</p>
-
-<p>[UPDATE] yesterday i mentioned i had to modify the <a href="https://github.com/adnanh/webhook/blob/master/docs/Hook-Examples.md">sample that was included</a> on the webhook site. Well, i noticed something this morning. The reason i needed it modified was the trigger rule was checking the header and the reference for the branch, but any time i ran it, it would not trigger&hellip; The reason was simple: the webhook app is expecting <code>application/json</code> but i had it set to <code>application/x-www-form-urlencoded</code> which is the default&hellip; the webhook app then couldn&rsquo;t parse it correctly&hellip; changing that fixes the problem! happy days!</p>
+<p>So far, so good. Very happy with the software, but would like a nicer interface to see whats going on. At the moment, you are either limited to using the web interface, which aint bad, but not great, or watching the log files&hellip; I would also like the ability to prioritize certain files or folders, so, for example, upload my documents folder before anything else, and if anything changes in there, even if its uploading from somewhere else, pause and upload the documents folder&hellip; Just a thought&hellip;</p>
 
     </p>
     
@@ -338,8 +283,8 @@ src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-web
 <script>
 
  var disqus_config = function () {
-        this.page.url =  null ;  
-        this.page.identifier =  null ; 
+        this.page.url = "https://www.tiernanotoole.ie/2012/11/30/symform_-_p2p_backup.html";  
+        this.page.identifier = "https://www.tiernanotoole.ie/2012/11/30/symform_-_p2p_backup.html"; 
     };
 (function() { 
 var d = document, s = d.createElement('script');
@@ -365,9 +310,9 @@ s.setAttribute('data-timestamp', +new Date());
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <br>
-<a href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html" class="hide-child link primary-color">“Auto deploying to multiple servers with GitHub and Webhooks”</a> was last updated: 
+<a href="https://www.tiernanotoole.ie/2012/11/30/symform_-_p2p_backup.html" class="hide-child link primary-color">“Symform - P2P Backup”</a> was last updated: 
 July 5, 2019: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/41ef786094d1e32c52b59dee6c484a378ec6ad62">fixing all aliases and build issues 
-  (41ef786)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/auto-deploying-to-multiple-servers-with-github-and-webhooks.md">Improve this page</a>
+  (41ef786)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2012-11-30-symform_-_p2p_backup.markdown">Improve this page</a>
 
         </div>
           <div class="medium-3 columns" data-sticky-container>
@@ -479,7 +424,7 @@ July 5, 2019: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//c
           
         </p>
         <p>
-          <a href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html#">Back to top</a>
+          <a href="https://www.tiernanotoole.ie/2012/11/30/symform_-_p2p_backup.html#">Back to top</a>
         </p>
       </div>
     </footer>

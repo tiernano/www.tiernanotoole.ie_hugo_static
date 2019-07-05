@@ -6,32 +6,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<meta property="og:title" content="Auto deploying to multiple servers with GitHub and Webhooks" />
-<meta property="og:description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
-using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;" />
+<meta property="og:title" content="(Mad) Max Speed - The Road Warrior (Internet connection) (double speed internet Part 5)" />
+<meta property="og:description" content="[NOTE] This part 5 in a series of posts. The rest can be found here.
+This post is going to be an update and theoretical post. probably very little &ldquo;new&rdquo; stuff going on here, mostly updates, and what I am planning on doing later on.
+This week, I have been OOF sick, so I have not done much work, but I have been surfing the web, watching videos, downloading stuff, etc." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html" />
-<meta property="article:published_time" content="2018-07-05T16:00:00&#43;00:00"/>
+<meta property="og:url" content="https://www.tiernanotoole.ie/2016/04/21/2-cable-modems-double-speed-part-5.html" />
+<meta property="article:published_time" content="2016-04-21T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2019-07-05T07:38:16&#43;01:00"/>
 
 
-<meta itemprop="name" content="Auto deploying to multiple servers with GitHub and Webhooks">
-<meta itemprop="description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
-using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;">
+<meta itemprop="name" content="(Mad) Max Speed - The Road Warrior (Internet connection) (double speed internet Part 5)">
+<meta itemprop="description" content="[NOTE] This part 5 in a series of posts. The rest can be found here.
+This post is going to be an update and theoretical post. probably very little &ldquo;new&rdquo; stuff going on here, mostly updates, and what I am planning on doing later on.
+This week, I have been OOF sick, so I have not done much work, but I have been surfing the web, watching videos, downloading stuff, etc.">
 
 
-<meta itemprop="datePublished" content="2018-07-05T16:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2016-04-21T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-07-05T07:38:16&#43;01:00" />
-<meta itemprop="wordCount" content="400">
+<meta itemprop="wordCount" content="429">
 
 
 
-<meta itemprop="keywords" content="Tutorial,Blogging," />
+<meta itemprop="keywords" content="Guide,Networking,IPv6,Projects,HowTo,HomeLab,Double_Internet," />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Auto deploying to multiple servers with GitHub and Webhooks"/>
-<meta name="twitter:description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
-using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;"/>
+<meta name="twitter:title" content="(Mad) Max Speed - The Road Warrior (Internet connection) (double speed internet Part 5)"/>
+<meta name="twitter:description" content="[NOTE] This part 5 in a series of posts. The rest can be found here.
+This post is going to be an update and theoretical post. probably very little &ldquo;new&rdquo; stuff going on here, mostly updates, and what I am planning on doing later on.
+This week, I have been OOF sick, so I have not done much work, but I have been surfing the web, watching videos, downloading stuff, etc."/>
 
 
 
@@ -42,8 +45,8 @@ using the magic of Github&rsquo;s Web hooks, the Webhook project and a small pie
 
 
     <base href="https://www.tiernanotoole.ie/">
-    <link rel="canonical" href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html">
-    <title>Auto deploying to multiple servers with GitHub and Webhooks | Tiernan&#39;s Comms Closet</title>
+    <link rel="canonical" href="https://www.tiernanotoole.ie/2016/04/21/2-cable-modems-double-speed-part-5.html">
+    <title>(Mad) Max Speed - The Road Warrior (Internet connection) (double speed internet Part 5) | Tiernan&#39;s Comms Closet</title>
 
     <!-- CSS -->
     <link href="https://www.tiernanotoole.ie/css/app.css" rel="stylesheet">
@@ -168,25 +171,55 @@ if (!doNotTrack) {
 
   <div class="blog-post">
     <h3>
-      <a href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html">Auto deploying to multiple servers with GitHub and Webhooks</a>
+      <a href="https://www.tiernanotoole.ie/2016/04/21/2-cable-modems-double-speed-part-5.html">(Mad) Max Speed - The Road Warrior (Internet connection) (double speed internet Part 5)</a>
     </h3>
     <div class="callout small">
       <small>
-        <time datetime="2018-07-05T16:40:23Z">
-          Thu Jul 5, 2018
+        <time datetime="2016-04-21T00:00:00Z">
+          Thu Apr 21, 2016
         </time> by .
         
         Tags: 
   
     
-      <a href="/tags/tutorial.html">
-        Tutorial
+      <a href="/tags/guide.html">
+        Guide
       </a>
   
     ,
     
-      <a href="/tags/blogging.html">
-        Blogging
+      <a href="/tags/networking.html">
+        Networking
+      </a>
+  
+    ,
+    
+      <a href="/tags/ipv6.html">
+        IPv6
+      </a>
+  
+    ,
+    
+      <a href="/tags/projects.html">
+        Projects
+      </a>
+  
+    ,
+    
+      <a href="/tags/howto.html">
+        HowTo
+      </a>
+  
+    ,
+    
+      <a href="/tags/homelab.html">
+        HomeLab
+      </a>
+  
+    ,
+    
+      <a href="/tags/double_internet.html">
+        Double_Internet
       </a>
   
 
@@ -195,22 +228,22 @@ if (!doNotTrack) {
         
           Share
 
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Share on Facebook">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.tiernanotoole.ie%2f2016%2f04%2f21%2f2-cable-modems-double-speed-part-5.html" title="Share on Facebook">
       Facebook
     </a>,
 
 
-    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Share on Google+">
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.tiernanotoole.ie%2f2016%2f04%2f21%2f2-cable-modems-double-speed-part-5.html" title="Share on Google+">
       Google+
     </a>,
 
 
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Share on LinkedIn">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.tiernanotoole.ie%2f2016%2f04%2f21%2f2-cable-modems-double-speed-part-5.html" title="Share on LinkedIn">
       LinkedIn
     </a>,
 
 
-    <a href="https://twitter.com/home?status=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Tweet this">
+    <a href="https://twitter.com/home?status=https%3a%2f%2fwww.tiernanotoole.ie%2f2016%2f04%2f21%2f2-cable-modems-double-speed-part-5.html" title="Tweet this">
       Twitter
     </a>
 
@@ -230,102 +263,23 @@ if (!doNotTrack) {
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
 
-      <p>In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!</p>
+      <p>[NOTE] This part 5 in a series of posts. The rest can be found <a href="https://www.tiernanotoole.ie/tags/double_internet.html">here</a>.</p>
 
+<p>This post is going to be an update and theoretical post. probably very little &ldquo;new&rdquo; stuff going on here, mostly updates, and what I am planning on doing later on.</p>
 
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530809017%2fgithub-webhook.png&width=500" alt="">
+<p>This week, I have been <a href="http://blogs.technet.com/b/exchange/archive/2004/07/12/180899.aspx">OOF</a> sick, so I have not done much work, but I have been surfing the web, watching videos, downloading stuff, etc., so I have an idea of how things are going. First, as mentioned in <a href="https://www.tiernanotoole.ie/2016/04/14/2-cable-modems-double-speed-part-4.html">the previous post</a> I have MPTCP, Squid, Socks Servers, OpenVPN and IPTables doing their magic. 2 <a href="http://www.openvpn.net">OpenVPN</a> tunnels between the house and <a href="https://m.do.co/c/d4d345b83b55">Digital Ocean</a>. All TCP Traffic (bar port 80) is sent over socks to the box in the cloud using RedSocks. All UDP traffic is sent direct over OpenVPN. Since MPTCP is in the mix, all socks traffic is actually split over the 2 connections. All port 80 traffic, and 443 (if the client is using local Squid as their proxy) is sent round-robin between the 2 upstream IPs to Squid (2 OpenVPN end points).</p>
 
+<p>Things I have noticed:</p>
 
+<ul>
+<li>Every now and again, <a href="https://github.com/darkk/redsocks">RedSocks</a> crashes&hellip; just full on dies. It’s just a matter of starting again, but it’s a pain&hellip;</li>
+<li>I have had to restart squid a couple of times&hellip; not too often though</li>
+<li>there was a power outage in the house a few days back&hellip; so, when everything came back online, it was a bit of a pain bringing all connections back to life. I do have to figure out a better plan</li>
+</ul>
 
+<p>I still have to read more on this ECMP stuff. Hopefully it will do what I am hoping.</p>
 
-
-<p>using the magic of <a href="https://developer.github.com/webhooks/">Github&rsquo;s Web hooks</a>, the <a href="https://github.com/adnanh/webhook">Webhook project</a> and a small piece of bash shell script, i have managed to get this auto deploying&hellip;</p>
-
-<p>First, Download the Webhook project (its a <a href="https://golang.org/">Go</a> application, so it works pretty much anywhere). Copy it somewhere on your machine. Next, you need a config. I used the <a href="https://github.com/adnanh/webhook/blob/master/docs/Hook-Examples.md">Github sample config</a> from the project site and made tweaks to what script to run and what i was passing in.</p>
-
-<script type="application/javascript" src="//gist.github.com/tiernano/1a2329461702b20e347f907b00752abb.js"></script>
-
-<p>next, the script to pull from Github was simple enough:</p>
-
-<script type="application/javascript" src="//gist.github.com/tiernano/005f0211787de9ec73a683d84a7d81ce.js"></script>
-
-<p>The repo should already be cloned into the folder, <code>/var/www/localfolder</code> and your web server should be pointing at that also. Then, its just a matter of running the command:</p>
-
-<p><code>./webhook --hooks github.json --verbose</code></p>
-
-<p>The <code>--verbose</code> tag gives you lots of info, so its handy for testing. and then your app is running and listening on the default port, 9000.</p>
-
-<p>next, head over to your project on Github and go to settings:</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-settings.png&width=500" alt="">
-
-
-
-
-
-<p>select webhooks and add new web hook</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-list.png&width=500" alt="">
-
-
-
-
-
-<p>Fill in the required details on the page, and click save.</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-create-webhook.png&width=500" alt="">
-
-
-
-
-
-<p>Github will go out and have a chat with the webhook and verify it can send and recieve stuff from the hook. You can see this in the deliveries section:</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-deliveries.png&width=500" alt="">
-
-
-
-
-
-<p>Clicking on these will show you the headers that were sent, along with the payload, and you can also see the response from your server. Finally, you have the option of resending the payload, just in case anything goes wrong.</p>
-
-<p>So, there you have it. A complete automated deploy across multiple servers! Any questions, leave a comment below!</p>
-
-<p>[UPDATE] yesterday i mentioned i had to modify the <a href="https://github.com/adnanh/webhook/blob/master/docs/Hook-Examples.md">sample that was included</a> on the webhook site. Well, i noticed something this morning. The reason i needed it modified was the trigger rule was checking the header and the reference for the branch, but any time i ran it, it would not trigger&hellip; The reason was simple: the webhook app is expecting <code>application/json</code> but i had it set to <code>application/x-www-form-urlencoded</code> which is the default&hellip; the webhook app then couldn&rsquo;t parse it correctly&hellip; changing that fixes the problem! happy days!</p>
+<p>Now for the theoretical stuff. I started thinking, could this work outside the house? Could you build this into something smaller, like a Raspberry Pi, and stick 2 or more USB Modems in, connect it back to a server in the cloud, setup P2P OpenVPN connections and then get more than a single modem speed download? The problems I can see are around MPTCP. I am not sure if it has been ported to ARM to run on a Raspberry Pi. Second, the max you could ever get out of it is 100Mbit/s, given the 10/100mb network port on board&hellip; and you may need extra power for the USB dongles. Also, getting P2P connections may be complicated, given the non-static IPs on the modems, though, in theory, non-P2P OpenVPN could work&hellip; Again, it’s a theory. I had the though and that’s where the title came from&hellip; anyway, throwing it out there&hellip;</p>
 
     </p>
     
@@ -338,8 +292,8 @@ src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-web
 <script>
 
  var disqus_config = function () {
-        this.page.url =  null ;  
-        this.page.identifier =  null ; 
+        this.page.url = "https://www.tiernanotoole.ie/2016/04/21/2-cable-modems-double-speed-part-5.html";  
+        this.page.identifier = "https://www.tiernanotoole.ie/2016/04/21/2-cable-modems-double-speed-part-5.html"; 
     };
 (function() { 
 var d = document, s = d.createElement('script');
@@ -365,9 +319,9 @@ s.setAttribute('data-timestamp', +new Date());
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <br>
-<a href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html" class="hide-child link primary-color">“Auto deploying to multiple servers with GitHub and Webhooks”</a> was last updated: 
+<a href="https://www.tiernanotoole.ie/2016/04/21/2-cable-modems-double-speed-part-5.html" class="hide-child link primary-color">“(Mad) Max Speed - The Road Warrior (Internet connection) (double speed internet Part 5)”</a> was last updated: 
 July 5, 2019: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/41ef786094d1e32c52b59dee6c484a378ec6ad62">fixing all aliases and build issues 
-  (41ef786)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/auto-deploying-to-multiple-servers-with-github-and-webhooks.md">Improve this page</a>
+  (41ef786)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2016-04-21-2-cable-modems-double-speed-part-5.markdown">Improve this page</a>
 
         </div>
           <div class="medium-3 columns" data-sticky-container>
@@ -479,7 +433,7 @@ July 5, 2019: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//c
           
         </p>
         <p>
-          <a href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html#">Back to top</a>
+          <a href="https://www.tiernanotoole.ie/2016/04/21/2-cable-modems-double-speed-part-5.html#">Back to top</a>
         </p>
       </div>
     </footer>

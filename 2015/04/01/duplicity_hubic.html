@@ -6,32 +6,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<meta property="og:title" content="Auto deploying to multiple servers with GitHub and Webhooks" />
-<meta property="og:description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
-using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;" />
+<meta property="og:title" content="Hubic and Duplicity" />
+<meta property="og:description" content="I mentioned HubiC in my last post, and in it i said that you could use Duplicity for backups. Well, this is how you get it to work&hellip;
+First, i am using Ubuntu 14.04 (i think&hellip;). I use Ubuntu in house for a few things:
+ its running Tiernan&rsquo;s Comms Closet, GeekPhotographer and Tiernan&rsquo;s Podcast all in house, aswell as being used to build this site. The Web Server and MySQL Server are seperated, MySQL running on Windows, web on Ubuntu&hellip; but thats a different story&hellip; I have a couple of proxy servers running Ubuntu also Other general servers running Ubuntu&hellip; dont ask, cause i cant remember what they do half the time&hellip;  So, Duplicity is a backup application." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html" />
-<meta property="article:published_time" content="2018-07-05T16:00:00&#43;00:00"/>
+<meta property="og:url" content="https://www.tiernanotoole.ie/2015/04/01/duplicity_hubic.html" />
+<meta property="article:published_time" content="2015-04-01T07:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2019-07-05T07:38:16&#43;01:00"/>
 
 
-<meta itemprop="name" content="Auto deploying to multiple servers with GitHub and Webhooks">
-<meta itemprop="description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
-using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;">
+<meta itemprop="name" content="Hubic and Duplicity">
+<meta itemprop="description" content="I mentioned HubiC in my last post, and in it i said that you could use Duplicity for backups. Well, this is how you get it to work&hellip;
+First, i am using Ubuntu 14.04 (i think&hellip;). I use Ubuntu in house for a few things:
+ its running Tiernan&rsquo;s Comms Closet, GeekPhotographer and Tiernan&rsquo;s Podcast all in house, aswell as being used to build this site. The Web Server and MySQL Server are seperated, MySQL running on Windows, web on Ubuntu&hellip; but thats a different story&hellip; I have a couple of proxy servers running Ubuntu also Other general servers running Ubuntu&hellip; dont ask, cause i cant remember what they do half the time&hellip;  So, Duplicity is a backup application.">
 
 
-<meta itemprop="datePublished" content="2018-07-05T16:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2015-04-01T07:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-07-05T07:38:16&#43;01:00" />
-<meta itemprop="wordCount" content="400">
+<meta itemprop="wordCount" content="690">
 
 
 
-<meta itemprop="keywords" content="Tutorial,Blogging," />
+<meta itemprop="keywords" content="Storage,Backup,Code," />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Auto deploying to multiple servers with GitHub and Webhooks"/>
-<meta name="twitter:description" content="In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!
-using the magic of Github&rsquo;s Web hooks, the Webhook project and a small piece of bash shell script, i have managed to get this auto deploying&hellip;"/>
+<meta name="twitter:title" content="Hubic and Duplicity"/>
+<meta name="twitter:description" content="I mentioned HubiC in my last post, and in it i said that you could use Duplicity for backups. Well, this is how you get it to work&hellip;
+First, i am using Ubuntu 14.04 (i think&hellip;). I use Ubuntu in house for a few things:
+ its running Tiernan&rsquo;s Comms Closet, GeekPhotographer and Tiernan&rsquo;s Podcast all in house, aswell as being used to build this site. The Web Server and MySQL Server are seperated, MySQL running on Windows, web on Ubuntu&hellip; but thats a different story&hellip; I have a couple of proxy servers running Ubuntu also Other general servers running Ubuntu&hellip; dont ask, cause i cant remember what they do half the time&hellip;  So, Duplicity is a backup application."/>
 
 
 
@@ -42,8 +45,8 @@ using the magic of Github&rsquo;s Web hooks, the Webhook project and a small pie
 
 
     <base href="https://www.tiernanotoole.ie/">
-    <link rel="canonical" href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html">
-    <title>Auto deploying to multiple servers with GitHub and Webhooks | Tiernan&#39;s Comms Closet</title>
+    <link rel="canonical" href="https://www.tiernanotoole.ie/2015/04/01/duplicity_hubic.html">
+    <title>Hubic and Duplicity | Tiernan&#39;s Comms Closet</title>
 
     <!-- CSS -->
     <link href="https://www.tiernanotoole.ie/css/app.css" rel="stylesheet">
@@ -168,25 +171,31 @@ if (!doNotTrack) {
 
   <div class="blog-post">
     <h3>
-      <a href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html">Auto deploying to multiple servers with GitHub and Webhooks</a>
+      <a href="https://www.tiernanotoole.ie/2015/04/01/duplicity_hubic.html">Hubic and Duplicity</a>
     </h3>
     <div class="callout small">
       <small>
-        <time datetime="2018-07-05T16:40:23Z">
-          Thu Jul 5, 2018
+        <time datetime="2015-04-01T07:00:00Z">
+          Wed Apr 1, 2015
         </time> by .
         
         Tags: 
   
     
-      <a href="/tags/tutorial.html">
-        Tutorial
+      <a href="/tags/storage.html">
+        Storage
       </a>
   
     ,
     
-      <a href="/tags/blogging.html">
-        Blogging
+      <a href="/tags/backup.html">
+        Backup
+      </a>
+  
+    ,
+    
+      <a href="/tags/code.html">
+        Code
       </a>
   
 
@@ -195,22 +204,22 @@ if (!doNotTrack) {
         
           Share
 
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Share on Facebook">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.tiernanotoole.ie%2f2015%2f04%2f01%2fduplicity_hubic.html" title="Share on Facebook">
       Facebook
     </a>,
 
 
-    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Share on Google+">
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fwww.tiernanotoole.ie%2f2015%2f04%2f01%2fduplicity_hubic.html" title="Share on Google+">
       Google+
     </a>,
 
 
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Share on LinkedIn">
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.tiernanotoole.ie%2f2015%2f04%2f01%2fduplicity_hubic.html" title="Share on LinkedIn">
       LinkedIn
     </a>,
 
 
-    <a href="https://twitter.com/home?status=https%3a%2f%2fwww.tiernanotoole.ie%2f2018%2f07%2f05%2fauto-deploying-to-multiple-servers-with-github-and-webhooks.html" title="Tweet this">
+    <a href="https://twitter.com/home?status=https%3a%2f%2fwww.tiernanotoole.ie%2f2015%2f04%2f01%2fduplicity_hubic.html" title="Tweet this">
       Twitter
     </a>
 
@@ -230,102 +239,65 @@ if (!doNotTrack) {
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
 
-      <p>In yesterdays post, i mentioned that i wanted to try get an auto deploy working for this site. It already builds automagically using Forestry and puts the static HTML into a Github repo, but i needed to manually update the servers hosting the site&hellip; Well, not any more!</p>
+      <p>I mentioned <a href="https://hubic.com/home/new/?referral=GMSQVQ">HubiC</a> in my <a href="https://www.tiernanotoole.ie/2015/03/31/HubiC_SWIFT_CURL.html">last post</a>, and in it i said that you could use <a href="http://duplicity.nongnu.org/">Duplicity</a> for backups. Well, this is how you get it to work&hellip;</p>
 
+<p>First, i am using Ubuntu 14.04 (i think&hellip;). I use <a href="http://www.ubuntu.com">Ubuntu</a> in house for a few things:</p>
 
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530809017/github-webhook.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530809017%2fgithub-webhook.png&width=500" alt="">
+<ul>
+<li>its running <a href="http://blog.lotas-smartman.net">Tiernan&rsquo;s Comms Closet</a>, <a href="http://www.geekphotographer.com">GeekPhotographer</a> and <a href="http://podcast.tiernanotoole.ie">Tiernan&rsquo;s Podcast</a> all in house, aswell as being used to <a href="http://tiernanotoole.ie/2012/08/29/NewSite.html">build this site</a>. The Web Server and MySQL Server are seperated, MySQL running on Windows, web on Ubuntu&hellip; but thats a different story&hellip;</li>
+<li>I have a couple of proxy servers running Ubuntu also</li>
+<li>Other general servers running Ubuntu&hellip; dont ask, cause i cant remember what they do half the time&hellip;</li>
+</ul>
 
+<p>So, <a href="http://duplicity.nongnu.org/">Duplicity</a> is a backup application. From their website:</p>
 
+<p>What is it?</p>
 
+<p>Duplicity backs directories by producing encrypted tar-format volumes and uploading them to a remote or local file server. Because duplicity uses librsync, the incremental archives are space efficient and only record the parts of files that have changed since the last backup. Because duplicity uses GnuPG to encrypt and/or sign these archives, they will be safe from spying and/or modification by the server.</p>
 
+<p>The duplicity package also includes the rdiffdir utility. Rdiffdir is an extension of librsync&rsquo;s rdiff to directories&mdash;it can be used to produce signatures and deltas of directories as well as regular files. These signatures and deltas are in GNU tar format.</p>
 
-<p>using the magic of <a href="https://developer.github.com/webhooks/">Github&rsquo;s Web hooks</a>, the <a href="https://github.com/adnanh/webhook">Webhook project</a> and a small piece of bash shell script, i have managed to get this auto deploying&hellip;</p>
+<p>So, how do we get it working? Well, givin that i am on Ubuntu, these are the steps i needed to do:</p>
 
-<p>First, Download the Webhook project (its a <a href="https://golang.org/">Go</a> application, so it works pretty much anywhere). Copy it somewhere on your machine. Next, you need a config. I used the <a href="https://github.com/adnanh/webhook/blob/master/docs/Hook-Examples.md">Github sample config</a> from the project site and made tweaks to what script to run and what i was passing in.</p>
+<ul>
+<li>first, we need some credentials and API keys&hellip; If you havent signed up for <a href="https://hubic.com/home/new/?referral=GMSQVQ">HubiC</a> Do so now&hellip; That url gets you an extra 5Gb if you sign up for free (usually 25Gb) or if you pay 1EUR a month, you get 110Gb (usually 100Gb) and 5EUR a month gets you a staggering 10TB (yup! Terabytes!).</li>
+<li>Login to Hubic, and in the menu go to &lsquo;My Account&rsquo;, &lsquo;Developers&rsquo;. in here, create a new application (name and URL to redirect to&hellip; <a href="http://localhost">http://localhost</a> seems to work correctly). Get the Client ID and Secret ID that was given to you.</li>
+<li>take the contents of <a href="https://gist.github.com/tiernano/86ab2e08ba4e588a343a">the following gist</a> and replace your own details&hellip; I know, i am not a fan of sticking my password in a txt file&hellip; but it should be your local machine&hellip;</li>
+<li>that file should be in your home directory and should be called .hubic_credentials.</li>
+<li>add the duplicity PPA project (<a href="https://launchpad.net/~duplicity-team/+archive/ubuntu/ppa">https://launchpad.net/~duplicity-team/+archive/ubuntu/ppa</a>) to ubuntu using the add-apt-repository command (details on the link above, under the link &lsquo;read about installing&rsquo;). for me, i just called &lsquo;sudo add-apt-repository ppa:duplicity-team/ppa&rsquo;</li>
+<li>install duplicity by doing &lsquo;sudo apt-get install duplicity&rsquo;. Dont forget (its in the tutorial above!) to do an &lsquo;sudo apt-get update&rsquo; first!</li>
+<li>When i ran that, there where a few extra Python packages to be installed, so i was asked did i want to install them&hellip; Say, yes.</li>
+<li>Now, to run a backup we run the following command:</li>
+</ul>
 
-<script type="application/javascript" src="//gist.github.com/tiernano/1a2329461702b20e347f907b00752abb.js"></script>
+<p><code>duplicity ~/ cf+hubic://location</code></p>
 
-<p>next, the script to pull from Github was simple enough:</p>
+<ul>
+<li>cf+hubic is the backend to use, ~/ is the url to backup (my home directory in this case) and location is where on Hubic we want it stored. If this doesent exist, not a problem&hellip; it will create it.</li>
+<li>after we run this we&hellip; ahhh&hellip; i get an error:</li>
+</ul>
 
-<script type="application/javascript" src="//gist.github.com/tiernano/005f0211787de9ec73a683d84a7d81ce.js"></script>
+<p><code>BackendException: This backend requires the pyrax library available from Rackspace.</code></p>
 
-<p>The repo should already be cloned into the folder, <code>/var/www/localfolder</code> and your web server should be pointing at that also. Then, its just a matter of running the command:</p>
+<ul>
+<li>right&hellip; <a href="https://github.com/rackspace/pyrax">pyrax library</a> is from Rackspace and is available to download though pip&hellip;</li>
+<li>I seem to have python and a few other bits installed on this machine, so running &lsquo;sudo pip install pyrax&rsquo; works&hellip; Your millage may vary&hellip; [eg, this is out of scope for this tutorial! your on your own!]</li>
+<li>Other problem&hellip; I got a load of weird and wondering errors like this:</li>
+</ul>
 
-<p><code>./webhook --hooks github.json --verbose</code></p>
+<p><code>AttributeError: 'Module_six_moves_urllib_parse' object has no attribute 'SplitResult'</code></p>
 
-<p>The <code>--verbose</code> tag gives you lots of info, so its handy for testing. and then your app is running and listening on the default port, 9000.</p>
+<ul>
+<li>I fixed these by running:</li>
+</ul>
 
-<p>next, head over to your project on Github and go to settings:</p>
+<p><code>sudo pip install furl --upgrade</code></p>
 
+<ul>
+<li>FINALLY! ITS ALIVE!!! by default, it asks you for a key for the GnuPG encryption&hellip; and its all good! the first backup creates the directories, required files, etc. the next time you run the command, it will only upload changes. it will also ask for your GnuPG code you entered, so remember it!</li>
+</ul>
 
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-settings.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-settings.png&width=500" alt="">
-
-
-
-
-
-<p>select webhooks and add new web hook</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-list.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-list.png&width=500" alt="">
-
-
-
-
-
-<p>Fill in the required details on the page, and click save.</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-create-webhook.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-create-webhook.png&width=500" alt="">
-
-
-
-
-
-<p>Github will go out and have a chat with the webhook and verify it can send and recieve stuff from the hook. You can see this in the deliveries section:</p>
-
-
-<img 
-srcset="
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=500 500w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=710 710w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=1000 1000w,
-https://images.tiernanotoole.net/Image/?inputImage=v1530810063/github-webhook-deliveries.png&width=1420 1420w"
-src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-webhook-deliveries.png&width=500" alt="">
-
-
-
-
-
-<p>Clicking on these will show you the headers that were sent, along with the payload, and you can also see the response from your server. Finally, you have the option of resending the payload, just in case anything goes wrong.</p>
-
-<p>So, there you have it. A complete automated deploy across multiple servers! Any questions, leave a comment below!</p>
-
-<p>[UPDATE] yesterday i mentioned i had to modify the <a href="https://github.com/adnanh/webhook/blob/master/docs/Hook-Examples.md">sample that was included</a> on the webhook site. Well, i noticed something this morning. The reason i needed it modified was the trigger rule was checking the header and the reference for the branch, but any time i ran it, it would not trigger&hellip; The reason was simple: the webhook app is expecting <code>application/json</code> but i had it set to <code>application/x-www-form-urlencoded</code> which is the default&hellip; the webhook app then couldn&rsquo;t parse it correctly&hellip; changing that fixes the problem! happy days!</p>
+<p>And thats all folks! Any questions, leave them in the comments!</p>
 
     </p>
     
@@ -338,8 +310,8 @@ src="https://images.tiernanotoole.net/Image/?inputImage=v1530810063%2fgithub-web
 <script>
 
  var disqus_config = function () {
-        this.page.url =  null ;  
-        this.page.identifier =  null ; 
+        this.page.url = "https://www.tiernanotoole.ie/2015/04/01/Duplicity_Hubic.html";  
+        this.page.identifier = "https://www.tiernanotoole.ie/2015/04/01/Duplicity_Hubic.html"; 
     };
 (function() { 
 var d = document, s = d.createElement('script');
@@ -365,9 +337,9 @@ s.setAttribute('data-timestamp', +new Date());
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 <br>
-<a href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html" class="hide-child link primary-color">“Auto deploying to multiple servers with GitHub and Webhooks”</a> was last updated: 
+<a href="https://www.tiernanotoole.ie/2015/04/01/duplicity_hubic.html" class="hide-child link primary-color">“Hubic and Duplicity”</a> was last updated: 
 July 5, 2019: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//commit/41ef786094d1e32c52b59dee6c484a378ec6ad62">fixing all aliases and build issues 
-  (41ef786)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/auto-deploying-to-multiple-servers-with-github-and-webhooks.md">Improve this page</a>
+  (41ef786)</a>. Found an issue? <a href="https://github.com/tiernano/www.tiernanotoole.ie_hugo/edit/master/content/post/2015-04-01-Duplicity_Hubic.markdown">Improve this page</a>
 
         </div>
           <div class="medium-3 columns" data-sticky-container>
@@ -479,7 +451,7 @@ July 5, 2019: <a  href="https://github.com/tiernano/www.tiernanotoole.ie_hugo//c
           
         </p>
         <p>
-          <a href="https://www.tiernanotoole.ie/2018/07/05/auto-deploying-to-multiple-servers-with-github-and-webhooks.html#">Back to top</a>
+          <a href="https://www.tiernanotoole.ie/2015/04/01/duplicity_hubic.html#">Back to top</a>
         </p>
       </div>
     </footer>
